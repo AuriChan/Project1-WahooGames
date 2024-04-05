@@ -1,7 +1,5 @@
-#include <raylib.h>
+#include "Game.h"
+#include "MemLeaks.h"
+#include "Globals.h"
 
 
-int main()
-{
-	CloseWindow();
-}
