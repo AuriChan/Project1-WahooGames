@@ -13,6 +13,9 @@
     <Filter Include="Render">
       <UniqueIdentifier>{f3cfeecd-c2ce-419c-a7e4-4ef23cb5c9bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Geometry">
+      <UniqueIdentifier>{d366206b-e327-455c-8424-9760f4a79a7b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Globals.cpp">
@@ -45,6 +48,9 @@
     <ClCompile Include="Source\main.cpp">
       <Filter>Application</Filter>
     </ClCompile>
+    <ClCompile Include="Source\AABB.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Globals.h">
@@ -71,14 +77,17 @@
     <ClInclude Include="Source\Player.h">
       <Filter>Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Point.h">
-      <Filter>Entities</Filter>
-    </ClInclude>
     <ClInclude Include="Source\RenderComponent.h">
       <Filter>Render</Filter>
     </ClInclude>
     <ClInclude Include="Source\Sprite.h">
       <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AABB.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Point.h">
+      <Filter>Geometry</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

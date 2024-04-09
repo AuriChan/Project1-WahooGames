@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\AABB.cpp" />
     <ClCompile Include="Source\Entity.cpp" />
     <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\Globals.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="Source\TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\AABB.h" />
     <ClInclude Include="Source\Entity.h" />
     <ClInclude Include="Source\Game.h" />
     <ClInclude Include="Source\Globals.h" />
