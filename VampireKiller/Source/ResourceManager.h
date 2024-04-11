@@ -8,6 +8,6 @@ enum class Resource {
    
     IMG_SIMON_BELMONTE,
     IMG_ENEMY,
-    IMG_ONJECTS,
+    IMG_OBJECTS,
     IMG_TILES
 };
