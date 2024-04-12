@@ -3,7 +3,7 @@
 #include "Globals.h"
 
 //constructors
-Entity::Entity(const Point& p, int w, int h) : pos(p), dir({ 0,0 }), width(w), height(h), frame_width(w), frame_height(h), render(nullptr)
+/*Entity::Entity(const Point& p, int w, int h) : pos(p), dir({0,0}), width(w), height(h), frame_width(w), frame_height(h), render(nullptr)
 {
 }
 Entity::Entity(const Point& p, int w, int h, int frame_w, int frame_h) : pos(p), dir({ 0,0 }), width(w), height(h), frame_width(frame_w), frame_height(frame_h), render(nullptr)
@@ -65,4 +65,4 @@ void Entity::DrawHitbox(int x, int y, int w, int h, const Color& col) const
 
 	render->DrawBox(x, y - (h - 1), w, h, c);
 	render->DrawCorners(x, y - (h - 1), w, h);
-}
+}*/

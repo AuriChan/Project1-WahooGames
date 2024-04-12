@@ -4,7 +4,7 @@
 #include "ResourceManager.h"
 #include "RenderComponent.h"
 
-class Entity
+/*class Entity
 {protected:
 	Point GetRenderingPosition() const; // returns a point where the sprite is loaded
     int frame_width, frame_height;//of sprite
@@ -33,4 +33,4 @@ public:
 	void DrawHitbox(int x, int y, int w, int h, const Color& col) const;//draws box with the width and height and the sprite mesurements and a color
 
 
-};
+};*/
