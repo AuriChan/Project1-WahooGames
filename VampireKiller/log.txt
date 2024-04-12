@@ -1,4 +1,7 @@
-Project executed on 12-04-2024 at 10:49:29.
+Project executed on 12-04-2024 at 18:44:38.
 main.cpp(13): Application start
+Game.cpp(62): Failed to load texture of img_menue
+Game.cpp(48): Failed to load textures
+main.cpp(18): Failed to initialise game
 main.cpp(34): Application finish
 main.cpp(37): Bye :)

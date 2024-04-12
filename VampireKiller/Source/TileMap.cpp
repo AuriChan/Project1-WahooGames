@@ -26,12 +26,13 @@ TileMap::~TileMap()
 void TileMap::InitTileDictionary()
 {
 	const int n = TILE_SIZE;
+	dict_rect[(int)Tile::GROUND] = { 0,  0, n, n };
 
 }
 
 AppStatus TileMap::Initialise()
 {
-	img_tiles = LoadTexture("Images/Tileset_Stage_2.png");
+	img_tiles = LoadTexture("Images/Tileset.png");
 	if (img_tiles.id == 0)
 	{
 		LOG("Failed to load texture images/tileset.png");

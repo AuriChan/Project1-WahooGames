@@ -56,10 +56,10 @@ AppStatus Game::Initialise(float scale)
 }
 AppStatus Game::LoadTextures()
 {
-    img_menu = LoadTexture("Images/MSX.png");
+    img_menu = LoadTexture("Images/TitleScreen.jpg");
     if (img_menu.id == 0)
     {
-        LOG("Failed to load texture images/menu.png");
+        LOG("Failed to load texture of img_menue");
         return AppStatus::ERROR;
     }
     return AppStatus::OK;
