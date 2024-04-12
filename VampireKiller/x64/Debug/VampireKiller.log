@@ -1,1 +1,13 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(439,5): error MSB8020: The build tools for v143 (Platform Toolset = 'v143') cannot be found. To build using the v143 build tools, please install v143 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿  Game.cpp
+  Player.cpp
+  Scene.cpp
+  TileMap.cpp
+  main.cpp
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+Game.obj : error LNK2019: unresolved external symbol "public: __cdecl Scene::~Scene(void)" (??1Scene@@QEAA@XZ) referenced in function "public: void * __cdecl Scene::`scalar deleting destructor'(unsigned int)" (??_GScene@@QEAAPEAXI@Z)
+Game.obj : error LNK2019: unresolved external symbol "public: void __cdecl Scene::Release(void)" (?Release@Scene@@QEAAXXZ) referenced in function "public: __cdecl Game::~Game(void)" (??1Game@@QEAA@XZ)
+main.obj : error LNK2019: unresolved external symbol "public: enum AppStatus __cdecl Game::Update(void)" (?Update@Game@@QEAA?AW4AppStatus@@XZ) referenced in function main
+main.obj : error LNK2019: unresolved external symbol "public: void __cdecl Game::Render(void)" (?Render@Game@@QEAAXXZ) referenced in function main
+main.obj : error LNK2019: unresolved external symbol "public: void __cdecl Game::Cleanup(void)" (?Cleanup@Game@@QEAAXXZ) referenced in function main
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe : fatal error LNK1120: 5 unresolved externals
