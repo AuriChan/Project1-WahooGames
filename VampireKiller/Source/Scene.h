@@ -20,4 +20,7 @@ private:
     AppStatus LoadLevel(int stage);
 
     TileMap* level;
+    Camera2D camera;
+
+    DebugMode debug;
 };

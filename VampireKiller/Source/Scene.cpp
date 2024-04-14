@@ -5,6 +5,13 @@
 Scene::Scene()
 {
 	level = nullptr;
+
+	camera.target = { 0, 0 };				//Center of the screen
+	camera.offset = { 0, 0 };	            //Offset from the target (center of the screen) {0,MARGIN_GUI_Y}
+	camera.rotation = 0.0f;					//No rotation
+	camera.zoom = 1.0f;						//Default zoom
+
+	debug = DebugMode::OFF;
 }
 Scene::~Scene()
 {
