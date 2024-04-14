@@ -49,13 +49,13 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::LEAFS_BOTTOM5] = { 14 * n, 0 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_BOTTOM6] = { 15 * n, 0 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP1] = { 0 * n, 1 * n, n, n };
-	dict_rect[(int)Tile:: LEAFS_TOP_TREE1] = { 1 * n, 1 * n, n, n };
-	dict_rect[(int)Tile:: LEAFS_TOP2] = { 2 * n, 1 * n, n, n };
+	dict_rect[(int)Tile::LEAFS_TOP_TREE1] = { 1 * n, 1 * n, n, n };
+	dict_rect[(int)Tile::LEAFS_TOP2] = { 2 * n, 1 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP3] = { 3 * n, 1 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP4] = { 4 * n, 1 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP5] = { 5 * n, 1 * n, n, n };
-	dict_rect[(int)Tile:: LEAFS_TOP6] = { 6 * n, 1 * n, n, n };
-	dict_rect[(int)Tile:: LEAFS_TOP7] = { 7 * n, 1 * n, n, n };
+	dict_rect[(int)Tile::LEAFS_TOP6] = { 6 * n, 1 * n, n, n };
+	dict_rect[(int)Tile::LEAFS_TOP7] = { 7 * n, 1 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP8] = { 8 * n, 1 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP_TREE2] = { 9 * n, 1 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP_TREE3] = { 10 * n, 1 * n, n, n };
@@ -66,9 +66,9 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::LEAFS_TOP11] = { 15 * n, 1 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP_SKY1] = { 0 * n, 2 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP_SKY2] = { 1 * n, 2 * n, n, n };
-	dict_rect[(int)Tile:: LEAFS_TOP_SKY3] = { 2 * n, 2 * n, n, n };
+	dict_rect[(int)Tile::LEAFS_TOP_SKY3] = { 2 * n, 2 * n, n, n };
 	dict_rect[(int)Tile::LEAFS_TOP_SKY4] = { 3 * n, 2 * n, n, n };
-	dict_rect[(int)Tile:: LEAFS_TOP_SKY_CASTLE] = { 4 * n, 2 * n, n, n };
+	dict_rect[(int)Tile::LEAFS_TOP_SKY_CASTLE] = { 4 * n, 2 * n, n, n };
 	dict_rect[(int)Tile::TOP_CASTLE1] = { 5 * n, 2 * n, n, n };
 	dict_rect[(int)Tile::TOP_CASTLE2] = { 6 * n, 2 * n, n, n };
 	dict_rect[(int)Tile::MID_CASTLE1] = { 7 * n, 2 * n, n, n };
@@ -78,24 +78,24 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::MID_CASTLE3] = { 11 * n, 2 * n, n, n };
 	dict_rect[(int)Tile::MID_CASTLE4] = { 12 * n, 2 * n, n, n };
 	dict_rect[(int)Tile::TOP_WINDOW_LEFT] = { 13 * n, 2 * n, n, n };
-	dict_rect[(int)Tile:: DOOR_TOP_LEFT] = { 14 * n, 2 * n, n, n };
-	dict_rect[(int)Tile:: DOOR_TOP_RIGHT] = { 15 * n, 2 * n, n, n };
+	dict_rect[(int)Tile::DOOR_TOP_LEFT] = { 14 * n, 2 * n, n, n };
+	dict_rect[(int)Tile::DOOR_TOP_RIGHT] = { 15 * n, 2 * n, n, n };
 	dict_rect[(int)Tile::TOP_WINDOW_RIGHT] = { 0 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::MID_CASTLE5] = { 1 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::DOOR_LEFT_BROKEN] = { 2 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::DOOR_RIGHT] = { 3 * n, 3 * n, n, n };
-	dict_rect[(int)Tile:: WINDOW_BOTTOM_LEFT] = { 4 * n, 3 * n, n, n };
-	dict_rect[(int)Tile:: DOOR_LEFT] = { 5 * n, 3 * n, n, n };
+	dict_rect[(int)Tile::WINDOW_BOTTOM_LEFT] = { 4 * n, 3 * n, n, n };
+	dict_rect[(int)Tile::DOOR_LEFT] = { 5 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::DOOR_RIGHT_BROKEN] = { 6 * n, 3 * n, n, n };
-	dict_rect[(int)Tile:: WINDOW_BOTTOM_RIGHT] = { 7 * n, 3 * n, n, n };
+	dict_rect[(int)Tile::WINDOW_BOTTOM_RIGHT] = { 7 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::CASTLE_BOTTOM_LEFT] = { 8 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::CASTLE_BOTTOM_MID] = { 9 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::DOOR_BOTTOM_LEFT] = { 10 * n, 3 * n, n, n };
-	dict_rect[(int)Tile:: DOOR_BOTTOM_RIGHT] = { 11 * n, 3 * n, n, n };
+	dict_rect[(int)Tile::DOOR_BOTTOM_RIGHT] = { 11 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::CASTLE_BOTTOM_RIGHT] = { 12 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::STATUE_SPIRAL_LEFT] = { 13 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::STATUE_SPIRAL_RIGHT] = { 14 * n, 3 * n, n, n };
-	dict_rect[(int)Tile:: PILLAR] = { 15 * n, 3 * n, n, n };
+	dict_rect[(int)Tile::PILLAR] = { 15 * n, 3 * n, n, n };
 	dict_rect[(int)Tile::STATUE_BOTTOM_LEFT] = { 0 * n, 4 * n, n, n };
 	dict_rect[(int)Tile::STATUE_BOTTOM_RIGHT] = { 1 * n, 4 * n, n, n };
 	dict_rect[(int)Tile::STATUE_TOP_LEFT] = { 2 * n, 4 * n, n, n };
@@ -119,7 +119,7 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::BROKEN_CRUMBS_RIGHT] = { 4 * n, 5 * n, n, n };
 	dict_rect[(int)Tile::STAIRS] = { 5*n, 5 * n, n, n };
 	dict_rect[(int)Tile::NARROW_WINDOW_LEFT_TOP] = { 6 *n, 5 * n, n, n };
-	dict_rect[(int)Tile:: NARROW_WINDOW_RIGHT_TOP] = {7 *n, 5 * n, n, n };
+	dict_rect[(int)Tile::NARROW_WINDOW_RIGHT_TOP] = {7 *n, 5 * n, n, n };
 	dict_rect[(int)Tile::NARROW_WINDOW_LEFT_BOTTOM] = { 8*n, 5 * n, n, n };
 	dict_rect[(int)Tile::NARROW_WINDOW_RIGHT_BOTTOM] = { 9 *n, 5 * n, n, n };
 	dict_rect[(int)Tile::BROKEN_BLACK_LEFT] = {10 *n, 5 * n, n, n };
@@ -127,7 +127,7 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::COLOR_WINDOW_TOP_LEFT] = { 12 *n, 5 * n, n, n };
 	dict_rect[(int)Tile::COLOR_WINDOW_TOP_RIGHT] = { 13*n, 5 * n, n, n };
 	dict_rect[(int)Tile::COLOR_WINDOW_BOTTOM_LEFT] = { 14*n, 5 * n, n, n };
-	dict_rect[(int)Tile:: COLOR_WINDOW_BOTTOM_RIGHT] = { 15 *n, 5 * n, n, n };
+	dict_rect[(int)Tile::COLOR_WINDOW_BOTTOM_RIGHT] = { 15 *n, 5 * n, n, n };
 
 //ENTITIES
 	dict_rect[(int)Tile::MEDUSA_BOTTOM_LEFT] = { 0 *n, 6 * n, n, n };
@@ -136,8 +136,7 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::MEDUSA_MID_RIGHT] = { 3*n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_TOP_LEFT] = { 4 *n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_TOP_RIGHT] = { 5*n, 6 * n, n, n };
-	dict_rect[(int)Tile::PLAYER] = { 0 * n, 0 * n, n, n };
-	dict_rect[(int)Tile::SOLDIER] = { 12 * n, 3 * n, n, n };
+	dict_rect[(int)Tile::SOLDIER] = { 12 * n, 4 * n, n, n };
 	dict_rect[(int)Tile::HEAD] = { 9 * n, 2 * n, n, n };
 
 //GADGETS
@@ -159,7 +158,13 @@ void TileMap::InitTileDictionary()
 //OBJECTS
 	dict_rect[(int)Tile::HEART] = { 7 * n, 1 * n, n, n };
 
-
+//EXTRA TILES 
+	dict_rect[(int)Tile::FENCE_TOP3] = { 0 * n, 7 * n, n, n };
+	dict_rect[(int)Tile::TREE_HANG_LEAF5] = { 1 * n, 7 * n, n, n };
+	dict_rect[(int)Tile::TREE_HANG_LEAF6] = { 2 * n, 7 * n, n, n };
+	dict_rect[(int)Tile::BROKEN_CASTLE] = { 3 * n, 7 * n, n, n };
+	
+	
 
 
 
