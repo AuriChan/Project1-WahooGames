@@ -104,7 +104,7 @@
               "RelativeDocumentMoniker": "Source\\Scene.cpp",
               "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
               "RelativeToolTip": "Source\\Scene.cpp",
-              "ViewState": "AQIAAKcAAAAAAAAAAAAiwK0AAAAkAAAA",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAAwG8AAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-11T14:27:01.101Z",
               "EditorCaption": ""
@@ -119,8 +119,7 @@
               "RelativeToolTip": "Source\\Scene.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:27:01.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.1Z"
             },
             {
               "$type": "Document",
@@ -132,8 +131,7 @@
               "RelativeToolTip": "Source\\Globals.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:27:01.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.103Z"
             },
             {
               "$type": "Document",
@@ -145,8 +143,7 @@
               "RelativeToolTip": "Source\\Player.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:27:01.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.098Z"
             },
             {
               "$type": "Document",
@@ -156,7 +153,7 @@
               "RelativeDocumentMoniker": "Source\\TileMap.h",
               "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h",
               "RelativeToolTip": "Source\\TileMap.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAAAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-11T14:27:01.1Z",
               "EditorCaption": ""
@@ -171,8 +168,7 @@
               "RelativeToolTip": "Source\\TileMap.cpp",
               "ViewState": "AQIAAJAAAAAAAAAAAAAAAIsAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-11T14:27:01.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.1Z"
             },
             {
               "$type": "Document",
@@ -184,8 +180,7 @@
               "RelativeToolTip": "Source\\Globals.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-11T14:27:01.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.103Z"
             },
             {
               "$type": "Document",
@@ -197,8 +192,7 @@
               "RelativeToolTip": "Source\\Game.cpp",
               "ViewState": "AQIAACcAAAAAAAAAAAD4vzIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-11T14:27:01.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.101Z"
             },
             {
               "$type": "Document",
@@ -210,8 +204,7 @@
               "RelativeToolTip": "Source\\Point.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:27:01.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.098Z"
             },
             {
               "$type": "Document",
