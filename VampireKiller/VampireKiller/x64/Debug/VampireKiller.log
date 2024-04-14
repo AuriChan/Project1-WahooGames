@@ -1,2 +1,6 @@
-﻿  Game.cpp
-  VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+﻿  Scene.cpp
+  TileMap.cpp
+C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(254,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(255,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe

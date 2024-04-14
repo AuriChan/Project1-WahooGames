@@ -163,6 +163,26 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::TREE_HANG_LEAF5] = { 1 * n, 7 * n, n, n };
 	dict_rect[(int)Tile::TREE_HANG_LEAF6] = { 2 * n, 7 * n, n, n };
 	dict_rect[(int)Tile::BROKEN_CASTLE] = { 3 * n, 7 * n, n, n };
+
+//TRANSITION TILES
+	dict_rect[(int)Tile::CASTLE_LAB1] = { 12 * n, 4 * n, n, n };
+	dict_rect[(int)Tile::LAB1_LAB2] = { 5 * n, 4 * n, n, n };
+	dict_rect[(int)Tile::LAB2_LAB3] = { 11 * n, 4 * n, n, n };
+	dict_rect[(int)Tile::LAB3_LAB1] = {  9* n, 5 * n, n, n };
+	dict_rect[(int)Tile::LAB2_LAB1] = { 8 * n, 5 * n, n, n };
+	dict_rect[(int)Tile::LAB3_LAB2] = { 5 * n, 4 * n, n, n };
+	dict_rect[(int)Tile::LAB1_LAB3] = { 3 * n, 5 * n, n, n };
+
+	dict_rect[(int)Tile::GARDEN1_GARDEN2] = { 0 * n, 7 * n, n, n };
+	dict_rect[(int)Tile::GARDEN2_GARDEN3] = { 0 * n, 7 * n, n, n };
+	dict_rect[(int)Tile::GARDEN2_GARDEN1] = { 1 * n, 0 * n, n, n };
+	dict_rect[(int)Tile::GARDEN3_GARDEN2] = { 1 * n, 0 * n, n, n };
+
+	
+
+	
+
+
 	
 	
 
