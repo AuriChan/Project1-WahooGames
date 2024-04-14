@@ -20,12 +20,12 @@ private:
     AppStatus BeginPlay();
     void FinishPlay();
 
-    AppStatus LoadTextures();
-    void UnloadTextures();
+    AppStatus LoadResources();
+    void UnloadResources();
 
     GameState state;
     Scene* scene;
-    Texture2D img_menu;
+    const Texture2D *img_menu;
 
     //To work with original game units and then scale the result
     RenderTexture2D target;

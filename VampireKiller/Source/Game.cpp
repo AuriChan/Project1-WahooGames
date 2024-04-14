@@ -43,7 +43,7 @@ AppStatus Game::Initialise(float scale)
     dst = { 0, 0, w, h };
 
     //Load resources
-    if (LoadTextures() != AppStatus::OK)
+    if (LoadResources() != AppStatus::OK)
     {
         LOG("Failed to load textures");
         return AppStatus::ERROR;
@@ -54,14 +54,16 @@ AppStatus Game::Initialise(float scale)
 
     return AppStatus::OK;
 }
-AppStatus Game::LoadTextures()
+AppStatus Game::LoadResources()
 {
-    img_menu = LoadTexture("Images/TitleScreen.png");
-    if (img_menu.id == 0)
+    ResourceManager& data = ResourceManager::Instance();
+
+    if (data.LoadTexture(Resource::IMG_MENU, "Images/TitleScreen.png") != AppStatus::OK)
     {
-        LOG("Failed to load texture of img_menue");
         return AppStatus::ERROR;
     }
+    img_menu = data.GetTexture(Resource::IMG_MENU);
+
     return AppStatus::OK;
 }
 
@@ -126,7 +128,7 @@ void Game::Render()
     switch (state)
     {
     case GameState::MAIN_MENU:
-        DrawTexture(img_menu, 0, 0, WHITE);
+        DrawTexture(*img_menu, 0, 0, WHITE);
         break;
 
     case GameState::PLAYING:
@@ -143,11 +145,13 @@ void Game::Render()
 }
 void Game::Cleanup()
 {
-    UnloadTextures();
+    UnloadResources();
     CloseWindow();
 }
-void Game::UnloadTextures()
+void Game::UnloadResources()
 {
-    UnloadTexture(img_menu);
+    ResourceManager& data = ResourceManager::Instance();
+    data.ReleaseTexture(Resource::IMG_MENU);
+
     UnloadRenderTexture(target);
 }

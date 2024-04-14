@@ -75,5 +75,5 @@ private:
 	std::unordered_map<int, Rectangle> dict_rect;
 
 	//Tile sheet
-	Texture2D img_tiles;
+	const Texture2D *img_tiles;
 };

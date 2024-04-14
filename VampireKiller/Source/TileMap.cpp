@@ -9,7 +9,7 @@ TileMap::TileMap()
 	width = 0;
 	height = 0;
 	map_y = 0;
-	img_tiles = {};
+	img_tiles = nullptr;
 
 	InitTileDictionary();
 }
@@ -183,12 +183,14 @@ void TileMap::InitTileDictionary()
 
 AppStatus TileMap::Initialise()
 {
-	img_tiles = LoadTexture("Images/Tileset.png");
-	if (img_tiles.id == 0)
+	ResourceManager& data = ResourceManager::Instance();
+
+	if (data.LoadTexture(Resource::IMG_TILES, "images/tileset.png") != AppStatus::OK)
 	{
-		LOG("Failed to load texture images/tileset.png");
 		return AppStatus::ERROR;
 	}
+	img_tiles = data.GetTexture(Resource::IMG_TILES);
+
 	return AppStatus::OK;
 }
 
@@ -232,13 +234,15 @@ void TileMap::Render()
 				pos.y = map_y + i * TILE_SIZE;
 
 				rc = dict_rect[(int)tile];
-				DrawTextureRec(img_tiles, rc, pos, WHITE);
+				DrawTextureRec(*img_tiles, rc, pos, WHITE);
 			}
 		}
 	}
 }
 void TileMap::Release()
 {
-	UnloadTexture(img_tiles);
+	ResourceManager& data = ResourceManager::Instance();
+	data.ReleaseTexture(Resource::IMG_TILES);
+
 	dict_rect.clear();
 }
