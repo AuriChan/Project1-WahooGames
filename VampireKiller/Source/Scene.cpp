@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 Scene::Scene()
-{
+{   
 	level = nullptr;
 
 	camera.target = { 0, 0 };				//Center of the screen
@@ -26,6 +26,7 @@ AppStatus Scene::Init()
 {
 	//Create level 
 	level = new TileMap();
+	
 	if (level == nullptr)
 	{
 		LOG("Failed to allocate memory for Level");
