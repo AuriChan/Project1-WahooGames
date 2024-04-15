@@ -197,7 +197,7 @@ AppStatus TileMap::Initialise()
 	}
 	img_tiles = data.GetTexture(Resource::IMG_TILES);
 
-	laser = new Sprite(img_tiles);
+	/*laser = new Sprite(img_tiles);
 	if (laser == nullptr)
 	{
 		LOG("Failed to allocate memory for laser sprite");
@@ -208,7 +208,7 @@ AppStatus TileMap::Initialise()
 	laser->AddKeyFrame(0, dict_rect[(int)Tile::LASER_FRAME0]);
 	laser->AddKeyFrame(0, dict_rect[(int)Tile::LASER_FRAME1]);
 	laser->AddKeyFrame(0, dict_rect[(int)Tile::LASER_FRAME2]);
-	laser->SetAnimation(0);
+	laser->SetAnimation(0);*/
 
 	return AppStatus::OK;
 }
@@ -244,18 +244,18 @@ Tile TileMap::GetTileIndex(int x, int y) const
 	}
 	return map[x + y * width];
 }
-bool TileMap::IsTileSolid(Tile tile) const
-{
-	return (Tile::SOLID_FIRST <= tile && tile <= Tile::SOLID_LAST);
-}
-bool TileMap::IsTileLadderTop(Tile tile) const
-{
-	return tile == Tile::LADDER_TOP_L || tile == Tile::LADDER_TOP_R;
-}
-bool TileMap::IsTileLadder(Tile tile) const
-{
-	return tile == Tile::LADDER_L || tile == Tile::LADDER_R;
-}
+//bool TileMap::IsTileSolid(Tile tile) const
+//{
+//	return (Tile::SOLID_FIRST <= tile && tile <= Tile::SOLID_LAST);
+//}
+//bool TileMap::IsTileLadderTop(Tile tile) const
+//{
+//	return tile == Tile::LADDER_TOP_L || tile == Tile::LADDER_TOP_R;
+//}
+//bool TileMap::IsTileLadder(Tile tile) const
+//{
+//	return tile == Tile::LADDER_L || tile == Tile::LADDER_R;
+//}
 bool TileMap::TestCollisionWallLeft(const AABB& box) const
 {
 	return CollisionX(box.pos, box.height);
@@ -373,22 +373,22 @@ bool TileMap::TestOnLadderTop(const AABB& box, int* px) const
 	}
 	return false;
 }
-int TileMap::GetLadderCenterPos(int pixel_x, int pixel_y) const
-{
-	int tx, ty;
-
-	tx = pixel_x / TILE_SIZE;
-	ty = pixel_y / TILE_SIZE;
-	Tile tile = GetTileIndex(tx, ty);
-
-	if (tile == Tile::LADDER_L || tile == Tile::LADDER_TOP_L)		return tx * TILE_SIZE + TILE_SIZE;
-	else if (tile == Tile::LADDER_R || tile == Tile::LADDER_TOP_R)	return tx * TILE_SIZE;
-	else
-	{
-		LOG("Internal error, tile should be a LADDER, coord: (%d,%d), tile type: %d", pixel_x, pixel_y, (int)tile);
-		return 0;
-	}
-}
+//int TileMap::GetLadderCenterPos(int pixel_x, int pixel_y) const
+//{
+//	int tx, ty;
+//
+//	tx = pixel_x / TILE_SIZE;
+//	ty = pixel_y / TILE_SIZE;
+//	Tile tile = GetTileIndex(tx, ty);
+//
+//	if (tile == Tile::LADDER_L || tile == Tile::LADDER_TOP_L)		return tx * TILE_SIZE + TILE_SIZE;
+//	else if (tile == Tile::LADDER_R || tile == Tile::LADDER_TOP_R)	return tx * TILE_SIZE;
+//	else
+//	{
+//		LOG("Internal error, tile should be a LADDER, coord: (%d,%d), tile type: %d", pixel_x, pixel_y, (int)tile);
+//		return 0;
+//	}
+//}
 void TileMap::Render()
 {
 	Tile tile;
@@ -405,7 +405,7 @@ void TileMap::Render()
 				pos.x = (float)j * TILE_SIZE;
 				pos.y = (float)i * TILE_SIZE;
 
-				if (tile != Tile::LASER)
+				/*if (tile != Tile::LASER)
 				{
 					rc = dict_rect[(int)tile];
 					DrawTextureRec(*img_tiles, rc, pos, WHITE);
@@ -413,7 +413,7 @@ void TileMap::Render()
 				else
 				{
 					laser->Draw((int)pos.x, (int)pos.y);
-				}
+				}*/
 			}
 		}
 	}

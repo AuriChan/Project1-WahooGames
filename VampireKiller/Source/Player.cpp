@@ -49,29 +49,29 @@ AppStatus Player::Initialise()
 	for (i = 0; i < 8; ++i)
 		sprite->AddKeyFrame((int)PlayerAnim::WALKING_LEFT, { (float)i * n, 4 * n, -n, n });
 
-	sprite->SetAnimationDelay((int)PlayerAnim::FALLING_RIGHT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::FALLING_RIGHT, { 2 * n, 5 * n, n, n });
-	sprite->AddKeyFrame((int)PlayerAnim::FALLING_RIGHT, { 3 * n, 5 * n, n, n });
-	sprite->SetAnimationDelay((int)PlayerAnim::FALLING_LEFT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::FALLING_LEFT, { 2 * n, 5 * n, -n, n });
-	sprite->AddKeyFrame((int)PlayerAnim::FALLING_LEFT, { 3 * n, 5 * n, -n, n });
+	sprite->SetAnimationDelay((int)PlayerAnim::CROUCHING_RIGHT, ANIM_DELAY);
+	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_RIGHT, { 2 * n, 5 * n, n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_RIGHT, { 3 * n, 5 * n, n, n });
+	sprite->SetAnimationDelay((int)PlayerAnim::CROUCHING_LEFT, ANIM_DELAY);
+	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_LEFT, { 2 * n, 5 * n, -n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_LEFT, { 3 * n, 5 * n, -n, n });
 
 	sprite->SetAnimationDelay((int)PlayerAnim::JUMPING_RIGHT, ANIM_DELAY);
 	sprite->AddKeyFrame((int)PlayerAnim::JUMPING_RIGHT, { 0, 5 * n, n, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::JUMPING_LEFT, ANIM_DELAY);
 	sprite->AddKeyFrame((int)PlayerAnim::JUMPING_LEFT, { 0, 5 * n, -n, n });
-	sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_RIGHT, ANIM_DELAY);
+	/*sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_RIGHT, ANIM_DELAY);
 	sprite->AddKeyFrame((int)PlayerAnim::LEVITATING_RIGHT, { n, 5 * n, n, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_LEFT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::LEVITATING_LEFT, { n, 5 * n, -n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::LEVITATING_LEFT, { n, 5 * n, -n, n });*/
 
-	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING, ANIM_LADDER_DELAY);
+	/*sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING, ANIM_LADDER_DELAY);
 	for (i = 0; i < 4; ++i)
 		sprite->AddKeyFrame((int)PlayerAnim::CLIMBING, { (float)i * n, 6 * n, n, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_PRE_TOP, ANIM_DELAY);
 	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_PRE_TOP, { 4 * n, 6 * n, n, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_TOP, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP, { 5 * n, 6 * n, n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP, { 5 * n, 6 * n, n, n });*/
 
 	sprite->SetAnimation((int)PlayerAnim::IDLE_RIGHT);
 
@@ -154,8 +154,8 @@ void Player::StartFalling()
 {
 	dir.y = PLAYER_SPEED;
 	state = State::FALLING;
-	if (IsLookingRight())	SetAnimation((int)PlayerAnim::FALLING_RIGHT);
-	else					SetAnimation((int)PlayerAnim::FALLING_LEFT);
+	if (IsLookingRight())	SetAnimation((int)PlayerAnim::CROUCHING_RIGHT);
+	else					SetAnimation((int)PlayerAnim::CROUCHING_LEFT);
 }
 void Player::StartJumping()
 {
@@ -167,17 +167,17 @@ void Player::StartJumping()
 }
 void Player::StartClimbingUp()
 {
-	state = State::CLIMBING;
+	/*state = State::CLIMBING;
 	SetAnimation((int)PlayerAnim::CLIMBING);
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
-	sprite->SetManualMode();
+	sprite->SetManualMode();*/
 }
 void Player::StartClimbingDown()
 {
-	state = State::CLIMBING;
+	/*state = State::CLIMBING;
 	SetAnimation((int)PlayerAnim::CLIMBING_TOP);
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
-	sprite->SetManualMode();
+	sprite->SetManualMode();*/
 }
 void Player::ChangeAnimRight()
 {
@@ -187,7 +187,7 @@ void Player::ChangeAnimRight()
 	case State::IDLE:	 SetAnimation((int)PlayerAnim::IDLE_RIGHT);    break;
 	case State::WALKING: SetAnimation((int)PlayerAnim::WALKING_RIGHT); break;
 	case State::JUMPING: SetAnimation((int)PlayerAnim::JUMPING_RIGHT); break;
-	case State::FALLING: SetAnimation((int)PlayerAnim::FALLING_RIGHT); break;
+	case State::FALLING: SetAnimation((int)PlayerAnim::CROUCHING_RIGHT); break;
 	}
 }
 void Player::ChangeAnimLeft()
@@ -198,7 +198,7 @@ void Player::ChangeAnimLeft()
 	case State::IDLE:	 SetAnimation((int)PlayerAnim::IDLE_LEFT);    break;
 	case State::WALKING: SetAnimation((int)PlayerAnim::WALKING_LEFT); break;
 	case State::JUMPING: SetAnimation((int)PlayerAnim::JUMPING_LEFT); break;
-	case State::FALLING: SetAnimation((int)PlayerAnim::FALLING_LEFT); break;
+	case State::FALLING: SetAnimation((int)PlayerAnim::CROUCHING_LEFT); break;
 	}
 }
 void Player::Update()
@@ -335,15 +335,15 @@ void Player::LogicJumping()
 				if (IsLookingRight())	SetAnimation((int)PlayerAnim::JUMPING_RIGHT);
 				else					SetAnimation((int)PlayerAnim::JUMPING_LEFT);
 			}
-			else if (IsLevitating())
+			/*else if (IsLevitating())
 			{
 				if (IsLookingRight())	SetAnimation((int)PlayerAnim::LEVITATING_RIGHT);
 				else					SetAnimation((int)PlayerAnim::LEVITATING_LEFT);
-			}
+			}*/
 			else if (IsDescending())
 			{
-				if (IsLookingRight())	SetAnimation((int)PlayerAnim::FALLING_RIGHT);
-				else					SetAnimation((int)PlayerAnim::FALLING_LEFT);
+				if (IsLookingRight())	SetAnimation((int)PlayerAnim::CROUCHING_RIGHT);
+				else					SetAnimation((int)PlayerAnim::CROUCHING_LEFT);
 			}
 		}
 		//We check ground collision when jumping down
@@ -365,60 +365,60 @@ void Player::LogicJumping()
 }
 void Player::LogicClimbing()
 {
-	AABB box;
-	Sprite* sprite = dynamic_cast<Sprite*>(render);
-	int tmp;
-
-	if (IsKeyDown(KEY_UP))
-	{
-		pos.y -= PLAYER_LADDER_SPEED;
-		sprite->NextFrame();
-	}
-	else if (IsKeyDown(KEY_DOWN))
-	{
-		pos.y += PLAYER_LADDER_SPEED;
-		sprite->PrevFrame();
-	}
-
-	//It is important to first check LadderTop due to its condition as a collision ground.
-	//By doing so, we ensure that we don't stop climbing down immediately after starting the descent.
-	box = GetHitbox();
-	if (map->TestOnLadderTop(box, &tmp))
-	{
-		if (IsInSecondHalfTile())		SetAnimation((int)PlayerAnim::CLIMBING_PRE_TOP);
-		else if (IsInFirstHalfTile())	SetAnimation((int)PlayerAnim::CLIMBING_TOP);
-		else					LOG("Internal error, tile should be a LADDER_TOP, coord: (%d,%d)", box.pos.x, box.pos.y);
-	}
-	else if (map->TestCollisionGround(box, &pos.y))
-	{
-		//Case leaving the ladder descending.
-		Stop();
-		sprite->SetAutomaticMode();
-	}
-	else if (!map->TestOnLadder(box, &tmp))
-	{
-		//Case leaving the ladder ascending.
-		//If we are not in a LadderTop, colliding ground or in the Ladder it means we are leaving
-		//ther ladder ascending.
-		Stop();
-		sprite->SetAutomaticMode();
-	}
-	else
-	{
-		if (GetAnimation() != PlayerAnim::CLIMBING)	SetAnimation((int)PlayerAnim::CLIMBING);
-	}
-}
-void Player::DrawDebug(const Color& col) const
-{
-	Entity::DrawHitbox(pos.x, pos.y, width, height, col);
-
-	DrawText(TextFormat("Position: (%d,%d)\nSize: %dx%d\nFrame: %dx%d", pos.x, pos.y, width, height, frame_width, frame_height), 18 * 16, 0, 8, LIGHTGRAY);
-	DrawPixel(pos.x, pos.y, WHITE);
-}
-void Player::Release()
-{
-	ResourceManager& data = ResourceManager::Instance();
-	data.ReleaseTexture(Resource::IMG_PLAYER);
-
-	render->Release();
+//	AABB box;
+//	Sprite* sprite = dynamic_cast<Sprite*>(render);
+//	int tmp;
+//
+//	if (IsKeyDown(KEY_UP))
+//	{
+//		pos.y -= PLAYER_LADDER_SPEED;
+//		sprite->NextFrame();
+//	}
+//	else if (IsKeyDown(KEY_DOWN))
+//	{
+//		pos.y += PLAYER_LADDER_SPEED;
+//		sprite->PrevFrame();
+//	}
+//
+//	//It is important to first check LadderTop due to its condition as a collision ground.
+//	//By doing so, we ensure that we don't stop climbing down immediately after starting the descent.
+//	box = GetHitbox();
+//	if (map->TestOnLadderTop(box, &tmp))
+//	{
+//		if (IsInSecondHalfTile())		SetAnimation((int)PlayerAnim::CLIMBING_PRE_TOP);
+//		else if (IsInFirstHalfTile())	SetAnimation((int)PlayerAnim::CLIMBING_TOP);
+//		else					LOG("Internal error, tile should be a LADDER_TOP, coord: (%d,%d)", box.pos.x, box.pos.y);
+//	}
+//	else if (map->TestCollisionGround(box, &pos.y))
+//	{
+//		//Case leaving the ladder descending.
+//		Stop();
+//		sprite->SetAutomaticMode();
+//	}
+//	else if (!map->TestOnLadder(box, &tmp))
+//	{
+//		//Case leaving the ladder ascending.
+//		//If we are not in a LadderTop, colliding ground or in the Ladder it means we are leaving
+//		//ther ladder ascending.
+//		Stop();
+//		sprite->SetAutomaticMode();
+//	}
+//	else
+//	{
+//		if (GetAnimation() != PlayerAnim::CLIMBING)	SetAnimation((int)PlayerAnim::CLIMBING);
+//	}
+//}
+//void Player::DrawDebug(const Color& col) const
+//{
+//	Entity::DrawHitbox(pos.x, pos.y, width, height, col);
+//
+//	DrawText(TextFormat("Position: (%d,%d)\nSize: %dx%d\nFrame: %dx%d", pos.x, pos.y, width, height, frame_width, frame_height), 18 * 16, 0, 8, LIGHTGRAY);
+//	DrawPixel(pos.x, pos.y, WHITE);
+//}
+//void Player::Release()
+//{
+//	ResourceManager& data = ResourceManager::Instance();
+//	data.ReleaseTexture(Resource::IMG_PLAYER);
+//
+//	render->Release();
 }

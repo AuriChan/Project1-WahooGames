@@ -250,7 +250,7 @@ AppStatus Scene::LoadLevel(int stage)
 		for (x = 0; x < LEVEL_WIDTH; ++x)
 		{
 			tile = (Tile)map[i];
-			if (tile == Tile::EMPTY)
+			if (tile == Tile::AIR)
 			{
 				map[i] = 0;
 			}
@@ -261,22 +261,15 @@ AppStatus Scene::LoadLevel(int stage)
 				player->SetPos(pos);
 				map[i] = 0;
 			}
-			else if (tile == Tile::ITEM_APPLE)
+			else if (tile == Tile::HEART)
 			{
 				pos.x = x * TILE_SIZE;
 				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				obj = new Object(pos, ObjectType::APPLE);
+				obj = new Object(pos, ObjectType::HEART);
 				objects.push_back(obj);
 				map[i] = 0;
 			}
-			else if (tile == Tile::ITEM_CHILI)
-			{
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				obj = new Object(pos, ObjectType::CHILI);
-				objects.push_back(obj);
-				map[i] = 0;
-			}
+			
 			++i;
 		}
 	}
