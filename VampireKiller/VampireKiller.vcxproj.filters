@@ -51,6 +51,12 @@
     <ClCompile Include="Source\AABB.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Object.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\StaticImage.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Globals.h">
@@ -88,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="Source\Point.h">
       <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\StaticImage.h">
+      <Filter>Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

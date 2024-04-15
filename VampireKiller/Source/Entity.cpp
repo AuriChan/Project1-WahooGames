@@ -2,15 +2,12 @@
 #include<cmath>
 #include "Globals.h"
 
-//constructors
-/*Entity::Entity(const Point& p, int w, int h) : pos(p), dir({0,0}), width(w), height(h), frame_width(w), frame_height(h), render(nullptr)
+Entity::Entity(const Point& p, int w, int h) : pos(p), dir({ 0,0 }), width(w), height(h), frame_width(w), frame_height(h), render(nullptr)
 {
 }
 Entity::Entity(const Point& p, int w, int h, int frame_w, int frame_h) : pos(p), dir({ 0,0 }), width(w), height(h), frame_width(frame_w), frame_height(frame_h), render(nullptr)
 {
 }
-
-
 Entity::~Entity()
 {
 	if (render != nullptr)
@@ -19,11 +16,11 @@ Entity::~Entity()
 		render = nullptr;
 	}
 }
-void Entity::SetPos(const Point& p) //sets SIMON BELMONTE hitbox position
+void Entity::SetPos(const Point& p)
 {
 	pos = p;
 }
-void Entity::Update()//changes position depending on movement direction
+void Entity::Update()
 {
 	pos += dir;
 }
@@ -36,7 +33,7 @@ AABB Entity::GetHitbox() const
 Point Entity::GetRenderingPosition() const
 {
 	Point p;
-	p.x = pos.x + width / 2 - frame_width / 2; //preguntar
+	p.x = pos.x + width / 2 - frame_width / 2;
 	p.y = pos.y - (frame_height - 1);
 	return p;
 }
@@ -53,7 +50,7 @@ void Entity::DrawTint(const Color& col) const
 void Entity::DrawHitbox(const Color& col) const
 {
 	Color c = col;
-	c.a = 128;	//alpha/transparency
+	c.a = 128;		//50% transparent
 
 	render->DrawBox(pos.x, pos.y - (height - 1), width, height, c);
 	render->DrawCorners(pos.x, pos.y - (height - 1), width, height);
@@ -61,8 +58,8 @@ void Entity::DrawHitbox(const Color& col) const
 void Entity::DrawHitbox(int x, int y, int w, int h, const Color& col) const
 {
 	Color c = col;
-	c.a = 128;//alpha/transparent
+	c.a = 128;		//50% transparent
 
 	render->DrawBox(x, y - (h - 1), w, h, c);
 	render->DrawCorners(x, y - (h - 1), w, h);
-}*/
+}

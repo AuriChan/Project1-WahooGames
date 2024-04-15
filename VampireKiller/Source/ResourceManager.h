@@ -4,13 +4,11 @@
 #include <unordered_map>
 #include <string>
 
-//Sprite sheets
 enum class Resource {
     IMG_MENU,
-    IMG_SIMON_BELMONTE,
-    IMG_ENEMY,
-    IMG_OBJECTS,
-    IMG_TILES
+    IMG_PLAYER,
+    IMG_TILES,
+    IMG_ITEMS
 };
 
 class ResourceManager {

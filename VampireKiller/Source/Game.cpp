@@ -7,7 +7,7 @@ Game::Game()
 {
     state = GameState::MAIN_MENU;
     scene = nullptr;
-    img_menu = {};
+    img_menu = nullptr;
 
     target = {};
     src = {};
@@ -29,7 +29,7 @@ AppStatus Game::Initialise(float scale)
     h = WINDOW_HEIGHT * scale;
 
     //Initialise window
-    InitWindow((int)w, (int)h, "VampireKiller");
+    InitWindow((int)w, (int)h, "Vampire Killer");
 
     //Render texture initialisation, used to hold the rendering result so we can easily resize it
     target = LoadRenderTexture(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -38,19 +38,21 @@ AppStatus Game::Initialise(float scale)
         LOG("Failed to create render texture");
         return AppStatus::ERROR;
     }
-  
+    SetTextureFilter(target.texture, TEXTURE_FILTER_POINT);
     src = { 0, 0, WINDOW_WIDTH, -WINDOW_HEIGHT };
     dst = { 0, 0, w, h };
 
     //Load resources
     if (LoadResources() != AppStatus::OK)
     {
-        LOG("Failed to load textures");
+        LOG("Failed to load resources");
         return AppStatus::ERROR;
     }
 
     //Set the target frame rate for the application
     SetTargetFPS(60);
+    //Disable the escape key to quit functionality
+    SetExitKey(0);
 
     return AppStatus::OK;
 }
@@ -58,7 +60,7 @@ AppStatus Game::LoadResources()
 {
     ResourceManager& data = ResourceManager::Instance();
 
-    if (data.LoadTexture(Resource::IMG_MENU, "Images/TitleScreen.png") != AppStatus::OK)
+    if (data.LoadTexture(Resource::IMG_MENU, "images/TitleScreen.png") != AppStatus::OK)
     {
         return AppStatus::ERROR;
     }
@@ -66,7 +68,6 @@ AppStatus Game::LoadResources()
 
     return AppStatus::OK;
 }
-
 AppStatus Game::BeginPlay()
 {
     scene = new Scene();
@@ -75,7 +76,7 @@ AppStatus Game::BeginPlay()
         LOG("Failed to allocate memory for Scene");
         return AppStatus::ERROR;
     }
-    if (scene->Init() == AppStatus::ERROR)
+    if (scene->Init() != AppStatus::OK)
     {
         LOG("Failed to initialise Scene");
         return AppStatus::ERROR;
@@ -91,13 +92,16 @@ void Game::FinishPlay()
 }
 AppStatus Game::Update()
 {
+    //Check if user attempts to close the window, either by clicking the close button or by pressing Alt+F4
+    if (WindowShouldClose()) return AppStatus::QUIT;
+
     switch (state)
     {
     case GameState::MAIN_MENU:
         if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
         if (IsKeyPressed(KEY_SPACE))
         {
-            if (BeginPlay() == AppStatus::ERROR) return AppStatus::ERROR;
+            if (BeginPlay() != AppStatus::OK) return AppStatus::ERROR;
             state = GameState::PLAYING;
         }
         break;
@@ -110,8 +114,6 @@ AppStatus Game::Update()
         }
         else
         {
-            //Process Input
-            scene->HandleInputPlayer();
             //Game logic
             scene->Update();
         }

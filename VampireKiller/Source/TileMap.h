@@ -3,6 +3,8 @@
 #include "Sprite.h"
 #include "Globals.h"
 #include <unordered_map>
+#include "Point.h"
+#include "AABB.h"
 
 enum class Tile
 {
@@ -31,7 +33,9 @@ enum class Tile
     STAIRS = 110, PINK_DOOR_TOP, PINK_DOOR_MID, PINK_DOOR_BOTTOM, CRUSHER_TOP, CRUSHER_MID, CRUSHER_BOTTOM, CRUSHER_PLATAFORM_MID, CRUSHER_PLATAFOR_LEFT, CRUSHER_PLATAFORM_RIGHT, FIRE/*120*/,
 
 //ENTITY
-	 SOLDIER = 150, HEAD, MEDUSA_BOTTOM_LEFT, MEDUSA_BOTTOM_RIGHT, MEDUSA_MID_LEFT, MEDUSA_MID_RIGHT, MEDUSA_TOP_LEFT, MEDUSA_TOP_RIGHT,
+
+PLAYER = 400,
+SOLDIER = 150, HEAD, MEDUSA_BOTTOM_LEFT, MEDUSA_BOTTOM_RIGHT, MEDUSA_MID_LEFT, MEDUSA_MID_RIGHT, MEDUSA_TOP_LEFT, MEDUSA_TOP_RIGHT,
 
 
 
@@ -66,20 +70,47 @@ public:
 	void Render();
 	void Release();
 
+	//Test for collisions with walls
+	bool TestCollisionWallLeft(const AABB& box) const;
+	bool TestCollisionWallRight(const AABB& box) const;
+
+	//Test collision with the ground and update 'py' with the maximum y-position to prevent
+	//penetration of the grounded tile, that is, the pixel y-position above the grounded tile.
+	//Grounded tile = solid tile (blocks) or ladder tops.
+	bool TestCollisionGround(const AABB& box, int* py) const;
+
+	//Test if there is a ground tile one pixel below the given box
+	bool TestFalling(const AABB& box) const;
+
+	//Test if box is on ladder and update 'px' with the x-center position of the ladder
+	bool TestOnLadder(const AABB& box, int* px) const;
+
+	//Test if box is on ladder top and update 'px' with the x-center position of the ladder
+	bool TestOnLadderTop(const AABB& box, int* px) const;
+
 private:
 	void InitTileDictionary();
+
+	Tile GetTileIndex(int x, int y) const;
+	bool IsTileSolid(Tile tile) const;
+	bool IsTileLadderTop(Tile tile) const;
+	bool IsTileLadder(Tile tile) const;
+	bool CollisionX(const Point& p, int distance) const;
+	bool CollisionY(const Point& p, int distance) const;
+	int GetLadderCenterPos(int pixel_x, int pixel_y) const;
 
 	//Tile map
 	Tile* map;
 
 	//Size of the tile map
-	int width, height;
-	//Map is rendered from this position (margin for GUI) 
-	int map_y;
+	int size, width, height;
 
 	//Dictionary of tile frames
 	std::unordered_map<int, Rectangle> dict_rect;
 
+	Sprite* laser;
+
 	//Tile sheet
-	const Texture2D *img_tiles;
+	const Texture2D* img_tiles;
 };
+
