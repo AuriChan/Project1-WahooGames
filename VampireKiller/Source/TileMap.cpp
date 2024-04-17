@@ -244,10 +244,10 @@ Tile TileMap::GetTileIndex(int x, int y) const
 	}
 	return map[x + y * width];
 }
-//bool TileMap::IsTileSolid(Tile tile) const
-//{
-//	return (Tile::SOLID_FIRST <= tile && tile <= Tile::SOLID_LAST);
-//}
+bool TileMap::IsTileSolid(Tile tile) const
+{
+	return (Tile::SOLID_FIRST <= tile && tile <= Tile::SOLID_LAST);
+}
 //bool TileMap::IsTileLadderTop(Tile tile) const
 //{
 //	return tile == Tile::LADDER_TOP_L || tile == Tile::LADDER_TOP_R;
