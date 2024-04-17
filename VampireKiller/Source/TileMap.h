@@ -10,6 +10,7 @@ enum class Tile
 {
 //BACKGROUND
 	//empty
+	EMPTY = -1,
 	AIR = 0,
     //1st stage
 	GROUND, FENCE_BOTTOM, FENCE_TOP1, FECNCE_TOP2,
@@ -108,7 +109,7 @@ private:
 	//Dictionary of tile frames
 	std::unordered_map<int, Rectangle> dict_rect;
 
-	/*Sprite* laser;*/
+	Sprite* laser;
 
 	//Tile sheet
 	const Texture2D* img_tiles;

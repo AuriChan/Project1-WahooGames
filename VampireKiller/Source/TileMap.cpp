@@ -8,7 +8,7 @@ TileMap::TileMap()
 	map = nullptr;
 	width = 0;
 	height = 0;
-	/*laser = nullptr;*/
+	laser = nullptr;
 	img_tiles = nullptr;
 
 	InitTileDictionary();
@@ -20,12 +20,12 @@ TileMap::~TileMap()
 		delete[] map;
 		map = nullptr;
 	}
-	/*if (laser != nullptr)
+	if (laser != nullptr)
 	{
 		laser->Release();
 		delete laser;
 		laser = nullptr;
-	}*/
+	}
 }
 
 void TileMap::InitTileDictionary()
@@ -35,7 +35,7 @@ void TileMap::InitTileDictionary()
 //BACKGROUND
 	
 	//empty
-	dict_rect[(int)Tile::AIR] = { 12 * n, 4 * n, n, n };
+	
 	//stage1
 	dict_rect[(int)Tile::GROUND] = { 0,  0, n, n };
 	dict_rect[(int)Tile::FENCE_BOTTOM] = { 1 * n, 0 * n, n, n };
