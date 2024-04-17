@@ -2,9 +2,9 @@
 
 //game size 
 #define GAME_SCALE_FACTOR	4.0f
-#define WINDOW_WIDTH    254
-#define WINDOW_HEIGHT   214 //198
-#define MARGIN_GUI_Y	28
+#define WINDOW_WIDTH    256
+#define WINDOW_HEIGHT   208 //198
+#define MARGIN_GUI_Y	32
 #define TILE_SIZE		16
 #define LEVEL_WIDTH		25
 #define LEVEL_HEIGHT	17

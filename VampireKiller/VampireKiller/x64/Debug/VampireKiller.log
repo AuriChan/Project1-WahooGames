@@ -1,5 +1,2 @@
-﻿  TileMap.cpp
-C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(306,7): warning C4101: 'tile': unreferenced local variable
-C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(305,6): warning C4101: 'x': unreferenced local variable
-C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(395,12): warning C4101: 'rc': unreferenced local variable
+﻿  Scene.cpp
   VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
