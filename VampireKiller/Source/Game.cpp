@@ -5,9 +5,12 @@
 
 Game::Game()
 {
-    state = GameState::MAIN_MENU;
+    state = GameState::INITIAL_SCREEN;
     scene = nullptr;
     img_menu = nullptr;
+    img_initialScreen = nullptr;
+    img_death = nullptr;
+    img_win = nullptr;
 
     target = {};
     src = {};
@@ -66,6 +69,24 @@ AppStatus Game::LoadResources()
     }
     img_menu = data.GetTexture(Resource::IMG_MENU);
 
+    if (data.LoadTexture(Resource::IMG_DATA, "Images/InitialScreen.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_initialScreen = data.GetTexture(Resource::IMG_DATA);
+
+    if (data.LoadTexture(Resource::IMG_DEATH, "Images/InitialScreen.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_death = data.GetTexture(Resource::IMG_DEATH);
+
+    if (data.LoadTexture(Resource::IMG_WIN, "Images/InitialScreen.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_win = data.GetTexture(Resource::IMG_WIN);
+
     return AppStatus::OK;
 }
 AppStatus Game::BeginPlay()
@@ -97,15 +118,22 @@ AppStatus Game::Update()
 
     switch (state)
     {
-    case GameState::MAIN_MENU:
+    case GameState::INITIAL_SCREEN:
         if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
+        if (IsKeyPressed(KEY_SPACE))
+        {
+            state = GameState::MAIN_MENU;
+        }
+        break;
+
+    case GameState::MAIN_MENU:
+        if (IsKeyPressed(KEY_ESCAPE)) { return AppStatus::QUIT; };
         if (IsKeyPressed(KEY_SPACE))
         {
             if (BeginPlay() != AppStatus::OK) return AppStatus::ERROR;
             state = GameState::PLAYING;
         }
         break;
-
     case GameState::PLAYING:
         if (IsKeyPressed(KEY_ESCAPE))
         {
@@ -131,6 +159,37 @@ void Game::Render()
     {
     case GameState::MAIN_MENU:
         DrawTexture(*img_menu, 0, 0, WHITE);
+        
+        break;
+    case GameState::INITIAL_SCREEN:
+        
+        Rectangle s;
+        s.x = 0;
+        s.y = 0;
+        s.width = 692;
+        s.height = 520;
+
+        Rectangle d;
+        d.x = 0;
+        d.y = 0;
+        d.width = 256;
+        d.height = 208;
+        Vector2 v;
+        v.x = 0;
+        v.y = 0;
+
+        DrawTexturePro(*img_initialScreen, s, d, v, 0, WHITE);
+        //DrawTexture(*img_initialScreen, 0, 0, WHITE);
+       
+       
+        break;
+    case GameState::WIN:
+        DrawTexture(*img_win, 0, 0, WHITE);
+
+        break;
+    case GameState::DEATH:
+        DrawTexture(*img_death, 0, 0, WHITE);
+
         break;
 
     case GameState::PLAYING:
@@ -154,6 +213,12 @@ void Game::UnloadResources()
 {
     ResourceManager& data = ResourceManager::Instance();
     data.ReleaseTexture(Resource::IMG_MENU);
+
+    data.ReleaseTexture(Resource::IMG_WIN);
+    
+    data.ReleaseTexture(Resource::IMG_DEATH);
+    
+    data.ReleaseTexture(Resource::IMG_DATA);
 
     UnloadRenderTexture(target);
 }

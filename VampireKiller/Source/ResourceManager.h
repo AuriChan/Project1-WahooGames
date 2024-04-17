@@ -5,6 +5,9 @@
 #include <string>
 
 enum class Resource {
+    IMG_DEATH,
+    IMG_WIN,
+    IMG_DATA,
     IMG_MENU,
     IMG_PLAYER,
     IMG_TILES,

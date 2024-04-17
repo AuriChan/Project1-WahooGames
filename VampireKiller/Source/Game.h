@@ -3,7 +3,7 @@
 #include "Scene.h"
 
 
-enum class GameState { MAIN_MENU, PLAYING, SETTINGS, CREDITS };
+enum class GameState { DEATH, WIN, INITIAL_SCREEN, MAIN_MENU, PLAYING, SETTINGS, CREDITS };
 
 class Game
 {
@@ -26,6 +26,9 @@ private:
     GameState state;
     Scene* scene;
     const Texture2D* img_menu;
+    const Texture2D* img_initialScreen;
+    const Texture2D* img_death;
+    const Texture2D* img_win;
 
     //To work with original game units and then scale the result
     RenderTexture2D target;
