@@ -37,7 +37,7 @@ void TileMap::InitTileDictionary()
 	//empty
 	
 	//stage1
-	dict_rect[(int)Tile::GROUND] = { 0,  0, n, n };
+	dict_rect[(int)Tile::SOLID_LAST] = { 0,  0, n, n };
 	dict_rect[(int)Tile::FENCE_BOTTOM] = { 1 * n, 0 * n, n, n };
 	dict_rect[(int)Tile::FENCE_TOP1] = { 2 * n, 0 * n, n, n };
 	dict_rect[(int)Tile::FECNCE_TOP2] = { 3 * n, 0 * n, n, n };
@@ -106,7 +106,7 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::STATUE_TOP_LEFT] = { 2 * n, 4 * n, n, n };
 	dict_rect[(int)Tile::STATUE_TOP_RIGHT] = { 3 * n, 4 * n, n, n };
 	//stage2
-	dict_rect[(int)Tile::CLAY_GROUND] = { 4 * n, 4 * n, n, n };
+	dict_rect[(int)Tile::SOLID_FIRST] = { 4 * n, 4 * n, n, n };
 	dict_rect[(int)Tile::WALL] = { 5 * n, 4 * n, n, n };
 	dict_rect[(int)Tile::ARCH_LEFT] = {6 *n, 4 * n, n, n };
 	dict_rect[(int)Tile::ARCH_MID_LEFT] = { 7*n, 4 * n, n, n };

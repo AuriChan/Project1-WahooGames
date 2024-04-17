@@ -75,13 +75,13 @@ AppStatus Game::LoadResources()
     }
     img_initialScreen = data.GetTexture(Resource::IMG_DATA);
 
-    if (data.LoadTexture(Resource::IMG_DEATH, "Images/InitialScreen.png") != AppStatus::OK)
+    if (data.LoadTexture(Resource::IMG_DEATH, "Images/game over.png") != AppStatus::OK)
     {
         return AppStatus::ERROR;
     }
     img_death = data.GetTexture(Resource::IMG_DEATH);
 
-    if (data.LoadTexture(Resource::IMG_WIN, "Images/InitialScreen.png") != AppStatus::OK)
+    if (data.LoadTexture(Resource::IMG_WIN, "Images/EndCredits.png") != AppStatus::OK)
     {
         return AppStatus::ERROR;
     }
@@ -137,13 +137,37 @@ AppStatus Game::Update()
     case GameState::PLAYING:
         if (IsKeyPressed(KEY_ESCAPE))
         {
+       
             FinishPlay();
             state = GameState::MAIN_MENU;
+        } 
+        if (IsKeyPressed(KEY_D))
+        {
+            state = GameState::DEATH;
         }
-        else
+        if (IsKeyPressed(KEY_W))
+        {
+            state = GameState::WIN;
+        }
+   
+        else 
         {
             //Game logic
             scene->Update();
+        }
+        break;
+    case GameState::DEATH:
+        if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
+        if (IsKeyPressed(KEY_SPACE))
+        {
+            state = GameState::MAIN_MENU;
+        }
+        break;
+    case GameState::WIN:
+        if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
+        if (IsKeyPressed(KEY_SPACE))
+        {
+            state = GameState::MAIN_MENU;
         }
         break;
     }
