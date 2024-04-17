@@ -10,8 +10,8 @@ enum class Tile
 {
 //BACKGROUND 
 	// SOLID 
-	SOLID_FIRST = -2, SOLID_LAST =-3,
-	//CLAY_GROUND = -2, GROUND = -3,
+	SOLID_FIRST = -3, SOLID_LAST =-2,
+	//CLAY_GROUND = -3, GROUND = -2,
 	
 	//empty
 	EMPTY = -1,
