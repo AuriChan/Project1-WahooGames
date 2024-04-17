@@ -396,13 +396,17 @@ void Scene::Update()
 		debug = (DebugMode)(((int)debug + 1) % (int)DebugMode::SIZE);
 	}
 	//Debug levels instantly
-	if (IsKeyPressed(KEY_ONE))		LoadLevel(1);
+	if (IsKeyPressed(KEY_F1))
+	{
+		debug = (DebugMode)(((int)debug + 1) % (int)DebugMode::SIZE);
+	}
+	else if (IsKeyPressed(KEY_ONE))		LoadLevel(1);
 	else if (IsKeyPressed(KEY_TWO))	LoadLevel(2);
 	else if (IsKeyPressed(KEY_THREE))	LoadLevel(3);
 	else if (IsKeyPressed(KEY_FOUR))	LoadLevel(4);
 	else if (IsKeyPressed(KEY_FIVE))	LoadLevel(5);
 	else if (IsKeyPressed(KEY_SIX))	LoadLevel(6);
-
+	
 	level->Update();
 	player->Update();
 	CheckCollisions();
