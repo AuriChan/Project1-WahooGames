@@ -1,8 +1,12 @@
-﻿LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-Scene.obj : error LNK2019: unresolved external symbol "public: void __cdecl Player::DrawDebug(struct Color const &)const " (?DrawDebug@Player@@QEBAXAEBUColor@@@Z) referenced in function "public: void __cdecl Scene::Render(void)" (?Render@Scene@@QEAAXXZ)
-Scene.obj : error LNK2019: unresolved external symbol "public: void __cdecl Player::Release(void)" (?Release@Player@@QEAAXXZ) referenced in function "public: __cdecl Scene::~Scene(void)" (??1Scene@@QEAA@XZ)
-TileMap.obj : error LNK2019: unresolved external symbol "private: bool __cdecl TileMap::IsTileSolid(enum Tile)const " (?IsTileSolid@TileMap@@AEBA_NW4Tile@@@Z) referenced in function "private: bool __cdecl TileMap::CollisionX(class Point const &,int)const " (?CollisionX@TileMap@@AEBA_NAEBVPoint@@H@Z)
-TileMap.obj : error LNK2019: unresolved external symbol "private: bool __cdecl TileMap::IsTileLadderTop(enum Tile)const " (?IsTileLadderTop@TileMap@@AEBA_NW4Tile@@@Z) referenced in function "private: bool __cdecl TileMap::CollisionY(class Point const &,int)const " (?CollisionY@TileMap@@AEBA_NAEBVPoint@@H@Z)
-TileMap.obj : error LNK2019: unresolved external symbol "private: bool __cdecl TileMap::IsTileLadder(enum Tile)const " (?IsTileLadder@TileMap@@AEBA_NW4Tile@@@Z) referenced in function "public: bool __cdecl TileMap::TestOnLadder(class AABB const &,int *)const " (?TestOnLadder@TileMap@@QEBA_NAEBVAABB@@PEAH@Z)
-TileMap.obj : error LNK2019: unresolved external symbol "private: int __cdecl TileMap::GetLadderCenterPos(int,int)const " (?GetLadderCenterPos@TileMap@@AEBAHHH@Z) referenced in function "public: bool __cdecl TileMap::TestOnLadder(class AABB const &,int *)const " (?TestOnLadder@TileMap@@QEBA_NAEBVAABB@@PEAH@Z)
-C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe : fatal error LNK1120: 6 unresolved externals
+﻿  Player.cpp
+  Scene.cpp
+  TileMap.cpp
+C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(306,7): warning C4101: 'tile': variable local sin referencia
+C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(305,6): warning C4101: 'x': variable local sin referencia
+C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(395,12): warning C4101: 'rc': variable local sin referencia
+  Generando código...
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+Scene.obj : error LNK2019: símbolo externo "public: void __cdecl Player::DrawDebug(struct Color const &)const " (?DrawDebug@Player@@QEBAXAEBUColor@@@Z) sin resolver al que se hace referencia en la función "public: void __cdecl Scene::Render(void)" (?Render@Scene@@QEAAXXZ)
+Scene.obj : error LNK2019: símbolo externo "public: void __cdecl Player::Release(void)" (?Release@Player@@QEAAXXZ) sin resolver al que se hace referencia en la función "public: __cdecl Scene::~Scene(void)" (??1Scene@@QEAA@XZ)
+TileMap.obj : error LNK2019: símbolo externo "private: bool __cdecl TileMap::IsTileSolid(enum Tile)const " (?IsTileSolid@TileMap@@AEBA_NW4Tile@@@Z) sin resolver al que se hace referencia en la función "private: bool __cdecl TileMap::CollisionX(class Point const &,int)const " (?CollisionX@TileMap@@AEBA_NAEBVPoint@@H@Z)
+C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe : fatal error LNK1120: 3 externos sin resolver

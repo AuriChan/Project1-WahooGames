@@ -8,7 +8,7 @@ TileMap::TileMap()
 	map = nullptr;
 	width = 0;
 	height = 0;
-	laser = nullptr;
+	/*laser = nullptr;*/
 	img_tiles = nullptr;
 
 	InitTileDictionary();
@@ -20,12 +20,12 @@ TileMap::~TileMap()
 		delete[] map;
 		map = nullptr;
 	}
-	if (laser != nullptr)
+	/*if (laser != nullptr)
 	{
 		laser->Release();
 		delete laser;
 		laser = nullptr;
-	}
+	}*/
 }
 
 void TileMap::InitTileDictionary()
@@ -191,7 +191,7 @@ AppStatus TileMap::Initialise()
 {
 	ResourceManager& data = ResourceManager::Instance();
 
-	if (data.LoadTexture(Resource::IMG_TILES, "images/tileset.png") != AppStatus::OK)
+	if (data.LoadTexture(Resource::IMG_TILES, "Images/Tileset.png") != AppStatus::OK)
 	{
 		return AppStatus::ERROR;
 	}
@@ -232,7 +232,7 @@ AppStatus TileMap::Load(int data[], int w, int h)
 }
 void TileMap::Update()
 {
-	laser->Update();
+	/*laser->Update();*/
 }
 Tile TileMap::GetTileIndex(int x, int y) const
 {
@@ -311,68 +311,68 @@ bool TileMap::CollisionY(const Point& p, int distance) const
 	x1 = (p.x + distance - 1) / TILE_SIZE;
 
 	//Iterate over the tiles within the horizontal range
-	for (x = x0; x <= x1; ++x)
-	{
-		tile = GetTileIndex(x, y);
+	//for (x = x0; x <= x1; ++x)
+	//{
+	//	tile = GetTileIndex(x, y);
 
-		//One solid or laddertop tile is sufficient
-		if (IsTileSolid(tile) || IsTileLadderTop(tile))
-			return true;
-	}
+	//	//One solid or laddertop tile is sufficient
+	//	if (IsTileSolid(tile) || IsTileLadderTop(tile))
+	//		return true;
+	//}
 	return false;
 }
-bool TileMap::TestOnLadder(const AABB& box, int* px) const
-{
-	int left, right, bottom;
-	int tx1, tx2, ty;
-	Tile tile1, tile2;
-
-	//Control points
-	left = box.pos.x;
-	right = box.pos.x + box.width - 1;
-	bottom = box.pos.y + box.height - 1;
-
-	//Calculate the tile coordinates
-	tx1 = left / TILE_SIZE;
-	tx2 = right / TILE_SIZE;
-	ty = bottom / TILE_SIZE;
-
-	//To be able to climb up or down, both control points must be on ladder
-	tile1 = GetTileIndex(tx1, ty);
-	tile2 = GetTileIndex(tx2, ty);
-	if (IsTileLadder(tile1) && IsTileLadder(tile2))
-	{
-		*px = GetLadderCenterPos(left, bottom) - box.width / 2;
-		return true;
-	}
-	return false;
-}
-bool TileMap::TestOnLadderTop(const AABB& box, int* px) const
-{
-	int left, right, bottom;
-	int tx1, tx2, ty;
-	Tile tile1, tile2;
-
-	//Control points
-	left = box.pos.x;
-	right = box.pos.x + box.width - 1;
-	bottom = box.pos.y + box.height - 1;
-
-	//Calculate the tile coordinates
-	tx1 = left / TILE_SIZE;
-	tx2 = right / TILE_SIZE;
-	ty = bottom / TILE_SIZE;
-
-	//To be able to climb up or down, both control points must be on ladder
-	tile1 = GetTileIndex(tx1, ty);
-	tile2 = GetTileIndex(tx2, ty);
-	if (IsTileLadderTop(tile1) && IsTileLadderTop(tile2))
-	{
-		*px = GetLadderCenterPos(left, bottom) - box.width / 2;
-		return true;
-	}
-	return false;
-}
+//bool TileMap::TestOnLadder(const AABB& box, int* px) const
+//{
+//	int left, right, bottom;
+//	int tx1, tx2, ty;
+//	Tile tile1, tile2;
+//
+//	//Control points
+//	left = box.pos.x;
+//	right = box.pos.x + box.width - 1;
+//	bottom = box.pos.y + box.height - 1;
+//
+//	//Calculate the tile coordinates
+//	tx1 = left / TILE_SIZE;
+//	tx2 = right / TILE_SIZE;
+//	ty = bottom / TILE_SIZE;
+//
+//	//To be able to climb up or down, both control points must be on ladder
+//	tile1 = GetTileIndex(tx1, ty);
+//	tile2 = GetTileIndex(tx2, ty);
+//	if (IsTileLadder(tile1) && IsTileLadder(tile2))
+//	{
+//		*px = GetLadderCenterPos(left, bottom) - box.width / 2;
+//		return true;
+//	}
+//	return false;
+//}
+//bool TileMap::TestOnLadderTop(const AABB& box, int* px) const
+//{
+//	int left, right, bottom;
+//	int tx1, tx2, ty;
+//	Tile tile1, tile2;
+//
+//	//Control points
+//	left = box.pos.x;
+//	right = box.pos.x + box.width - 1;
+//	bottom = box.pos.y + box.height - 1;
+//
+//	//Calculate the tile coordinates
+//	tx1 = left / TILE_SIZE;
+//	tx2 = right / TILE_SIZE;
+//	ty = bottom / TILE_SIZE;
+//
+//	//To be able to climb up or down, both control points must be on ladder
+//	tile1 = GetTileIndex(tx1, ty);
+//	tile2 = GetTileIndex(tx2, ty);
+//	if (IsTileLadderTop(tile1) && IsTileLadderTop(tile2))
+//	{
+//		*px = GetLadderCenterPos(left, bottom) - box.width / 2;
+//		return true;
+//	}
+//	return false;
+//}
 //int TileMap::GetLadderCenterPos(int pixel_x, int pixel_y) const
 //{
 //	int tx, ty;
@@ -423,7 +423,7 @@ void TileMap::Release()
 	ResourceManager& data = ResourceManager::Instance();
 	data.ReleaseTexture(Resource::IMG_TILES);
 
-	laser->Release();
+	/*laser->Release();*/
 
 	dict_rect.clear();
 }

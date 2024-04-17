@@ -22,7 +22,7 @@ AppStatus Player::Initialise()
 	const int n = PLAYER_FRAME_SIZE;
 
 	ResourceManager& data = ResourceManager::Instance();
-	if (data.LoadTexture(Resource::IMG_PLAYER, "images/eric.png") != AppStatus::OK)
+	if (data.LoadTexture(Resource::IMG_PLAYER, "Images/eric.png") != AppStatus::OK)
 	{
 		return AppStatus::ERROR;
 	}
@@ -165,20 +165,20 @@ void Player::StartJumping()
 	else					SetAnimation((int)PlayerAnim::JUMPING_LEFT);
 	jump_delay = PLAYER_JUMP_DELAY;
 }
-void Player::StartClimbingUp()
-{
-	/*state = State::CLIMBING;
-	SetAnimation((int)PlayerAnim::CLIMBING);
-	Sprite* sprite = dynamic_cast<Sprite*>(render);
-	sprite->SetManualMode();*/
-}
-void Player::StartClimbingDown()
-{
-	/*state = State::CLIMBING;
-	SetAnimation((int)PlayerAnim::CLIMBING_TOP);
-	Sprite* sprite = dynamic_cast<Sprite*>(render);
-	sprite->SetManualMode();*/
-}
+//void Player::StartClimbingUp()
+//{
+//	/*state = State::CLIMBING;
+//	SetAnimation((int)PlayerAnim::CLIMBING);
+//	Sprite* sprite = dynamic_cast<Sprite*>(render);
+//	sprite->SetManualMode();*/
+//}
+//void Player::StartClimbingDown()
+//{
+//	/*state = State::CLIMBING;
+//	SetAnimation((int)PlayerAnim::CLIMBING_TOP);
+//	Sprite* sprite = dynamic_cast<Sprite*>(render);
+//	sprite->SetManualMode();*/
+//}
 void Player::ChangeAnimRight()
 {
 	look = Look::RIGHT;
@@ -264,38 +264,38 @@ void Player::MoveY()
 	{
 		LogicJumping();
 	}
-	else if (state == State::CLIMBING)
-	{
-		LogicClimbing();
-	}
+	//else if (state == State::CLIMBING)
+	//{
+	//	LogicClimbing();
+	//}
 	else //idle, walking, falling
 	{
 		pos.y += PLAYER_SPEED;
 		box = GetHitbox();
 		if (map->TestCollisionGround(box, &pos.y))
 		{
-			if (state == State::FALLING) Stop();
+			//if (state == State::FALLING) Stop();
 
-			if (IsKeyDown(KEY_UP))
-			{
-				box = GetHitbox();
-				if (map->TestOnLadder(box, &pos.x))
-					StartClimbingUp();
-			}
-			else if (IsKeyDown(KEY_DOWN))
-			{
-				//To climb up the ladder, we need to check the control point (x, y)
-				//To climb down the ladder, we need to check pixel below (x, y+1) instead
-				box = GetHitbox();
-				box.pos.y++;
-				if (map->TestOnLadderTop(box, &pos.x))
-				{
-					StartClimbingDown();
-					pos.y += PLAYER_LADDER_SPEED;
-				}
+			//if (IsKeyDown(KEY_UP))
+			//{
+			//	box = GetHitbox();
+			//	if (map->TestOnLadder(box, &pos.x))
+			//		StartClimbingUp();
+			//}
+			//else if (IsKeyDown(KEY_DOWN))
+			//{
+			//	//To climb up the ladder, we need to check the control point (x, y)
+			//	//To climb down the ladder, we need to check pixel below (x, y+1) instead
+			//	box = GetHitbox();
+			//	box.pos.y++;
+			//	if (map->TestOnLadderTop(box, &pos.x))
+			//	{
+			//		StartClimbingDown();
+			//		pos.y += PLAYER_LADDER_SPEED;
+			//	}
 
-			}
-			else if (IsKeyPressed(KEY_SPACE))
+			//}
+			/*else*/ if (IsKeyPressed(KEY_SPACE))
 			{
 				StartJumping();
 			}
@@ -363,8 +363,8 @@ void Player::LogicJumping()
 		}
 	}
 }
-void Player::LogicClimbing()
-{
+//void Player::LogicClimbing()
+//{
 //	AABB box;
 //	Sprite* sprite = dynamic_cast<Sprite*>(render);
 //	int tmp;
@@ -421,4 +421,4 @@ void Player::LogicClimbing()
 //	data.ReleaseTexture(Resource::IMG_PLAYER);
 //
 //	render->Release();
-}
+//}
