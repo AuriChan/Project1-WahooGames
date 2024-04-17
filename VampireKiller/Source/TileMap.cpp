@@ -311,14 +311,14 @@ bool TileMap::CollisionY(const Point& p, int distance) const
 	x1 = (p.x + distance - 1) / TILE_SIZE;
 
 	//Iterate over the tiles within the horizontal range
-	//for (x = x0; x <= x1; ++x)
-	//{
-	//	tile = GetTileIndex(x, y);
+	for (x = x0; x <= x1; ++x)
+	{
+		tile = GetTileIndex(x, y);
 
-	//	//One solid or laddertop tile is sufficient
-	//	if (IsTileSolid(tile) || IsTileLadderTop(tile))
-	//		return true;
-	//}
+		//One solid or laddertop tile is sufficient
+		if (IsTileSolid(tile)) //|| IsTileLadderTop(tile))
+			return true;
+	}
 	return false;
 }
 //bool TileMap::TestOnLadder(const AABB& box, int* px) const
