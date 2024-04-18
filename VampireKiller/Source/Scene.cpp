@@ -311,6 +311,9 @@ AppStatus Scene::LoadLevel(int stage)
 				objects.push_back(obj);
 				map[i] = 0;
 			}
+			
+			
+			
 
 			tile2 = (Tile)map2[i];
 			if (tile2 == Tile::EMPTY)
@@ -324,6 +327,8 @@ AppStatus Scene::LoadLevel(int stage)
 				player->SetPos(pos);
 				map2[i] = 0;
 			}
+			
+
 			
 			++i;
 		}
@@ -356,6 +361,7 @@ void Scene::Update()
 	else if (IsKeyPressed(KEY_FOUR))	LoadLevel(4);
 	else if (IsKeyPressed(KEY_FIVE))	LoadLevel(5);
 	else if (IsKeyPressed(KEY_SIX))	    LoadLevel(6);
+	
 	
 	
 	level->Update();
@@ -414,6 +420,11 @@ void Scene::CheckCollisions()
 			++it;
 		}
 	}
+	 if (level->TestTransition(player_box) == 1)
+	 {
+		 LoadLevel(2);
+	 }
+	
 }
 void Scene::ClearLevel()
 {

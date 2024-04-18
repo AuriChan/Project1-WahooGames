@@ -242,9 +242,9 @@ void Player::MoveX()
 
 	
 	else if (IsKeyDown(KEY_RIGHT))
-	{   if (pos.x > WINDOW_WIDTH) 
+	{   if (pos.x >= WINDOW_WIDTH - PLAYER_FRAME_SIZE_X)
 	    {
-		pos.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE;
+		pos.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
 	    }
 
 		pos.x += PLAYER_SPEED;
