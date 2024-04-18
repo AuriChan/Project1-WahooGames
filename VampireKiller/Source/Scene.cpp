@@ -282,6 +282,7 @@ AppStatus Scene::LoadLevel(int stage)
 		LOG("Failed to load level, stage %d doesn't exist", stage);
 		return AppStatus::ERROR;
 	}
+	
 
 	//Entities and objects
 	i = 0;

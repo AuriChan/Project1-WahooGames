@@ -1,113 +1,113 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\",
+  "WorkspaceRootPath": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\TileMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\TileMap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\RenderComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\AABB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Globals.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Globals.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Globals.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\StaticImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\RenderComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\StaticImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\AABB.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Sprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Sprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\MemLeaks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\MemLeaks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\MemLeaks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Globals.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Globals.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Globals.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -118,15 +118,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Globals.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Globals.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Globals.h",
               "RelativeDocumentMoniker": "Source\\Globals.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Globals.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Globals.h",
               "RelativeToolTip": "Source\\Globals.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -136,9 +136,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "RenderComponent.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.cpp",
               "RelativeDocumentMoniker": "Source\\RenderComponent.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.cpp",
               "RelativeToolTip": "Source\\RenderComponent.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -148,9 +148,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "Sprite.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.h",
               "RelativeDocumentMoniker": "Source\\Sprite.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.h",
               "RelativeToolTip": "Source\\Sprite.h",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -160,9 +160,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "Object.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Object.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Object.h",
               "RelativeDocumentMoniker": "Source\\Object.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Object.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Object.h",
               "RelativeToolTip": "Source\\Object.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -172,9 +172,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "StaticImage.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.h",
               "RelativeDocumentMoniker": "Source\\StaticImage.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.h",
               "RelativeToolTip": "Source\\StaticImage.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -182,13 +182,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Scene.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
               "RelativeDocumentMoniker": "Source\\Scene.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
               "RelativeToolTip": "Source\\Scene.cpp",
-              "ViewState": "AQIAAFgBAAAAAAAAAADwv2kBAAAAAAAA",
+              "ViewState": "AQIAAP4AAAAAAAAAAAAAwCkBAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-11T14:27:01.101Z",
               "EditorCaption": ""
@@ -197,9 +197,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "StaticImage.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.cpp",
               "RelativeDocumentMoniker": "Source\\StaticImage.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.cpp",
               "RelativeToolTip": "Source\\StaticImage.cpp",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -209,9 +209,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "AABB.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp",
               "RelativeDocumentMoniker": "Source\\AABB.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp",
               "RelativeToolTip": "Source\\AABB.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -221,9 +221,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "AABB.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h",
               "RelativeDocumentMoniker": "Source\\AABB.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h",
               "RelativeToolTip": "Source\\AABB.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -233,22 +233,21 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "TileMap.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h",
               "RelativeDocumentMoniker": "Source\\TileMap.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h",
               "RelativeToolTip": "Source\\TileMap.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:27:01.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.1Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "Object.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Object.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Object.cpp",
               "RelativeDocumentMoniker": "Source\\Object.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Object.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Object.cpp",
               "RelativeToolTip": "Source\\Object.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -258,35 +257,33 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "TileMap.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.cpp",
               "RelativeDocumentMoniker": "Source\\TileMap.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.cpp",
               "RelativeToolTip": "Source\\TileMap.cpp",
               "ViewState": "AQIAACUAAAAAAAAAAAASwCgAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-11T14:27:01.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.1Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Game.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Game.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Game.cpp",
               "RelativeDocumentMoniker": "Source\\Game.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Game.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Game.cpp",
               "RelativeToolTip": "Source\\Game.cpp",
               "ViewState": "AQIAAJ8AAAAAAAAAAADwv64AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-11T14:27:01.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.101Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Game.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Game.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Game.h",
               "RelativeDocumentMoniker": "Source\\Game.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Game.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Game.h",
               "RelativeToolTip": "Source\\Game.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -294,11 +291,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\main.cpp",
               "RelativeDocumentMoniker": "Source\\main.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\main.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\main.cpp",
               "RelativeToolTip": "Source\\main.cpp",
               "ViewState": "AQIAAAkAAAAAAAAAAADwvx0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -309,9 +306,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "ResourceManager.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.h",
               "RelativeDocumentMoniker": "Source\\ResourceManager.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.h",
               "RelativeToolTip": "Source\\ResourceManager.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -321,9 +318,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Scene.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Scene.h",
               "RelativeDocumentMoniker": "Source\\Scene.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Scene.h",
               "RelativeToolTip": "Source\\Scene.h",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -333,9 +330,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Player.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Player.h",
               "RelativeDocumentMoniker": "Source\\Player.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Player.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Player.h",
               "RelativeToolTip": "Source\\Player.h",
               "ViewState": "AQIAACcAAAAAAAAAAAAAADgAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -345,9 +342,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Player.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Player.cpp",
               "RelativeDocumentMoniker": "Source\\Player.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Player.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Player.cpp",
               "RelativeToolTip": "Source\\Player.cpp",
               "ViewState": "AQIAAEIAAAAAAAAAAAAAAEAAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -357,9 +354,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Entity.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Entity.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Entity.cpp",
               "RelativeDocumentMoniker": "Source\\Entity.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Entity.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Entity.cpp",
               "RelativeToolTip": "Source\\Entity.cpp",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAACEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -369,9 +366,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "RenderComponent.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.h",
               "RelativeDocumentMoniker": "Source\\RenderComponent.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\RenderComponent.h",
               "RelativeToolTip": "Source\\RenderComponent.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -381,9 +378,9 @@
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "Sprite.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.cpp",
               "RelativeDocumentMoniker": "Source\\Sprite.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Sprite.cpp",
               "RelativeToolTip": "Source\\Sprite.cpp",
               "ViewState": "AQIAAF0AAAAAAAAAAAAAAHoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -393,9 +390,9 @@
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "ResourceManager.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.cpp",
               "RelativeDocumentMoniker": "Source\\ResourceManager.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\ResourceManager.cpp",
               "RelativeToolTip": "Source\\ResourceManager.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -405,9 +402,9 @@
               "$type": "Document",
               "DocumentIndex": 23,
               "Title": "MemLeaks.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\MemLeaks.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\MemLeaks.h",
               "RelativeDocumentMoniker": "Source\\MemLeaks.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\MemLeaks.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\MemLeaks.h",
               "RelativeToolTip": "Source\\MemLeaks.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -417,9 +414,9 @@
               "$type": "Document",
               "DocumentIndex": 24,
               "Title": "Globals.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Globals.cpp",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Globals.cpp",
               "RelativeDocumentMoniker": "Source\\Globals.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Globals.cpp",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Globals.cpp",
               "RelativeToolTip": "Source\\Globals.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -429,9 +426,9 @@
               "$type": "Document",
               "DocumentIndex": 25,
               "Title": "Entity.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Entity.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Entity.h",
               "RelativeDocumentMoniker": "Source\\Entity.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Entity.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Entity.h",
               "RelativeToolTip": "Source\\Entity.h",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAACUAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -441,9 +438,9 @@
               "$type": "Document",
               "DocumentIndex": 26,
               "Title": "Point.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Point.h",
+              "DocumentMoniker": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Point.h",
               "RelativeDocumentMoniker": "Source\\Point.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Point.h",
+              "ToolTip": "C:\\Users\\Laura\\OneDrive\\Documentos\\GitHub\\Project1-WahooGames\\VampireKiller\\Source\\Point.h",
               "RelativeToolTip": "Source\\Point.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
