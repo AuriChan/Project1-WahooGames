@@ -149,7 +149,6 @@ AppStatus Game::Update()
         {
             state = GameState::WIN;
         }
-   
         else 
         {
             //Game logic

@@ -20,6 +20,7 @@ AppStatus Player::Initialise()
 {
 	int i;
 	const int n = PLAYER_FRAME_SIZE_Y;
+	const int m = PLAYER_FRAME_SIZE_X;
 
 	ResourceManager& data = ResourceManager::Instance();
 	if (data.LoadTexture(Resource::IMG_PLAYER, "Images/SimonBelmont.png") != AppStatus::OK)
@@ -38,28 +39,26 @@ AppStatus Player::Initialise()
 	sprite->SetNumberAnimations((int)PlayerAnim::NUM_ANIMATIONS);
 
 	sprite->SetAnimationDelay((int)PlayerAnim::IDLE_RIGHT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::IDLE_RIGHT, { 0, 0, n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::IDLE_RIGHT, { 0, 0, m, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::IDLE_LEFT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::IDLE_LEFT, { 0, 0, -n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::IDLE_LEFT, { 0, 0, -m, n });
 
 	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_RIGHT, ANIM_DELAY);
-	for (i = 0; i < 8; ++i)
-		sprite->AddKeyFrame((int)PlayerAnim::WALKING_RIGHT, { (float)i * n, 4 * n, n, n });
+	for (i = 0; i < 3; ++i)
+		sprite->AddKeyFrame((int)PlayerAnim::WALKING_RIGHT, { (float)i * m, 0, m, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_LEFT, ANIM_DELAY);
-	for (i = 0; i < 8; ++i)
-		sprite->AddKeyFrame((int)PlayerAnim::WALKING_LEFT, { (float)i * n, 4 * n, -n, n });
+	for (i = 0; i < 3; ++i)
+		sprite->AddKeyFrame((int)PlayerAnim::WALKING_LEFT, { (float)i * m, 0, -m, n });
 
 	sprite->SetAnimationDelay((int)PlayerAnim::CROUCHING_RIGHT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_RIGHT, { 2 * n, 5 * n, n, n });
-	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_RIGHT, { 3 * n, 5 * n, n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_RIGHT, { 3 * m, 0, m, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::CROUCHING_LEFT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_LEFT, { 2 * n, 5 * n, -n, n });
-	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_LEFT, { 3 * n, 5 * n, -n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::CROUCHING_LEFT, { 3 * m, 0, -m, n });
 
 	sprite->SetAnimationDelay((int)PlayerAnim::JUMPING_RIGHT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::JUMPING_RIGHT, { 0, 5 * n, n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::JUMPING_RIGHT, { 3 * m, 0, m, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::JUMPING_LEFT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)PlayerAnim::JUMPING_LEFT, { 0, 5 * n, -n, n });
+	sprite->AddKeyFrame((int)PlayerAnim::JUMPING_LEFT, { 3 * m, 0, -m, n });
 	/*sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_RIGHT, ANIM_DELAY);
 	sprite->AddKeyFrame((int)PlayerAnim::LEVITATING_RIGHT, { n, 5 * n, n, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_LEFT, ANIM_DELAY);
@@ -165,6 +164,12 @@ void Player::StartJumping()
 	else					SetAnimation((int)PlayerAnim::JUMPING_LEFT);
 	jump_delay = PLAYER_JUMP_DELAY;
 }
+void Player::StartCrouching()
+{
+	state = State::CROUCHING;
+	if (IsLookingRight())	SetAnimation((int)PlayerAnim::CROUCHING_RIGHT);
+	else					SetAnimation((int)PlayerAnim::CROUCHING_LEFT);
+}
 //void Player::StartClimbingUp()
 //{
 //	/*state = State::CLIMBING;
@@ -188,6 +193,7 @@ void Player::ChangeAnimRight()
 	case State::WALKING: SetAnimation((int)PlayerAnim::WALKING_RIGHT); break;
 	case State::JUMPING: SetAnimation((int)PlayerAnim::JUMPING_RIGHT); break;
 	case State::FALLING: SetAnimation((int)PlayerAnim::CROUCHING_RIGHT); break;
+	case State::CROUCHING: SetAnimation((int)PlayerAnim::CROUCHING_RIGHT); break;
 	}
 }
 void Player::ChangeAnimLeft()
@@ -199,6 +205,7 @@ void Player::ChangeAnimLeft()
 	case State::WALKING: SetAnimation((int)PlayerAnim::WALKING_LEFT); break;
 	case State::JUMPING: SetAnimation((int)PlayerAnim::JUMPING_LEFT); break;
 	case State::FALLING: SetAnimation((int)PlayerAnim::CROUCHING_LEFT); break;
+	case State::CROUCHING: SetAnimation((int)PlayerAnim::CROUCHING_LEFT); break;
 	}
 }
 void Player::Update()
@@ -244,7 +251,7 @@ void Player::MoveX()
 	else if (IsKeyDown(KEY_RIGHT))
 	{   if (pos.x > WINDOW_WIDTH) 
 	    {
-		pos.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE;
+		pos.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
 	    }
 
 		pos.x += PLAYER_SPEED;
@@ -284,7 +291,7 @@ void Player::MoveY()
 		box = GetHitbox();
 		if (map->TestCollisionGround(box, &pos.y))
 		{
-			//if (state == State::FALLING) Stop();
+			if (state == State::FALLING) Stop();
 
 			//if (IsKeyDown(KEY_UP))
 			//{
@@ -305,9 +312,13 @@ void Player::MoveY()
 			//	}
 
 			//}
-			/*else*/ if (IsKeyPressed(KEY_SPACE))
+			/*else*/ if (IsKeyPressed(KEY_UP))
 			{
 				StartJumping();
+			}
+			else if (IsKeyDown(KEY_DOWN))
+			{
+				StartCrouching();
 			}
 		}
 		else
