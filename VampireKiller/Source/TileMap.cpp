@@ -272,12 +272,23 @@ bool TileMap::TestCollisionGround(const AABB& box, int* py) const
 	if (CollisionY(p, box.width))
 	{
 		tile_y = p.y / TILE_SIZE;
-
+		
 		*py = tile_y * TILE_SIZE - 1;
 		return true;
 	}
 	return false;
 }
+int TileMap::TestTransition(const AABB& box) const 
+{
+	Tile t = GetTileIndex(box.pos.x, box.pos.y);
+	if (t == Tile::LAB1_LAB2)
+	{
+		return 1;
+	}
+
+	return 0;
+}
+
 bool TileMap::TestFalling(const AABB& box) const
 {
 	return !CollisionY(box.pos + Point(0, box.height), box.width);

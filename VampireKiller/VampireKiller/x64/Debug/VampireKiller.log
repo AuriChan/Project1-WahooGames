@@ -1,2 +1,7 @@
-﻿  Player.cpp
-  VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+﻿  Game.cpp
+  Player.cpp
+  Scene.cpp
+  TileMap.cpp
+  main.cpp
+  Generating Code...
+  VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
