@@ -170,6 +170,7 @@ void Player::StartCrouching()
 	if (IsLookingRight())	SetAnimation((int)PlayerAnim::CROUCHING_RIGHT);
 	else					SetAnimation((int)PlayerAnim::CROUCHING_LEFT);
 }
+
 //void Player::StartClimbingUp()
 //{
 //	/*state = State::CLIMBING;
@@ -213,8 +214,10 @@ void Player::Update()
 	//Player doesn't use the "Entity::Update() { pos += dir; }" default behaviour.
 	//Instead, uses an independent behaviour for each axis.
 	
+
 	MoveX();
 	MoveY();
+	
 
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
@@ -227,8 +230,11 @@ void Player::MoveX()
 	//We can only go up and down while climbing
 	if (state == State::CLIMBING)	return;
 	
-
-	if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT))
+	if (IsKeyDown(KEY_DOWN))
+	{
+		StartCrouching();
+	}
+	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT))
 	{
 		if (pos.x < 0) { pos.x = 0; }
 		else{pos.x += -PLAYER_SPEED;}
@@ -246,7 +252,6 @@ void Player::MoveX()
 			if (state == State::WALKING) Stop();
 		}
 	}
-
 	
 	else if (IsKeyDown(KEY_RIGHT))
 	{   if (pos.x >= WINDOW_WIDTH - PLAYER_FRAME_SIZE_X)
@@ -268,9 +273,10 @@ void Player::MoveX()
 			if (state == State::WALKING) Stop();
 		}
 	}
+
 	else
 	{
-		if (state == State::WALKING) Stop();
+		if (state == State::WALKING || state == State::CROUCHING) Stop();
 	}
 }
 void Player::MoveY()
@@ -316,10 +322,8 @@ void Player::MoveY()
 			{
 				StartJumping();
 			}
-			else if (IsKeyDown(KEY_DOWN))
-			{
-				StartCrouching();
-			}
+		
+			
 		}
 		else
 		{
