@@ -17,7 +17,7 @@ Object::Object(const Point& p, ObjectType t) : Entity(p, OBJECT_PHYSICAL_SIZE, O
 	}
 
 	ResourceManager& data = ResourceManager::Instance();
-	render = new StaticImage(data.GetTexture(Resource::IMG_TILES), rc);
+	render = new StaticImage(data.GetTexture(Resource::IMG_ITEMS), rc);
 }
 Object::~Object()
 {
@@ -30,6 +30,7 @@ int Object::Points() const
 {
 	if (type == ObjectType::APPLE)		return POINTS_APPLE;
 	else if (type == ObjectType::CHILI)	return POINTS_CHILI;
+	else if (type == ObjectType::HEART)	return POINTS_HEART;
 	else
 	{
 		LOG("Internal error: object type invalid when giving points");

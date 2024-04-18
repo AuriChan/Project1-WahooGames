@@ -162,8 +162,8 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::CRUSHER_PLATAFORM_RIGHT] = { 8 * n, 9 * n, n, n };
 
 //OBJECTS
-	dict_rect[(int)Tile::HEART] = { 7 * n, 1 * n, n, n };
-
+	/*dict_rect[(int)Tile::ITEM_HEART] ={ 7 * n, 1 * n, n, n } ;*/
+	
 //EXTRA TILES 
 	dict_rect[(int)Tile::FENCE_TOP3] = { 0 * n, 7 * n, n, n };
 	dict_rect[(int)Tile::TREE_HANG_LEAF5] = { 1 * n, 7 * n, n, n };

@@ -303,14 +303,7 @@ AppStatus Scene::LoadLevel(int stage)
 				player->SetPos(pos);
 				map[i] = 0;
 			}
-			else if (tile == Tile::HEART)
-			{
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				obj = new Object(pos, ObjectType::HEART);
-				objects.push_back(obj);
-				map[i] = 0;
-			}
+			
 			
 			
 			
@@ -326,6 +319,14 @@ AppStatus Scene::LoadLevel(int stage)
 				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
 				player->SetPos(pos);
 				map2[i] = 0;
+			}
+			else if (tile == Tile::ITEM_HEART)
+			{
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::HEART);
+				objects.push_back(obj);
+				map[i] = 0;
 			}
 			
 
