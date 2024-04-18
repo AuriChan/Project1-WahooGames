@@ -8,7 +8,7 @@ TileMap::TileMap()
 	map = nullptr;
 	width = 0;
 	height = 0;
-	laser = nullptr;
+	/*laser = nullptr;*/
 	img_tiles = nullptr;
 
 	InitTileDictionary();
@@ -20,12 +20,12 @@ TileMap::~TileMap()
 		delete[] map;
 		map = nullptr;
 	}
-	if (laser != nullptr)
+	/*if (laser != nullptr)
 	{
 		laser->Release();
 		delete laser;
 		laser = nullptr;
-	}
+	}*/
 }
 
 void TileMap::InitTileDictionary()

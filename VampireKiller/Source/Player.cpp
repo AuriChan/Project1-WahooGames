@@ -5,7 +5,7 @@
 #include <raymath.h>
 
 Player::Player(const Point& p, State s, Look view) :
-	Entity(p, PLAYER_PHYSICAL_WIDTH, PLAYER_PHYSICAL_HEIGHT, PLAYER_FRAME_SIZE, PLAYER_FRAME_SIZE)
+	Entity(p, PLAYER_PHYSICAL_WIDTH, PLAYER_PHYSICAL_HEIGHT, PLAYER_FRAME_SIZE_X, PLAYER_FRAME_SIZE_Y)
 {
 	state = s;
 	look = view;
@@ -19,7 +19,7 @@ Player::~Player()
 AppStatus Player::Initialise()
 {
 	int i;
-	const int n = PLAYER_FRAME_SIZE;
+	const int n = PLAYER_FRAME_SIZE_Y;
 
 	ResourceManager& data = ResourceManager::Instance();
 	if (data.LoadTexture(Resource::IMG_PLAYER, "Images/SimonBelmont.png") != AppStatus::OK)
