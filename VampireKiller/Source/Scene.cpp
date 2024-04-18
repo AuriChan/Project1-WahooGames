@@ -351,11 +351,11 @@ void Scene::Update()
 		debug = (DebugMode)(((int)debug + 1) % (int)DebugMode::SIZE);
 	}
 	else if (IsKeyPressed(KEY_ONE))		LoadLevel(1);
-	else if (IsKeyPressed(KEY_TWO))	LoadLevel(2);
+	else if (IsKeyPressed(KEY_TWO))	    LoadLevel(2);
 	else if (IsKeyPressed(KEY_THREE))	LoadLevel(3);
 	else if (IsKeyPressed(KEY_FOUR))	LoadLevel(4);
 	else if (IsKeyPressed(KEY_FIVE))	LoadLevel(5);
-	else if (IsKeyPressed(KEY_SIX))	LoadLevel(6);
+	else if (IsKeyPressed(KEY_SIX))	    LoadLevel(6);
 	
 	
 	level->Update();
@@ -385,7 +385,9 @@ void Scene::Render()
 void Scene::Release()
 {
 	level->Release();
+	
 	player->Release();
+	
 	ClearLevel();
 }
 void Scene::CheckCollisions()

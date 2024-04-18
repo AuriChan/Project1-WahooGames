@@ -205,6 +205,7 @@ void Player::Update()
 {
 	//Player doesn't use the "Entity::Update() { pos += dir; }" default behaviour.
 	//Instead, uses an independent behaviour for each axis.
+	
 	MoveX();
 	MoveY();
 
@@ -218,10 +219,13 @@ void Player::MoveX()
 
 	//We can only go up and down while climbing
 	if (state == State::CLIMBING)	return;
+	
 
 	if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT))
 	{
-		pos.x += -PLAYER_SPEED;
+		if (pos.x < 0) { pos.x = 0; }
+		else{pos.x += -PLAYER_SPEED;}
+
 		if (state == State::IDLE) StartWalkingLeft();
 		else
 		{
@@ -235,8 +239,14 @@ void Player::MoveX()
 			if (state == State::WALKING) Stop();
 		}
 	}
+
+	
 	else if (IsKeyDown(KEY_RIGHT))
-	{
+	{   if (pos.x > WINDOW_WIDTH) 
+	    {
+		pos.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE;
+	    }
+
 		pos.x += PLAYER_SPEED;
 		if (state == State::IDLE) StartWalkingRight();
 		else
