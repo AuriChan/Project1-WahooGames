@@ -186,7 +186,7 @@ void Game::Render()
         break;
     case GameState::INITIAL_SCREEN:
         
-        Rectangle s;
+        /*Rectangle s;
         s.x = 0;
         s.y = 0;
         s.width = 692;
@@ -201,8 +201,8 @@ void Game::Render()
         v.x = 0;
         v.y = 0;
 
-        DrawTexturePro(*img_initialScreen, s, d, v, 0, WHITE);
-        //DrawTexture(*img_initialScreen, 0, 0, WHITE);
+        DrawTexturePro(*img_initialScreen, s, d, v, 0, WHITE);*/
+        DrawTexture(*img_initialScreen, 0, 0, WHITE);
        
        
         break;
