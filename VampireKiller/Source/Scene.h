@@ -36,7 +36,8 @@ private:
     TileMap* level;
  
     std::vector<Object*> objects;
-    Sprite* fire;
+    std::vector<Object*> objects2;
+    //Sprite* fire;
     
     Camera2D camera;
     DebugMode debug;

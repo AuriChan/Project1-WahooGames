@@ -1,5 +1,6 @@
 #include "Object.h"
 #include "StaticImage.h"
+#include "Sprite.h"
 
 Object::Object(const Point& p, ObjectType t) : Entity(p, OBJECT_PHYSICAL_SIZE, OBJECT_PHYSICAL_SIZE, OBJECT_FRAME_SIZE, OBJECT_FRAME_SIZE)
 {
@@ -12,12 +13,14 @@ Object::Object(const Point& p, ObjectType t) : Entity(p, OBJECT_PHYSICAL_SIZE, O
 	case ObjectType::APPLE: rc = { 4 * n, 3 * n, n, n }; break;
 	case ObjectType::CHILI: rc = { 5 * n, 3 * n, n, n }; break;
 	case ObjectType::HEART: rc = { 4 * n, 1 * n, n, n }; break;
+	case ObjectType::FIRE: rc = { 5 * n, 3 * n, n, n }; break;
 
 	default: LOG("Internal error: object creation of invalid type");
 	}
 
 	ResourceManager& data = ResourceManager::Instance();
 	render = new StaticImage(data.GetTexture(Resource::IMG_ITEMS), rc);
+	
 }
 Object::~Object()
 {
@@ -31,6 +34,7 @@ int Object::Points() const
 	if (type == ObjectType::APPLE)		return POINTS_APPLE;
 	else if (type == ObjectType::CHILI)	return POINTS_CHILI;
 	else if (type == ObjectType::HEART)	return POINTS_HEART;
+	
 	else
 	{
 		LOG("Internal error: object type invalid when giving points");

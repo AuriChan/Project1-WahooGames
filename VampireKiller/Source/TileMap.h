@@ -35,7 +35,7 @@ enum class Tile
 	BROKEN_BLACK_RIGHT,COLOR_WINDOW_TOP_LEFT, COLOR_WINDOW_TOP_RIGHT,COLOR_WINDOW_BOTTOM_LEFT, COLOR_WINDOW_BOTTOM_RIGHT,
 
 //GADGETS
-    STAIRS = 110, PINK_DOOR_TOP, PINK_DOOR_MID, PINK_DOOR_BOTTOM, CRUSHER_TOP, CRUSHER_MID, CRUSHER_BOTTOM, CRUSHER_PLATAFORM_MID, CRUSHER_PLATAFOR_LEFT, CRUSHER_PLATAFORM_RIGHT, FIRE/*120*/, FIRE_FRAME0, FIRE_FRAME1,
+    STAIRS = 110, PINK_DOOR_TOP, PINK_DOOR_MID, PINK_DOOR_BOTTOM, CRUSHER_TOP, CRUSHER_MID, CRUSHER_BOTTOM, CRUSHER_PLATAFORM_MID, CRUSHER_PLATAFOR_LEFT, CRUSHER_PLATAFORM_RIGHT, 
 
 //ENTITY
 
@@ -45,7 +45,7 @@ SOLDIER = 150, HEAD, MEDUSA_BOTTOM_LEFT, MEDUSA_BOTTOM_RIGHT, MEDUSA_MID_LEFT, M
 
 
 //OBJECT 
-    ITEM_HEART = 200,
+    ITEM_HEART = 200, FIRE, FIRE_FRAME0, FIRE_FRAME1,
 
 //EXTRA TILES
     FENCE_TOP3 = 250, TREE_HANG_LEAF5, TREE_HANG_LEAF6, BROKEN_CASTLE, 
@@ -86,7 +86,7 @@ public:
 	//penetration of the grounded tile, that is, the pixel y-position above the grounded tile.
 	//Grounded tile = solid tile (blocks) or ladder tops.
 	bool TestCollisionGround(const AABB& box, int* py) const;
-	int TestTransition(const AABB& box) const;
+	/*int TestTransition(const AABB& box) const;*/
 
 	//Test if there is a ground tile one pixel below the given box
 	bool TestFalling(const AABB& box) const;
@@ -117,7 +117,7 @@ private:
 	//Dictionary of tile frames
 	std::unordered_map<int, Rectangle> dict_rect;
 
-	Sprite* fire;
+	/*Sprite* fire;*/
 
 	//Tile sheet
 	const Texture2D* img_tiles;

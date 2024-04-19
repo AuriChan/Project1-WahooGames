@@ -8,7 +8,7 @@
 #define POINTS_CHILI	20
 #define POINTS_HEART	1
 
-enum class ObjectType { APPLE, CHILI, HEART };
+enum class ObjectType { APPLE, CHILI, HEART, FIRE };
 
 class Object : public Entity
 {

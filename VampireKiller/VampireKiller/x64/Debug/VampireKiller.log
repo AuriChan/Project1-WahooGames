@@ -1,8 +1,4 @@
-﻿  Enemy.cpp
-  Game.cpp
-  Player.cpp
-  Scene.cpp
+﻿  main.cpp
   TileMap.cpp
-  main.cpp
   Generating Code...
   VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
