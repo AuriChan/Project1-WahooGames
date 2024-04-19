@@ -17,6 +17,8 @@ public:
     void Update();
     void Render();
     void Release();
+    Player* GetPlayer()const;
+    
 
 private:
     AppStatus LoadLevel(int stage);

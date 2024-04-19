@@ -1,7 +1,10 @@
 #include "Scene.h"
 #include "Globals.h"
 #include <stdio.h>
-
+Player* Scene::GetPlayer()const
+{
+	return player;
+}
 Scene::Scene()
 {
 	player = nullptr;
@@ -121,6 +124,7 @@ AppStatus Scene::LoadLevel(int stage)
 			};
 		player->InitScore();
 		player->SetStage(1);
+		
 		
 	}
 	else if (stage == 2)
@@ -360,6 +364,26 @@ void Scene::Update()
 	else if (IsKeyPressed(KEY_FOUR))	LoadLevel(4);
 	else if (IsKeyPressed(KEY_FIVE))	LoadLevel(5);
 	else if (IsKeyPressed(KEY_SIX))	    LoadLevel(6);
+
+	//instant death
+	
+	if ((player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
+		&& IsKeyPressed(KEY_M) && player->GetLives() >0 )
+	{
+		
+		player->SetLifes(player->GetLives() - 1);
+		LoadLevel(1);
+
+	}
+
+	else if ((player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
+		&& IsKeyPressed(KEY_M) && player->GetLives() > 0)
+	{
+
+		player->SetLifes(player->GetLives() - 1);
+		LoadLevel(4);
+
+	}
 
 	//level transition
 	//go
