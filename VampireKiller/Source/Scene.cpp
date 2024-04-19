@@ -328,13 +328,13 @@ AppStatus Scene::LoadLevel(int stage)
 				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
 				obj = new Object(pos, ObjectType::HEART);
 				objects.push_back(obj);
-				map[i] = 0;
+				map2[i] = 0;
 			}
 			else if (tile2 == Tile::FIRE)
 			{
 				pos.x = x * TILE_SIZE;
 				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				map[i] = 0;
+				map2[i] = 0;
 			}
 			
 
