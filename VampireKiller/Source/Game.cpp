@@ -3,6 +3,7 @@
 #include "ResourceManager.h"
 #include <stdio.h>
 
+
 Game::Game()
 {
     state = GameState::INITIAL_SCREEN;
@@ -149,6 +150,11 @@ AppStatus Game::Update()
         {
             state = GameState::WIN;
         }
+        if (scene->GetPlayer()->GetLives() == 0)
+        {
+            state = GameState::DEATH;
+        }
+       
         else 
         {
             //Game logic

@@ -58,12 +58,15 @@ public:
 
 	AppStatus Initialise();
 	void SetTileMap(TileMap* tilemap);
+	
 
 	void InitScore();
 	void SetStage(int n);
 	int GetStage()const;
 	void IncrScore(int n);
 	int GetScore();
+	void SetLifes(int l);
+	int GetLives()const;
 
 	void Update();
 	void DrawDebug(const Color& col) const;
@@ -109,5 +112,6 @@ private:
 	TileMap* map;
 	int stageC;
 	int score;
+	int lifes = 3;
 };
 

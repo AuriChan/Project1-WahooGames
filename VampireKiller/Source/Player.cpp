@@ -88,6 +88,16 @@ int Player::GetStage()const
 {
 	return stageC;
 }
+void Player::SetLifes(int l)
+{
+	lifes = l;
+}
+
+int Player::GetLives()const
+{
+	return lifes;
+}
+
 void Player::IncrScore(int n)
 {
 	score += n;
