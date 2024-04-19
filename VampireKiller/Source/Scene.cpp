@@ -8,6 +8,7 @@ Player* Scene::GetPlayer()const
 Scene::Scene()
 {
 	player = nullptr;
+	soldier = nullptr;
 	level = nullptr;
 
 	camera.target = { 0, 0 };				//Center of the screen
@@ -24,6 +25,12 @@ Scene::~Scene()
 		player->Release();
 		delete player;
 		player = nullptr;
+	}
+	if (soldier != nullptr)
+	{
+		soldier->Release();
+		delete soldier;
+		soldier = nullptr;
 	}
 	if (level != nullptr)
 	{
@@ -52,7 +59,19 @@ AppStatus Scene::Init()
 		LOG("Failed to initialise Player");
 		return AppStatus::ERROR;
 	}
-
+	//Create enemy
+	soldier = new Enemy({ 0,0 }, eState::IDLE, eLook::RIGHT);
+	if (soldier == nullptr)
+	{
+		LOG("Failed to allocate memory for Enemy");
+		return AppStatus::ERROR;
+	}
+	//Initialise player
+	if (soldier->Initialise() != AppStatus::OK)
+	{
+		LOG("Failed to initialise Enemy");
+		return AppStatus::ERROR;
+	}
 	//Create level 
 	level = new TileMap();
 	if (level == nullptr)
@@ -74,6 +93,8 @@ AppStatus Scene::Init()
 	}
 	//Assign the tile map reference to the player to check collisions while navigating
 	player->SetTileMap(level);
+	soldier->SetTileMap(level);
+	
 
 	return AppStatus::OK;
 }
@@ -118,12 +139,13 @@ AppStatus Scene::LoadLevel(int stage)
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 120, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-					   400, 0,200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+					   400, 0,200, 0, 0, 0,  0, 0, 0, 0, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 					     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
 			};
 		player->InitScore();
 		player->SetStage(1);
+		soldier->SetStage(1);
 		
 		
 	}
@@ -159,6 +181,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(2);
+		soldier->SetStage(2);
 	}
 	else if (stage == 3)
 	{
@@ -191,6 +214,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(3);
+		soldier->SetStage(3);
 	}
 	else if (stage == 4)
 	{
@@ -224,6 +248,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(4);
+		soldier->SetStage(4);
 	}
 	else if (stage == 5)
 	{
@@ -256,6 +281,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(5);
+		soldier->SetStage(5);
 	}
 	else if (stage == 6)
 	{
@@ -288,6 +314,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		    player->SetStage(6);
+			soldier->SetStage(6);
 		}
 			
 	else
@@ -320,6 +347,13 @@ AppStatus Scene::LoadLevel(int stage)
 				pos.x = x * TILE_SIZE;
 				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
 				player->SetPos(pos);
+				map2[i] = 0;
+			}
+			else if (tile2 == Tile::SOLDIER)
+			{
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				soldier->SetPos(pos);
 				map2[i] = 0;
 			}
 			else if (tile2 == Tile::ITEM_HEART)
@@ -461,6 +495,7 @@ void Scene::Update()
 	
 	level->Update();
 	player->Update();
+	soldier->Update();
 	CheckCollisions();
 }
 void Scene::Render()
@@ -477,6 +512,7 @@ void Scene::Render()
 	{
 		RenderObjectsDebug(YELLOW);
 		player->DrawDebug(GREEN);
+		soldier->DrawDebug(RED);
 	}
 
 	EndMode2D();
@@ -488,6 +524,7 @@ void Scene::Release()
 	level->Release();
 	
 	player->Release();
+	soldier->Release();
 	
 	ClearLevel();
 }

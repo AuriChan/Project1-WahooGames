@@ -136,14 +136,15 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::COLOR_WINDOW_BOTTOM_RIGHT] = { 15 *n, 5 * n, n, n };
 
 //ENTITIES
-	dict_rect[(int)Tile::PLAYER] = { 0 * n, 0 * n, n, n };
+
+	//dict_rect[(int)Tile::PLAYER] = { 0 * n, 0 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_BOTTOM_LEFT] = { 0 *n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_BOTTOM_RIGHT] = { 1 *n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_MID_LEFT] = { 2*n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_MID_RIGHT] = { 3*n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_TOP_LEFT] = { 4 *n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_TOP_RIGHT] = { 5*n, 6 * n, n, n };
-	dict_rect[(int)Tile::SOLDIER] = { 12 * n, 4 * n, n, n };
+	//dict_rect[(int)Tile::SOLDIER] = { 12 * n, 4 * n, n, n };
 	dict_rect[(int)Tile::HEAD] = { 9 * n, 2 * n, n, n };
 
 //GADGETS

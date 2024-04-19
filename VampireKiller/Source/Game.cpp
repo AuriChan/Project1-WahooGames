@@ -141,16 +141,17 @@ AppStatus Game::Update()
        
             FinishPlay();
             state = GameState::MAIN_MENU;
-        } 
-        if (IsKeyPressed(KEY_D))
+        }
+        
+        else if (IsKeyPressed(KEY_D))
         {
             state = GameState::DEATH;
         }
-        if (IsKeyPressed(KEY_W))
+        else if (IsKeyPressed(KEY_W))
         {
             state = GameState::WIN;
         }
-        if (scene->GetPlayer()->GetLives() == 0)
+        else if (scene->GetPlayer()->GetLives() == 0)
         {
             state = GameState::DEATH;
         }
