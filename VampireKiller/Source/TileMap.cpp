@@ -150,8 +150,8 @@ void TileMap::InitTileDictionary()
 //GADGETS
 	
 	//stage1
-	dict_rect[(int)Tile::FIRE_FRAME0] = { 5 * n,  1* n, n, n };
-	dict_rect[(int)Tile::FIRE_FRAME1] = { 5 * n,  1* n, n, n };
+	dict_rect[(int)Tile::FIRE_FRAME0] = { 5 * n,  3* n, n, n };
+	dict_rect[(int)Tile::FIRE_FRAME1] = { 6 * n,  3* n, n, n };
 
     //stage2
 	dict_rect[(int)Tile::PINK_DOOR_TOP] = { 6 * n, 6 * n, n, n };
@@ -437,6 +437,7 @@ void TileMap::Render()
 		}
 	}
 }
+
 void TileMap::Release()
 {
 	ResourceManager& data = ResourceManager::Instance();

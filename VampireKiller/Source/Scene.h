@@ -34,8 +34,10 @@ private:
     Player* player;
     Enemy* soldier;
     TileMap* level;
+ 
     std::vector<Object*> objects;
-
+    Sprite* fire;
+    
     Camera2D camera;
     DebugMode debug;
 };

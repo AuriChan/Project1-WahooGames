@@ -38,16 +38,16 @@ AppStatus Enemy::Initialise()
 	sprite->SetNumberAnimations((int)EnemyAnim::NUM_ANIMATIONS);
 
 	sprite->SetAnimationDelay((int)EnemyAnim::IDLE_RIGHT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)EnemyAnim::IDLE_RIGHT, { 0, 0, m, n });
+	sprite->AddKeyFrame((int)EnemyAnim::IDLE_RIGHT, { 1 * m, 3 * n, m, n });
 	sprite->SetAnimationDelay((int)EnemyAnim::IDLE_LEFT, ANIM_DELAY);
-	sprite->AddKeyFrame((int)EnemyAnim::IDLE_LEFT, { 0, 0, -m, n });
+	sprite->AddKeyFrame((int)EnemyAnim::IDLE_LEFT, { 1 * m, 3* n, -m, n });
 
 	sprite->SetAnimationDelay((int)EnemyAnim::WALKING_RIGHT, ANIM_DELAY);
 	for (i = 0; i < 3; ++i)
-		sprite->AddKeyFrame((int)EnemyAnim::WALKING_RIGHT, { (float)i * m, 0, m, n });
+		sprite->AddKeyFrame((int)EnemyAnim::WALKING_RIGHT, {  (float) i * m ,  3 *n, m, n });
 	sprite->SetAnimationDelay((int)EnemyAnim::WALKING_LEFT, ANIM_DELAY);
 	for (i = 0; i < 3; ++i)
-		sprite->AddKeyFrame((int)EnemyAnim::WALKING_LEFT, { (float)i * m, 0, -m, n });
+		sprite->AddKeyFrame((int)EnemyAnim::WALKING_LEFT, { (float) i * m, 3*n, -m, n });
 
 
 	sprite->SetAnimation((int)EnemyAnim::IDLE_RIGHT);
@@ -141,14 +141,8 @@ void Enemy::ChangeAnimLeft()
 }
 void Enemy::Update()
 {
-	//Player doesn't use the "Entity::Update() { pos += dir; }" default behaviour.
-	//Instead, uses an independent behaviour for each axis.
-
-
 	MoveX();
 	
-
-
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
 }

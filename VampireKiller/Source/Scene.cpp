@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include "Globals.h"
 #include <stdio.h>
+#include "TileMap.h"
 Player* Scene::GetPlayer()const
 {
 	return player;
@@ -10,6 +11,7 @@ Scene::Scene()
 	player = nullptr;
 	soldier = nullptr;
 	level = nullptr;
+	
 
 	camera.target = { 0, 0 };				//Center of the screen
 	camera.offset = { 0, MARGIN_GUI_Y };	//Offset from the target (center of the screen)
@@ -32,6 +34,7 @@ Scene::~Scene()
 		delete soldier;
 		soldier = nullptr;
 	}
+
 	if (level != nullptr)
 	{
 		level->Release();
@@ -72,6 +75,9 @@ AppStatus Scene::Init()
 		LOG("Failed to initialise Enemy");
 		return AppStatus::ERROR;
 	}
+
+	//init fire
+	 
 	//Create level 
 	level = new TileMap();
 	if (level == nullptr)
@@ -85,6 +91,7 @@ AppStatus Scene::Init()
 		LOG("Failed to initialise Level");
 		return AppStatus::ERROR;
 	}
+
 	//Load level
 	if (LoadLevel(1) != AppStatus::OK)
 	{
@@ -125,7 +132,7 @@ AppStatus Scene::LoadLevel(int stage)
 					18,  16,  15,  14,  17,  19,  18,  21,  18,  19,  20,  21,  17,  19,  20,  21,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
 					10,  11,  75,  76,   0,  12,  10,  12,  10,  12,  10, 251,   0,  12,  10,  12,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
 					 3, 250,  73,  74, 250, 250,   4, 250,   4, 250,   4, 250, 250, 250,   3, 307,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
-					 2,   2,  70,  71,  72,   2,   2,   2,   2,   2,   2,   2,  72,   2,   2,   2,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
+					 2,   2,  70,  71, 72,   2,   2,   2,   2,   2,   2,   2,  72,   2,   2,   2,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
 					-2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,   1,   1,   1,   1,   1,   1,   1,   1,   1,
 					 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
 			};
@@ -378,6 +385,7 @@ AppStatus Scene::LoadLevel(int stage)
 	}
 	//Tile map
 	level->Load(map, LEVEL_WIDTH, LEVEL_HEIGHT);
+	
 	delete[] map2;
 	delete[] map;
 
@@ -490,9 +498,6 @@ void Scene::Update()
 		player->SetPos(posP);
 	}
 
-	
-	
-	
 	level->Update();
 	player->Update();
 	soldier->Update();
@@ -503,10 +508,13 @@ void Scene::Render()
 	BeginMode2D(camera);
 
 	level->Render();
+	
+	
 	if (debug == DebugMode::OFF || debug == DebugMode::SPRITES_AND_HITBOXES)
 	{
 		RenderObjects();
 		player->Draw();
+		soldier->Draw();
 	}
 	if (debug == DebugMode::SPRITES_AND_HITBOXES || debug == DebugMode::ONLY_HITBOXES)
 	{
@@ -565,6 +573,7 @@ void Scene::ClearLevel()
 		delete obj;
 	}
 	objects.clear();
+	
 }
 void Scene::RenderObjects() const
 {
