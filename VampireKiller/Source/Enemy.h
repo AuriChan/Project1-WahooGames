@@ -74,7 +74,8 @@ private:
 
 	TileMap* map;
 	int stageC;
-	
+	bool lookLeft = true;
+	bool lookRight = false;
 	int lifes = 1;
 };
 

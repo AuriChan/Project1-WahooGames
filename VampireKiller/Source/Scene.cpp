@@ -451,6 +451,7 @@ void Scene::Update()
 	if (player->GetStage() == 1 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
 	{
 		LoadLevel(2);
+		
 	}
 	else if (player->GetStage() == 2 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
 	{

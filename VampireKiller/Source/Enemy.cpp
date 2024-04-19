@@ -150,47 +150,37 @@ void Enemy::MoveX()
 {
 	AABB box;
 	int prev_x = pos.x;
-
 	
-		if (pos.x < 0) { pos.x = 0; }
+	if (state == eState::IDLE) StartWalkingRight();
+	if (pos.x > ENEMY_FRAME_SIZE_X *5 && pos.x < (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X*4) && lookLeft == true)
+	{
+		pos.x -= ENEMY_SPEED ;
 
-		else { pos.x += -ENEMY_SPEED; }
-
-		if (state == eState::IDLE) StartWalkingLeft();
-		else
-		{
-			if (IsLookingRight()) ChangeAnimLeft();
-		}
-
-		box = GetHitbox();
-		if (map->TestCollisionWallLeft(box))
-		{
-			pos.x = prev_x;
-			if (state == eState::WALKING) Stop();
-		}
-	
-
-	
-		if (pos.x >= WINDOW_WIDTH - ENEMY_FRAME_SIZE_X)
-		{
-			pos.x = WINDOW_WIDTH - ENEMY_FRAME_SIZE_X;
-		}
-
+	}
+	else if(pos.x > ENEMY_FRAME_SIZE_X *5 && pos.x < (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X*4) && lookRight == true)
+	{
 		pos.x += ENEMY_SPEED;
-		if (state == eState::IDLE) StartWalkingRight();
-		else
-		{
-			if (IsLookingLeft()) ChangeAnimRight();
-		}
-
-		box = GetHitbox();
-		if (map->TestCollisionWallRight(box))
-		{
-			pos.x = prev_x;
-			if (state == eState::WALKING) Stop();
-		}
+	}
 	
+	if (pos.x <= ENEMY_FRAME_SIZE_X *5)
+	{
+		pos.x = ENEMY_FRAME_SIZE_X*5 + 1;
+		lookLeft = false;
+		lookRight = true;
+		StartWalkingLeft();
+		ChangeAnimLeft();
+		
+	}
+    else if (pos.x >= (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X*4))
+	{
+		pos.x = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X*4) - 1;
+		lookLeft = true;
+		StartWalkingRight();
+		ChangeAnimRight();
 
+		
+		lookRight = false;
+	}
 	
 }
 
