@@ -84,6 +84,7 @@ AppStatus Scene::LoadLevel(int stage)
 	int* map = nullptr;
 	int* map2 = nullptr;
 	Object* obj;
+	
 
 	ClearLevel();
 
@@ -114,11 +115,13 @@ AppStatus Scene::LoadLevel(int stage)
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-					   400, 0, 0, 0,200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+					   400, 0,200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 					     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
 			};
 		player->InitScore();
+		player->SetStage(1);
+		
 	}
 	else if (stage == 2)
 	{
@@ -151,6 +154,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
+		player->SetStage(2);
 	}
 	else if (stage == 3)
 	{
@@ -182,6 +186,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
+		player->SetStage(3);
 	}
 	else if (stage == 4)
 	{
@@ -214,6 +219,7 @@ AppStatus Scene::LoadLevel(int stage)
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
+		player->SetStage(4);
 	}
 	else if (stage == 5)
 	{
@@ -245,6 +251,7 @@ AppStatus Scene::LoadLevel(int stage)
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
+		player->SetStage(5);
 	}
 	else if (stage == 6)
 	{
@@ -276,7 +283,9 @@ AppStatus Scene::LoadLevel(int stage)
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
-			}
+		    player->SetStage(6);
+		}
+			
 	else
 	{
 		//Error level doesn't exist or incorrect level number
@@ -296,18 +305,7 @@ AppStatus Scene::LoadLevel(int stage)
 			{
 				map[i] = 0;
 			}
-			else if (tile == Tile::PLAYER)
-			{
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				player->SetPos(pos);
-				map[i] = 0;
-			}
 			
-			
-			
-			
-
 			tile2 = (Tile)map2[i];
 			if (tile2 == Tile::EMPTY)
 			{
@@ -320,7 +318,7 @@ AppStatus Scene::LoadLevel(int stage)
 				player->SetPos(pos);
 				map2[i] = 0;
 			}
-			else if (tile == Tile::ITEM_HEART)
+			else if (tile2 == Tile::ITEM_HEART)
 			{
 				pos.x = x * TILE_SIZE;
 				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
@@ -343,7 +341,7 @@ AppStatus Scene::LoadLevel(int stage)
 }
 void Scene::Update()
 {
-	Point p1, p2;
+	Point p1, p2, posP;
 	AABB box;
 
 	//Switch between the different debug modes: off, on (sprites & hitboxes), on (hitboxes) 
@@ -362,6 +360,72 @@ void Scene::Update()
 	else if (IsKeyPressed(KEY_FOUR))	LoadLevel(4);
 	else if (IsKeyPressed(KEY_FIVE))	LoadLevel(5);
 	else if (IsKeyPressed(KEY_SIX))	    LoadLevel(6);
+
+	//level transition
+	//go
+	if (player->GetStage() == 1 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	{
+		LoadLevel(2);
+	}
+	else if (player->GetStage() == 2 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	{
+		
+		LoadLevel(3);
+	}
+	else if (player->GetStage() == 3 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	{
+		LoadLevel(4);
+	}
+	else if (player->GetStage() == 4 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	{
+		LoadLevel(5);
+	}
+	else if (player->GetStage() == 5 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	{
+		LoadLevel(6);
+	}
+	
+	else if (player->GetStage() == 6 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	{
+		LoadLevel(4);
+	}
+	//back
+	else if (player->GetStage() == 2 && player->GetHitbox().pos.x < 0)
+	{
+		LoadLevel(1);
+		posP.x =WINDOW_WIDTH -PLAYER_FRAME_SIZE_X;
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
+		player->SetPos(posP);
+	}
+	else if (player->GetStage() == 3 && player->GetHitbox().pos.x < 0)
+	{
+		LoadLevel(2);
+		posP.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
+		player->SetPos(posP);
+	}
+	else if (player->GetStage() == 4 && player->GetHitbox().pos.x < 0)
+	{
+		LoadLevel(6);
+		posP.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		player->SetPos(posP);
+	}
+	else if (player->GetStage() == 5 && player->GetHitbox().pos.x < 0)
+	{
+		LoadLevel(4);
+		posP.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		player->SetPos(posP);
+	}
+	else if (player->GetStage() == 6 && player->GetHitbox().pos.x < 0)
+	{
+		LoadLevel(5);
+		posP.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		player->SetPos(posP);
+	}
+
 	
 	
 	

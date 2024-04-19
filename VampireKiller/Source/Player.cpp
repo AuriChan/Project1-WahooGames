@@ -80,6 +80,14 @@ void Player::InitScore()
 {
 	score = 0;
 }
+void Player::SetStage(int n)
+{
+	stageC = n;
+}
+int Player::GetStage()const
+{
+	return stageC;
+}
 void Player::IncrScore(int n)
 {
 	score += n;
@@ -237,6 +245,7 @@ void Player::MoveX()
 	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT))
 	{
 		if (pos.x < 0) { pos.x = 0; }
+		
 		else{pos.x += -PLAYER_SPEED;}
 
 		if (state == State::IDLE) StartWalkingLeft();

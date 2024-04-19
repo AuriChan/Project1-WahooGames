@@ -60,6 +60,8 @@ public:
 	void SetTileMap(TileMap* tilemap);
 
 	void InitScore();
+	void SetStage(int n);
+	int GetStage()const;
 	void IncrScore(int n);
 	int GetScore();
 
@@ -105,7 +107,7 @@ private:
 	int jump_delay;
 
 	TileMap* map;
-
+	int stageC;
 	int score;
 };
 

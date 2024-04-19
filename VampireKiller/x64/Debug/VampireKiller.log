@@ -1,8 +1,2 @@
-﻿  Game.cpp
-  Scene.cpp
-  TileMap.cpp
-C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(79,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\TileMap.cpp(80,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  VampireKiller.vcxproj -> C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+﻿  Scene.cpp
+  VampireKiller.vcxproj -> C:\Users\mariandreinalg\Documents\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
