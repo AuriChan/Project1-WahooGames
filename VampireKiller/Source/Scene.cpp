@@ -502,7 +502,7 @@ void Scene::CheckCollisions()
 		obj_box = (*it)->GetHitbox();
 		if (player_box.TestAABB(obj_box))
 		{
-			player->IncrScore((*it)->Points());
+			player->IncrLifes((*it)->Points());
 
 			//Delete the object
 			delete* it;
@@ -546,6 +546,8 @@ void Scene::RenderObjectsDebug(const Color& col) const
 void Scene::RenderGUI() const
 {
 	//Temporal approach
-	DrawText(TextFormat("SCORE : %d", player->GetScore()), 10, 10, 8, LIGHTGRAY);
+	DrawText(TextFormat("SCORE : %d", player->GetScore()), 10, 5, 5, LIGHTGRAY);
+	DrawText(TextFormat("LIFES : %d", player->GetLives()), 10,15, 5, LIGHTGRAY);
+
 }
 

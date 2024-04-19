@@ -64,6 +64,7 @@ public:
 	void SetStage(int n);
 	int GetStage()const;
 	void IncrScore(int n);
+	void IncrLifes(int n);
 	int GetScore();
 	void SetLifes(int l);
 	int GetLives()const;

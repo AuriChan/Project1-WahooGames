@@ -102,6 +102,10 @@ void Player::IncrScore(int n)
 {
 	score += n;
 }
+void Player::IncrLifes(int n)
+{
+	lifes += n;
+}
 int Player::GetScore()
 {
 	return score;

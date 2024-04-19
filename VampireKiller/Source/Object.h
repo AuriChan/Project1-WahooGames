@@ -6,7 +6,7 @@
 
 #define POINTS_APPLE	10
 #define POINTS_CHILI	20
-#define POINTS_HEART	100
+#define POINTS_HEART	1
 
 enum class ObjectType { APPLE, CHILI, HEART };
 
