@@ -8,7 +8,7 @@ TileMap::TileMap()
 	map = nullptr;
 	width = 0;
 	height = 0;
-	/*laser = nullptr;*/
+	fire = nullptr;
 	img_tiles = nullptr;
 	img_items = nullptr;
 
@@ -21,12 +21,12 @@ TileMap::~TileMap()
 		delete[] map;
 		map = nullptr;
 	}
-	/*if (laser != nullptr)
+	if (fire != nullptr)
 	{
-		laser->Release();
-		delete laser;
-		laser = nullptr;
-	}*/
+		fire->Release();
+		delete fire;
+		fire = nullptr;
+	}
 }
 
 void TileMap::InitTileDictionary()
@@ -149,7 +149,8 @@ void TileMap::InitTileDictionary()
 //GADGETS
 	
 	//stage1
-	dict_rect[(int)Tile::FIRE] = { 5 * n,  3* n, n, n };
+	dict_rect[(int)Tile::FIRE_FRAME0] = { 5 * n,  1* n, n, n };
+	dict_rect[(int)Tile::FIRE_FRAME1] = { 5 * n,  1* n, n, n };
 
     //stage2
 	dict_rect[(int)Tile::PINK_DOOR_TOP] = { 6 * n, 6 * n, n, n };
@@ -204,18 +205,17 @@ AppStatus TileMap::Initialise()
 	}
 	img_items = data.GetTexture(Resource::IMG_ITEMS);
 
-	/*laser = new Sprite(img_tiles);
-	if (laser == nullptr)
+	fire = new Sprite(img_items);
+	if (fire == nullptr)
 	{
-		LOG("Failed to allocate memory for laser sprite");
+		LOG("Failed to allocate memory for fire sprite");
 		return AppStatus::ERROR;
 	}
-	laser->SetNumberAnimations(1);
-	laser->SetAnimationDelay(0, ANIM_DELAY);
-	laser->AddKeyFrame(0, dict_rect[(int)Tile::LASER_FRAME0]);
-	laser->AddKeyFrame(0, dict_rect[(int)Tile::LASER_FRAME1]);
-	laser->AddKeyFrame(0, dict_rect[(int)Tile::LASER_FRAME2]);
-	laser->SetAnimation(0);*/
+	fire->SetNumberAnimations(1);
+	fire->SetAnimationDelay(0, ANIM_DELAY);
+	fire->AddKeyFrame(0, dict_rect[(int)Tile::FIRE_FRAME0]);
+	fire->AddKeyFrame(0, dict_rect[(int)Tile::FIRE_FRAME1]);
+	fire->SetAnimation(0);
 
 	return AppStatus::OK;
 }
@@ -239,7 +239,7 @@ AppStatus TileMap::Load(int data[], int w, int h)
 }
 void TileMap::Update()
 {
-	/*laser->Update();*/
+	fire->Update();
 }
 Tile TileMap::GetTileIndex(int x, int y) const
 {
@@ -423,15 +423,15 @@ void TileMap::Render()
 				pos.x = (float)j * TILE_SIZE;
 				pos.y = (float)i * TILE_SIZE;
 
-				/*if (tile != Tile::LASER)
-				{*/
+				if (tile != Tile::FIRE)
+				{
 					rc = dict_rect[(int)tile];
 					DrawTextureRec(*img_tiles, rc, pos, WHITE);
-				//}
-				/*else
+				}
+				else
 				{
-					laser->Draw((int)pos.x, (int)pos.y);
-				}*/
+					fire->Draw((int)pos.x, (int)pos.y);
+				}
 			}
 		}
 	}
@@ -442,7 +442,7 @@ void TileMap::Release()
 	data.ReleaseTexture(Resource::IMG_TILES);
 	data.ReleaseTexture(Resource::IMG_ITEMS);
 
-	/*laser->Release();*/
+	fire->Release();
 
 	dict_rect.clear();
 }
