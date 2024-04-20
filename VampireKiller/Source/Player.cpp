@@ -62,10 +62,10 @@ AppStatus Player::Initialise()
 
 	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_IDLE_RIGHT, ANIM_DELAY);
 	for (i = 0; i < 3; ++i)
-	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_RIGHT, { (float)i * m, 2 * n, 4 * m, n });
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_RIGHT, { (float)i * 4 * m, 2 * n, 4 * m, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_IDLE_LEFT, ANIM_DELAY);
 	for (i = 0; i < 3; ++i)
-	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_LEFT, { (float)i * m, 2 * n, 4 * (-m), n});
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_LEFT, { (float)i * 4 * m, 2 * n, 4 * (-m), n});
 
 
 	/*sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_RIGHT, ANIM_DELAY);
@@ -119,6 +119,7 @@ int Player::GetScore()
 {
 	return score;
 }
+
 void Player::SetTileMap(TileMap* tilemap)
 {
 	map = tilemap;
@@ -319,6 +320,16 @@ void Player::MoveX()
 		{
 			pos.x = prev_x;
 			if (state == State::WALKING) Stop();
+		}
+	}
+	else if (IsKeyPressed(KEY_SPACE))
+	{
+		if (state == State::CROUCHING) return;
+		else if (state == State::IDLE) StartAttacking();
+		else if (state == State::WALKING) StartAttacking();
+		else
+		{
+			StartAttacking();
 		}
 	}
 
