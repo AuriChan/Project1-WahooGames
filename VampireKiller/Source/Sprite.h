@@ -21,6 +21,8 @@ public:
     void AddKeyFrame(int id, const Rectangle& rect);
     void SetAnimation(int id);
     int GetAnimation();
+    bool GetIsFinished();
+    void SetIsFinished(bool f);
 
     void SetManualMode();
     void SetAutomaticMode();
@@ -44,5 +46,6 @@ private:
     std::vector<Animation> animations;
 
     AnimMode mode;
+    bool isFinished;
 };
 

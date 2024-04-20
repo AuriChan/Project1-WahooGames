@@ -212,8 +212,27 @@ void Player::StartCrouching()
 void Player::StartAttacking()
 {
 	state = State::ATTACKING;
-	if (IsLookingRight())	SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
-	else					SetAnimation((int)PlayerAnim::WHIP_IDLE_LEFT);
+	
+	 
+	if (IsLookingRight())
+	{
+		SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
+		Sprite* sprite = dynamic_cast<Sprite*>(render);
+		sprite->SetSingleMode();
+	}
+	else
+	{
+		SetAnimation((int)PlayerAnim::WHIP_IDLE_LEFT);
+		Sprite* sprite = dynamic_cast<Sprite*>(render);
+		sprite->SetSingleMode();
+	}
+		
+
+	
+
+	
+
+	
 }
 
 //void Player::StartClimbingUp()
@@ -329,7 +348,7 @@ void Player::MoveX()
 			if (state == State::WALKING) Stop();
 		}
 	}
-	else if (IsKeyPressed(KEY_SPACE))
+	else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING)
 	{
 		if (state == State::CROUCHING) return;
 		else if (state == State::IDLE) StartAttacking();

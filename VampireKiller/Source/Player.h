@@ -118,5 +118,6 @@ private:
 	int score;
 	int lifes = 3;
 	bool win = false;
+	bool isFinished = false;
 };
 
