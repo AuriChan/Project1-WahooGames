@@ -182,7 +182,7 @@ void Player::StartWalkingRight()
 }
 void Player::StartFalling()
 {
-	dir.y = PLAYER_SPEED;
+	dir.y = PLAYER_SPEED *2;
 	state = State::FALLING;
 	if (IsLookingRight())	SetAnimation((int)PlayerAnim::CROUCHING_RIGHT);
 	else					SetAnimation((int)PlayerAnim::CROUCHING_LEFT);
@@ -283,7 +283,7 @@ void Player::MoveX()
 	{
 		if (pos.x < 0) { pos.x = 0; }
 		
-		else{pos.x += -PLAYER_SPEED;}
+		else{pos.x -= PLAYER_SPEED;}
 
 		if (state == State::IDLE) StartWalkingLeft();
 		else if (state == State::CROUCHING) StartWalkingLeft();
@@ -341,7 +341,7 @@ void Player::MoveY()
 	//}
 	else //idle, walking, falling
 	{
-		pos.y += PLAYER_SPEED;
+		pos.y += PLAYER_SPEED*2;
 		box = GetHitbox();
 		if (map->TestCollisionGround(box, &pos.y))
 		{
@@ -397,7 +397,7 @@ void Player::LogicJumping()
 		//Is the jump finished?
 		if (dir.y > PLAYER_JUMP_FORCE)
 		{
-			dir.y = PLAYER_SPEED;
+			dir.y = PLAYER_SPEED*2;
 			StartFalling();
 		}
 		else
