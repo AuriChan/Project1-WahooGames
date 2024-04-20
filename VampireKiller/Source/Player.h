@@ -19,7 +19,7 @@
 #define ANIM_LADDER_DELAY		(2*ANIM_DELAY)
 
 //When jumping, initial jump speed and maximum falling speed
-#define PLAYER_JUMP_FORCE		10
+#define PLAYER_JUMP_FORCE		9
 
 //Frame delay for updating the jump velocity
 #define PLAYER_JUMP_DELAY		2
@@ -68,6 +68,8 @@ public:
 	int GetScore();
 	void SetLifes(int l);
 	int GetLives()const;
+	bool GetWin();
+	void SetWin(bool w);
 
 	void Update();
 	void DrawDebug(const Color& col) const;
@@ -115,5 +117,6 @@ private:
 	int stageC;
 	int score;
 	int lifes = 3;
+	bool win = false;
 };
 

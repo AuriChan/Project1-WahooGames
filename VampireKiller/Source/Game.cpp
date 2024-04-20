@@ -155,6 +155,11 @@ AppStatus Game::Update()
         {
             state = GameState::DEATH;
         }
+        else if (scene->GetPlayer()->GetWin() == true)
+        {
+            state = GameState::WIN;
+        }
+
        
        
         else 
