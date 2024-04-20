@@ -59,6 +59,15 @@ AppStatus Player::Initialise()
 	sprite->AddKeyFrame((int)PlayerAnim::JUMPING_RIGHT, { 3 * m, 0, m, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::JUMPING_LEFT, ANIM_DELAY);
 	sprite->AddKeyFrame((int)PlayerAnim::JUMPING_LEFT, { 3 * m, 0, -m, n });
+
+	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_IDLE_RIGHT, ANIM_DELAY);
+	for (i = 0; i < 3; ++i)
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_RIGHT, { (float)i * m, 2 * n, 4 * m, n });
+	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_IDLE_LEFT, ANIM_DELAY);
+	for (i = 0; i < 3; ++i)
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_LEFT, { (float)i * m, 2 * n, 4 * (-m), n});
+
+
 	/*sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_RIGHT, ANIM_DELAY);
 	sprite->AddKeyFrame((int)PlayerAnim::LEVITATING_RIGHT, { n, 5 * n, n, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_LEFT, ANIM_DELAY);
@@ -192,6 +201,12 @@ void Player::StartCrouching()
 	if (IsLookingRight())	SetAnimation((int)PlayerAnim::CROUCHING_RIGHT);
 	else					SetAnimation((int)PlayerAnim::CROUCHING_LEFT);
 }
+void Player::StartAttacking()
+{
+	state = State::ATTACKING;
+	if (IsLookingRight())	SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
+	else					SetAnimation((int)PlayerAnim::WHIP_IDLE_LEFT);
+}
 
 //void Player::StartClimbingUp()
 //{
@@ -252,17 +267,26 @@ void Player::MoveX()
 	//We can only go up and down while climbing
 	if (state == State::CLIMBING)	return;
 	
-	if (IsKeyDown(KEY_DOWN))
+	
+	if (IsKeyDown(KEY_DOWN) && state != State::ATTACKING)
 	{
-		StartCrouching();
+		if (state == State::JUMPING) return;
+		else if (state == State::IDLE) StartCrouching();
+		else if (state == State::WALKING) StartCrouching();
+		else
+		{
+			StartCrouching();
+		}
+		
 	}
-	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT))
+	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
 	{
 		if (pos.x < 0) { pos.x = 0; }
 		
 		else{pos.x += -PLAYER_SPEED;}
 
 		if (state == State::IDLE) StartWalkingLeft();
+		else if (state == State::CROUCHING) StartWalkingLeft();
 		else
 		{
 			if (IsLookingRight()) ChangeAnimLeft();
@@ -276,7 +300,7 @@ void Player::MoveX()
 		}
 	}
 	
-	else if (IsKeyDown(KEY_RIGHT))
+	else if (IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
 	{   if (pos.x >= WINDOW_WIDTH - PLAYER_FRAME_SIZE_X)
 	    {
 		pos.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
@@ -284,6 +308,7 @@ void Player::MoveX()
 
 		pos.x += PLAYER_SPEED;
 		if (state == State::IDLE) StartWalkingRight();
+		else if (state == State::CROUCHING) StartWalkingRight();
 		else
 		{
 			if (IsLookingLeft()) ChangeAnimRight();

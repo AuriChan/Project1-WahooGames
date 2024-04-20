@@ -52,6 +52,10 @@ void Sprite::SetAutomaticMode()
 {
     mode = AnimMode::AUTOMATIC;
 }
+void Sprite::SetSingleMode()
+{
+    mode = AnimMode::SINGLE;
+}
 void Sprite::Update()
 {
     //Both animation modes (automatic and manual) are carry out with animation delay

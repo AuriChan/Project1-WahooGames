@@ -2,7 +2,7 @@
 #include "RenderComponent.h"
 #include <vector>
 
-enum class AnimMode { AUTOMATIC, MANUAL };
+enum class AnimMode { AUTOMATIC, MANUAL, SINGLE };
 
 struct Animation
 {
@@ -24,6 +24,7 @@ public:
 
     void SetManualMode();
     void SetAutomaticMode();
+    void SetSingleMode();
 
     void Update();
     void NextFrame();
