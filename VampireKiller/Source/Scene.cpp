@@ -294,7 +294,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 204, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(5);
@@ -327,7 +327,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		    player->SetStage(6);
@@ -379,6 +379,14 @@ AppStatus Scene::LoadLevel(int stage)
 				pos.x = x * TILE_SIZE;
 				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
 				obj = new Object(pos, ObjectType::HEART);
+				objects.push_back(obj);
+				map2[i] = 0;
+			}
+			else if (tile2 == Tile::ITEM_RING)
+			{
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::THE_RING);
 				objects.push_back(obj);
 				map2[i] = 0;
 			}
@@ -631,23 +639,35 @@ void Scene::CheckCollisions()
 	soldier_box = soldier->GetHitbox();
 	auto it = objects.begin();
 	
+	
 
 	if (player_box.TestAABB(soldier_box)&& player->GetLives() != 0 && soldier->GetState() == eState::WALKING)
 	{
 		player->SetLifes(player->GetLives() - 1);
-		
+	
 		soldier->SetState(eState:: WAIT);
-		//player->SetLifes(0);
+
+		
+		
 	}
 	while (it != objects.end())
 	{
 		
 		obj_box = (*it)->GetHitbox();
-		if (player_box.TestAABB(obj_box))
+		if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::HEART)
 		{
 			player->IncrLifes((*it)->Points());
 
 			//Delete the object
+			delete* it;
+			//Erase the object from the vector and get the iterator to the next valid element
+			it = objects.erase(it);
+		}
+		else if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::THE_RING)
+		{
+			
+			player->SetWin(true);
+			
 			delete* it;
 			//Erase the object from the vector and get the iterator to the next valid element
 			it = objects.erase(it);

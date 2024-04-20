@@ -8,7 +8,7 @@
 #define POINTS_CHILI	20
 #define POINTS_HEART	1
 
-enum class ObjectType { APPLE, CHILI, HEART, /*FIRE*/ };
+enum class ObjectType { APPLE, CHILI, HEART, THE_RING};
 
 class Object : public Entity
 {
@@ -18,6 +18,7 @@ public:
 
 	void DrawDebug(const Color& col) const;
 	int Points() const;
+	ObjectType GetType();
 
 private:
 	ObjectType type;

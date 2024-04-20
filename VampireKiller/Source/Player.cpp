@@ -119,7 +119,14 @@ int Player::GetScore()
 {
 	return score;
 }
-
+bool Player::GetWin()
+{
+	return win;
+};
+void Player:: SetWin(bool w)
+{
+	win = w;
+};
 void Player::SetTileMap(TileMap* tilemap)
 {
 	map = tilemap;
