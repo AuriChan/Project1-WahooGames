@@ -8,7 +8,7 @@
 #define TILE_SIZE		16
 #define LEVEL_WIDTH		25
 #define LEVEL_HEIGHT	17
-#define ANIM_DELAY		4
+#define ANIM_DELAY		6
 
 //App performance parameters
 enum class AppStatus { OK = 0, ERROR, QUIT };
