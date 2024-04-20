@@ -10,13 +10,13 @@
 #define ENEMY_PHYSICAL_HEIGHT	28
 
 //Horizontal speed and vertical speed while falling down
-#define ENEMY_SPEED			2
+#define ENEMY_SPEED			1
 
 
 
 
 //Logic states
-enum class eState { IDLE, WALKING, ATTACKING, DEAD };
+enum class eState { IDLE, WALKING, ATTACKING, DEAD, WAIT };
 enum class eLook { RIGHT, LEFT};
 
 enum class EnemyAnim {
@@ -38,13 +38,15 @@ public:
 	
 	void SetStage(int n);
 	int GetStage()const;
+	eState GetState()const;
+	void SetState(eState s);
 
 	
 	
 	void SetLifes(int l);
 	int GetLives()const;
 
-	void Update();
+	void Update(int marginLeft, int marginRight);
 	void DrawDebug(const Color& col) const;
 	void Release();
 
@@ -53,7 +55,7 @@ private:
 	bool IsLookingLeft() const;
 
 	//Enemy mechanics
-	void MoveX();
+	void MoveX(int ml, int mr);
 	
 	
 	

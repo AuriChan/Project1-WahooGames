@@ -6,6 +6,10 @@ Player* Scene::GetPlayer()const
 {
 	return player;
 }
+Enemy* Scene::GetEnemy()const
+{
+	return soldier;
+}
 Scene::Scene()
 {
 	player = nullptr;
@@ -120,6 +124,7 @@ AppStatus Scene::LoadLevel(int stage)
 	int* map = nullptr;
 	int* map2 = nullptr;
 	Object* obj;
+	
 	
 
 	ClearLevel();
@@ -367,6 +372,7 @@ AppStatus Scene::LoadLevel(int stage)
 				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
 				soldier->SetPos(pos);
 				map2[i] = 0;
+				
 			}
 			else if (tile2 == Tile::ITEM_HEART)
 			{
@@ -408,6 +414,7 @@ void Scene::Update()
 {
 	Point p1, p2, posP;
 	AABB box;
+	Point p;
 
 	//Switch between the different debug modes: off, on (sprites & hitboxes), on (hitboxes) 
 	if (IsKeyPressed(KEY_F1))
@@ -419,12 +426,45 @@ void Scene::Update()
 	{
 		debug = (DebugMode)(((int)debug + 1) % (int)DebugMode::SIZE);
 	}
-	else if (IsKeyPressed(KEY_ONE))		LoadLevel(1);
-	else if (IsKeyPressed(KEY_TWO))	    LoadLevel(2);
-	else if (IsKeyPressed(KEY_THREE))	LoadLevel(3);
-	else if (IsKeyPressed(KEY_FOUR))	LoadLevel(4);
-	else if (IsKeyPressed(KEY_FIVE))	LoadLevel(5);
-	else if (IsKeyPressed(KEY_SIX))	    LoadLevel(6);
+	else if (IsKeyPressed(KEY_ONE))
+	{ 
+		LoadLevel(1);
+	}
+	else if (IsKeyPressed(KEY_TWO)) 
+	{ 
+		LoadLevel(2); 
+	}
+	else if (IsKeyPressed(KEY_THREE)) 
+	{ 
+		LoadLevel(3); 
+	}
+	else if (IsKeyPressed(KEY_FOUR))
+	{ 
+		LoadLevel(4); 
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X * 4;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
+	}
+	else if (IsKeyPressed(KEY_FIVE))
+	{
+		LoadLevel(5); 
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X * 5;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
+	}
+	else if (IsKeyPressed(KEY_SIX)) 
+	{ 
+		LoadLevel(6); 
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 5);
+	}
 
 	//instant death
 	
@@ -434,6 +474,13 @@ void Scene::Update()
 		
 		player->SetLifes(player->GetLives() - 1);
 		LoadLevel(1);
+
+	}
+	if (IsKeyPressed(KEY_E) && soldier->GetLives() > 0)
+	{
+
+		soldier->SetLifes(soldier->GetLives() - 1);
+		
 
 	}
 
@@ -448,9 +495,12 @@ void Scene::Update()
 
 	//level transition
 	//go
+
+	
 	if (player->GetStage() == 1 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
 	{
 		LoadLevel(2);
+		
 		
 	}
 	else if (player->GetStage() == 2 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
@@ -461,19 +511,41 @@ void Scene::Update()
 	else if (player->GetStage() == 3 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
 	{
 		LoadLevel(4);
+		
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X * 4;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
+		
 	}
 	else if (player->GetStage() == 4 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
 	{
 		LoadLevel(5);
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X * 5;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
 	}
 	else if (player->GetStage() == 5 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
 	{
 		LoadLevel(6);
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 5);
 	}
 	
 	else if (player->GetStage() == 6 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
 	{
 		LoadLevel(4);
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X * 4;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
 	}
 	//back
 	else if (player->GetStage() == 2 && player->GetHitbox().pos.x < 0)
@@ -514,7 +586,8 @@ void Scene::Update()
 
 	level->Update();
 	player->Update();
-	soldier->Update();
+	soldier->Update( marginLeft,  marginRight);
+	
 	CheckCollisions();
 }
 void Scene::Render()
@@ -552,10 +625,20 @@ void Scene::Release()
 }
 void Scene::CheckCollisions()
 {
-	AABB player_box, obj_box;
+	AABB player_box, obj_box, soldier_box;
 
 	player_box = player->GetHitbox();
+	soldier_box = soldier->GetHitbox();
 	auto it = objects.begin();
+	
+
+	if (player_box.TestAABB(soldier_box)&& player->GetLives() != 0 && soldier->GetState() == eState::WALKING)
+	{
+		player->SetLifes(player->GetLives() - 1);
+		
+		soldier->SetState(eState:: WAIT);
+		//player->SetLifes(0);
+	}
 	while (it != objects.end())
 	{
 		
@@ -583,6 +666,9 @@ void Scene::CheckCollisions()
 }
 void Scene::ClearLevel()
 {
+	Point p;
+	p.x = WINDOW_WIDTH + 400;
+	p.y = 0;
 	for (Object* obj : objects)
 	{
 		delete obj;
@@ -593,6 +679,8 @@ void Scene::ClearLevel()
 		delete obj;
 	}
 	objects2.clear();
+	
+	
 	
 }
 void Scene::RenderObjects() const

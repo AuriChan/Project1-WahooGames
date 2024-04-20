@@ -72,7 +72,14 @@ int Enemy::GetLives()const
 {
 	return lifes;
 }
-
+eState Enemy::GetState()const
+{
+	return state;
+};
+void Enemy:: SetState(eState s)
+{
+	state = s;
+};
 
 void Enemy::SetTileMap(TileMap* tilemap)
 {
@@ -139,41 +146,41 @@ void Enemy::ChangeAnimLeft()
 	
 	}
 }
-void Enemy::Update()
+void Enemy::Update(int marginLeft, int marginRight)
 {
-	MoveX();
+	MoveX(marginLeft, marginRight);
 	
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
 }
-void Enemy::MoveX()
+void Enemy::MoveX(int ml, int mr)
 {
 	AABB box;
 	int prev_x = pos.x;
 	
 	if (state == eState::IDLE) StartWalkingRight();
-	if (pos.x > ENEMY_FRAME_SIZE_X *5 && pos.x < (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X*4) && lookLeft == true)
+	if (pos.x > ml && pos.x < (mr) && lookLeft == true)
 	{
 		pos.x -= ENEMY_SPEED ;
 
 	}
-	else if(pos.x > ENEMY_FRAME_SIZE_X *5 && pos.x < (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X*4) && lookRight == true)
+	else if(pos.x > ml && pos.x < (mr) && lookRight == true)
 	{
 		pos.x += ENEMY_SPEED;
 	}
 	
-	if (pos.x <= ENEMY_FRAME_SIZE_X *5)
+	if (pos.x <= ml)
 	{
-		pos.x = ENEMY_FRAME_SIZE_X*5 + 1;
+		pos.x = ml + 1;
 		lookLeft = false;
 		lookRight = true;
 		StartWalkingLeft();
 		ChangeAnimLeft();
 		
 	}
-    else if (pos.x >= (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X*4))
+    else if (pos.x >= (mr))
 	{
-		pos.x = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X*4) - 1;
+		pos.x = (mr) - 1;
 		lookLeft = true;
 		StartWalkingRight();
 		ChangeAnimRight();

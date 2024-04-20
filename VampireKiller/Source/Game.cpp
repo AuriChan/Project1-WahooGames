@@ -156,6 +156,7 @@ AppStatus Game::Update()
             state = GameState::DEATH;
         }
        
+       
         else 
         {
             //Game logic
