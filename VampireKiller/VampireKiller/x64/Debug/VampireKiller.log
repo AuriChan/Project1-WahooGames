@@ -1,2 +1,17 @@
-﻿  Player.cpp
-  VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+﻿  AABB.cpp
+  Enemy.cpp
+  Entity.cpp
+  Game.cpp
+  Globals.cpp
+  Object.cpp
+  Player.cpp
+  RenderComponent.cpp
+  ResourceManager.cpp
+  Scene.cpp
+  Sprite.cpp
+  StaticImage.cpp
+  TileMap.cpp
+  main.cpp
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe

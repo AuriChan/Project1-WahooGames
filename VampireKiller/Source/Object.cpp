@@ -12,7 +12,7 @@ Object::Object(const Point& p, ObjectType t) : Entity(p, OBJECT_PHYSICAL_SIZE, O
 	{
 	case ObjectType::APPLE: rc = { 4 * n, 3 * n, n, n }; break;
 	case ObjectType::CHILI: rc = { 5 * n, 3 * n, n, n }; break;
-	case ObjectType::HEART: rc = { 4 * n, 1 * n, n, n }; break;
+	case ObjectType::HEART: rc = { 3 * n, 1 * n, n, n }; break;
 	case ObjectType::THE_RING: rc = { 3 * n, 2 * n, n, n }; break;
 	/*case ObjectType::FIRE: rc = { 5 * n, 3 * n, n, n }; break;*/
 
