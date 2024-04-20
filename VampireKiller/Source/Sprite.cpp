@@ -89,7 +89,7 @@ void Sprite::Update()
                 {
                     
                     SetIsFinished(true);
-                    mode == AnimMode::AUTOMATIC;
+                    mode = AnimMode::AUTOMATIC;
                     
                 }
                 
