@@ -156,7 +156,7 @@ AppStatus Scene::LoadLevel(int stage)
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-					   400, 0,200, 0, 0, 0,  0, 0, 0, 0, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+					   400, 0,0, 0, 0, 0,  0, 0, 150, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 					     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
 			};
@@ -226,7 +226,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
@@ -259,9 +259,9 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(4);
@@ -325,7 +325,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -437,14 +437,30 @@ void Scene::Update()
 	else if (IsKeyPressed(KEY_ONE))
 	{ 
 		LoadLevel(1);
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 4;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X * 4;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
 	}
 	else if (IsKeyPressed(KEY_TWO)) 
 	{ 
-		LoadLevel(2); 
+		LoadLevel(2);
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 4;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X * 4;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
 	}
 	else if (IsKeyPressed(KEY_THREE)) 
 	{ 
 		LoadLevel(3); 
+		p.x = 400;
+		p.y = WINDOW_HEIGHT - TILE_SIZE * 4;
+		soldier->SetPos(p);
+		marginLeft = ENEMY_FRAME_SIZE_X * 4;
+		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
+
 	}
 	else if (IsKeyPressed(KEY_FOUR))
 	{ 
@@ -505,14 +521,19 @@ void Scene::Update()
 		if ((player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
 		 && player->GetLives() > 0)
 	    {
+			 
 		   player->Update();
 		   player->SetLifes(player->GetLives() - 1);
 		   player->SetHp(100);
 		   
-		   LoadLevel(1);
+		   
+			   LoadLevel(1);
+			  
+		  
+		    
 
 	    }
-		else if ((player->GetStage() == 2 || player->GetStage() == 3 || player->GetStage() == 4)
+		else if ((player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
 			&& player->GetLives() > 0)
 		{
 			player->Update();
@@ -532,18 +553,18 @@ void Scene::Update()
 	//go
 
 	
-	if (player->GetStage() == 1 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	if (player->GetStage() == 1 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X-64) > WINDOW_WIDTH)
 	{
 		LoadLevel(2);
 		
 		
 	}
-	else if (player->GetStage() == 2 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	else if (player->GetStage() == 2 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
 	{
 		
 		LoadLevel(3);
 	}
-	else if (player->GetStage() == 3 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	else if (player->GetStage() == 3 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
 	{
 		LoadLevel(4);
 		
@@ -554,7 +575,7 @@ void Scene::Update()
 		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
 		
 	}
-	else if (player->GetStage() == 4 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	else if (player->GetStage() == 4 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
 	{
 		LoadLevel(5);
 		p.x = 400;
@@ -563,7 +584,7 @@ void Scene::Update()
 		marginLeft = ENEMY_FRAME_SIZE_X * 5;
 		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 7);
 	}
-	else if (player->GetStage() == 5 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	else if (player->GetStage() == 5 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
 	{
 		LoadLevel(6);
 		p.x = 400;
@@ -573,7 +594,7 @@ void Scene::Update()
 		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 5);
 	}
 	
-	else if (player->GetStage() == 6 && player->GetHitbox().pos.x + PLAYER_FRAME_SIZE_X > WINDOW_WIDTH)
+	else if (player->GetStage() == 6 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
 	{
 		LoadLevel(4);
 		p.x = 400;
@@ -586,35 +607,35 @@ void Scene::Update()
 	else if (player->GetStage() == 2 && player->GetHitbox().pos.x < 0)
 	{
 		LoadLevel(1);
-		posP.x =WINDOW_WIDTH -PLAYER_FRAME_SIZE_X;
+		posP.x =WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
 		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
 		player->SetPos(posP);
 	}
 	else if (player->GetStage() == 3 && player->GetHitbox().pos.x < 0)
 	{
 		LoadLevel(2);
-		posP.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
+		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
 		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
 		player->SetPos(posP);
 	}
 	else if (player->GetStage() == 4 && player->GetHitbox().pos.x < 0)
 	{
 		LoadLevel(6);
-		posP.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
+		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
 		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
 		player->SetPos(posP);
 	}
 	else if (player->GetStage() == 5 && player->GetHitbox().pos.x < 0)
 	{
 		LoadLevel(4);
-		posP.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
+		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
 		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
 		player->SetPos(posP);
 	}
 	else if (player->GetStage() == 6 && player->GetHitbox().pos.x < 0)
 	{
 		LoadLevel(5);
-		posP.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
+		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
 		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
 		player->SetPos(posP);
 	}

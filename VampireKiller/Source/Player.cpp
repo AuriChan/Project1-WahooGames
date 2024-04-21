@@ -74,14 +74,16 @@ AppStatus Player::Initialise()
 	for (i = 0; i < 3; ++i)
 		sprite->AddKeyFrame((int)PlayerAnim::WHIP_CROUCHING_LEFT, { (float)i * m, 4 * n, -m, n });
 
-	sprite->SetAnimationDelay((int)PlayerAnim::DEATH_RIGHT, ANIM_DELAY);
-	
+
+	sprite->SetAnimationDelay((int)PlayerAnim::DEATH_RIGHT, ANIM_DELAY*3);
 		sprite->AddKeyFrame((int)PlayerAnim::DEATH_RIGHT, { (float) m,  n, m, n });
 		sprite->AddKeyFrame((int)PlayerAnim::DEATH_RIGHT, { (float)2 * m,  n, m, n });
-	sprite->SetAnimationDelay((int)PlayerAnim::DEATH_LEFT, ANIM_DELAY);
-	
+		
+
+	sprite->SetAnimationDelay((int)PlayerAnim::DEATH_LEFT, ANIM_DELAY *3);
 		sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float) m,  n, -m, n });
 		sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float)2 * m,  n, -m, n });
+	
 
 
 	/*sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_RIGHT, ANIM_DELAY);
@@ -152,6 +154,8 @@ int Player::GetHp()const
 {
 	return HpBar;
 };
+
+
 void Player::SetTileMap(TileMap* tilemap)
 {
 	map = tilemap;
@@ -295,6 +299,9 @@ void Player::Death()
 
 		}
 		
+
+		
+		
 	
 
 }
@@ -384,7 +391,7 @@ void Player::MoveX()
 	//We can only go up and down while climbing
 	if (state == State::CLIMBING)	return;
 	
-	if (IsKeyDown(KEY_DOWN) && state != State::ATTACKING)
+	if (IsKeyDown(KEY_DOWN) && state != State::ATTACKING && state != State::DEAD)
 	{
 		if (state == State::JUMPING) return;
 		else if (state == State::IDLE) StartCrouching();
@@ -392,7 +399,7 @@ void Player::MoveX()
 
 	}
 	
-	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
+	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && state != State::ATTACKING && state != State::DEAD)
 	{
 		if (pos.x < 0) { pos.x = 0; }
 		
@@ -413,10 +420,10 @@ void Player::MoveX()
 		}
 	}
 	
-	else if (IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
-	{   if (pos.x >= WINDOW_WIDTH - PLAYER_FRAME_SIZE_X)
+	else if (IsKeyDown(KEY_RIGHT) && state != State::ATTACKING && state != State::DEAD)
+	{   if (pos.x >= WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X -64 ))
 	    {
-		pos.x = WINDOW_WIDTH - PLAYER_FRAME_SIZE_X;
+		pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X -64);
 	    }
 
 		pos.x += PLAYER_SPEED;
@@ -446,7 +453,7 @@ void Player::MoveY()
 
 
 
-	if (state == State::JUMPING)
+	if (state == State::JUMPING )
 	{
 		LogicJumping();
 	}
@@ -481,11 +488,11 @@ void Player::MoveY()
 			//	}
 
 			//}
-			/*else*/ if (IsKeyPressed(KEY_UP))
+			/*else*/ if (IsKeyPressed(KEY_UP) && state != State::DEAD)
 			{
 				StartJumping();
 			}
-			else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING)
+			else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
 			{
 				StartAttacking();
 			}

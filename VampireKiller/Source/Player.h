@@ -71,6 +71,9 @@ public:
 	void SetWin(bool w);
 	void SetHp(int h);
 	int GetHp()const;
+	
+	
+
 
 	void Update();
 	void DrawDebug(const Color& col) const;
@@ -97,6 +100,7 @@ private:
 	void StartCrouching();
 	void StartAttacking();
 	void Death();
+	
 	/*void StartClimbingUp();
 	void StartClimbingDown();*/
 	void ChangeAnimRight();
@@ -123,6 +127,7 @@ private:
 	bool win = false;
 	bool isFinished = false;
 	bool isCrouching = false;
+	
 	
 };
 
