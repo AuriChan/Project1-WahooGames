@@ -28,6 +28,7 @@ Game::~Game()
 }
 AppStatus Game::Initialise(float scale)
 {
+    InitAudioDevice();
     float w, h;
     w = WINDOW_WIDTH * scale;
     h = WINDOW_HEIGHT * scale;
@@ -253,6 +254,7 @@ void Game::Render()
 }
 void Game::Cleanup()
 {
+    CloseAudioDevice();
     UnloadResources();
     CloseWindow();
 }

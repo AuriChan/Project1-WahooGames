@@ -48,7 +48,7 @@ private:
    
 
     Music musics[10];
-    Sound sounds[10];
+    Sound sound;
     
     
 

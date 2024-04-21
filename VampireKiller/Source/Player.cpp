@@ -12,6 +12,10 @@ Player::Player(const Point& p, State s, Look view) :
 	jump_delay = PLAYER_JUMP_DELAY;
 	map = nullptr;
 	score = 0;
+
+	
+	
+	
 }
 Player::~Player()
 {
@@ -277,6 +281,8 @@ void Player::StartAttacking()
 
 		}
 	}
+	sound = LoadSound("Images/WhipMissTarget.wav");
+	PlaySound(sound);
 	
 }
 void Player::Death()
@@ -495,6 +501,7 @@ void Player::MoveY()
 			else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
 			{
 				StartAttacking();
+				
 			}
 		
 			
@@ -618,6 +625,8 @@ void Player::Release()
 {
 	ResourceManager& data = ResourceManager::Instance();
 	data.ReleaseTexture(Resource::IMG_PLAYER);
+
+	CloseAudioDevice();
 
 	render->Release();
 }

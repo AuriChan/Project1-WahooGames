@@ -28,8 +28,8 @@ Scene::Scene()
 
 	debug = DebugMode::OFF;
 
-	InitAudioDevice();
-	/*sounds[0] = LoadSound("./raylib_audio_resources/coin.wav");*/
+	
+	
 	musics[0] = LoadMusicStream("Images/VampireKiller.mp3");
 	musics[1] = LoadMusicStream("Images/Starker.mp3");
 	musics[2] = LoadMusicStream("Images/Ending.mp3");
@@ -45,6 +45,7 @@ Scene::Scene()
 	PlayMusicStream(musics[2]);
 	PlayMusicStream(musics[3]);
 	PlayMusicStream(musics[4]);
+	
 }
 Scene::~Scene()
 {
@@ -708,7 +709,7 @@ void Scene::Release()
 	
 	player->Release();
 	soldier->Release();
-	CloseAudioDevice();
+	
 	ClearLevel();
 }
 void Scene::CheckCollisions()
@@ -736,6 +737,8 @@ void Scene::CheckCollisions()
 		obj_box = (*it)->GetHitbox();
 		if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::HEART)
 		{
+			sound = LoadSound("Images/Heart.wav");
+			PlaySound(sound);
 			player->IncrLifes((*it)->Points());
 
 			//Delete the object
@@ -745,7 +748,8 @@ void Scene::CheckCollisions()
 		}
 		else if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::THE_RING)
 		{
-			
+			sound = LoadSound("Images/Item.wav");
+			PlaySound(sound);
 			player->SetWin(true);
 			
 			delete* it;
