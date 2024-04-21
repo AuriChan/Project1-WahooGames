@@ -474,26 +474,59 @@ void Scene::Update()
 		marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 5);
 	}
 
-	//instant death
+	//Take out lives and die manually
 	
 	if ((player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
 		&& IsKeyPressed(KEY_M) && player->GetLives() >0 )
 	{
-		
-		player->SetLifes(player->GetLives() - 1);
+		player->SetHp(0);
 		player->Update();
+		player->SetLifes(player->GetLives() - 1);
+		player->SetHp(100);
 		LoadLevel(1);
 
-	}
-	
+    }
 	else if ((player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
 		&& IsKeyPressed(KEY_M) && player->GetLives() > 0)
 	{
-
+		player->SetHp(0);
+		player->Update();
 		player->SetLifes(player->GetLives() - 1);
+		player->SetHp(100);
 		LoadLevel(4);
 
 	}
+
+	//natural death
+	if (player->GetHp() <= 0)
+	{	
+		
+
+		if ((player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
+		 && player->GetLives() > 0)
+	    {
+		   player->Update();
+		   player->SetLifes(player->GetLives() - 1);
+		   player->SetHp(100);
+		   
+		   LoadLevel(1);
+
+	    }
+		else if ((player->GetStage() == 2 || player->GetStage() == 3 || player->GetStage() == 4)
+			&& player->GetLives() > 0)
+		{
+			player->Update();
+			player->SetLifes(player->GetLives() - 1);
+			player->SetHp(100);
+
+			LoadLevel(4);
+
+		}
+
+	}
+	
+	
+	
 
 	//level transition
 	//go
@@ -635,9 +668,9 @@ void Scene::CheckCollisions()
 	
 	
 
-	if (player_box.TestAABB(soldier_box)&& player->GetLives() != 0 && soldier->GetState() == eState::WALKING)
+	if (player_box.TestAABB(soldier_box)&& player->GetHp() != 0 && soldier->GetState() == eState::WALKING)
 	{
-		player->SetLifes(player->GetLives() - 1);
+		player->SetHp(player->GetHp() - 50);
 	
 		soldier->SetState(eState:: WAIT);
 
@@ -720,6 +753,7 @@ void Scene::RenderGUI() const
 	//Temporal approach
 	DrawText(TextFormat("SCORE : %d", player->GetScore()), 10, 5, 5, LIGHTGRAY);
 	DrawText(TextFormat("LIFES : %d", player->GetLives()), 10,15, 5, LIGHTGRAY);
+	DrawText(TextFormat("HP BAR : %d", player->GetHp()), 10, 25, 5, LIGHTGRAY);
 
 }
 

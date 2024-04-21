@@ -69,6 +69,8 @@ public:
 	int GetLives()const;
 	bool GetWin();
 	void SetWin(bool w);
+	void SetHp(int h);
+	int GetHp()const;
 
 	void Update();
 	void DrawDebug(const Color& col) const;
@@ -117,8 +119,10 @@ private:
 	int stageC;
 	int score;
 	int lifes = 3;
+	int HpBar = 100;
 	bool win = false;
 	bool isFinished = false;
 	bool isCrouching = false;
+	
 };
 

@@ -143,6 +143,15 @@ void Player:: SetWin(bool w)
 {
 	win = w;
 };
+void Player::SetHp(int h)
+{
+	HpBar = h;
+}
+;
+int Player::GetHp()const
+{
+	return HpBar;
+};
 void Player::SetTileMap(TileMap* tilemap)
 {
 	map = tilemap;
@@ -285,6 +294,7 @@ void Player::Death()
 			sprite->SetSingleMode();
 
 		}
+		
 	
 
 }
@@ -331,10 +341,17 @@ void Player::Update()
 {
 	//Player doesn't use the "Entity::Update() { pos += dir; }" default behaviour.
 	//Instead, uses an independent behaviour for each axis.
-	
+	if (HpBar == 0)
+	{
+		Death();
+	}
+	else
+	{
+		MoveX();
+	    MoveY();
 
-	MoveX();
-	MoveY();
+
+	}
 	
 
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
