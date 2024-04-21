@@ -137,14 +137,13 @@ void TileMap::InitTileDictionary()
 
 //ENTITIES
 
-	//dict_rect[(int)Tile::PLAYER] = { 0 * n, 0 * n, n, n };
+	
 	dict_rect[(int)Tile::MEDUSA_BOTTOM_LEFT] = { 0 *n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_BOTTOM_RIGHT] = { 1 *n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_MID_LEFT] = { 2*n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_MID_RIGHT] = { 3*n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_TOP_LEFT] = { 4 *n, 6 * n, n, n };
 	dict_rect[(int)Tile::MEDUSA_TOP_RIGHT] = { 5*n, 6 * n, n, n };
-	//dict_rect[(int)Tile::SOLDIER] = { 12 * n, 4 * n, n, n };
 	dict_rect[(int)Tile::HEAD] = { 9 * n, 2 * n, n, n };
 
 //GADGETS
@@ -163,9 +162,6 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::CRUSHER_PLATAFORM_MID] = { 7 * n, 9 * n, n, n };
 	dict_rect[(int)Tile::CRUSHER_PLATAFOR_LEFT] = { 6 * n, 9 * n, n, n };
 	dict_rect[(int)Tile::CRUSHER_PLATAFORM_RIGHT] = { 8 * n, 9 * n, n, n };
-
-//OBJECTS
-	/*dict_rect[(int)Tile::ITEM_HEART] ={ 7 * n, 1 * n, n, n } ;*/
 	
 //EXTRA TILES 
 	dict_rect[(int)Tile::FENCE_TOP3] = { 0 * n, 7 * n, n, n };
@@ -256,14 +252,7 @@ bool TileMap::IsTileSolid(Tile tile) const
 {
 	return (Tile::SOLID_FIRST <= tile && tile <= Tile::SOLID_LAST);
 }
-//bool TileMap::IsTileLadderTop(Tile tile) const
-//{
-//	return tile == Tile::LADDER_TOP_L || tile == Tile::LADDER_TOP_R;
-//}
-//bool TileMap::IsTileLadder(Tile tile) const
-//{
-//	return tile == Tile::LADDER_L || tile == Tile::LADDER_R;
-//}
+
 bool TileMap::TestCollisionWallLeft(const AABB& box) const
 {
 	return CollisionX(box.pos, box.height);
@@ -286,16 +275,6 @@ bool TileMap::TestCollisionGround(const AABB& box, int* py) const
 	}
 	return false;
 }
-//int TileMap::TestTransition(const AABB& box) const 
-//{
-//	Tile t = GetTileIndex(box.pos.x, box.pos.y);
-//	if (t == Tile::LAB1_LAB2)
-//	{
-//		return 1;
-//	}
-//
-//	return 0;
-//}
 
 bool TileMap::TestFalling(const AABB& box) const
 {
@@ -340,74 +319,7 @@ bool TileMap::CollisionY(const Point& p, int distance) const
 	}
 	return false;
 }
-//bool TileMap::TestOnLadder(const AABB& box, int* px) const
-//{
-//	int left, right, bottom;
-//	int tx1, tx2, ty;
-//	Tile tile1, tile2;
-//
-//	//Control points
-//	left = box.pos.x;
-//	right = box.pos.x + box.width - 1;
-//	bottom = box.pos.y + box.height - 1;
-//
-//	//Calculate the tile coordinates
-//	tx1 = left / TILE_SIZE;
-//	tx2 = right / TILE_SIZE;
-//	ty = bottom / TILE_SIZE;
-//
-//	//To be able to climb up or down, both control points must be on ladder
-//	tile1 = GetTileIndex(tx1, ty);
-//	tile2 = GetTileIndex(tx2, ty);
-//	if (IsTileLadder(tile1) && IsTileLadder(tile2))
-//	{
-//		*px = GetLadderCenterPos(left, bottom) - box.width / 2;
-//		return true;
-//	}
-//	return false;
-//}
-//bool TileMap::TestOnLadderTop(const AABB& box, int* px) const
-//{
-//	int left, right, bottom;
-//	int tx1, tx2, ty;
-//	Tile tile1, tile2;
-//
-//	//Control points
-//	left = box.pos.x;
-//	right = box.pos.x + box.width - 1;
-//	bottom = box.pos.y + box.height - 1;
-//
-//	//Calculate the tile coordinates
-//	tx1 = left / TILE_SIZE;
-//	tx2 = right / TILE_SIZE;
-//	ty = bottom / TILE_SIZE;
-//
-//	//To be able to climb up or down, both control points must be on ladder
-//	tile1 = GetTileIndex(tx1, ty);
-//	tile2 = GetTileIndex(tx2, ty);
-//	if (IsTileLadderTop(tile1) && IsTileLadderTop(tile2))
-//	{
-//		*px = GetLadderCenterPos(left, bottom) - box.width / 2;
-//		return true;
-//	}
-//	return false;
-//}
-//int TileMap::GetLadderCenterPos(int pixel_x, int pixel_y) const
-//{
-//	int tx, ty;
-//
-//	tx = pixel_x / TILE_SIZE;
-//	ty = pixel_y / TILE_SIZE;
-//	Tile tile = GetTileIndex(tx, ty);
-//
-//	if (tile == Tile::LADDER_L || tile == Tile::LADDER_TOP_L)		return tx * TILE_SIZE + TILE_SIZE;
-//	else if (tile == Tile::LADDER_R || tile == Tile::LADDER_TOP_R)	return tx * TILE_SIZE;
-//	else
-//	{
-//		LOG("Internal error, tile should be a LADDER, coord: (%d,%d), tile type: %d", pixel_x, pixel_y, (int)tile);
-//		return 0;
-//	}
-//}
+
 void TileMap::Render()
 {
 	Tile tile;

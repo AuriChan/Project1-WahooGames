@@ -413,23 +413,6 @@ AppStatus Scene::LoadLevel(int stage)
 				objects.push_back(obj);
 				map2[i] = 0;
 			}
-			/*else if (tile2 == Tile::FIRE)
-			{
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				obj = new Object(pos, ObjectType::FIRE);
-				objects2.push_back(obj);
-				map2[i] = 0;
-			}*/
-			/*else if (tile2 == Tile::FIRE)
-			{
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				map2[i] = 0;
-			}*/
-			
-
-			
 			++i;
 		}
 	}
@@ -762,10 +745,6 @@ void Scene::CheckCollisions()
 			++it;
 		}
 	}
-	 /*if (level->TestTransition(player_box) == 1)
-	 {
-		 LoadLevel(2);
-	 }*/
 	
 }
 void Scene::ClearLevel()
@@ -808,9 +787,9 @@ void Scene::RenderObjectsDebug(const Color& col) const
 void Scene::RenderGUI() const
 {
 	//Temporal approach
-	DrawText(TextFormat("SCORE : %d", player->GetScore()), 10, 5, 5, LIGHTGRAY);
-	DrawText(TextFormat("LIFES : %d", player->GetLives()), 10,15, 5, LIGHTGRAY);
-	DrawText(TextFormat("HP BAR : %d", player->GetHp()), 10, 25, 5, LIGHTGRAY);
+	DrawText(TextFormat("SCORE : %d", player->GetScore()), 10, 1, 5, LIGHTGRAY);
+	DrawText(TextFormat("LIFES : %d", player->GetLives()), 10,11, 5, LIGHTGRAY);
+	DrawText(TextFormat("HP BAR : %d", player->GetHp()), 10, 21, 5, LIGHTGRAY);
 
 }
 

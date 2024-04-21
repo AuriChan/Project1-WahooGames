@@ -39,7 +39,6 @@ private:
  
     std::vector<Object*> objects;
     std::vector<Object*> objects2;
-    //Sprite* fire;
     
     Camera2D camera;
     DebugMode debug;

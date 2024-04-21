@@ -10,8 +10,7 @@ enum class Tile
 {
 //BACKGROUND 
 	// SOLID 
-	SOLID_FIRST = -3, SOLID_LAST =-2,
-	//CLAY_GROUND = -3, GROUND = -2,
+	CLAY_GROUND = -3, GROUND = -2,
 	
 	//empty
 	EMPTY = -1,
@@ -57,7 +56,8 @@ SOLDIER = 150, HEAD, MEDUSA_BOTTOM_LEFT, MEDUSA_BOTTOM_RIGHT, MEDUSA_MID_LEFT, M
 					   GARDEN2_GARDEN1, GARDEN3_GARDEN2,
 
 //INTERVALS
-
+    SOLID_FIRST = CLAY_GROUND,
+	SOLID_LAST = GROUND,
     SPECIAL_FIRST = FIRE,
 	SPECIAL_LAST = FIRE,
 	
@@ -91,22 +91,14 @@ public:
 	//Test if there is a ground tile one pixel below the given box
 	bool TestFalling(const AABB& box) const;
 
-	//Test if box is on ladder and update 'px' with the x-center position of the ladder
-	bool TestOnLadder(const AABB& box, int* px) const;
-
-	//Test if box is on ladder top and update 'px' with the x-center position of the ladder
-	bool TestOnLadderTop(const AABB& box, int* px) const;
 
 private:
 	void InitTileDictionary();
 
 	Tile GetTileIndex(int x, int y) const;
 	bool IsTileSolid(Tile tile) const;
-	bool IsTileLadderTop(Tile tile) const;
-	bool IsTileLadder(Tile tile) const;
 	bool CollisionX(const Point& p, int distance) const;
 	bool CollisionY(const Point& p, int distance) const;
-	int GetLadderCenterPos(int pixel_x, int pixel_y) const;
 
 	//Tile map
 	Tile* map;

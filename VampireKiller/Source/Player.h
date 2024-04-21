@@ -87,7 +87,6 @@ private:
 	void MoveX();
 	void MoveY();
 	void LogicJumping();
-	/*void LogicClimbing();*/
 
 	//Animation management
 	void SetAnimation(int id);
@@ -101,8 +100,6 @@ private:
 	void StartAttacking();
 	void Death();
 	
-	/*void StartClimbingUp();
-	void StartClimbingDown();*/
 	void ChangeAnimRight();
 	void ChangeAnimLeft();
 
