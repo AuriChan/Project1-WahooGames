@@ -10,6 +10,10 @@ Enemy* Scene::GetEnemy()const
 {
 	return soldier;
 }
+Music Scene::GetMusic(int i) const
+{
+	return musics[i];
+}
 Scene::Scene()
 {
 	player = nullptr;
@@ -23,6 +27,24 @@ Scene::Scene()
 	camera.zoom = 1.0f;						//Default zoom
 
 	debug = DebugMode::OFF;
+
+	InitAudioDevice();
+	/*sounds[0] = LoadSound("./raylib_audio_resources/coin.wav");*/
+	musics[0] = LoadMusicStream("Images/VampireKiller.mp3");
+	musics[1] = LoadMusicStream("Images/Starker.mp3");
+	musics[2] = LoadMusicStream("Images/Ending.mp3");
+	musics[3] = LoadMusicStream("Images/Prologue.mp3");
+	musics[4] = LoadMusicStream("Images/GameOver.mp3");
+	musics[0].looping = true;
+	musics[1].looping = true;
+	musics[2].looping = true;
+	musics[3].looping = true;
+	musics[4].looping = false;
+	PlayMusicStream(musics[0]);
+	PlayMusicStream(musics[1]);
+	PlayMusicStream(musics[2]);
+	PlayMusicStream(musics[3]);
+	PlayMusicStream(musics[4]);
 }
 Scene::~Scene()
 {
@@ -643,6 +665,16 @@ void Scene::Update()
 	level->Update();
 	player->Update();
 	soldier->Update( marginLeft,  marginRight);
+
+	if (player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
+	{
+		UpdateMusicStream(musics[0]);
+	}
+	else if (player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
+	{
+		UpdateMusicStream(musics[1]);
+	}
+	
 	
 	CheckCollisions();
 }
@@ -676,7 +708,7 @@ void Scene::Release()
 	
 	player->Release();
 	soldier->Release();
-	
+	CloseAudioDevice();
 	ClearLevel();
 }
 void Scene::CheckCollisions()

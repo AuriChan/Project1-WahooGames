@@ -20,6 +20,7 @@ public:
     void Release();
     Player* GetPlayer()const;
     Enemy* GetEnemy()const;
+    Music GetMusic(int i) const;
     
 
 private:
@@ -47,7 +48,10 @@ private:
    
 
     Music musics[10];
+    Sound sounds[10];
     
+    
+
   
 
 };
