@@ -481,17 +481,11 @@ void Scene::Update()
 	{
 		
 		player->SetLifes(player->GetLives() - 1);
+		player->Update();
 		LoadLevel(1);
 
 	}
-	if (IsKeyPressed(KEY_E) && soldier->GetLives() > 0)
-	{
-
-		soldier->SetLifes(soldier->GetLives() - 1);
-		
-
-	}
-
+	
 	else if ((player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
 		&& IsKeyPressed(KEY_M) && player->GetLives() > 0)
 	{

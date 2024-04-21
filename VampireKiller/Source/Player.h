@@ -2,7 +2,7 @@
 #include "Entity.h"
 #include "TileMap.h"
 
-#define PLAYER_FRAME_SIZE_X		80
+#define PLAYER_FRAME_SIZE_X	    80
 #define PLAYER_FRAME_SIZE_Y     32
 
 //Logical model size: 12x28
@@ -42,9 +42,8 @@ enum class PlayerAnim {
 	CROUCHING_LEFT, CROUCHING_RIGHT,
 	CLIMBING_TOP_LEFT, CLIMBING_TOP_RIGHT,
 	CLIMBING_BOTTOM_LEFT, CLIMBING_BOTTOM_RIGHT,
-	RECEIVING_DAMAGE, DEATH,
+	RECEIVING_DAMAGE, DEATH_LEFT, DEATH_RIGHT,
 	WHIP_IDLE_LEFT, WHIP_IDLE_RIGHT,
-	WHIP_JUMPING_LEFT, WHIP_JUMPING_RIGHT,
 	WHIP_CROUCHING_LEFT, WHIP_CROUCHING_RIGHT,
 	WHIP_CLIMBING_TOP_LEFT, WHIP_CLIMBING_TOP_RIGHT,
 	WHIP_CLIMBING_BOTTOM_LEFT, WHIP_CLIMBING_BOTTOM_RIGHT,
@@ -95,6 +94,7 @@ private:
 	void StartJumping();
 	void StartCrouching();
 	void StartAttacking();
+	void Death();
 	/*void StartClimbingUp();
 	void StartClimbingDown();*/
 	void ChangeAnimRight();
@@ -119,5 +119,6 @@ private:
 	int lifes = 3;
 	bool win = false;
 	bool isFinished = false;
+	bool isCrouching = false;
 };
 
