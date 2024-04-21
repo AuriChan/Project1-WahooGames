@@ -2,9 +2,8 @@
 #include "Entity.h"
 #include "TileMap.h"
 
-#define PLAYER_FRAME_SIZE_X		48
+#define PLAYER_FRAME_SIZE_X		80
 #define PLAYER_FRAME_SIZE_Y     32
-#define PLAYER_FRAME_SIZE_WHIP  64
 
 //Logical model size: 12x28
 #define PLAYER_PHYSICAL_WIDTH	12

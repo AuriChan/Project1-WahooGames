@@ -21,7 +21,6 @@ AppStatus Player::Initialise()
 	int i;
 	const int n = PLAYER_FRAME_SIZE_Y;
 	const int m = PLAYER_FRAME_SIZE_X;
-	const int o = PLAYER_FRAME_SIZE_WHIP;
 
 	ResourceManager& data = ResourceManager::Instance();
 	if (data.LoadTexture(Resource::IMG_PLAYER, "Images/SimonBelmont.png") != AppStatus::OK)
@@ -63,10 +62,10 @@ AppStatus Player::Initialise()
 
 	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_IDLE_RIGHT, ANIM_DELAY);
 	for (i = 0; i < 3; ++i)
-	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_RIGHT, { (float)i * o, 3 * n, o, n });
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_RIGHT, { (float)i * m, 3 * n, m, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_IDLE_LEFT, ANIM_DELAY);
 	for (i = 0; i < 3; ++i)
-	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_LEFT, { (float)i * 0, 3 * n, -o, n});
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_LEFT, { (float)i * m, 3 * n, -m, n});
 
 
 	/*sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_RIGHT, ANIM_DELAY);
