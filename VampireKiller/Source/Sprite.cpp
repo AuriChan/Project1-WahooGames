@@ -1,4 +1,5 @@
 #include"Sprite.h"
+#include "Globals.h"
 
 Sprite::Sprite(const Texture2D* texture)
 {
@@ -80,7 +81,7 @@ void Sprite::Update()
                 current_frame %= animations[current_anim].frames.size();
                 current_delay = animations[current_anim].delay;
             }
-            else if (mode == AnimMode::SINGLE)
+            if (mode == AnimMode::SINGLE)
             {
                 current_frame++;
                 current_delay = animations[current_anim].delay;
@@ -89,7 +90,8 @@ void Sprite::Update()
                 {
                     
                     SetIsFinished(true);
-                    mode == AnimMode::AUTOMATIC;
+                    mode = AnimMode::AUTOMATIC;
+                    
                     
                 }
                 
