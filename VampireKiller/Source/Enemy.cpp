@@ -22,12 +22,12 @@ AppStatus Enemy::Initialise()
 	const int m = ENEMY_FRAME_SIZE_X;
 
 	ResourceManager& data = ResourceManager::Instance();
-	if (data.LoadTexture(Resource::IMG_ENEMY, "Images/enemy.png") != AppStatus::OK)
+	if (data.LoadTexture(ResourceImages::IMG_ENEMY, "Images/enemy.png") != AppStatus::OK)
 	{
 		return AppStatus::ERROR;
 	}
 
-	render = new Sprite(data.GetTexture(Resource::IMG_ENEMY));
+	render = new Sprite(data.GetTexture(ResourceImages::IMG_ENEMY));
 	if (render == nullptr)
 	{
 		LOG("Failed to allocate memory for player sprite");
@@ -201,8 +201,8 @@ void Enemy::DrawDebug(const Color& col) const
 void Enemy::Release()
 {
 	ResourceManager& data = ResourceManager::Instance();
-	data.ReleaseTexture(Resource::IMG_PLAYER);
-	data.ReleaseTexture(Resource::IMG_ENEMY);
+	data.ReleaseTexture(ResourceImages::IMG_PLAYER);
+	data.ReleaseTexture(ResourceImages::IMG_ENEMY);
 
 	render->Release();
 }

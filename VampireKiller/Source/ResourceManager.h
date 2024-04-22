@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <string>
 
-enum class Resource {
+enum class ResourceImages {
     IMG_DEATH,
     IMG_WIN,
     IMG_DATA,
@@ -13,6 +13,18 @@ enum class Resource {
     IMG_ENEMY,
     IMG_TILES,
     IMG_ITEMS
+};
+
+enum class ResourceAudio {
+    MUSIC_PROLOGUE,
+    MUSIC_VAMPIREKILLER,
+    MUSIC_STARKER,
+    MUSIC_ENDING,
+    MUSIC_GAMEOVER,
+
+    SOUND_ATTACK,
+    SOUND_HEART
+
 };
 
 class ResourceManager {
@@ -25,11 +37,11 @@ public:
     }
 
     //Load and unload texture
-    AppStatus LoadTexture(Resource id, const std::string& file_path);
-    void ReleaseTexture(Resource id);
+    AppStatus LoadTexture(ResourceImages id, const std::string& file_path);
+    void ReleaseTexture(ResourceImages id);
 
     //Get texture by key
-    const Texture2D* GetTexture(Resource id) const;
+    const Texture2D* GetTexture(ResourceImages id) const;
 
     //Release resources
     void Release();
@@ -45,5 +57,5 @@ private:
     ~ResourceManager();
 
     //Dictionary to store loaded textures
-    std::unordered_map<Resource, Texture2D> textures;
+    std::unordered_map<ResourceImages, Texture2D> textures;
 };

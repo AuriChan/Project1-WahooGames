@@ -23,12 +23,12 @@ AppStatus Player::Initialise()
 	const int m = PLAYER_FRAME_SIZE_X;
 
 	ResourceManager& data = ResourceManager::Instance();
-	if (data.LoadTexture(Resource::IMG_PLAYER, "Images/SimonBelmont.png") != AppStatus::OK)
+	if (data.LoadTexture(ResourceImages::IMG_PLAYER, "Images/SimonBelmont.png") != AppStatus::OK)
 	{
 		return AppStatus::ERROR;
 	}
 
-	render = new Sprite(data.GetTexture(Resource::IMG_PLAYER));
+	render = new Sprite(data.GetTexture(ResourceImages::IMG_PLAYER));
 	if (render == nullptr)
 	{
 		LOG("Failed to allocate memory for player sprite");
@@ -506,7 +506,7 @@ void Player::DrawDebug(const Color& col) const
 void Player::Release()
 {
 	ResourceManager& data = ResourceManager::Instance();
-	data.ReleaseTexture(Resource::IMG_PLAYER);
+	data.ReleaseTexture(ResourceImages::IMG_PLAYER);
 
 	CloseAudioDevice();
 

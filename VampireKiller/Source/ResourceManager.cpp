@@ -9,7 +9,7 @@ ResourceManager::~ResourceManager()
 }
 
 //Load a texture from a file and associate it with the key id
-AppStatus ResourceManager::LoadTexture(Resource id, const std::string& file_path)
+AppStatus ResourceManager::LoadTexture(ResourceImages id, const std::string& file_path)
 {
     //Load the texture
     Texture2D texture = ::LoadTexture(file_path.c_str());
@@ -26,7 +26,7 @@ AppStatus ResourceManager::LoadTexture(Resource id, const std::string& file_path
 }
 
 //Release the texture associated with the key id
-void ResourceManager::ReleaseTexture(Resource id)
+void ResourceManager::ReleaseTexture(ResourceImages id)
 {
     //Find the texture associated with the key
     auto it = textures.find(id);
@@ -40,7 +40,7 @@ void ResourceManager::ReleaseTexture(Resource id)
 }
 
 //Get a texture by key
-const Texture2D* ResourceManager::GetTexture(Resource id) const
+const Texture2D* ResourceManager::GetTexture(ResourceImages id) const
 {
     //Find the texture associated with the key and return it
     auto it = textures.find(id);

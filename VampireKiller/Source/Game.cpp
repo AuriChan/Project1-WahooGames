@@ -65,29 +65,29 @@ AppStatus Game::LoadResources()
 {
     ResourceManager& data = ResourceManager::Instance();
 
-    if (data.LoadTexture(Resource::IMG_MENU, "Images/TitleScreen.png") != AppStatus::OK)
+    if (data.LoadTexture(ResourceImages::IMG_MENU, "Images/TitleScreen.png") != AppStatus::OK)
     {
         return AppStatus::ERROR;
     }
-    img_menu = data.GetTexture(Resource::IMG_MENU);
+    img_menu = data.GetTexture(ResourceImages::IMG_MENU);
 
-    if (data.LoadTexture(Resource::IMG_DATA, "Images/InitialScreen.png") != AppStatus::OK)
+    if (data.LoadTexture(ResourceImages::IMG_DATA, "Images/InitialScreen.png") != AppStatus::OK)
     {
         return AppStatus::ERROR;
     }
-    img_initialScreen = data.GetTexture(Resource::IMG_DATA);
+    img_initialScreen = data.GetTexture(ResourceImages::IMG_DATA);
 
-    if (data.LoadTexture(Resource::IMG_DEATH, "Images/game over.png") != AppStatus::OK)
+    if (data.LoadTexture(ResourceImages::IMG_DEATH, "Images/game over.png") != AppStatus::OK)
     {
         return AppStatus::ERROR;
     }
-    img_death = data.GetTexture(Resource::IMG_DEATH);
+    img_death = data.GetTexture(ResourceImages::IMG_DEATH);
 
-    if (data.LoadTexture(Resource::IMG_WIN, "Images/EndCredits.png") != AppStatus::OK)
+    if (data.LoadTexture(ResourceImages::IMG_WIN, "Images/EndCredits.png") != AppStatus::OK)
     {
         return AppStatus::ERROR;
     }
-    img_win = data.GetTexture(Resource::IMG_WIN);
+    img_win = data.GetTexture(ResourceImages::IMG_WIN);
 
     return AppStatus::OK;
 }
@@ -245,13 +245,13 @@ void Game::Cleanup()
 void Game::UnloadResources()
 {
     ResourceManager& data = ResourceManager::Instance();
-    data.ReleaseTexture(Resource::IMG_MENU);
+    data.ReleaseTexture(ResourceImages::IMG_MENU);
 
-    data.ReleaseTexture(Resource::IMG_WIN);
+    data.ReleaseTexture(ResourceImages::IMG_WIN);
     
-    data.ReleaseTexture(Resource::IMG_DEATH);
+    data.ReleaseTexture(ResourceImages::IMG_DEATH);
     
-    data.ReleaseTexture(Resource::IMG_DATA);
+    data.ReleaseTexture(ResourceImages::IMG_DATA);
 
     UnloadRenderTexture(target);
 }

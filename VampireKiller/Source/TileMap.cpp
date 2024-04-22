@@ -190,17 +190,17 @@ AppStatus TileMap::Initialise()
 {
 	ResourceManager& data = ResourceManager::Instance();
 
-	if (data.LoadTexture(Resource::IMG_TILES, "Images/Tileset.png") != AppStatus::OK)
+	if (data.LoadTexture(ResourceImages::IMG_TILES, "Images/Tileset.png") != AppStatus::OK)
 	{
 		return AppStatus::ERROR;
 	}
-	img_tiles = data.GetTexture(Resource::IMG_TILES);
+	img_tiles = data.GetTexture(ResourceImages::IMG_TILES);
 
-	if (data.LoadTexture(Resource::IMG_ITEMS, "Images/objects.png") != AppStatus::OK)
+	if (data.LoadTexture(ResourceImages::IMG_ITEMS, "Images/objects.png") != AppStatus::OK)
 	{
 		return AppStatus::ERROR;
 	}
-	img_items = data.GetTexture(Resource::IMG_ITEMS);
+	img_items = data.GetTexture(ResourceImages::IMG_ITEMS);
 
 	fire = new Sprite(img_items);
 	if (fire == nullptr)
@@ -353,8 +353,8 @@ void TileMap::Render()
 void TileMap::Release()
 {
 	ResourceManager& data = ResourceManager::Instance();
-	data.ReleaseTexture(Resource::IMG_TILES);
-	data.ReleaseTexture(Resource::IMG_ITEMS);
+	data.ReleaseTexture(ResourceImages::IMG_TILES);
+	data.ReleaseTexture(ResourceImages::IMG_ITEMS);
 
 	fire->Release();
 
