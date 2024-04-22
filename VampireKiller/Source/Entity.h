@@ -36,5 +36,6 @@ protected:
 	int frame_width, frame_height;
 
 	RenderComponent* render;
+	bool alive;
 
 };
