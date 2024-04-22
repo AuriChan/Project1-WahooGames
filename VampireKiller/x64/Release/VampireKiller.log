@@ -1,0 +1,26 @@
+﻿  AABB.cpp
+  Enemy.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\Entity.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  Entity.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\Entity.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  Game.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\Scene.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  Globals.cpp
+  main.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\Scene.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  Object.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\Entity.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  Player.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\Entity.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  RenderComponent.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\RenderComponent.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  ResourceManager.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\ResourceManager.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  Scene.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\Scene.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  Sprite.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\RenderComponent.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  StaticImage.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\RenderComponent.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory
+  TileMap.cpp
+C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\TileMap.h(2,10): fatal  error C1083: Cannot open include file: 'raylib.h': No such file or directory

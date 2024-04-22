@@ -19,7 +19,7 @@ public:
     void Render();
     void Release();
     Player* GetPlayer()const;
-    Enemy* GetEnemy()const;
+  
     Music GetMusic(int i) const;
     
 
@@ -34,7 +34,7 @@ private:
     void RenderGUI() const;
 
     Player* player;
-    Enemy* soldier;
+   
     TileMap* level;
  
     std::vector<Object*> objects;

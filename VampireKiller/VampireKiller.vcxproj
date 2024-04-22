@@ -138,7 +138,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\AABB.cpp" />
+    <ClCompile Include="Source\Bat.cpp" />
     <ClCompile Include="Source\Enemy.cpp" />
+    <ClCompile Include="Source\EnemyManager.cpp" />
     <ClCompile Include="Source\Entity.cpp" />
     <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\Globals.cpp" />
@@ -148,13 +150,18 @@
     <ClCompile Include="Source\RenderComponent.cpp" />
     <ClCompile Include="Source\ResourceManager.cpp" />
     <ClCompile Include="Source\Scene.cpp" />
+    <ClCompile Include="Source\SkullHead.cpp" />
+    <ClCompile Include="Source\SkullTurret.cpp" />
+    <ClCompile Include="Source\Soldier.cpp" />
     <ClCompile Include="Source\Sprite.cpp" />
     <ClCompile Include="Source\StaticImage.cpp" />
     <ClCompile Include="Source\TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\AABB.h" />
+    <ClInclude Include="Source\Bat.h" />
     <ClInclude Include="Source\Enemy.h" />
+    <ClInclude Include="Source\EnemyManager.h" />
     <ClInclude Include="Source\Entity.h" />
     <ClInclude Include="Source\Game.h" />
     <ClInclude Include="Source\Globals.h" />
@@ -165,6 +172,9 @@
     <ClInclude Include="Source\RenderComponent.h" />
     <ClInclude Include="Source\ResourceManager.h" />
     <ClInclude Include="Source\Scene.h" />
+    <ClInclude Include="Source\SkullHead.h" />
+    <ClInclude Include="Source\SkullTurret.h" />
+    <ClInclude Include="Source\Soldier.h" />
     <ClInclude Include="Source\Sprite.h" />
     <ClInclude Include="Source\StaticImage.h" />
     <ClInclude Include="Source\TileMap.h" />
