@@ -1,2 +1,10 @@
-﻿  RenderComponent.cpp
-  VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+﻿  Game.cpp
+  Globals.cpp
+  main.cpp
+  Object.cpp
+  Scene.cpp
+  SkullHead.cpp
+  TileMap.cpp
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe

@@ -42,8 +42,6 @@ private:
     
     Camera2D camera;
     DebugMode debug;
-    int marginLeft =ENEMY_FRAME_SIZE_X * 5;
-    int marginRight = (WINDOW_WIDTH - ENEMY_FRAME_SIZE_X * 4);
    
 
     Music musics[10];
