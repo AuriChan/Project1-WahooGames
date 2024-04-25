@@ -132,32 +132,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AABB.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp",
-              "RelativeDocumentMoniker": "Source\\AABB.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp",
-              "RelativeToolTip": "Source\\AABB.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-15T17:31:22.543Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AABB.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h",
-              "RelativeDocumentMoniker": "Source\\AABB.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h",
-              "RelativeToolTip": "Source\\AABB.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-14T21:36:12.326Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 11,
@@ -205,6 +181,43 @@
               "ViewState": "AQIAAGwAAAAAAAAAAAAAAEYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-11T14:27:01.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Scene.cpp",
+              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
+              "RelativeDocumentMoniker": "Source\\Scene.cpp",
+              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
+              "RelativeToolTip": "Source\\Scene.cpp",
+              "ViewState": "AQIAADYBAAAAAAAAAADwv3MBAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-11T14:27:01.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AABB.h",
+              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h",
+              "RelativeDocumentMoniker": "Source\\AABB.h",
+              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.h",
+              "RelativeToolTip": "Source\\AABB.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-14T21:36:12.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AABB.cpp",
+              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp",
+              "RelativeDocumentMoniker": "Source\\AABB.cpp",
+              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\AABB.cpp",
+              "RelativeToolTip": "Source\\AABB.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-15T17:31:22.543Z"
             },
             {
               "$type": "Document",
@@ -289,19 +302,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-19T14:13:50.429Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Scene.cpp",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
-              "RelativeDocumentMoniker": "Source\\Scene.cpp",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
-              "RelativeToolTip": "Source\\Scene.cpp",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAAAFIAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-11T14:27:01.101Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
