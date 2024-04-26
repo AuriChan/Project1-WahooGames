@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\TileMap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\TileMap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\StaticImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -132,20 +132,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Point.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Point.h",
-              "RelativeDocumentMoniker": "Source\\Point.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Point.h",
-              "RelativeToolTip": "Source\\Point.h",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:27:01.098Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 10,
@@ -190,10 +178,35 @@
               "RelativeDocumentMoniker": "Source\\Scene.cpp",
               "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
               "RelativeToolTip": "Source\\Scene.cpp",
-              "ViewState": "AQIAADYBAAAAAAAAAADwv3MBAAAFAAAA",
+              "ViewState": "AQIAABACAAAAAAAAAAAAACsCAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-11T14:27:01.101Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TileMap.h",
+              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h",
+              "RelativeDocumentMoniker": "Source\\TileMap.h",
+              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h",
+              "RelativeToolTip": "Source\\TileMap.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-11T14:27:01.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Point.h",
+              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Point.h",
+              "RelativeDocumentMoniker": "Source\\Point.h",
+              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Point.h",
+              "RelativeToolTip": "Source\\Point.h",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-11T14:27:01.098Z"
             },
             {
               "$type": "Document",
@@ -257,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Scene.h",
               "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.h",
               "RelativeDocumentMoniker": "Source\\Scene.h",
@@ -269,19 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TileMap.h",
-              "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h",
-              "RelativeDocumentMoniker": "Source\\TileMap.h",
-              "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\TileMap.h",
-              "RelativeToolTip": "Source\\TileMap.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:27:01.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Enemy.cpp",
               "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Enemy.cpp",
               "RelativeDocumentMoniker": "Source\\Enemy.cpp",
@@ -293,7 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Enemy.h",
               "RelativeDocumentMoniker": "Source\\Enemy.h",
