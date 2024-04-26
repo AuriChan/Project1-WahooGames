@@ -46,7 +46,7 @@ private:
 
     Music musics[10];
     Sound sound;
-    
+    ResourceManager& data = ResourceManager::Instance();
     
 
   

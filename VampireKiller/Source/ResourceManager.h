@@ -38,10 +38,17 @@ public:
 
     //Load and unload texture
     AppStatus LoadTexture(ResourceImages id, const std::string& file_path);
+    void LoadMusic(ResourceAudio id, const std::string& file_path, bool loop);
+    void LoadSound(ResourceAudio id, const std::string& file_path);
+    void StartMusic(ResourceAudio id);
+    void StartSound(ResourceAudio id);
     void ReleaseTexture(ResourceImages id);
+    void ReleaseMusic(ResourceAudio id);
+    void ReleaseSound(ResourceAudio id);
 
     //Get texture by key
     const Texture2D* GetTexture(ResourceImages id) const;
+    const Music* GetMusic(ResourceAudio id) const;
 
     //Release resources
     void Release();
@@ -58,4 +65,6 @@ private:
 
     //Dictionary to store loaded textures
     std::unordered_map<ResourceImages, Texture2D> textures;
+    std::unordered_map<ResourceAudio, Music> musics;
+    std::unordered_map<ResourceAudio, Sound> sounds;
 };

@@ -703,7 +703,8 @@ void Scene::Update()
 
 	if (player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
 	{
-		UpdateMusicStream(musics[0]);
+		/*UpdateMusicStream(musics[0]);*/
+		
 	}
 	else if (player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
 	{
