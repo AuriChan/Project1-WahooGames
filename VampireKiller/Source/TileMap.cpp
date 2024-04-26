@@ -134,6 +134,9 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::COLOR_WINDOW_TOP_RIGHT] = { 13*n, 5 * n, n, n };
 	dict_rect[(int)Tile::COLOR_WINDOW_BOTTOM_LEFT] = { 14*n, 5 * n, n, n };
 	dict_rect[(int)Tile::COLOR_WINDOW_BOTTOM_RIGHT] = { 15 *n, 5 * n, n, n };
+	dict_rect[(int)Tile::BROKEN_GREY_LEFT] = { 9 * n, 6 * n, n, n };
+	dict_rect[(int)Tile::BROKEN_GREY_RIGHT] = { 10 * n, 6 * n, n, n };
+	
 
 //ENTITIES
 
