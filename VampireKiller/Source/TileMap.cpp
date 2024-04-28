@@ -171,6 +171,16 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::TREE_HANG_LEAF5] = { 1 * n, 7 * n, n, n };
 	dict_rect[(int)Tile::TREE_HANG_LEAF6] = { 2 * n, 7 * n, n, n };
 	dict_rect[(int)Tile::BROKEN_CASTLE] = { 3 * n, 7 * n, n, n };
+	dict_rect[(int)Tile::WIDE_WINDOW_TOP_LEFT] = { 11 * n, 6 * n, n, n };
+	dict_rect[(int)Tile::WIDE_WINDOW_TOP_RIGHT] = { 12 * n, 6 * n, n, n };
+	dict_rect[(int)Tile::WIDE_WINDOW_LEFT] = {11* n, 7 * n, n, n };
+	dict_rect[(int)Tile::WIDE_WINDOW_RIGHT] = {12 * n, 7 * n, n, n };
+	dict_rect[(int)Tile::WIDE_WINDOW] = { 11 * n, 8 * n, n, n };
+	dict_rect[(int)Tile::RAIL_WALL] = { 13 * n, 6 * n, n, n };
+	dict_rect[(int)Tile::BLUE_W_TOP_LEFT] = { 14 *n, 6 *n, n, n };
+	dict_rect[(int)Tile::BLUE_W_TOP_RIGT] = { 15 *n, 6 *n, n, n };
+	dict_rect[(int)Tile::BLUE_W_BOTTOM_LEFT] = { 14*n, 7 *n, n, n };
+	dict_rect[(int)Tile::BLUE_W_BOTTOM_RIGHT] = { 15*n, 7 *n, n, n };
 
 //TRANSITION TILES
 	dict_rect[(int)Tile::CASTLE_LAB1] = { 12 * n, 4 * n, n, n };
