@@ -4,6 +4,7 @@
 #include "TileMap.h"
 #include "Object.h"
 #include "Enemy.h"
+#include "Text.h"
 
 
 enum class DebugMode { OFF, SPRITES_AND_HITBOXES, ONLY_HITBOXES, SIZE };
@@ -44,7 +45,7 @@ private:
 
 
     ResourceManager& data = ResourceManager::Instance();
-    
+    Text *font;
 
   
 

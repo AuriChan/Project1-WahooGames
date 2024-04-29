@@ -10,9 +10,8 @@ Player* Scene::GetPlayer()const
 Scene::Scene()
 {
 	player = nullptr;
-
 	level = nullptr;
-	
+	font = nullptr;
 
 	camera.target = { 0, 0 };				//Center of the screen
 	camera.offset = { 0, MARGIN_GUI_Y };	//Offset from the target (center of the screen)
@@ -46,6 +45,11 @@ Scene::~Scene()
 		delete level;
 		level = nullptr;
 	}
+	if (font != nullptr)
+	{
+		delete font;
+		font = nullptr;
+	}
 	for (Entity* obj : objects)
 	{
 		delete obj;
@@ -70,6 +74,20 @@ AppStatus Scene::Init()
 	if (player->Initialise() != AppStatus::OK)
 	{
 		LOG("Failed to initialise Player");
+		return AppStatus::ERROR;
+	}
+
+	//Create text font 
+	font = new Text();
+	if (font == nullptr)
+	{
+		LOG("Failed to allocate memory for font 1");
+		return AppStatus::ERROR;
+	}
+	//Initialise text font 1
+	if (font->Initialise(ResourceImages::IMG_FONT, "images/font8x8.png", ' ', 8) != AppStatus::OK)
+	{
+		LOG("Failed to initialise Level");
 		return AppStatus::ERROR;
 	}
 	//Create enemy
@@ -1194,9 +1212,15 @@ void Scene::RenderObjectsDebug(const Color& col) const
 void Scene::RenderGUI() const
 {
 	//Temporal approach
-	DrawText(TextFormat("SCORE : %d", player->GetScore()), 10, 1, 5, LIGHTGRAY);
+	/*DrawText(TextFormat("SCORE : %d", player->GetScore()), 10, 1, 5, LIGHTGRAY);
 	DrawText(TextFormat("LIFES : %d", player->GetLives()), 10,11, 5, LIGHTGRAY);
-	DrawText(TextFormat("HP BAR : %d", player->GetHp()), 10, 21, 5, LIGHTGRAY);
+	DrawText(TextFormat("HP BAR : %d", player->GetHp()), 10, 21, 5, LIGHTGRAY);*/
+
+	
+	font->Draw(10, 1, TextFormat("SCORE:%d", player->GetScore()));
+	font->Draw(10, 11, TextFormat("LIFES:%d",player->GetLives()));
+	font->Draw(10, 21, TextFormat("HP BAR:%d",player->GetHp()));
+
 
 }
 
