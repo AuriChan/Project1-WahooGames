@@ -1,17 +1,2 @@
-﻿  Bat.cpp
-  Enemy.cpp
-  EnemyManager.cpp
-  Entity.cpp
-  Game.cpp
-  Object.cpp
-  Player.cpp
-C:\Users\laurapc7\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\Player.cpp(338,10): warning C4553: '==': result of expression not used; did you intend '='?
-  ResourceManager.cpp
-  Scene.cpp
-  SkullHead.cpp
-  SkullTurret.cpp
-  Soldier.cpp
-  TileMap.cpp
-  main.cpp
-  Generating Code...
-  VampireKiller.vcxproj -> C:\Users\laurapc7\Documents\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+﻿  Scene.cpp
+  VampireKiller.vcxproj -> C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
