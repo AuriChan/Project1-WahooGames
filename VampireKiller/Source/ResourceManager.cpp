@@ -38,7 +38,6 @@ void ResourceManager::LoadSound(ResourceAudio id, const std::string& file_path)
 {
     Sound sound = ::LoadSound(file_path.c_str());
     sounds[id] = sound;
-    PlaySound(sounds[id]);
 }
 
 //Release the texture associated with the key id
@@ -87,7 +86,7 @@ void ResourceManager::StartMusic(ResourceAudio id)
 }
 void ResourceManager::StartSound(ResourceAudio id)
 {
-    
+    PlaySound(sounds[id]);
 }
 
 //Get a texture by key
@@ -96,16 +95,6 @@ const Texture2D* ResourceManager::GetTexture(ResourceImages id) const
     //Find the texture associated with the key and return it
     auto it = textures.find(id);
     if (it != textures.end())   return &(it->second);
-
-    //Return nullptr if key is not found
-    return nullptr;
-}
-
-const Music* ResourceManager::GetMusic(ResourceAudio id) const
-{
-    //Find the texture associated with the key and return it
-    auto it = musics.find(id);
-    if (it != musics.end())   return &(it->second);
 
     //Return nullptr if key is not found
     return nullptr;

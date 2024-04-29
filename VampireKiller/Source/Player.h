@@ -124,8 +124,7 @@ private:
 	bool win = false;
 	bool isFinished = false;
 	bool isCrouching = false;
-	Sound sound;
-	
+	ResourceManager& data = ResourceManager::Instance();
 	
 };
 

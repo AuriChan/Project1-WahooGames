@@ -24,7 +24,8 @@ enum class ResourceAudio {
     MUSIC_GAMEOVER,
 
     SOUND_ATTACK,
-    SOUND_HEART
+    SOUND_HEART,
+    SOUND_ITEM
 
 };
 

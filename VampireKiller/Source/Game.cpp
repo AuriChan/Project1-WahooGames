@@ -129,7 +129,6 @@ AppStatus Game::Update()
         break;
 
     case GameState::MAIN_MENU:
-        
         if (IsKeyPressed(KEY_ESCAPE)) 
         { 
             
@@ -177,7 +176,7 @@ AppStatus Game::Update()
         }
         break;
     case GameState::DEATH:
-        UpdateMusicStream(scene->GetMusic(4));
+        data.StartMusic(ResourceAudio::MUSIC_GAMEOVER);
         if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
         if (IsKeyPressed(KEY_SPACE))
         {
@@ -186,7 +185,7 @@ AppStatus Game::Update()
         }
         break;
     case GameState::WIN:
-        UpdateMusicStream(scene->GetMusic(2));
+        data.StartMusic(ResourceAudio::MUSIC_ENDING);
         if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
         if (IsKeyPressed(KEY_SPACE))
         {

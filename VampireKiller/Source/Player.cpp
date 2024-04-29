@@ -254,8 +254,8 @@ void Player::StartAttacking()
 
 		}
 	}
-	sound = LoadSound("Images/WhipMissTarget.wav");
-	PlaySound(sound);
+	data.LoadSound(ResourceAudio::SOUND_ATTACK, "Images/WhipMissTarget.wav");
+	data.StartSound(ResourceAudio::SOUND_ATTACK);
 	
 }
 void Player::Death()
@@ -316,8 +316,6 @@ void Player::Update()
 	{
 		MoveX();
 	    MoveY();
-
-
 	}
 	
 

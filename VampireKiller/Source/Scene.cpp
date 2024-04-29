@@ -7,10 +7,6 @@ Player* Scene::GetPlayer()const
 	return player;
 }
 
-Music Scene::GetMusic(int i) const
-{
-	return musics[i];
-}
 Scene::Scene()
 {
 	player = nullptr;
@@ -28,25 +24,10 @@ Scene::Scene()
 	data.LoadMusic(ResourceAudio::MUSIC_PROLOGUE, "Images/Prologue.mp3", true);
 	data.LoadMusic(ResourceAudio::MUSIC_VAMPIREKILLER, "Images/VampireKiller.mp3", true);
 	data.LoadMusic(ResourceAudio::MUSIC_STARKER, "Images/Starker.mp3", true);
-	data.LoadMusic(ResourceAudio::MUSIC_BOSS, "Images/.mp3", true);
+	data.LoadMusic(ResourceAudio::MUSIC_BOSS, "Images/PoisonMind.mp3", true);
 	data.LoadMusic(ResourceAudio::MUSIC_ENDING, "Images/Ending.mp3", true);
 	data.LoadMusic(ResourceAudio::MUSIC_GAMEOVER, "Images/GameOver.mp3", false);
 	
-	/*musics[0] = LoadMusicStream("Images/VampireKiller.mp3");
-	musics[1] = LoadMusicStream("Images/Starker.mp3");
-	musics[2] = LoadMusicStream("Images/Ending.mp3");
-	musics[3] = LoadMusicStream("Images/Prologue.mp3");
-	musics[4] = LoadMusicStream("Images/GameOver.mp3");
-	musics[0].looping = true;
-	musics[1].looping = true;
-	musics[2].looping = true;
-	musics[3].looping = true;
-	musics[4].looping = false;
-	PlayMusicStream(musics[0]);
-	PlayMusicStream(musics[1]);
-	PlayMusicStream(musics[2]);
-	PlayMusicStream(musics[3]);
-	PlayMusicStream(musics[4]);*/
 	
 }
 Scene::~Scene()
@@ -962,6 +943,7 @@ void Scene::Update()
 		LoadLevel(4);
 
 	}
+	
 
 	//natural death
 	if (player->GetHp() <= 0)
@@ -1080,14 +1062,16 @@ void Scene::Update()
 
 	if (player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
 	{
-		/*UpdateMusicStream(musics[0]);*/
 		data.StartMusic(ResourceAudio::MUSIC_VAMPIREKILLER);
 		
 	}
 	else if (player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
 	{
-		/*UpdateMusicStream(musics[1]);*/
 		data.StartMusic(ResourceAudio::MUSIC_STARKER);
+	}
+	else if (player->GetStage() == 19)
+	{
+		data.StartMusic(ResourceAudio::MUSIC_BOSS);
 	}
 	
 	
@@ -1143,8 +1127,8 @@ void Scene::CheckCollisions()
 		obj_box = (*it)->GetHitbox();
 		if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::HEART)
 		{
-			sound = LoadSound("Images/Heart.wav");
-			PlaySound(sound);
+			data.LoadSound(ResourceAudio::SOUND_HEART, "Images/Heart.wav");
+			data.StartSound(ResourceAudio::SOUND_HEART);
 			player->IncrLifes((*it)->Points());
 
 			//Delete the object
@@ -1154,8 +1138,8 @@ void Scene::CheckCollisions()
 		}
 		else if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::THE_RING)
 		{
-			sound = LoadSound("Images/Item.wav");
-			PlaySound(sound);
+			data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+			data.StartSound(ResourceAudio::SOUND_ITEM);
 			player->SetWin(true);
 			
 			delete* it;

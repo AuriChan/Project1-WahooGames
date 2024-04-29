@@ -19,8 +19,6 @@ public:
     void Render();
     void Release();
     Player* GetPlayer()const;
-  
-    Music GetMusic(int i) const;
     
 
 private:
@@ -44,8 +42,7 @@ private:
     DebugMode debug;
    
 
-    Music musics[10];
-    Sound sound;
+
     ResourceManager& data = ResourceManager::Instance();
     
 
