@@ -25,9 +25,14 @@ Scene::Scene()
 
 	debug = DebugMode::OFF;
 
+	data.LoadMusic(ResourceAudio::MUSIC_PROLOGUE, "Images/Prologue.mp3", true);
+	data.LoadMusic(ResourceAudio::MUSIC_VAMPIREKILLER, "Images/VampireKiller.mp3", true);
+	data.LoadMusic(ResourceAudio::MUSIC_STARKER, "Images/Starker.mp3", true);
+	data.LoadMusic(ResourceAudio::MUSIC_BOSS, "Images/.mp3", true);
+	data.LoadMusic(ResourceAudio::MUSIC_ENDING, "Images/Ending.mp3", true);
+	data.LoadMusic(ResourceAudio::MUSIC_GAMEOVER, "Images/GameOver.mp3", false);
 	
-	
-	musics[0] = LoadMusicStream("Images/VampireKiller.mp3");
+	/*musics[0] = LoadMusicStream("Images/VampireKiller.mp3");
 	musics[1] = LoadMusicStream("Images/Starker.mp3");
 	musics[2] = LoadMusicStream("Images/Ending.mp3");
 	musics[3] = LoadMusicStream("Images/Prologue.mp3");
@@ -41,7 +46,7 @@ Scene::Scene()
 	PlayMusicStream(musics[1]);
 	PlayMusicStream(musics[2]);
 	PlayMusicStream(musics[3]);
-	PlayMusicStream(musics[4]);
+	PlayMusicStream(musics[4]);*/
 	
 }
 Scene::~Scene()
@@ -1076,11 +1081,13 @@ void Scene::Update()
 	if (player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
 	{
 		/*UpdateMusicStream(musics[0]);*/
+		data.StartMusic(ResourceAudio::MUSIC_VAMPIREKILLER);
 		
 	}
 	else if (player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
 	{
-		UpdateMusicStream(musics[1]);
+		/*UpdateMusicStream(musics[1]);*/
+		data.StartMusic(ResourceAudio::MUSIC_STARKER);
 	}
 	
 	

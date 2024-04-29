@@ -19,6 +19,7 @@ enum class ResourceAudio {
     MUSIC_PROLOGUE,
     MUSIC_VAMPIREKILLER,
     MUSIC_STARKER,
+    MUSIC_BOSS,
     MUSIC_ENDING,
     MUSIC_GAMEOVER,
 
