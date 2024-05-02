@@ -1083,7 +1083,7 @@ void Scene::Update()
 		data.StartMusic(ResourceAudio::MUSIC_VAMPIREKILLER);
 		
 	}
-	else if (player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
+	else if (player->GetStage() >= 4 && player->GetStage() <= 21 && player->GetStage() != 19)
 	{
 		data.StartMusic(ResourceAudio::MUSIC_STARKER);
 	}

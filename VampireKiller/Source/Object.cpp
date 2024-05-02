@@ -12,6 +12,16 @@ Object::Object(const Point& p, ObjectType t) : Entity(p, OBJECT_PHYSICAL_SIZE, O
 	{
 	case ObjectType::APPLE: rc = { 4 * n, 3 * n, n, n }; break;
 	case ObjectType::CHILI: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::MORNINGSTAR_WHIP: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::BATTLE_CROSS: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::HOURGLASS: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::HOLY_WATER: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::MAGIC_STAFF: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::BOSS_ORB: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::INVULNERABILITY_ORB: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::ITEM_CHEST: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::GOLD_KEY: rc = { 5 * n, 3 * n, n, n }; break;
+	case ObjectType::SILVER_KEY: rc = { 5 * n, 3 * n, n, n }; break;
 	case ObjectType::HEART: rc = { 3 * n, 1 * n, n, n }; break;
 	case ObjectType::THE_RING: rc = { 3 * n, 2 * n, n, n }; break;
 
