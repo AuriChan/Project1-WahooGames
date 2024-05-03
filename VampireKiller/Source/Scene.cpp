@@ -170,7 +170,7 @@ AppStatus Scene::LoadLevel(int stage)
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-					   400, 0,0, 0, 0, 0,  0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+					   400, 0,0, 0, 0,  0,  0, 0, 0, 0, 0, 200, 0,  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 						 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 					     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,	  0,   0,   0,   0,
 			};
@@ -867,6 +867,191 @@ AppStatus Scene::LoadLevel(int stage)
 			}
 			
 			tile2 = (Tile)map2[i];
+			switch (tile2)
+			{
+			case Tile::EMPTY:
+				map2[i] = 0;
+				break;
+			case Tile::PLAYER:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				player->SetPos(pos);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_HEART:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::HEART);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_RING:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::THE_RING);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_MORNINGSTAR_WHIP:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::MORNINGSTAR_WHIP);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_BATTLE_CROSS:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::BATTLE_CROSS);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_HOURGLASS:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::HOURGLASS);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_HOLY_WATER:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::HOLY_WATER);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_MAGIC_STAFF:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::MAGIC_STAFF);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_BOSS_ORB:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::BOSS_ORB);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_INVULNERABILITY_ORB:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::INVULNERABILITY_ORB);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_CHEST:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::ITEM_CHEST);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_GOLD_KEY:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::GOLD_KEY);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_SILVER_KEY:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::SILVER_KEY);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_SPEED_BOOTS:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::SPEED_BOOTS);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_SHIELD_A:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::SHIELD_A);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_SHIELD_B:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::SHIELD_B);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_BLACK_BIBLE:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::BLACK_BIBLE);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_WHITE_BIBLE:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::WHITE_BIBLE);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_WINGS:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::WINGS);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_SILVER_CROSS:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::SILVER_CROSS);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_WHITE_MONEY_BAG:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::WHITE_MONEY_BAG);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_BLUE_MONEY_BAG:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::BLUE_MONEY_BAG);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_STAGE_MAP:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::STAGE_MAP);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_HEALTH_ORB:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::HEALTH_ORB);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+			case Tile::ITEM_GOLD_CROSS:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				obj = new Object(pos, ObjectType::GOLD_CROSS);
+				objects.push_back(obj);
+				map2[i] = 0;
+				break;
+
+			default:
+				break;
+			}
+
+
 			if (tile2 == Tile::EMPTY)
 			{
 				map2[i] = 0;
@@ -1142,45 +1327,189 @@ void Scene::CheckCollisions()
 	while (it != objects.end())
 	{
 		
-		obj_box = (*it)->GetHitbox();
-		if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::HEART)
+		obj_box = (*it)->GetHitbox(); 
+		
+		if (player_box.TestAABB(obj_box))
 		{
-			data.LoadSound(ResourceAudio::SOUND_HEART, "Images/Heart.wav");
-			data.StartSound(ResourceAudio::SOUND_HEART);
-			player->IncrLifes((*it)->Points());
+			switch ((*it)->GetType())
+			{
+			case ObjectType::HEART:
+				data.LoadSound(ResourceAudio::SOUND_HEART, "Images/Heart.wav");
+				data.StartSound(ResourceAudio::SOUND_HEART);
+				player->IncrLifes((*it)->Points());
 
-			//Delete the object
-			delete* it;
-			//Erase the object from the vector and get the iterator to the next valid element
-			it = objects.erase(it);
-		}
-		else if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::THE_RING)
-		{
-			data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
-			data.StartSound(ResourceAudio::SOUND_ITEM);
-			player->SetWin(true);
-			
-			delete* it;
-			it = objects.erase(it);
-		}
-		/*else if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::THE_RING)
-		{
-			data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
-			data.StartSound(ResourceAudio::SOUND_ITEM);
-			player->SetWin(true);
+				//Delete the object
+				delete* it;
+				//Erase the object from the vector and get the iterator to the next valid element
+				it = objects.erase(it);
+				break;
+			case ObjectType::THE_RING:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+				player->SetWin(true);
 
-			delete* it;
-			it = objects.erase(it);
-		}
-		else if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::THE_RING)
-		{
-			data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
-			data.StartSound(ResourceAudio::SOUND_ITEM);
-			player->SetWin(true);
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::MORNINGSTAR_WHIP:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
 
-			delete* it;
-			it = objects.erase(it);
-		}*/
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::BATTLE_CROSS:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::HOURGLASS:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::HOLY_WATER:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::MAGIC_STAFF:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::BOSS_ORB:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::INVULNERABILITY_ORB:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::ITEM_CHEST:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::GOLD_KEY:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::SILVER_KEY:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::SPEED_BOOTS:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::SHIELD_A:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::SHIELD_B:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::BLACK_BIBLE:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::WHITE_BIBLE:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::WINGS:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::SILVER_CROSS:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::WHITE_MONEY_BAG:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::BLUE_MONEY_BAG:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::STAGE_MAP:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::HEALTH_ORB:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::GOLD_CROSS:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				delete* it;
+				it = objects.erase(it);
+				break;
+			default:
+				break;
+			}
+		}
+		
 		else
 		{
 			//Move to the next object
