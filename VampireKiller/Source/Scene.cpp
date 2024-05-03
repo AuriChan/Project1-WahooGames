@@ -1050,36 +1050,6 @@ AppStatus Scene::LoadLevel(int stage)
 			default:
 				break;
 			}
-
-
-			if (tile2 == Tile::EMPTY)
-			{
-				map2[i] = 0;
-			}
-			else if (tile2 == Tile::PLAYER)
-			{
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				player->SetPos(pos);
-				map2[i] = 0;
-			}
-			
-			else if (tile2 == Tile::ITEM_HEART)
-			{
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				obj = new Object(pos, ObjectType::HEART);
-				objects.push_back(obj);
-				map2[i] = 0;
-			}
-			else if (tile2 == Tile::ITEM_RING)
-			{
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				obj = new Object(pos, ObjectType::THE_RING);
-				objects.push_back(obj);
-				map2[i] = 0;
-			}
 			++i;
 		}
 	}
