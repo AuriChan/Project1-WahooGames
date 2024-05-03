@@ -1161,9 +1161,26 @@ void Scene::CheckCollisions()
 			player->SetWin(true);
 			
 			delete* it;
-			//Erase the object from the vector and get the iterator to the next valid element
 			it = objects.erase(it);
 		}
+		/*else if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::THE_RING)
+		{
+			data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+			data.StartSound(ResourceAudio::SOUND_ITEM);
+			player->SetWin(true);
+
+			delete* it;
+			it = objects.erase(it);
+		}
+		else if (player_box.TestAABB(obj_box) && (*it)->GetType() == ObjectType::THE_RING)
+		{
+			data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+			data.StartSound(ResourceAudio::SOUND_ITEM);
+			player->SetWin(true);
+
+			delete* it;
+			it = objects.erase(it);
+		}*/
 		else
 		{
 			//Move to the next object
