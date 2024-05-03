@@ -369,13 +369,13 @@ AppStatus Scene::LoadLevel(int stage)
 			    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		      400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+			    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-			   -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-			  400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+			    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+			    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(7);
@@ -403,12 +403,12 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(8);
@@ -436,12 +436,12 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+			  400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(9);
@@ -1091,6 +1091,140 @@ AppStatus Scene::LoadLevel(int stage)
 
 	return AppStatus::OK;
 }
+
+void Scene:: ChangeStage(int stage)
+{
+	Point posP;
+	int right = player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64);
+	int left = player->GetHitbox().pos.x;
+	int top = player->GetHitbox().pos.y + 30;
+	int bottom = player->GetHitbox().pos.y;
+
+	//level 1
+	if (stage == 1 && right > WINDOW_WIDTH)
+	{
+		LoadLevel(2);
+
+
+	}
+	//level 2
+	else if (stage == 2 && right > WINDOW_WIDTH)
+	{
+
+		LoadLevel(3);
+	}
+	
+	else if (stage == 2 && left < 0)
+	{
+		LoadLevel(1);
+		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
+		player->SetPos(posP);
+	}
+    //level 3
+	else if (stage == 3 && right > WINDOW_WIDTH-48)
+	{
+		LoadLevel(4);
+
+
+
+	}
+	else if (stage == 3 && left < 0)
+	{
+		LoadLevel(2);
+		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
+		player->SetPos(posP);
+	}
+	//level 4
+	else if (stage == 4 &&right > WINDOW_WIDTH)
+	{
+		LoadLevel(5);
+
+	}
+	else if (stage == 4 && left < 0)
+	{
+		LoadLevel(6);
+		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		player->SetPos(posP);
+	}
+
+	//level 5
+	else if (stage == 5 && right > WINDOW_WIDTH)
+	{
+		LoadLevel(6);
+
+	}
+	else if (stage == 5 && left < 0)
+	{
+		LoadLevel(4);
+		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		player->SetPos(posP);
+	}
+	else if (stage == 5 && top < 0)
+	{
+		LoadLevel(8);
+		
+	}
+	
+	//level 6
+	else if (stage == 6 && right > WINDOW_WIDTH)
+	{
+		LoadLevel(4);
+
+	}
+	else if (stage == 6 && left < 0)
+	{
+		LoadLevel(5);
+		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		player->SetPos(posP);
+	}
+	else if (stage == 6 && top < 0)
+	{
+		LoadLevel(9);
+
+	}
+	//level 7
+	else if (stage == 7 && right > WINDOW_WIDTH)
+	{
+		LoadLevel(8);
+	}
+	else if (stage == 7 && left < 0)
+	{
+		LoadLevel(12);
+	}
+	else if (stage == 7 && bottom > WINDOW_HEIGHT)
+	{
+		LoadLevel(4);
+	}
+	//level 8
+	else if (stage == 8 && right > WINDOW_WIDTH)
+	{
+		LoadLevel(9);
+	}
+	else if (stage == 8 && left < 0)
+	{
+		LoadLevel(7);
+	}
+	else if( stage == 8 && bottom > WINDOW_HEIGHT)
+	{
+		LoadLevel(5);
+	}
+	//level 9
+	else if (stage == 9 && left < 0)
+	{
+		LoadLevel(8);
+	}
+	else if (stage == 9 && bottom > WINDOW_HEIGHT)
+	{
+		LoadLevel(6);
+	}
+	//level 10
+
+}
 void Scene::Update()
 {
 	Point p1, p2, posP;
@@ -1181,84 +1315,7 @@ void Scene::Update()
 
 	}
 	
-	
-	
-
-	//level transition
-	//go
-
-	
-	if (player->GetStage() == 1 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X-64) > WINDOW_WIDTH)
-	{
-		LoadLevel(2);
-		
-		
-	}
-	else if (player->GetStage() == 2 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
-	{
-		
-		LoadLevel(3);
-	}
-	else if (player->GetStage() == 3 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
-	{
-		LoadLevel(4);
-		
-		
-		
-	}
-	else if (player->GetStage() == 4 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
-	{
-		LoadLevel(5);
-		
-	}
-	else if (player->GetStage() == 5 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
-	{
-		LoadLevel(6);
-		
-	}
-	
-	else if (player->GetStage() == 6 && player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64) > WINDOW_WIDTH)
-	{
-		LoadLevel(4);
-		
-	}
-	//back
-	else if (player->GetStage() == 2 && player->GetHitbox().pos.x < 0)
-	{
-		LoadLevel(1);
-		posP.x =WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
-		player->SetPos(posP);
-	}
-	else if (player->GetStage() == 3 && player->GetHitbox().pos.x < 0)
-	{
-		LoadLevel(2);
-		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
-		player->SetPos(posP);
-	}
-	else if (player->GetStage() == 4 && player->GetHitbox().pos.x < 0)
-	{
-		LoadLevel(6);
-		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
-		player->SetPos(posP);
-	}
-	else if (player->GetStage() == 5 && player->GetHitbox().pos.x < 0)
-	{
-		LoadLevel(4);
-		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
-		player->SetPos(posP);
-	}
-	else if (player->GetStage() == 6 && player->GetHitbox().pos.x < 0)
-	{
-		LoadLevel(5);
-		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
-		player->SetPos(posP);
-	}
-
+	ChangeStage(player->GetStage());
 	level->Update();
 	player->Update();
 	

@@ -29,7 +29,7 @@ private:
     void ClearLevel();
     void RenderObjects() const;
     void RenderObjectsDebug(const Color& col) const;
-
+    void ChangeStage(int stage);
     void RenderGUI() const;
 
     Player* player;
