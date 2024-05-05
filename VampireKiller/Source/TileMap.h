@@ -97,12 +97,15 @@ public:
 	//Test if there is a ground tile one pixel below the given box
 	bool TestFalling(const AABB& box) const;
 
+	bool TestOnLadder(const AABB& box, int* px) const;
+
 
 private:
 	void InitTileDictionary();
 
 	Tile GetTileIndex(int x, int y) const;
 	bool IsTileSolid(Tile tile) const;
+	bool IsTileLadder(Tile tile) const;
 	bool CollisionX(const Point& p, int distance) const;
 	bool CollisionY(const Point& p, int distance) const;
 

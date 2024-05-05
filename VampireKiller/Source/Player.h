@@ -87,6 +87,7 @@ private:
 	void MoveX();
 	void MoveY();
 	void LogicJumping();
+	void LogicClimbing();
 
 	//Animation management
 	void SetAnimation(int id);
