@@ -101,6 +101,8 @@ private:
 	void StartJumping();
 	void StartCrouching();
 	void StartAttacking();
+	void StartClimbingUp();
+	void StartClimbingDown();
 	void Death();
 	
 	void ChangeAnimRight();

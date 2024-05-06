@@ -98,6 +98,7 @@ public:
 	bool TestFalling(const AABB& box) const;
 
 	bool TestOnLadder(const AABB& box, int* px) const;
+	bool TestOnLadderTop(const AABB& box, int* px) const;
 
 
 private:
@@ -108,6 +109,7 @@ private:
 	bool IsTileLadder(Tile tile) const;
 	bool CollisionX(const Point& p, int distance) const;
 	bool CollisionY(const Point& p, int distance) const;
+	int GetLadderCenterPos(int pixel_x, int pixel_y) const;
 
 	//Tile map
 	Tile* map;

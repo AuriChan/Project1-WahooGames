@@ -84,6 +84,14 @@ AppStatus Player::Initialise()
 		sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float) m,  n, -m, n });
 		sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float)2 * m,  n, -m, n });
 
+	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_TOP_RIGHT, ANIM_DELAY * 3);
+		sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP_RIGHT, { (float)4 * m,  0, m, n });
+		sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP_RIGHT, { (float)1 * m,  0, m, n });
+
+	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, ANIM_DELAY * 3);
+		sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)5 * m,  0, -m, n });
+		sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)1 * m,  0, -m, n });
+
 	sprite->SetAnimation((int)PlayerAnim::IDLE_RIGHT);
 
 	return AppStatus::OK;
@@ -267,6 +275,20 @@ void Player::StartAttacking()
 	data.StartSound(ResourceAudio::SOUND_ATTACK);
 	
 }
+void Player::StartClimbingUp()
+{
+	state = State::CLIMBING;
+	SetAnimation((int)PlayerAnim::CLIMBING_TOP_RIGHT);
+	Sprite* sprite = dynamic_cast<Sprite*>(render);
+	sprite->SetManualMode();
+}
+void Player::StartClimbingDown()
+{
+	state = State::CLIMBING;
+	SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
+	Sprite* sprite = dynamic_cast<Sprite*>(render);
+	sprite->SetManualMode();
+}
 void Player::Death()
 {
 	
@@ -420,9 +442,13 @@ void Player::MoveY()
 
 
 
-	if (state == State::JUMPING )
+	if (state == State::JUMPING)
 	{
 		LogicJumping();
+	}
+	else if (state == State::CLIMBING)
+	{
+		LogicClimbing();
 	}
 	else //idle, walking, falling
 	{
@@ -434,13 +460,33 @@ void Player::MoveY()
 
 			if (IsKeyPressed(KEY_UP) && state != State::DEAD)
 			{
-				StartJumping();
+				box = GetHitbox();
+				if (map->TestOnLadder(box, &pos.x))
+					StartClimbingUp();
+				else
+				{
+					StartJumping();
+				}
+			}
+			else if (IsKeyDown(KEY_DOWN) && state != State::DEAD)
+			{
+				//To climb up the ladder, we need to check the control point (x, y)
+				//To climb down the ladder, we need to check pixel below (x, y+1) instead
+				box = GetHitbox();
+				box.pos.y++;
+				if (map->TestOnLadder(box, &pos.x))
+				{
+					StartClimbingDown();
+					pos.y += PLAYER_LADDER_SPEED;
+				}
+
 			}
 			else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
 			{
 				StartAttacking();
 				
 			}
+			
 		
 			
 		}
@@ -502,46 +548,46 @@ void Player::LogicJumping()
 		}
 	}
 }
-//void Player::LogicClimbing()
-//{
-//	AABB box;
-//	Sprite* sprite = dynamic_cast<Sprite*>(render);
-//	int tmp;
-//
-//	if (IsKeyDown(KEY_UP))
-//	{
-//		pos.y -= PLAYER_LADDER_SPEED;
-//		sprite->NextFrame();
-//	}
-//	else if (IsKeyDown(KEY_DOWN))
-//	{
-//		pos.y += PLAYER_LADDER_SPEED;
-//		sprite->PrevFrame();
-//	}
-//
-//	//It is important to first check LadderTop due to its condition as a collision ground.
-//	//By doing so, we ensure that we don't stop climbing down immediately after starting the descent.
-//	box = GetHitbox();
-//	
-//	if (map->TestCollisionGround(box, &pos.y))
-//	{
-//		//Case leaving the ladder descending.
-//		Stop();
-//		sprite->SetAutomaticMode();
-//	}
-//	else if (!map->TestOnLadder(box, &tmp))
-//	{
-//		//Case leaving the ladder ascending.
-//		//If we are not in a LadderTop, colliding ground or in the Ladder it means we are leaving
-//		//ther ladder ascending.
-//		Stop();
-//		sprite->SetAutomaticMode();
-//	}
-//	else
-//	{
-//		if (GetAnimation() != PlayerAnim::CLIMBING)	SetAnimation((int)PlayerAnim::CLIMBING);
-//	}
-//}
+void Player::LogicClimbing()
+{
+	AABB box;
+	Sprite* sprite = dynamic_cast<Sprite*>(render);
+	int tmp;
+
+	if (IsKeyDown(KEY_UP))
+	{
+		pos.y -= PLAYER_LADDER_SPEED;
+		sprite->NextFrame();
+	}
+	else if (IsKeyDown(KEY_DOWN))
+	{
+		pos.y += PLAYER_LADDER_SPEED;
+		sprite->PrevFrame();
+	}
+
+	//It is important to first check LadderTop due to its condition as a collision ground.
+	//By doing so, we ensure that we don't stop climbing down immediately after starting the descent.
+	box = GetHitbox();
+	
+	if (map->TestCollisionGround(box, &pos.y))
+	{
+		//Case leaving the ladder descending.
+		Stop();
+		sprite->SetAutomaticMode();
+	}
+	else if (!map->TestOnLadder(box, &tmp))
+	{
+		//Case leaving the ladder ascending.
+		//If we are not in a LadderTop, colliding ground or in the Ladder it means we are leaving
+		//ther ladder ascending.
+		Stop();
+		sprite->SetAutomaticMode();
+	}
+	else
+	{
+		if (GetAnimation() != PlayerAnim::CLIMBING_TOP_RIGHT)	SetAnimation((int)PlayerAnim::CLIMBING_TOP_RIGHT);
+	}
+}
 
 void Player::DrawDebug(const Color& col) const
 {
