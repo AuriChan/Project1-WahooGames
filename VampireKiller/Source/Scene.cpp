@@ -212,6 +212,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(2);
+		
 	
 	}
 	else if (stage == 3)
@@ -245,6 +246,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(3);
+		
 		
 	}
 	else if (stage == 4)
@@ -873,14 +875,167 @@ AppStatus Scene::LoadLevel(int stage)
 				map2[i] = 0;
 				break;
 			case Tile::PLAYER:
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				player->SetPos(pos);
+				
+				if (firstLoad == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					firstLoad = false;
+					player->SetPos(pos);
+				}
+
+				else
+				{
+					Point posP;
+					int right = player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64);
+					int left = player->GetHitbox().pos.x;
+					int top = player->GetHitbox().pos.y + 30;
+					int bottom = player->GetHitbox().pos.y;
+
+
+					
+					if (stage == 1 && right > WINDOW_WIDTH )
+					{
+						
+						posP.x = x * TILE_SIZE;
+						posP.y =player->GetPosY();
+						player->SetPos(posP);
+						
+					}
+					//level 2
+					else if (stage == 2 && right > WINDOW_WIDTH )
+					{
+
+						posP.x = x * TILE_SIZE;
+						posP.y = player->GetPosY();
+						player->SetPos(posP);
+						
+					}
+
+					else if (stage == 1 && left <= 0)
+					{
+						
+						posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+						posP.y = player->GetPosY();
+						player->SetPos(posP);
+						
+					}
+					//level 3
+					else if (stage == 4 && right > WINDOW_WIDTH-48)
+					{
+						
+
+						posP.x = x * TILE_SIZE;
+						posP.y = player->GetPosY() +16;
+						player->SetPos(posP);
+
+					}
+					else if (stage == 2 && left < 0)
+					{
+						
+						posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+						posP.y = player->GetPosY();
+						player->SetPos(posP);
+					}
+					//level 4
+					else if (stage == 4 && right > WINDOW_WIDTH)
+					{
+						posP.x = x * TILE_SIZE;
+						posP.y = player->GetPosY();
+						player->SetPos(posP);
+
+					}
+					else if (stage == 3 && left < 0)
+					{
+						posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+						posP.y = player->GetPosY();
+						player->SetPos(posP);
+						
+					}
+
+					//level 5
+					else if (stage == 5 && right > WINDOW_WIDTH)
+					{
+						posP.x = x * TILE_SIZE;
+						posP.y = player->GetPosY();
+						player->SetPos(posP);
+
+					}
+					else if (stage == 4 && left < 0)
+					{
+						posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+						posP.y = player->GetPosY();
+						player->SetPos(posP);
+						
+					}
+					else if (stage == 5 && top < 0)
+					{
+						
+
+					}
+
+					//level 6
+					else if (stage == 6 && right > WINDOW_WIDTH)
+					{
+						
+
+					}
+					else if (stage == 6 && left < 0)
+					{
+						
+						/*pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+						pos.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+						player->SetPos(pos);*/
+					}
+					else if (stage == 6 && top < 0)
+					{
+						
+
+					}
+					//level 7
+					else if (stage == 7 && right > WINDOW_WIDTH)
+					{
+						
+					}
+					else if (stage == 7 && left < 0)
+					{
+						
+					}
+					else if (stage == 7 && bottom > WINDOW_HEIGHT)
+					{
+						
+					}
+					//level 8
+					else if (stage == 8 && right > WINDOW_WIDTH)
+					{
+						
+					}
+					else if (stage == 8 && left < 0)
+					{
+						
+					}
+					else if (stage == 8 && bottom > WINDOW_HEIGHT)
+					{
+						
+					}
+					//level 9
+					else if (stage == 9 && left < 0)
+					{
+						
+					}
+					else if (stage == 9 && bottom > WINDOW_HEIGHT)
+					{
+						
+					}
+					//level 10
+				}
+				
 				map2[i] = 0;
 				break;
 			case Tile::ITEM_HEART:
 				pos.x = x * TILE_SIZE;
 				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				
 				obj = new Object(pos, ObjectType::HEART);
 				objects.push_back(obj);
 				map2[i] = 0;
@@ -1062,9 +1217,10 @@ AppStatus Scene::LoadLevel(int stage)
 	return AppStatus::OK;
 }
 
-void Scene:: ChangeStage(int stage)
+
+void Scene:: StageManager(int stage)
 {
-	Point posP;
+	Point pos;
 	int right = player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64);
 	int left = player->GetHitbox().pos.x;
 	int top = player->GetHitbox().pos.y + 30;
@@ -1074,8 +1230,7 @@ void Scene:: ChangeStage(int stage)
 	if (stage == 1 && right > WINDOW_WIDTH)
 	{
 		LoadLevel(2);
-
-
+		
 	}
 	//level 2
 	else if (stage == 2 && right > WINDOW_WIDTH)
@@ -1087,12 +1242,12 @@ void Scene:: ChangeStage(int stage)
 	else if (stage == 2 && left < 0)
 	{
 		LoadLevel(1);
-		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
-		player->SetPos(posP);
+		/*pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		pos.y = player->GetPosY();
+		player->SetPos(pos);*/
 	}
     //level 3
-	else if (stage == 3 && right > WINDOW_WIDTH-48)
+	else if (stage == 3 && right > WINDOW_WIDTH -48 )
 	{
 		LoadLevel(4);
 
@@ -1102,9 +1257,9 @@ void Scene:: ChangeStage(int stage)
 	else if (stage == 3 && left < 0)
 	{
 		LoadLevel(2);
-		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 4;
-		player->SetPos(posP);
+		/*pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		pos.y = WINDOW_HEIGHT - TILE_SIZE * 4;
+		player->SetPos(pos);*/
 	}
 	//level 4
 	else if (stage == 4 &&right > WINDOW_WIDTH)
@@ -1115,9 +1270,9 @@ void Scene:: ChangeStage(int stage)
 	else if (stage == 4 && left < 0)
 	{
 		LoadLevel(6);
-		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
-		player->SetPos(posP);
+		/*pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		pos.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		player->SetPos(pos);*/
 	}
 
 	//level 5
@@ -1129,9 +1284,9 @@ void Scene:: ChangeStage(int stage)
 	else if (stage == 5 && left < 0)
 	{
 		LoadLevel(4);
-		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
-		player->SetPos(posP);
+		/*pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		pos.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		player->SetPos(pos);*/
 	}
 	else if (stage == 5 && top < 0)
 	{
@@ -1148,9 +1303,9 @@ void Scene:: ChangeStage(int stage)
 	else if (stage == 6 && left < 0)
 	{
 		LoadLevel(5);
-		posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-		posP.y = WINDOW_HEIGHT - TILE_SIZE * 3;
-		player->SetPos(posP);
+		/*pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		pos.y = WINDOW_HEIGHT - TILE_SIZE * 3;
+		player->SetPos(pos);*/
 	}
 	else if (stage == 6 && top < 0)
 	{
@@ -1285,7 +1440,7 @@ void Scene::Update()
 
 	}
 	
-	ChangeStage(player->GetStage());
+	StageManager(player->GetStage());
 	level->Update();
 	player->Update();
 	

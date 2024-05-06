@@ -29,7 +29,7 @@ private:
     void ClearLevel();
     void RenderObjects() const;
     void RenderObjectsDebug(const Color& col) const;
-    void ChangeStage(int stage);
+    void StageManager(int stage);
     void RenderGUI() const;
 
     Player* player;
@@ -42,7 +42,7 @@ private:
     Camera2D camera;
     DebugMode debug;
    
-
+    bool firstLoad = true;
 
     ResourceManager& data = ResourceManager::Instance();
     Text *font;

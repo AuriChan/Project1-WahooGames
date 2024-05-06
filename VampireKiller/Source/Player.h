@@ -19,7 +19,7 @@
 #define ANIM_LADDER_DELAY		(2*ANIM_DELAY)
 
 //When jumping, initial jump speed and maximum falling speed
-#define PLAYER_JUMP_FORCE		20
+#define PLAYER_JUMP_FORCE		9
 
 //Frame delay for updating the jump velocity
 #define PLAYER_JUMP_DELAY		2
@@ -71,6 +71,8 @@ public:
 	void SetWin(bool w);
 	void SetHp(int h);
 	int GetHp()const;
+	int GetPosY()const;
+	int GetPosx()const;
 	
 	
 
@@ -118,7 +120,7 @@ private:
 	int jump_delay;
 
 	TileMap* map;
-	int stageC;
+	int stageC = 1;
 	int score;
 	int lifes = 3;
 	int HpBar = 100;

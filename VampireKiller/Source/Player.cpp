@@ -140,6 +140,15 @@ int Player::GetHp()const
 	return HpBar;
 };
 
+int Player:: GetPosY()const
+{
+	return pos.y;
+}
+int Player :: GetPosx()const
+{
+	return pos.x;
+}
+
 
 void Player::SetTileMap(TileMap* tilemap)
 {
