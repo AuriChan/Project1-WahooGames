@@ -43,6 +43,7 @@ private:
     DebugMode debug;
    
     bool firstLoad = true;
+    bool doorEntrance = true;
 
     ResourceManager& data = ResourceManager::Instance();
     Text *font;
