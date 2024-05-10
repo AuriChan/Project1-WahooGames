@@ -889,7 +889,7 @@ AppStatus Scene::LoadLevel(int stage)
 					Point posP;
 					int right = player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64);
 					int left = player->GetHitbox().pos.x;
-					int top = player->GetHitbox().pos.y + 30;
+					int top = player->GetHitbox().pos.y +48;
 					int bottom = player->GetHitbox().pos.y;
 
 					if (stage == 4 && right > (WINDOW_WIDTH -48)  && doorEntrance == true )
@@ -919,8 +919,8 @@ AppStatus Scene::LoadLevel(int stage)
 					}
 					else if (top < 32)
 					{
-						posP.x = player->GetPosx();
-						posP.y = WINDOW_HEIGHT;
+						posP.x = player->GetPosx() ;
+						posP.y = WINDOW_HEIGHT -32;
 						player->SetPos(posP);
 
 					}
@@ -1127,7 +1127,7 @@ void Scene:: StageManager(int stage)
 	Point pos;
 	int right = player->GetHitbox().pos.x + (PLAYER_FRAME_SIZE_X - 64);
 	int left = player->GetHitbox().pos.x;
-	int top = player->GetHitbox().pos.y + 30;
+	int top = player->GetHitbox().pos.y +48;
 	int bottom = player->GetHitbox().pos.y;
 
 	//level 1
@@ -1184,7 +1184,7 @@ void Scene:: StageManager(int stage)
 		LoadLevel(4);
 
 	}
-	else if (stage == 5 && top < 0)
+	else if (stage == 5 && top < 32)
 	{
 		LoadLevel(8);
 		
@@ -1201,7 +1201,7 @@ void Scene:: StageManager(int stage)
 		LoadLevel(5);
 		
 	}
-	else if (stage == 6 && top < 0)
+	else if (stage == 6 && top < 32)
 	{
 		LoadLevel(9);
 
@@ -1277,7 +1277,7 @@ void Scene:: StageManager(int stage)
 	{
 		player->SetLifes(0);
 	}
-	else if (stage == 10 && top < 0)
+	else if (stage == 10 && top < 32)
 	{
 		LoadLevel(13);
 
@@ -1353,7 +1353,7 @@ void Scene:: StageManager(int stage)
 	{
 		player->SetLifes(0);
 	}
-	else if (stage == 18 && top < 0)
+	else if (stage == 18 && top < 32)
 	{
 		LoadLevel(21);
 
