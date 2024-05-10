@@ -1,25 +1,2 @@
-﻿  AABB.cpp
-  Bat.cpp
-  Enemy.cpp
-  EnemyManager.cpp
-  Entity.cpp
-  Game.cpp
-  Globals.cpp
-  Object.cpp
-  Player.cpp
-C:\Users\laurapc7\Documents\GitHub\Project1-WahooGames\VampireKiller\Source\Player.cpp(367,10): warning C4553: '==': result of expression not used; did you intend '='?
-  RenderComponent.cpp
-  ResourceManager.cpp
-  Scene.cpp
-  SkullHead.cpp
-  SkullTurret.cpp
-  Soldier.cpp
-  Sprite.cpp
-  StaticImage.cpp
-  Text.cpp
-  TileMap.cpp
-  main.cpp
-  Generating Code...
-  LINK : C:\Users\laurapc7\Documents\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe not found or not built by the last incremental link; performing full link
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  VampireKiller.vcxproj -> C:\Users\laurapc7\Documents\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+﻿  Scene.cpp
+  VampireKiller.vcxproj -> C:\Users\paulall\Documents\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe

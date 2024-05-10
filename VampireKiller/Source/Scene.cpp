@@ -892,6 +892,15 @@ AppStatus Scene::LoadLevel(int stage)
 					int top = player->GetHitbox().pos.y + 30;
 					int bottom = player->GetHitbox().pos.y;
 
+					if (stage == 4 && right > (WINDOW_WIDTH -48)  && doorEntrance == true )
+					{
+
+						posP.x = x * TILE_SIZE;
+						posP.y = (player->GetPosY() +16);
+						player->SetPos(posP);
+						doorEntrance = false;
+
+					}
 					if (right > WINDOW_WIDTH)
 					{
 
@@ -900,16 +909,6 @@ AppStatus Scene::LoadLevel(int stage)
 						player->SetPos(posP);
 
 					}
-					/*if (stage = 4 && right > WINDOW_WIDTH && doorEntrance == true)
-					{
-
-						posP.x = x * TILE_SIZE;
-						posP.y = (player->GetPosY() +16);
-						player->SetPos(posP);
-						doorEntrance == false;
-
-					}*/
-
 					else if (left <= 0)
 					{
 
@@ -932,132 +931,7 @@ AppStatus Scene::LoadLevel(int stage)
 						player->SetPos(posP);
 
 					}
-					////level 2
-					//else if (stage == 2 && right > WINDOW_WIDTH )
-					//{
-
-					//	posP.x = x * TILE_SIZE;
-					//	posP.y = player->GetPosY();
-					//	player->SetPos(posP);
-					//	
-					//}
-
-					//else if (stage == 1 && left <= 0)
-					//{
-					//	
-					//	posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-					//	posP.y = player->GetPosY();
-					//	player->SetPos(posP);
-					//	
-					//}
-					////level 3
-					//else if (stage == 4 && right > WINDOW_WIDTH-48)
-					//{
-					//	
-
-					//	posP.x = x * TILE_SIZE;
-					//	posP.y = player->GetPosY() +16;
-					//	player->SetPos(posP);
-
-					//}
-					//else if (stage == 2 && left < 0)
-					//{
-					//	
-					//	posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-					//	posP.y = player->GetPosY();
-					//	player->SetPos(posP);
-					//}
-					////level 4
-					//else if (stage == 4 && right > WINDOW_WIDTH)
-					//{
-					//	posP.x = x * TILE_SIZE;
-					//	posP.y = player->GetPosY();
-					//	player->SetPos(posP);
-
-					//}
-					//else if (stage == 3 && left < 0)
-					//{
-					//	posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-					//	posP.y = player->GetPosY();
-					//	player->SetPos(posP);
-					//	
-					//}
-
-					////level 5
-					//else if (stage == 5 && right > WINDOW_WIDTH)
-					//{
-					//	posP.x = x * TILE_SIZE;
-					//	posP.y = player->GetPosY();
-					//	player->SetPos(posP);
-
-					//}
-					//else if (stage == 4 && left < 0)
-					//{
-					//	posP.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-					//	posP.y = player->GetPosY();
-					//	player->SetPos(posP);
-					//	
-					//}
-					//else if (stage == 5 && top < 0)
-					//{
-					//	
-
-					//}
-
-					////level 6
-					//else if (stage == 6 && right > WINDOW_WIDTH)
-					//{
-					//	
-
-					//}
-					//else if (stage == 6 && left < 0)
-					//{
-					//	
-					//	/*pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
-					//	pos.y = WINDOW_HEIGHT - TILE_SIZE * 3;
-					//	player->SetPos(pos);*/
-					//}
-					//else if (stage == 6 && top < 0)
-					//{
-					//	
-
-					//}
-					////level 7
-					//else if (stage == 7 && right > WINDOW_WIDTH)
-					//{
-					//	
-					//}
-					//else if (stage == 7 && left < 0)
-					//{
-					//	
-					//}
-					//else if (stage == 7 && bottom > WINDOW_HEIGHT)
-					//{
-					//	
-					//}
-					////level 8
-					//else if (stage == 8 && right > WINDOW_WIDTH)
-					//{
-					//	
-					//}
-					//else if (stage == 8 && left < 0)
-					//{
-					//	
-					//}
-					//else if (stage == 8 && bottom > WINDOW_HEIGHT)
-					//{
-					//	
-					//}
-					////level 9
-					//else if (stage == 9 && left < 0)
-					//{
-					//	
-					//}
-					//else if (stage == 9 && bottom > WINDOW_HEIGHT)
-					//{
-					//	
-					//}
-					//level 10
+					
 				}
 				
 				map2[i] = 0;
@@ -1275,7 +1149,7 @@ void Scene:: StageManager(int stage)
 		
 	}
     //level 3
-	else if (stage == 3 && right > WINDOW_WIDTH)
+	else if (stage == 3 && right > (WINDOW_WIDTH - 48))
 	{
 		LoadLevel(4);
 
