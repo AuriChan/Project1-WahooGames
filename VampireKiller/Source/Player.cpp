@@ -277,17 +277,18 @@ void Player::StartAttacking()
 }
 void Player::StartClimbingUp()
 {
-	state = State::CLIMBING;
-	SetAnimation((int)PlayerAnim::CLIMBING_TOP_RIGHT);
-	Sprite* sprite = dynamic_cast<Sprite*>(render);
-	sprite->SetManualMode();
+		state = State::CLIMBING;
+		SetAnimation((int)PlayerAnim::CLIMBING_TOP_RIGHT);
+		Sprite* sprite = dynamic_cast<Sprite*>(render);
+		sprite->SetManualMode();
 }
 void Player::StartClimbingDown()
 {
-	state = State::CLIMBING;
-	SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
-	Sprite* sprite = dynamic_cast<Sprite*>(render);
-	sprite->SetManualMode();
+		state = State::CLIMBING;
+		SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
+		Sprite* sprite = dynamic_cast<Sprite*>(render);
+		sprite->SetManualMode();
+	
 }
 void Player::Death()
 {
@@ -463,14 +464,11 @@ void Player::MoveY()
 			if (IsKeyPressed(KEY_UP) && state != State::DEAD)
 			{
 				box = GetHitbox();
-				if (map->TestOnLadder(box, &pos.x))
-					StartClimbingUp();
-				else
-				{
+				if (!map->TestOnLadder(box, &pos.x))
 					StartJumping();
-				}
+				
 			}
-			else if (IsKeyDown(KEY_DOWN) && state != State::DEAD)
+			if (IsKeyDown(KEY_DOWN) && state != State::DEAD)
 			{
 				//To climb up the ladder, we need to check the control point (x, y)
 				//To climb down the ladder, we need to check pixel below (x, y+1) instead
@@ -558,6 +556,9 @@ void Player::LogicClimbing()
 
 	if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_RIGHT))
 	{
+		box = GetHitbox();
+		if (map->TestOnLadder(box, &pos.x))
+			StartClimbingUp();
 		pos.y -= PLAYER_LADDER_SPEED;
 		pos.x += PLAYER_LADDER_SPEED;
 		sprite->NextFrame();
@@ -566,7 +567,7 @@ void Player::LogicClimbing()
 	{
 		pos.y += PLAYER_LADDER_SPEED;
 		pos.x -= PLAYER_LADDER_SPEED;
-		sprite->PrevFrame();
+		sprite->NextFrame();
 	}
 
 	//It is important to first check LadderTop due to its condition as a collision ground.
