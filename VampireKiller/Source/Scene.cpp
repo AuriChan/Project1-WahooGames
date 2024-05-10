@@ -917,7 +917,7 @@ AppStatus Scene::LoadLevel(int stage)
 						player->SetPos(posP);
 
 					}
-					else if (top < 0)
+					else if (top < 32)
 					{
 						posP.x = player->GetPosx();
 						posP.y = WINDOW_HEIGHT;

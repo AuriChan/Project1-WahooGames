@@ -339,26 +339,34 @@ bool TileMap::CollisionY(const Point& p, int distance) const
 
 bool TileMap::TestOnLadder(const AABB& box, int* px) const
 {
-	int left, right, bottom;
-	int tx1, tx2, ty;
+	int right, left, bottom2, bottom1;
+	int tx1, tx2, ty1, ty2;
 	Tile tile1, tile2;
 
 	//Control points
-	left = box.pos.x;
-	right = box.pos.x + box.width - 1;
-	bottom = box.pos.y + box.height - 1;
+	left = box.pos.x + box.width-8;
+	right = box.pos.x + box.width ;
+	bottom2 = box.pos.y + box.height -8;
+	bottom1 = box.pos.y + box.height;
 
 	//Calculate the tile coordinates
 	tx1 = left / TILE_SIZE;
 	tx2 = right / TILE_SIZE;
-	ty = bottom / TILE_SIZE;
+	ty2 = bottom2 / TILE_SIZE;
+	ty1 = bottom1 / TILE_SIZE;
 
 	//To be able to climb up or down, both control points must be on ladder
-	tile1 = GetTileIndex(tx1, ty);
-	tile2 = GetTileIndex(tx2, ty);
-	if (IsTileLadder(tile1) && IsTileLadder(tile2))
+	
+	tile2 = GetTileIndex(tx2, ty2);
+	tile1 = GetTileIndex(tx1, ty1);
+	if (IsTileLadder(tile2))
 	{
-		*px = GetLadderCenterPos(left, bottom) - box.width / 2;
+		*px = GetLadderCenterPos(right, bottom2)-(box.width / 2)+1;
+		return true;
+	}
+	else if (IsTileLadder(tile1))
+	{
+		*px = GetLadderCenterPos(left, bottom1) - (box.width / 2)+1;
 		return true;
 	}
 	return false;

@@ -345,8 +345,10 @@ void Player::Update()
 	}
 	else
 	{
+		
 		MoveX();
-	    MoveY();
+		MoveY();
+	    
 	}
 	
 
@@ -554,14 +556,16 @@ void Player::LogicClimbing()
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	int tmp;
 
-	if (IsKeyDown(KEY_UP))
+	if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_RIGHT))
 	{
 		pos.y -= PLAYER_LADDER_SPEED;
+		pos.x += PLAYER_LADDER_SPEED;
 		sprite->NextFrame();
 	}
-	else if (IsKeyDown(KEY_DOWN))
+	else if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_LEFT))
 	{
 		pos.y += PLAYER_LADDER_SPEED;
+		pos.x -= PLAYER_LADDER_SPEED;
 		sprite->PrevFrame();
 	}
 
