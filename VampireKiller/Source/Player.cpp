@@ -466,7 +466,9 @@ void Player::MoveY()
 			if (IsKeyPressed(KEY_UP) && state != State::DEAD)
 			{
 				box = GetHitbox();
-				if (!map->TestOnLadder(box, &pos.x))
+				if (map->TestOnLadder(box, &pos.x))
+					StartClimbingUp();
+				else
 					StartJumping();
 
 			}
@@ -475,12 +477,8 @@ void Player::MoveY()
 				//To climb up the ladder, we need to check the control point (x, y)
 				//To climb down the ladder, we need to check pixel below (x, y+1) instead
 				box = GetHitbox();
-				box.pos.y++;
 				if (map->TestOnLadder(box, &pos.x))
-				{
 					StartClimbingDown();
-					pos.y += PLAYER_LADDER_SPEED;
-				}
 
 			}
 			else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
@@ -558,15 +556,14 @@ void Player::LogicClimbing()
 
 	if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_RIGHT))
 	{
-		box = GetHitbox();
-		if (map->TestOnLadder(box, &pos.x))
-			StartClimbingUp();
+		
 		pos.y -= PLAYER_LADDER_SPEED;
 		pos.x += PLAYER_LADDER_SPEED;
 		sprite->NextFrame();
 	}
 	else if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_LEFT))
 	{
+		
 		pos.y += PLAYER_LADDER_SPEED;
 		pos.x -= PLAYER_LADDER_SPEED;
 		sprite->NextFrame();
