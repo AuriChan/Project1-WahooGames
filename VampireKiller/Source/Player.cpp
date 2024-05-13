@@ -1,3 +1,4 @@
+
 #include "Player.h"
 #include "Sprite.h"
 #include "TileMap.h"
@@ -62,10 +63,10 @@ AppStatus Player::Initialise()
 
 	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_IDLE_RIGHT, ANIM_DELAY);
 	for (i = 0; i < 3; ++i)
-	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_RIGHT, { (float)i * m, 3 * n, m, n });
+		sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_RIGHT, { (float)i * m, 3 * n, m, n });
 	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_IDLE_LEFT, ANIM_DELAY);
 	for (i = 0; i < 3; ++i)
-	sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_LEFT, { (float)i * m, 3 * n, -m, n});
+		sprite->AddKeyFrame((int)PlayerAnim::WHIP_IDLE_LEFT, { (float)i * m, 3 * n, -m, n });
 
 	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_CROUCHING_RIGHT, ANIM_DELAY);
 	for (i = 0; i < 3; ++i)
@@ -75,22 +76,22 @@ AppStatus Player::Initialise()
 		sprite->AddKeyFrame((int)PlayerAnim::WHIP_CROUCHING_LEFT, { (float)i * m, 4 * n, -m, n });
 
 
-	sprite->SetAnimationDelay((int)PlayerAnim::DEATH_RIGHT, ANIM_DELAY*3);
-		sprite->AddKeyFrame((int)PlayerAnim::DEATH_RIGHT, { (float) m,  n, m, n });
-		sprite->AddKeyFrame((int)PlayerAnim::DEATH_RIGHT, { (float)2 * m,  n, m, n });
-		
+	sprite->SetAnimationDelay((int)PlayerAnim::DEATH_RIGHT, ANIM_DELAY * 3);
+	sprite->AddKeyFrame((int)PlayerAnim::DEATH_RIGHT, { (float)m,  n, m, n });
+	sprite->AddKeyFrame((int)PlayerAnim::DEATH_RIGHT, { (float)2 * m,  n, m, n });
 
-	sprite->SetAnimationDelay((int)PlayerAnim::DEATH_LEFT, ANIM_DELAY *3);
-		sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float) m,  n, -m, n });
-		sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float)2 * m,  n, -m, n });
+
+	sprite->SetAnimationDelay((int)PlayerAnim::DEATH_LEFT, ANIM_DELAY * 3);
+	sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float)m,  n, -m, n });
+	sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float)2 * m,  n, -m, n });
 
 	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_TOP_RIGHT, ANIM_DELAY * 3);
-		sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP_RIGHT, { (float)4 * m,  0, m, n });
-		sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP_RIGHT, { (float)1 * m,  0, m, n });
+	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP_RIGHT, { (float)4 * m,  0, m, n });
+	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP_RIGHT, { (float)1 * m,  0, m, n });
 
 	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, ANIM_DELAY * 3);
-		sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)5 * m,  0, -m, n });
-		sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)1 * m,  0, -m, n });
+	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)5 * m,  0, -m, n });
+	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)1 * m,  0, -m, n });
 
 	sprite->SetAnimation((int)PlayerAnim::IDLE_RIGHT);
 
@@ -134,7 +135,7 @@ bool Player::GetWin()
 {
 	return win;
 };
-void Player:: SetWin(bool w)
+void Player::SetWin(bool w)
 {
 	win = w;
 };
@@ -148,11 +149,11 @@ int Player::GetHp()const
 	return HpBar;
 };
 
-int Player:: GetPosY()const
+int Player::GetPosY()const
 {
 	return pos.y;
 }
-int Player :: GetPosx()const
+int Player::GetPosx()const
 {
 	return pos.x;
 }
@@ -213,7 +214,7 @@ void Player::StartWalkingRight()
 }
 void Player::StartFalling()
 {
-	dir.y = PLAYER_SPEED *2;
+	dir.y = PLAYER_SPEED * 2;
 	state = State::FALLING;
 	if (IsLookingRight())	SetAnimation((int)PlayerAnim::CROUCHING_RIGHT);
 	else					SetAnimation((int)PlayerAnim::CROUCHING_LEFT);
@@ -234,7 +235,7 @@ void Player::StartCrouching()
 }
 void Player::StartAttacking()
 {
- 	if (state == State::CROUCHING)
+	if (state == State::CROUCHING)
 	{
 		isCrouching = true;
 		state = State::ATTACKING;
@@ -273,43 +274,43 @@ void Player::StartAttacking()
 	}
 	data.LoadSound(ResourceAudio::SOUND_ATTACK, "Images/WhipMissTarget.wav");
 	data.StartSound(ResourceAudio::SOUND_ATTACK);
-	
+
 }
 void Player::StartClimbingUp()
 {
-		state = State::CLIMBING;
-		SetAnimation((int)PlayerAnim::CLIMBING_TOP_RIGHT);
-		Sprite* sprite = dynamic_cast<Sprite*>(render);
-		sprite->SetManualMode();
+	state = State::CLIMBING;
+	SetAnimation((int)PlayerAnim::CLIMBING_TOP_RIGHT);
+	Sprite* sprite = dynamic_cast<Sprite*>(render);
+	sprite->SetManualMode();
 }
 void Player::StartClimbingDown()
 {
-		state = State::CLIMBING;
-		SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
-		Sprite* sprite = dynamic_cast<Sprite*>(render);
-		sprite->SetManualMode();
-	
+	state = State::CLIMBING;
+	SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
+	Sprite* sprite = dynamic_cast<Sprite*>(render);
+	sprite->SetManualMode();
+
 }
 void Player::Death()
 {
-	
-	
-		state = State::DEAD;
-		if (IsLookingRight())
-		{
-			SetAnimation((int)PlayerAnim::DEATH_RIGHT);
-			Sprite* sprite = dynamic_cast<Sprite*>(render);
-			sprite->SetSingleMode();
 
-		}
-		else
-		{
-			SetAnimation((int)PlayerAnim::DEATH_LEFT);
-			Sprite* sprite = dynamic_cast<Sprite*>(render);
-			sprite->SetSingleMode();
 
-		}
-		
+	state = State::DEAD;
+	if (IsLookingRight())
+	{
+		SetAnimation((int)PlayerAnim::DEATH_RIGHT);
+		Sprite* sprite = dynamic_cast<Sprite*>(render);
+		sprite->SetSingleMode();
+
+	}
+	else
+	{
+		SetAnimation((int)PlayerAnim::DEATH_LEFT);
+		Sprite* sprite = dynamic_cast<Sprite*>(render);
+		sprite->SetSingleMode();
+
+	}
+
 }
 
 void Player::ChangeAnimRight()
@@ -346,17 +347,17 @@ void Player::Update()
 	}
 	else
 	{
-		
+
 		MoveX();
 		MoveY();
-	    
+
 	}
-	
+
 
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
 
-	
+
 	if (sprite->GetIsFinished())
 	{
 		sprite->SetIsFinished(false);
@@ -370,7 +371,7 @@ void Player::Update()
 			state == State::IDLE;
 			Stop();
 		}
-		
+
 		isCrouching = false;
 	}
 
@@ -382,7 +383,7 @@ void Player::MoveX()
 
 	//We can only go up and down while climbing
 	if (state == State::CLIMBING)	return;
-	
+
 	if (IsKeyDown(KEY_DOWN) && state != State::ATTACKING && state != State::DEAD)
 	{
 		if (state == State::JUMPING) return;
@@ -390,12 +391,12 @@ void Player::MoveX()
 		else if (state == State::WALKING) StartCrouching();
 
 	}
-	
+
 	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && state != State::ATTACKING && state != State::DEAD)
 	{
 		if (pos.x < 0) { pos.x = 0; }
-		
-		else{pos.x -= PLAYER_SPEED;}
+
+		else { pos.x -= PLAYER_SPEED; }
 
 		if (state == State::IDLE) StartWalkingLeft();
 		else if (state == State::CROUCHING) StartWalkingLeft();
@@ -411,12 +412,13 @@ void Player::MoveX()
 			if (state == State::WALKING) Stop();
 		}
 	}
-	
+
 	else if (IsKeyDown(KEY_RIGHT) && state != State::ATTACKING && state != State::DEAD)
-	{   if (pos.x >= WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X -64 ))
-	    {
-		pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X -64);
-	    }
+	{
+		if (pos.x >= WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64))
+		{
+			pos.x = WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64);
+		}
 
 		pos.x += PLAYER_SPEED;
 		if (state == State::IDLE) StartWalkingRight();
@@ -433,7 +435,7 @@ void Player::MoveX()
 			if (state == State::WALKING) Stop();
 		}
 	}
-	
+
 	else
 	{
 		if (state == State::WALKING || state == State::CROUCHING) Stop();
@@ -455,7 +457,7 @@ void Player::MoveY()
 	}
 	else //idle, walking, falling
 	{
-		pos.y += PLAYER_SPEED*2;
+		pos.y += PLAYER_SPEED * 2;
 		box = GetHitbox();
 		if (map->TestCollisionGround(box, &pos.y))
 		{
@@ -466,7 +468,7 @@ void Player::MoveY()
 				box = GetHitbox();
 				if (!map->TestOnLadder(box, &pos.x))
 					StartJumping();
-				
+
 			}
 			if (IsKeyDown(KEY_DOWN) && state != State::DEAD)
 			{
@@ -484,11 +486,11 @@ void Player::MoveY()
 			else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
 			{
 				StartAttacking();
-				
+
 			}
-			
-		
-			
+
+
+
 		}
 		else
 		{
@@ -514,7 +516,7 @@ void Player::LogicJumping()
 		//Is the jump finished?
 		if (dir.y > PLAYER_JUMP_FORCE)
 		{
-			dir.y = PLAYER_SPEED*2;
+			dir.y = PLAYER_SPEED * 2;
 			StartFalling();
 		}
 		else
@@ -573,7 +575,7 @@ void Player::LogicClimbing()
 	//It is important to first check LadderTop due to its condition as a collision ground.
 	//By doing so, we ensure that we don't stop climbing down immediately after starting the descent.
 	box = GetHitbox();
-	
+
 	if (map->TestCollisionGround(box, &pos.y))
 	{
 		//Case leaving the ladder descending.
