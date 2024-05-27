@@ -130,6 +130,9 @@ private:
 	bool isFinished = false;
 	bool isCrouching = false;
 	ResourceManager& data = ResourceManager::Instance();
+
+	bool isClimbingUp;
+	bool startedClimbing;
 	
 };
 

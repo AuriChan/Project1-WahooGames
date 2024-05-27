@@ -13,6 +13,8 @@ Player::Player(const Point& p, State s, Look view) :
 	jump_delay = PLAYER_JUMP_DELAY;
 	map = nullptr;
 	score = 0;
+	isClimbingUp = false;
+	startedClimbing = false;
 }
 Player::~Player()
 {
@@ -488,8 +490,15 @@ void Player::MoveY()
 				//To climb up the ladder, we need to check the control point (x, y)
 				//To climb down the ladder, we need to check pixel below (x, y+1) instead
 				box = GetHitbox();
-				if (map->TestOnLadder(box, &pos.x)) //This has to be TestOnLadderTop()
+				box.pos.y++;
+				if (map->TestOnLadderTop(box, &pos.x) && !startedClimbing) //This has to be TestOnLadderTop()
+				{
+					
 					StartClimbingDown();
+					pos.y -= 1;
+					pos.x -= 1;
+					/*startedClimbing = true;*/
+				}
 
 			}
 			else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
@@ -497,8 +506,6 @@ void Player::MoveY()
 				StartAttacking();
 
 			}
-
-
 
 		}
 		else
@@ -564,18 +571,18 @@ void Player::LogicClimbing()
 	AABB box;
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	int tmp;
-	state = State::CLIMBING; //added by Pol
+
 
 	if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_RIGHT))
 	{
-		
+		isClimbingUp = true;
 		pos.y -= PLAYER_LADDER_SPEED;
 		pos.x += PLAYER_LADDER_SPEED;
 		sprite->NextFrame();
 	}
 	else if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_LEFT))
 	{
-		
+		isClimbingUp = false;
 		pos.y += PLAYER_LADDER_SPEED;
 		pos.x -= PLAYER_LADDER_SPEED;
 		sprite->NextFrame(); // Change the sprite to go downwards, check what sprite is
@@ -601,7 +608,9 @@ void Player::LogicClimbing()
 	}
 	else
 	{
-		if (GetAnimation() != PlayerAnim::CLIMBING_TOP_RIGHT)	SetAnimation((int)PlayerAnim::CLIMBING_TOP_RIGHT); //sus as fuck
+		//if (GetAnimation() != PlayerAnim::CLIMBING_BOTTOM_LEFT)	SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT); //the problem
+		if (isClimbingUp && GetAnimation() != PlayerAnim::CLIMBING_TOP_RIGHT)	SetAnimation((int)PlayerAnim::CLIMBING_TOP_RIGHT);
+		else if (!isClimbingUp && GetAnimation() != PlayerAnim::CLIMBING_BOTTOM_LEFT) SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
 	}
 }
 
