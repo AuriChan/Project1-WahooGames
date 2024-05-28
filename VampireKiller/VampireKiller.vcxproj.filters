@@ -81,8 +81,16 @@
     <ClCompile Include="Source\Text.cpp">
       <Filter>Render</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="Source\FadeTransition.cpp">
       <Filter>Render</Filter>
+=======
+    <ClCompile Include="Source\Shot.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ShotManager.cpp">
+      <Filter>Entities</Filter>
+>>>>>>> Stashed changes
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -149,8 +157,16 @@
     <ClInclude Include="Source\Text.h">
       <Filter>Render</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="Source\FadeTransition.h">
       <Filter>Render</Filter>
+=======
+    <ClInclude Include="Source\Shot.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ShotManager.h">
+      <Filter>Entities</Filter>
+>>>>>>> Stashed changes
     </ClInclude>
   </ItemGroup>
 </Project>
