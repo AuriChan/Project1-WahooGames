@@ -4,10 +4,11 @@
 #include "ResourceManager.h"
 #include "RenderComponent.h"
 #include "AABB.h"
-
+enum class LookE { RIGHT, LEFT };
 class Entity
 {
 public:
+	Entity();
 	Entity(const Point& p, int width, int height);
 	Entity(const Point& p, int width, int height, int frame_width, int frame_height);
 	virtual ~Entity();
@@ -15,6 +16,9 @@ public:
 	void SetPos(const Point& p);
 	void Update();
 	AABB GetHitbox() const;
+	void SetAlive(bool b);
+	bool IsAlive() const;
+	void Set(const Point& p, const Point& d, int w, int h, int framew, int frameh);
 	
 
 	//Draw representation model

@@ -151,6 +151,8 @@
     <ClCompile Include="Source\RenderComponent.cpp" />
     <ClCompile Include="Source\ResourceManager.cpp" />
     <ClCompile Include="Source\Scene.cpp" />
+    <ClCompile Include="Source\Shot.cpp" />
+    <ClCompile Include="Source\ShotManager.cpp" />
     <ClCompile Include="Source\SkullHead.cpp" />
     <ClCompile Include="Source\SkullTurret.cpp" />
     <ClCompile Include="Source\Soldier.cpp" />
@@ -175,6 +177,8 @@
     <ClInclude Include="Source\RenderComponent.h" />
     <ClInclude Include="Source\ResourceManager.h" />
     <ClInclude Include="Source\Scene.h" />
+    <ClInclude Include="Source\Shot.h" />
+    <ClInclude Include="Source\ShotManager.h" />
     <ClInclude Include="Source\SkullHead.h" />
     <ClInclude Include="Source\SkullTurret.h" />
     <ClInclude Include="Source\Soldier.h" />
