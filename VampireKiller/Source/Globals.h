@@ -10,6 +10,9 @@
 #define LEVEL_HEIGHT	17
 #define ANIM_DELAY		6
 
+//Game states
+enum class GameState { DEATH, WIN, INITIAL_SCREEN, MAIN_MENU, PLAYING, SETTINGS, CREDITS };
+
 //App performance parameters
 enum class AppStatus { OK = 0, ERROR, QUIT };
 #define EXIT_SUCCESS	0

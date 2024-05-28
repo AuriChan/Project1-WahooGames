@@ -142,6 +142,7 @@
     <ClCompile Include="Source\Enemy.cpp" />
     <ClCompile Include="Source\EnemyManager.cpp" />
     <ClCompile Include="Source\Entity.cpp" />
+    <ClCompile Include="Source\FadeTransition.cpp" />
     <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\Globals.cpp" />
     <ClCompile Include="Source\main.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Source\Enemy.h" />
     <ClInclude Include="Source\EnemyManager.h" />
     <ClInclude Include="Source\Entity.h" />
+    <ClInclude Include="Source\FadeTransition.h" />
     <ClInclude Include="Source\Game.h" />
     <ClInclude Include="Source\Globals.h" />
     <ClInclude Include="Source\MemLeaks.h" />

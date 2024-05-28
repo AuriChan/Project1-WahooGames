@@ -81,6 +81,9 @@
     <ClCompile Include="Source\Text.cpp">
       <Filter>Render</Filter>
     </ClCompile>
+    <ClCompile Include="Source\FadeTransition.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Globals.h">
@@ -144,6 +147,9 @@
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Source\Text.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FadeTransition.h">
       <Filter>Render</Filter>
     </ClInclude>
   </ItemGroup>

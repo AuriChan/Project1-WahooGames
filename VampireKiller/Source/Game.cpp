@@ -54,6 +54,7 @@ AppStatus Game::Initialise(float scale)
         return AppStatus::ERROR;
     }
 
+
     //Set the target frame rate for the application
     SetTargetFPS(60);
     //Disable the escape key to quit functionality
@@ -118,81 +119,100 @@ AppStatus Game::Update()
     //Check if user attempts to close the window, either by clicking the close button or by pressing Alt+F4
     if (WindowShouldClose()) return AppStatus::QUIT;
 
-    switch (state)
+    if (fade_transition.IsActive() == true)
     {
-    case GameState::INITIAL_SCREEN:
-        if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
-        if (IsKeyPressed(KEY_SPACE))
-        {
-            state = GameState::MAIN_MENU;
-        }
-        break;
+        GameState prev_frame = state;
+        state = fade_transition.Update();
 
-    case GameState::MAIN_MENU:
-        if (IsKeyPressed(KEY_ESCAPE)) 
-        { 
-            
-            return AppStatus::QUIT; 
-            
-        };
-        if (IsKeyPressed(KEY_SPACE))
+        //Begin play and finish play are delayed due to the fading transition effect
+        if (prev_frame == GameState::MAIN_MENU && state == GameState::PLAYING)
         {
-            
             if (BeginPlay() != AppStatus::OK) return AppStatus::ERROR;
-            state = GameState::PLAYING;
         }
-        break;
-    case GameState::PLAYING:
-        
-        if (IsKeyPressed(KEY_ESCAPE))
+        else if (prev_frame == GameState::PLAYING && state == GameState::MAIN_MENU)
         {
             FinishPlay();
-            state = GameState::MAIN_MENU;
         }
-        
-        else if (IsKeyPressed(KEY_D))
-        {
-            state = GameState::DEATH;
-        }
-        else if (IsKeyPressed(KEY_W))
-        {
-            state = GameState::WIN;
-        }
-        else if (scene->GetPlayer()->GetLives() == 0)
-        {
-            state = GameState::DEATH;
-        }
-        else if (scene->GetPlayer()->GetWin() == true)
-        {
-            state = GameState::WIN;
-        }
+    }
 
-       
-       
-        else 
+    else
+    {
+        switch (state)
         {
-            //Game logic
-            scene->Update();
+        case GameState::INITIAL_SCREEN:
+            if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
+            if (IsKeyPressed(KEY_SPACE))
+            {
+                /*state = GameState::MAIN_MENU;*/
+                fade_transition.Set(GameState::INITIAL_SCREEN, 10, GameState::MAIN_MENU, 10, dst);
+            }
+            break;
+
+        case GameState::MAIN_MENU:
+            if (IsKeyPressed(KEY_ESCAPE))
+            {
+
+                return AppStatus::QUIT;
+
+            };
+            if (IsKeyPressed(KEY_SPACE))
+            {
+
+                /*if (BeginPlay() != AppStatus::OK) return AppStatus::ERROR;*/
+                /*state = GameState::PLAYING;*/
+                fade_transition.Set(GameState::MAIN_MENU, 10, GameState::PLAYING, 10, dst);
+            }
+            break;
+        case GameState::PLAYING:
+
+            if (IsKeyPressed(KEY_ESCAPE))
+            {
+                /*FinishPlay();*/
+                state = GameState::MAIN_MENU;
+                
+            }
+
+            else if (IsKeyPressed(KEY_D))
+            {
+                state = GameState::DEATH;
+            }
+            else if (IsKeyPressed(KEY_W))
+            {
+                state = GameState::WIN;
+            }
+            else if (scene->GetPlayer()->GetLives() == 0)
+            {
+                state = GameState::DEATH;
+            }
+            else if (scene->GetPlayer()->GetWin() == true)
+            {
+                state = GameState::WIN;
+            }
+            else
+            {
+                //Game logic
+                scene->Update();
+            }
+            break;
+        case GameState::DEATH:
+            data.StartMusic(ResourceAudio::MUSIC_GAMEOVER);
+            if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
+            if (IsKeyPressed(KEY_SPACE))
+            {
+                CloseAudioDevice();
+                state = GameState::MAIN_MENU;
+            }
+            break;
+        case GameState::WIN:
+            data.StartMusic(ResourceAudio::MUSIC_ENDING);
+            if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
+            if (IsKeyPressed(KEY_SPACE))
+            {
+                CloseAudioDevice();
+                state = GameState::MAIN_MENU;
+            }
+            break;
         }
-        break;
-    case GameState::DEATH:
-        data.StartMusic(ResourceAudio::MUSIC_GAMEOVER);
-        if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
-        if (IsKeyPressed(KEY_SPACE))
-        {
-            CloseAudioDevice();
-            state = GameState::MAIN_MENU;
-        }
-        break;
-    case GameState::WIN:
-        data.StartMusic(ResourceAudio::MUSIC_ENDING);
-        if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
-        if (IsKeyPressed(KEY_SPACE))
-        {
-            CloseAudioDevice();
-            state = GameState::MAIN_MENU;
-        }
-        break;
     }
     return AppStatus::OK;
 }
@@ -233,6 +253,7 @@ void Game::Render()
     //Draw render texture to screen, properly scaled
     BeginDrawing();
     DrawTexturePro(target.texture, src, dst, { 0, 0 }, 0.0f, WHITE);
+    if (fade_transition.IsActive()) fade_transition.Render();
     EndDrawing();
 }
 void Game::Cleanup()

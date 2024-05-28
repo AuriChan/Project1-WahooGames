@@ -495,8 +495,13 @@ void Player::MoveY()
 				{
 					
 					StartClimbingDown();
+<<<<<<< Updated upstream
 					pos.y += 16;
 					pos.x -= 16;
+=======
+					pos.y += 1;
+					pos.x -= 1;
+>>>>>>> Stashed changes
 					/*startedClimbing = true;*/
 				}
 

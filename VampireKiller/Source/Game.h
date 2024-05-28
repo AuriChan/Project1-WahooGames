@@ -1,9 +1,9 @@
 #pragma once
 #include "Globals.h"
 #include "Scene.h"
+#include "FadeTransition.h"
 
-
-enum class GameState { DEATH, WIN, INITIAL_SCREEN, MAIN_MENU, PLAYING, SETTINGS, CREDITS };
+//enum class GameState { DEATH, WIN, INITIAL_SCREEN, MAIN_MENU, PLAYING, SETTINGS, CREDITS };
 
 class Game
 {
@@ -34,4 +34,6 @@ private:
     RenderTexture2D target;
     Rectangle src, dst;
     ResourceManager& data = ResourceManager::Instance();
+
+    FadeTransition fade_transition;
 };
