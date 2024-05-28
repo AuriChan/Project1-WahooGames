@@ -95,6 +95,12 @@ AppStatus Player::Initialise()
 	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)5 * m,  0, -m, n });
 	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)1 * m,  0, -m, n });
 
+	/*sprite->SetAnimationDelay((int)PlayerAnim::WHIP_CLIMBING_TOP_RIGHT, ANIM_DELAY * 3);
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_CLIMBING_TOP_RIGHT, { (float)4 * m,  0, m, n });
+
+	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT, ANIM_DELAY * 3);
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT, { (float)5 * m,  0, -m, n });*/
+
 	sprite->SetAnimation((int)PlayerAnim::IDLE_RIGHT);
 
 	return AppStatus::OK;
@@ -256,7 +262,41 @@ void Player::StartAttacking()
 
 		}
 	}
-	else
+	/*else if (state == State::JUMPING)
+	{
+		if (IsLookingRight())
+		{
+			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
+			Sprite* sprite = dynamic_cast<Sprite*>(render);
+			sprite->SetSingleMode();
+
+		}
+		else
+		{
+			SetAnimation((int)PlayerAnim::WHIP_IDLE_LEFT);
+			Sprite* sprite = dynamic_cast<Sprite*>(render);
+			sprite->SetSingleMode();
+
+		}
+	}*/
+	/*else if (state == State::CLIMBING)
+	{
+		if (IsLookingRight())
+		{
+			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
+			Sprite* sprite = dynamic_cast<Sprite*>(render);
+			sprite->SetSingleMode();
+
+		}
+		else
+		{
+			SetAnimation((int)PlayerAnim::WHIP_IDLE_LEFT);
+			Sprite* sprite = dynamic_cast<Sprite*>(render);
+			sprite->SetSingleMode();
+
+		}
+	}*/
+	else if(state == State::IDLE)
 	{
 		state = State::ATTACKING;
 		if (IsLookingRight())
@@ -347,6 +387,10 @@ void Player::Update()
 	{
 		Death();
 	}
+	else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
+	{
+		StartAttacking();
+	}
 	else
 	{
 
@@ -385,8 +429,9 @@ void Player::MoveX()
 
 	//We can only go up and down while climbing
 	if (state == State::CLIMBING)	return;
+	if (state == State::DEAD) return;
 
-	if (IsKeyDown(KEY_DOWN) && state != State::ATTACKING && state != State::DEAD)
+	if (IsKeyDown(KEY_DOWN) && state != State::ATTACKING)
 	{
 		if (state == State::JUMPING) return;
 		else if (state == State::IDLE) StartCrouching();
@@ -394,7 +439,7 @@ void Player::MoveX()
 
 	}
 
-	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && state != State::ATTACKING && state != State::DEAD)
+	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
 	{
 		if (pos.x < 0) { pos.x = 0; }
 
@@ -415,7 +460,7 @@ void Player::MoveX()
 		}
 	}
 
-	else if (IsKeyDown(KEY_RIGHT) && state != State::ATTACKING && state != State::DEAD)
+	else if (IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
 	{
 		if (pos.x >= WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64))
 		{
@@ -446,8 +491,6 @@ void Player::MoveX()
 void Player::MoveY()
 {
 	AABB box;
-
-
 
 	if (state == State::JUMPING)
 	{
@@ -501,11 +544,7 @@ void Player::MoveY()
 				}
 
 			}
-			else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
-			{
-				StartAttacking();
-
-			}
+			
 
 		}
 		else

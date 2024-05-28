@@ -101,6 +101,7 @@ GameState FadeTransition::Update()
     //return the source state (from), otherwise return the target state (to).
     return state == FadeState::OUT ? from : to;
 }
+
 void FadeTransition::Render()
 {
     float alpha;

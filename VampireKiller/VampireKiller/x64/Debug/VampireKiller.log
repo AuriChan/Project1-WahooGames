@@ -1,35 +1,7 @@
-﻿  AABB.cpp
-  Bat.cpp
-  Enemy.cpp
-  EnemyManager.cpp
-  Entity.cpp
-  FadeTransition.cpp
-  Game.cpp
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\FadeTransition.cpp(119,59): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\FadeTransition.cpp(119,47): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\FadeTransition.cpp(119,39): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\FadeTransition.cpp(119,31): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\FadeTransition.cpp(127,59): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\FadeTransition.cpp(127,47): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\FadeTransition.cpp(127,39): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\FadeTransition.cpp(127,31): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  Globals.cpp
-  main.cpp
-  Object.cpp
+﻿  Game.cpp
   Player.cpp
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\Player.cpp(373,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-  RenderComponent.cpp
-  ResourceManager.cpp
+C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\Player.cpp(417,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
   Scene.cpp
-  SkullHead.cpp
-  SkullTurret.cpp
-  Soldier.cpp
-  Sprite.cpp
-  StaticImage.cpp
-  Text.cpp
+  main.cpp
   Generando código...
-  Compilando...
-  TileMap.cpp
-  Generando código...
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe

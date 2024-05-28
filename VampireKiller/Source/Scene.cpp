@@ -28,7 +28,7 @@ Scene::Scene()
 	data.LoadMusic(ResourceAudio::MUSIC_ENDING, "Images/Ending.mp3", true);
 	data.LoadMusic(ResourceAudio::MUSIC_GAMEOVER, "Images/GameOver.mp3", false);
 
-
+	dst = {};
 }
 Scene::~Scene()
 {
@@ -562,7 +562,7 @@ AppStatus Scene::LoadLevel(int stage)
 				-3, -3, -3, -3, 94, 95, 86, 87, 0, 0, 86, 87, 0, 0, 86, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 92, 93, 81, 81, 86, 87, 81, 81, 86, 87, 81, 81, 86, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 94, 95, 81, 81, 86, 87, 81, 81, 86, 87, 81, 81, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				-3, -3, 81, 81, 81, 10, -3, -3, 83, 84, -3, -3, 83, 84, 85, 82, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				-3, -3, 81, 81, 81, 110, -3, -3, 83, 84, -3, -3, 83, 84, 85, 82, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 81, 81, 110, 81, 86, 87, 0, 0, 86, 87, 0, 0, 86, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		map2 = new int[size] {
@@ -1131,27 +1131,35 @@ void Scene::StageManager(int stage)
 	int top = player->GetHitbox().pos.y + 48;
 	int bottom = player->GetHitbox().pos.y;
 
+	float w, h;
+	w = WINDOW_WIDTH * GAME_SCALE_FACTOR;
+	h = WINDOW_HEIGHT * GAME_SCALE_FACTOR;
+
+	dst = { 0, 0, w, h };
 	//level 1
 	if (stage == 1 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(1, 5, 2, 5, dst);
 		LoadLevel(2);
 
 	}
 	//level 2
 	else if (stage == 2 && right > WINDOW_WIDTH)
 	{
-
+		fade_transition.SetScene(2, 5, 3, 5, dst);
 		LoadLevel(3);
 	}
 
 	else if (stage == 2 && left < 0)
 	{
+		fade_transition.SetScene(2, 5, 1, 5, dst);
 		LoadLevel(1);
 
 	}
 	//level 3
 	else if (stage == 3 && right > (WINDOW_WIDTH - 48))
 	{
+		fade_transition.SetScene(3, 5, 4, 5, dst);
 		LoadLevel(4);
 
 
@@ -1159,17 +1167,20 @@ void Scene::StageManager(int stage)
 	}
 	else if (stage == 3 && left < 0)
 	{
+		fade_transition.SetScene(3, 5, 2, 5, dst);
 		LoadLevel(2);
 
 	}
 	//level 4
 	else if (stage == 4 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(4, 5, 5, 5, dst);
 		LoadLevel(5);
 
 	}
 	else if (stage == 4 && left < 0)
 	{
+		fade_transition.SetScene(4, 5, 6, 5, dst);
 		LoadLevel(6);
 
 	}
@@ -1177,16 +1188,19 @@ void Scene::StageManager(int stage)
 	//level 5
 	else if (stage == 5 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(5, 5, 6, 5, dst);
 		LoadLevel(6);
 
 	}
 	else if (stage == 5 && left < 0)
 	{
+		fade_transition.SetScene(5, 5, 4, 5, dst);
 		LoadLevel(4);
 
 	}
 	else if (stage == 5 && top < 32)
 	{
+		fade_transition.SetScene(5, 5, 8, 5, dst);
 		LoadLevel(8);
 
 	}
@@ -1194,61 +1208,74 @@ void Scene::StageManager(int stage)
 	//level 6
 	else if (stage == 6 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(6, 5, 4, 5, dst);
 		LoadLevel(4);
 
 	}
 	else if (stage == 6 && left < 0)
 	{
+		fade_transition.SetScene(6, 5, 5, 5, dst);
 		LoadLevel(5);
 
 	}
 	else if (stage == 6 && top < 32)
 	{
+		fade_transition.SetScene(6, 5, 9, 5, dst);
 		LoadLevel(9);
 
 	}
 	//level 7
 	else if (stage == 7 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(7, 5, 8, 5, dst);
 		LoadLevel(8);
 	}
 	else if (stage == 7 && left < 0)
 	{
+		fade_transition.SetScene(7, 5, 12, 5, dst);
 		LoadLevel(12);
 	}
 	else if (stage == 7 && bottom > WINDOW_HEIGHT)
 	{
+		fade_transition.SetScene(7, 5, 4, 5, dst);
 		LoadLevel(4);
 	}
 	//level 8
 	else if (stage == 8 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(8, 5, 9, 5, dst);
 		LoadLevel(9);
 	}
 	else if (stage == 8 && left < 0)
 	{
+		fade_transition.SetScene(8, 5, 7, 5, dst);
 		LoadLevel(7);
 	}
 	else if (stage == 8 && bottom > WINDOW_HEIGHT)
 	{
+		fade_transition.SetScene(8, 5, 5, 5, dst);
 		LoadLevel(5);
 	}
 	//level 9
 	else if (stage == 9 && left < 0)
 	{
+		fade_transition.SetScene(9, 5, 8, 5, dst);
 		LoadLevel(8);
 	}
 	else if (stage == 9 && bottom > WINDOW_HEIGHT)
 	{
+		fade_transition.SetScene(9, 5, 6, 5, dst);
 		LoadLevel(6);
 	}
 	//level 12
 	else if (stage == 12 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(12, 5, 7, 5, dst);
 		LoadLevel(7);
 	}
 	else if (stage == 12 && left < 0)
 	{
+		fade_transition.SetScene(12, 5, 11, 5, dst);
 		LoadLevel(11);
 	}
 	else if (stage == 12 && bottom > WINDOW_HEIGHT)
@@ -1258,10 +1285,12 @@ void Scene::StageManager(int stage)
 	//level 11
 	else if (stage == 11 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(11, 5, 12, 5, dst);
 		LoadLevel(12);
 	}
 	else if (stage == 11 && left < 0)
 	{
+		fade_transition.SetScene(11, 5, 10, 5, dst);
 		LoadLevel(10);
 	}
 	else if (stage == 11 && bottom > WINDOW_HEIGHT)
@@ -1271,6 +1300,7 @@ void Scene::StageManager(int stage)
 	//level 10
 	else if (stage == 10 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(10, 5, 11, 5, dst);
 		LoadLevel(11);
 	}
 
@@ -1280,47 +1310,57 @@ void Scene::StageManager(int stage)
 	}
 	else if (stage == 10 && top < 32)
 	{
+		fade_transition.SetScene(10, 5, 13, 5, dst);
 		LoadLevel(13);
 
 	}
 	//level 13
 	else if (stage == 13 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(13, 5, 14, 5, dst);
 		LoadLevel(14);
 	}
 	else if (stage == 13 && left < 0)
 	{
+		fade_transition.SetScene(13, 5, 18, 5, dst);
 		LoadLevel(18);
 	}
 	else if (stage == 13 && bottom > WINDOW_HEIGHT)
 	{
+		fade_transition.SetScene(13, 5, 10, 5, dst);
 		LoadLevel(10);
 	}
 	//level 14
 	else if (stage == 14 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(14, 5, 15, 5, dst);
 		LoadLevel(15);
 	}
 	else if (stage == 14 && left < 0)
 	{
+		fade_transition.SetScene(14, 5, 13, 5, dst);
 		LoadLevel(13);
 	}
 	else if (stage == 14 && bottom > WINDOW_HEIGHT)
 	{
+		fade_transition.SetScene(14, 5, 11, 5, dst);
 		LoadLevel(11);
 	}
 	//level 15
 	else if (stage == 15 && left < 0)
 	{
+		fade_transition.SetScene(15, 5, 14, 5, dst);
 		LoadLevel(14);
 	}
 	else if (stage == 15 && bottom > WINDOW_HEIGHT)
 	{
+		fade_transition.SetScene(15, 5, 12, 5, dst);
 		LoadLevel(12);
 	}
 	//level 16
 	else if (stage == 16 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(16, 5, 17, 5, dst);
 		LoadLevel(17);
 	}
 	else if (stage == 16 && bottom > WINDOW_HEIGHT)
@@ -1331,10 +1371,12 @@ void Scene::StageManager(int stage)
 	//level 17
 	else if (stage == 17 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(17, 5, 18, 5, dst);
 		LoadLevel(18);
 	}
 	else if (stage == 17 && left < 0)
 	{
+		fade_transition.SetScene(17, 5, 16, 5, dst);
 		LoadLevel(16);
 	}
 	else if (stage == 17 && bottom > WINDOW_HEIGHT)
@@ -1344,10 +1386,12 @@ void Scene::StageManager(int stage)
 	//level 18
 	else if (stage == 18 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(18, 5, 13, 5, dst);
 		LoadLevel(13);
 	}
 	else if (stage == 18 && left < 0)
 	{
+		fade_transition.SetScene(18, 5, 17, 5, dst);
 		LoadLevel(17);
 	}
 	else if (stage == 18 && bottom > WINDOW_HEIGHT)
@@ -1356,36 +1400,46 @@ void Scene::StageManager(int stage)
 	}
 	else if (stage == 18 && top < 32)
 	{
+		fade_transition.SetScene(18, 5, 21, 5, dst);
 		LoadLevel(21);
 
 	}
 	//level 19
 	else if (stage == 19 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(19, 5, 20, 5, dst);
 		LoadLevel(20);
 	}
 	//level 20
 	else if (stage == 20 && right > WINDOW_WIDTH)
 	{
+		fade_transition.SetScene(20, 5, 21, 5, dst);
 		LoadLevel(21);
 	}
 	else if (stage == 20 && left < 0)
 	{
+		fade_transition.SetScene(20, 5, 19, 5, dst);
 		LoadLevel(19);
 	}
 	//level 21
 	else if (stage == 21 && left < 0)
 	{
+		fade_transition.SetScene(21, 5, 20, 5, dst);
 		LoadLevel(20);
 	}
 	else if (stage == 21 && bottom > WINDOW_HEIGHT)
 	{
+		fade_transition.SetScene(21, 5, 18, 5, dst);
 		LoadLevel(18);
 	}
 
 }
 void Scene::Update()
 {
+	if (fade_transition.IsActive() == true)
+	{
+		fade_transition.Update();
+	}
 	Point p1, p2, posP;
 	AABB box;
 	Point p;
@@ -1515,6 +1569,7 @@ void Scene::Render()
 		player->DrawDebug(GREEN);
 
 	}
+	if (fade_transition.IsActive()) fade_transition.Render();
 
 	EndMode2D();
 

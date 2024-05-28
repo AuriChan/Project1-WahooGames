@@ -5,6 +5,7 @@
 #include "Object.h"
 #include "Enemy.h"
 #include "Text.h"
+#include "FadeTransition.h"
 
 
 enum class DebugMode { OFF, SPRITES_AND_HITBOXES, ONLY_HITBOXES, SIZE };
@@ -48,6 +49,7 @@ private:
     ResourceManager& data = ResourceManager::Instance();
     Text *font;
 
-  
+    Rectangle dst;
+    FadeTransition fade_transition;
 
 };

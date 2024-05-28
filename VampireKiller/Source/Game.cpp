@@ -144,7 +144,7 @@ AppStatus Game::Update()
             if (IsKeyPressed(KEY_SPACE))
             {
                 /*state = GameState::MAIN_MENU;*/
-                fade_transition.Set(GameState::INITIAL_SCREEN, 10, GameState::MAIN_MENU, 10, dst);
+                fade_transition.Set(GameState::INITIAL_SCREEN, 5, GameState::MAIN_MENU, 5, dst);
             }
             break;
 
@@ -160,7 +160,7 @@ AppStatus Game::Update()
 
                 /*if (BeginPlay() != AppStatus::OK) return AppStatus::ERROR;*/
                 /*state = GameState::PLAYING;*/
-                fade_transition.Set(GameState::MAIN_MENU, 10, GameState::PLAYING, 10, dst);
+                fade_transition.Set(GameState::MAIN_MENU, 5, GameState::PLAYING, 5, dst);
             }
             break;
         case GameState::PLAYING:
@@ -168,25 +168,30 @@ AppStatus Game::Update()
             if (IsKeyPressed(KEY_ESCAPE))
             {
                 /*FinishPlay();*/
-                state = GameState::MAIN_MENU;
+                fade_transition.Set(GameState::PLAYING, 5, GameState::MAIN_MENU, 5, dst);
+                /*state = GameState::MAIN_MENU;*/
                 
             }
 
             else if (IsKeyPressed(KEY_D))
             {
-                state = GameState::DEATH;
+                fade_transition.Set(GameState::PLAYING, 5, GameState::DEATH, 5, dst);
+                /*state = GameState::DEATH;*/
             }
             else if (IsKeyPressed(KEY_W))
             {
-                state = GameState::WIN;
+                fade_transition.Set(GameState::PLAYING, 5, GameState::WIN, 5, dst);
+                /*state = GameState::WIN;*/
             }
             else if (scene->GetPlayer()->GetLives() == 0)
             {
-                state = GameState::DEATH;
+                fade_transition.Set(GameState::PLAYING, 5, GameState::DEATH, 5, dst);
+                /*state = GameState::DEATH;*/
             }
             else if (scene->GetPlayer()->GetWin() == true)
             {
-                state = GameState::WIN;
+                fade_transition.Set(GameState::PLAYING, 5, GameState::WIN, 5, dst);
+                /*state = GameState::WIN;*/
             }
             else
             {
