@@ -495,8 +495,8 @@ void Player::MoveY()
 				{
 					
 					StartClimbingDown();
-					pos.y -= 1;
-					pos.x -= 1;
+					pos.y += 16;
+					pos.x -= 16;
 					/*startedClimbing = true;*/
 				}
 

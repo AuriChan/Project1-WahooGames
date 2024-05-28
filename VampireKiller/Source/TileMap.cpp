@@ -383,9 +383,9 @@ bool TileMap::TestOnLadderTop(const AABB& box, int* px) const
 	Tile tile1, tile2;
 
 	//Control points
-	left = box.pos.x + box.width - 8;
+	left = box.pos.x + box.width -8;
 	right = box.pos.x + box.width;
-	bottom2 = box.pos.y + box.height - 8;
+	bottom2 = box.pos.y + box.height-8;
 	bottom1 = box.pos.y + box.height;
 
 	//Calculate the tile coordinates
@@ -419,7 +419,7 @@ int TileMap::GetLadderCenterPos(int pixel_x, int pixel_y) const
 	Tile tile = GetTileIndex(tx, ty);
 
 	if (tile == Tile::STAIRS)		return tx * TILE_SIZE;
-	else if (tile == Tile::LADDER_TOP) return tx * TILE_SIZE + 16;
+	else if (tile == Tile::LADDER_TOP) return tx * TILE_SIZE +16;
 	else
 	{
 		LOG("Internal error, tile should be a LADDER, coord: (%d,%d), tile type: %d", pixel_x, pixel_y, (int)tile);
