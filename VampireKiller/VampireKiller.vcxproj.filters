@@ -1,31 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Application">
-      <UniqueIdentifier>{cbf31b56-5cde-4563-870d-40d2cb71bbff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core">
-      <UniqueIdentifier>{9e871f97-7e09-48a2-b5d0-d990528d5647}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities">
-      <UniqueIdentifier>{ef278471-f20d-4009-b03f-8a44a182b72b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Render">
-      <UniqueIdentifier>{f3cfeecd-c2ce-419c-a7e4-4ef23cb5c9bb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Geometry">
-      <UniqueIdentifier>{d366206b-e327-455c-8424-9760f4a79a7b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities\Enemies">
-      <UniqueIdentifier>{4f45fc3d-37dc-4448-b1f9-16f1a6741720}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Source\Globals.cpp">
-      <Filter>Application</Filter>
+      <Filter>Aplication</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Aplication</Filter>
     </ClCompile>
     <ClCompile Include="Source\ResourceManager.cpp">
-      <Filter>Application</Filter>
+      <Filter>Aplication</Filter>
     </ClCompile>
     <ClCompile Include="Source\Game.cpp">
       <Filter>Core</Filter>
@@ -36,11 +19,8 @@
     <ClCompile Include="Source\TileMap.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Entity.cpp">
-      <Filter>Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Player.cpp">
-      <Filter>Entities</Filter>
+    <ClCompile Include="Source\AABB.cpp">
+      <Filter>Geometry</Filter>
     </ClCompile>
     <ClCompile Include="Source\RenderComponent.cpp">
       <Filter>Render</Filter>
@@ -48,60 +28,61 @@
     <ClCompile Include="Source\Sprite.cpp">
       <Filter>Render</Filter>
     </ClCompile>
-    <ClCompile Include="Source\main.cpp">
-      <Filter>Application</Filter>
+    <ClCompile Include="Source\StaticImage.cpp">
+      <Filter>Render</Filter>
     </ClCompile>
-    <ClCompile Include="Source\AABB.cpp">
-      <Filter>Geometry</Filter>
+    <ClCompile Include="Source\Entity.cpp">
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object.cpp">
       <Filter>Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Source\StaticImage.cpp">
-      <Filter>Render</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Enemy.cpp">
-      <Filter>Entities\Enemies</Filter>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="Source\Bat.cpp">
+      <Filter>Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Enemy.cpp">
       <Filter>Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Source\EnemyManager.cpp">
       <Filter>Entities\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="Source\SkullHead.cpp">
+    <ClCompile Include="Source\Shot.cpp">
       <Filter>Entities\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Soldier.cpp">
+    <ClCompile Include="Source\ShotManager.cpp">
+      <Filter>Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SkullHead.cpp">
       <Filter>Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Source\SkullTurret.cpp">
       <Filter>Entities\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Soldier.cpp">
+      <Filter>Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FadeTransition.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Text.cpp">
       <Filter>Render</Filter>
     </ClCompile>
-<<<<<<< Updated upstream
-    <ClCompile Include="Source\FadeTransition.cpp">
-      <Filter>Render</Filter>
-=======
-    <ClCompile Include="Source\Shot.cpp">
-      <Filter>Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ShotManager.cpp">
-      <Filter>Entities</Filter>
->>>>>>> Stashed changes
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Player.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Globals.h">
-      <Filter>Application</Filter>
+      <Filter>Aplication</Filter>
     </ClInclude>
     <ClInclude Include="Source\MemLeaks.h">
-      <Filter>Application</Filter>
+      <Filter>Aplication</Filter>
     </ClInclude>
     <ClInclude Include="Source\ResourceManager.h">
-      <Filter>Application</Filter>
+      <Filter>Aplication</Filter>
     </ClInclude>
     <ClInclude Include="Source\Game.h">
       <Filter>Core</Filter>
@@ -112,11 +93,11 @@
     <ClInclude Include="Source\TileMap.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Entity.h">
-      <Filter>Entities</Filter>
+    <ClInclude Include="Source\AABB.h">
+      <Filter>Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Player.h">
-      <Filter>Entities</Filter>
+    <ClInclude Include="Source\Point.h">
+      <Filter>Geometry</Filter>
     </ClInclude>
     <ClInclude Include="Source\RenderComponent.h">
       <Filter>Render</Filter>
@@ -124,49 +105,64 @@
     <ClInclude Include="Source\Sprite.h">
       <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="Source\AABB.h">
-      <Filter>Geometry</Filter>
+    <ClInclude Include="Source\StaticImage.h">
+      <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Point.h">
-      <Filter>Geometry</Filter>
+    <ClInclude Include="Source\Entity.h">
+      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="Source\Object.h">
       <Filter>Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Source\StaticImage.h">
-      <Filter>Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Enemy.h">
+    <ClInclude Include="Source\Bat.h">
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Bat.h">
+    <ClInclude Include="Source\Enemy.h">
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Source\EnemyManager.h">
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="Source\SkullHead.h">
+    <ClInclude Include="Source\Shot.h">
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Soldier.h">
+    <ClInclude Include="Source\ShotManager.h">
+      <Filter>Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SkullHead.h">
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Source\SkullTurret.h">
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Soldier.h">
+      <Filter>Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FadeTransition.h">
+      <Filter>Render</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Text.h">
       <Filter>Render</Filter>
     </ClInclude>
-<<<<<<< Updated upstream
-    <ClInclude Include="Source\FadeTransition.h">
-      <Filter>Render</Filter>
-=======
-    <ClInclude Include="Source\Shot.h">
-      <Filter>Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ShotManager.h">
-      <Filter>Entities</Filter>
->>>>>>> Stashed changes
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{ba5a8796-b85b-4054-9532-18aa53627b2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aplication">
+      <UniqueIdentifier>{a525dfca-39c0-4631-8d24-ff12e2b868f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{4dfb17b8-f8ae-471d-8a37-649d281ac855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Geometry">
+      <UniqueIdentifier>{b759d6ba-cef5-468c-96d6-08742372e90f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{8b5e8119-00fa-4d13-b8f8-f47ba524556f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Enemies">
+      <UniqueIdentifier>{c065ee62-460e-4e22-821a-4895c79f711d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

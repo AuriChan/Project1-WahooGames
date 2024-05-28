@@ -1,7 +1,10 @@
-﻿  Game.cpp
-  Player.cpp
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\Player.cpp(417,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-  Scene.cpp
+﻿  Bat.cpp
+  EnemyManager.cpp
+  Game.cpp
   main.cpp
-  Generando código...
-  VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+  SkullHead.cpp
+  SkullTurret.cpp
+  Soldier.cpp
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
