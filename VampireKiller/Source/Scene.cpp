@@ -1773,15 +1773,37 @@ void Scene::RenderObjectsDebug(const Color& col) const
 }
 void Scene::RenderGUI() const
 {
-	//Temporal approach
-	DrawText(TextFormat("SCORE : %d", player->GetScore()), 10, 1, 5, LIGHTGRAY);
-	DrawText(TextFormat("LIFES : %d", player->GetLives()), 10,11, 5, LIGHTGRAY);
-	DrawText(TextFormat("HP BAR : %d", player->GetHp()), 10, 21, 5, LIGHTGRAY);
+	
+	if (player->GetScore() < 10)
+	{
+		font->Draw(10, 1, TextFormat("SCORE-00000%d", player->GetScore()));
 
+	}
+	else if (player->GetScore() < 100)
+	{
+		font->Draw(10, 1, TextFormat("SCORE-0000%d", player->GetScore()));
 
-	/*font->Draw(10, 1, TextFormat("SCORE:%d", player->GetScore()));
-	font->Draw(10, 11, TextFormat("LIFES:%d", player->GetLives()));
-	font->Draw(10, 21, TextFormat("HP BAR:%d", player->GetHp()));*/
+	}
+	else if (player->GetScore() < 1000)
+	{
+		font->Draw(10, 1, TextFormat("SCORE-000%d", player->GetScore()));
+
+	}
+	font->Draw(180, 1, TextFormat("@-%d", player->GetLives()));
+	font->Draw(10, 11, TextFormat("PLAYER %d", player->GetHp()));
+	font->Draw(10, 21, TextFormat("ENEMY %d", 0));
+	if (player->GetStage() < 10)
+	{
+		font->Draw(110, 1, TextFormat("STAGE-0%d", player->GetStage()));
+	}
+	else
+	{
+		font->Draw(110, 1, TextFormat("STAGE-%d", player->GetStage()));
+
+	}
+
+	
+	font->Draw(210, 1, TextFormat("P-02"));
 
 
 }
