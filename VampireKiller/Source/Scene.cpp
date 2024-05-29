@@ -13,6 +13,8 @@ Scene::Scene()
 	player = nullptr;
 	level = nullptr;
 	font = nullptr;
+	enemies = nullptr;
+	shots = nullptr;
 
 	camera.target = { 0, 0 };				//Center of the screen
 	camera.offset = { 0, MARGIN_GUI_Y };	//Offset from the target (center of the screen)
@@ -39,7 +41,12 @@ Scene::~Scene()
 		player = nullptr;
 	}
 
-
+	if (enemies != nullptr)
+	{
+		enemies->Release();
+		delete enemies;
+		enemies = nullptr;
+	}
 	if (level != nullptr)
 	{
 		level->Release();
@@ -77,7 +84,33 @@ AppStatus Scene::Init()
 		LOG("Failed to initialise Player");
 		return AppStatus::ERROR;
 	}
+	//Create enemy manager
+	enemies = new EnemyManager();
+	if (enemies == nullptr)
+	{
+		LOG("Failed to allocate memory for Enemy Manager");
+		return AppStatus::ERROR;
+	}
+	//Initialise enemy manager
+	if (enemies->Initialise() != AppStatus::OK)
+	{
+		LOG("Failed to initialise Enemy Manager");
+		return AppStatus::ERROR;
+	}
 
+	//Create shot manager 
+	shots = new ShotManager();
+	if (shots == nullptr)
+	{
+		LOG("Failed to allocate memory for Shot Manager");
+		return AppStatus::ERROR;
+	}
+	//Initialise shot manager
+	if (shots->Initialise() != AppStatus::OK)
+	{
+		LOG("Failed to initialise Shot Manager");
+		return AppStatus::ERROR;
+	}
 	//Create text font 
 	font = new Text();
 	if (font == nullptr)
@@ -120,7 +153,10 @@ AppStatus Scene::Init()
 	}
 	//Assign the tile map reference to the player to check collisions while navigating
 	player->SetTileMap(level);
-
+	//Assign the tile map reference to the shot manager to check collisions when shots are shot
+	shots->SetTileMap(level);
+	//Assign the shot manager reference to the enemy manager so enemies can add shots
+	enemies->SetShotManager(shots);
 
 
 	return AppStatus::OK;
@@ -135,7 +171,7 @@ AppStatus Scene::LoadLevel(int stage)
 	int* map = nullptr;
 	int* map2 = nullptr;
 	Object* obj;
-
+	AABB hitbox, area;
 
 
 	ClearLevel();
@@ -208,9 +244,9 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(2);
 
@@ -278,7 +314,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0,401, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(4);
@@ -311,7 +347,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 204, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0,401, 0, 0, 0, 0, 0, 204, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(5);
@@ -1107,6 +1143,14 @@ AppStatus Scene::LoadLevel(int stage)
 				map2[i] = 0;
 				break;
 
+			case Tile::SOLDIER:
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				hitbox = enemies->GetEnemyHitBox(pos, EnemyType::SLIME);
+				area = level->GetSweptAreaX(hitbox);
+				enemies->Add(pos, EnemyType::SLIME, area);
+				break;
+
 			default:
 				break;
 			}
@@ -1532,6 +1576,9 @@ void Scene::Update()
 	level->Update();
 	player->Update();
 
+	box = player->GetHitbox();
+	enemies->Update(box);
+	shots->Update(box);
 
 	if (player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
 	{
@@ -1561,12 +1608,16 @@ void Scene::Render()
 	{
 		RenderObjects();
 		player->Draw();
+		enemies->Draw();
+		shots->Draw();
 
 	}
 	if (debug == DebugMode::SPRITES_AND_HITBOXES || debug == DebugMode::ONLY_HITBOXES)
 	{
 		RenderObjectsDebug(YELLOW);
 		player->DrawDebug(GREEN);
+		enemies->DrawDebug();
+		shots->DrawDebug(GRAY);
 
 	}
 	if (fade_transition.IsActive()) fade_transition.Render();
@@ -1578,10 +1629,7 @@ void Scene::Render()
 void Scene::Release()
 {
 	level->Release();
-
 	player->Release();
-
-
 	ClearLevel();
 }
 void Scene::CheckCollisions()
@@ -1589,21 +1637,27 @@ void Scene::CheckCollisions()
 	AABB player_box, obj_box, soldier_box;
 
 	player_box = player->GetHitbox();
-
+	
 	auto it = objects.begin();
 
 
-
+	
 
 	while (it != objects.end())
 	{
 
 		obj_box = (*it)->GetHitbox();
 
+		if (player_box.TestAABB(soldier_box) && player->GetLives() != 0 )
+		{
+			player->SetLifes(player->GetLives() - 1);
+
+		}
 		if (player_box.TestAABB(obj_box))
 		{
 			switch ((*it)->GetType())
 			{
+			
 			case ObjectType::HEART:
 				data.LoadSound(ResourceAudio::SOUND_HEART, "Images/Heart.wav");
 				data.StartSound(ResourceAudio::SOUND_HEART);
@@ -1688,6 +1742,8 @@ void Scene::CheckCollisions()
 			case ObjectType::SILVER_KEY:
 				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 				data.StartSound(ResourceAudio::SOUND_ITEM);
+				
+				player->SetKey(true);
 
 				delete* it;
 				it = objects.erase(it);
@@ -1805,7 +1861,8 @@ void Scene::ClearLevel()
 	}
 	objects2.clear();
 
-
+	enemies->Release();
+	shots->Clear();
 
 }
 void Scene::RenderObjects() const

@@ -38,9 +38,7 @@ enum class Tile
 
 //ENTITY
 
-PLAYER = 400, 
-
-SOLDIER = 150, BAT, SKULL_HEAD, SKULL_TURRET,
+PLAYER = 400, SOLDIER, BAT, SKULL_HEAD, SKULL_TURRET,
 HEAD, MEDUSA_BOTTOM_LEFT, MEDUSA_BOTTOM_RIGHT, MEDUSA_MID_LEFT, MEDUSA_MID_RIGHT, MEDUSA_TOP_LEFT, MEDUSA_TOP_RIGHT,
 
 
@@ -99,7 +97,8 @@ public:
 
 	bool TestOnLadder(const AABB& box, int* px) const;
 	bool TestOnLadderTop(const AABB& box, int* px) const;
-
+	//Given a hitbox, computes the maximum swept box model along the X-axis without solid tiles
+	AABB GetSweptAreaX(const AABB& hitboxbox) const;
 
 private:
 	void InitTileDictionary();

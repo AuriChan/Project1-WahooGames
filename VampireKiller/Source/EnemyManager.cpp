@@ -13,7 +13,7 @@ EnemyManager::~EnemyManager()
 AppStatus EnemyManager::Initialise()
 {
 	ResourceManager& data = ResourceManager::Instance();
-	if (data.LoadTexture(ResourceImages::IMG_ENEMY, "images/enemies.png") != AppStatus::OK)
+	if (data.LoadTexture(ResourceImages::IMG_ENEMY, "images/enemy.png") != AppStatus::OK)
 	{
 		LOG("Failed to load enemies sprite texture");
 		return AppStatus::ERROR;
@@ -31,7 +31,7 @@ void EnemyManager::Add(const Point& pos, EnemyType type, const AABB& area, Look 
 
 	if (type == EnemyType::SLIME)
 	{
-		enemy = new Soldier(pos, SLIME_PHYSICAL_WIDTH, SLIME_PHYSICAL_HEIGHT, SLIME_FRAME_SIZE, SLIME_FRAME_SIZE);
+		enemy = new Slime(pos, SLIME_PHYSICAL_WIDTH, SLIME_PHYSICAL_HEIGHT, SLIME_FRAME_SIZE_X, SLIME_FRAME_SIZE_Y);
 	}
 	/*else if (type == EnemyType::TURRET)
 	{

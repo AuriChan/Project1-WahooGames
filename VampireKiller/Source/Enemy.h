@@ -2,10 +2,11 @@
 #include "Entity.h"
 
 //Representation model size: 32x32
-#define SLIME_FRAME_SIZE		32
+#define SLIME_FRAME_SIZE_Y		32
+#define SLIME_FRAME_SIZE_X		16
 //Logical model size: 24x30
-#define SLIME_PHYSICAL_WIDTH	24
-#define SLIME_PHYSICAL_HEIGHT	30
+#define SLIME_PHYSICAL_WIDTH	16
+#define SLIME_PHYSICAL_HEIGHT	32
 
 //Representation model size: 32x32
 #define TURRET_FRAME_SIZE		32

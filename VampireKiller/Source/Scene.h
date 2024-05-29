@@ -6,7 +6,8 @@
 #include "Enemy.h"
 #include "Text.h"
 #include "FadeTransition.h"
-
+#include "EnemyManager.h"
+#include "ShotManager.h"
 
 enum class DebugMode { OFF, SPRITES_AND_HITBOXES, ONLY_HITBOXES, SIZE };
 
@@ -48,6 +49,11 @@ private:
 
     ResourceManager& data = ResourceManager::Instance();
     Text *font;
+    //Enemies present in the level
+    EnemyManager* enemies;
+
+    //Shots thrown by enemies
+    ShotManager* shots;
 
     Rectangle dst;
     FadeTransition fade_transition;

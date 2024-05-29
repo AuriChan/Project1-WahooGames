@@ -151,6 +151,14 @@ void Player::SetWin(bool w)
 {
 	win = w;
 };
+bool Player::GetKey()const
+{
+	return key;
+}
+void Player::SetKey(bool k)
+{
+	key = k;
+}
 void Player::SetHp(int h)
 {
 	HpBar = h;

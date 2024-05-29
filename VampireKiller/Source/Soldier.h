@@ -1,18 +1,17 @@
 #pragma once
 #include "Enemy.h"
 
-#define SOLDIER_SPEED			1
-#define SOLDIER_ANIM_DELAY	(4*ANIM_DELAY)
+#define SLIME_SPEED			1
+#define SLIME_ANIM_DELAY	(2*ANIM_DELAY)
 
-#define SOLDIER_SHOT_OFFSET_X_LEFT	-14
-#define SOLDIER_SHOT_OFFSET_X_RIGHT	 26
-#define SOLDIER_SHOT_OFFSET_Y			-22
+#define SLIME_SHOT_OFFSET_X_LEFT	-14
+#define SLIME_SHOT_OFFSET_X_RIGHT	 26
+#define SLIME_SHOT_OFFSET_Y			-22
 
-#define SOLDIER_SHOT_SPEED	4
+#define SLIME_SHOT_SPEED	4
 
-enum class SoldierState { ROAMING, ATTACK };
-enum class SoldierAnim
-{
+enum class SlimeState { ROAMING, ATTACK };
+enum class SlimeAnim {
 	IDLE_LEFT, IDLE_RIGHT, WALKING_LEFT, WALKING_RIGHT,
 	ATTACK_LEFT, ATTACK_RIGHT, NUM_ANIMATIONS
 };
@@ -24,11 +23,11 @@ struct Step
 	int anim;		//graphical representation
 };
 
-class Soldier : public Enemy
+class Slime : public Enemy
 {
 public:
-	Soldier(const Point& p, int width, int height, int frame_width, int frame_height);
-	~Soldier();
+	Slime(const Point& p, int width, int height, int frame_width, int frame_height);
+	~Slime();
 
 	//Initialize the enemy with the specified look and area
 	AppStatus Initialise(Look look, const AABB& area) override;
@@ -47,7 +46,7 @@ private:
 	void UpdateLook(int anim_id);
 
 	int attack_delay;	//delay between attacks
-	SoldierState state;
+	SlimeState state;
 
 	int current_step;	//current step of the pattern
 	int current_frames;	//number of frames in the current step
