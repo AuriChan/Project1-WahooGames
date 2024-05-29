@@ -130,7 +130,9 @@ private:
 	ResourceManager& data = ResourceManager::Instance();
 
 	bool isClimbingUp;
+	bool isClimbingDown;
 	bool startedClimbing;
+	bool isAttacking;
 	
 };
 

@@ -14,7 +14,9 @@ Player::Player(const Point& p, State s, Look view) :
 	map = nullptr;
 	score = 0;
 	isClimbingUp = false;
+	isClimbingDown = false;
 	startedClimbing = false;
+	isAttacking = false;
 }
 Player::~Player()
 {
@@ -87,19 +89,21 @@ AppStatus Player::Initialise()
 	sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float)m,  n, -m, n });
 	sprite->AddKeyFrame((int)PlayerAnim::DEATH_LEFT, { (float)2 * m,  n, -m, n });
 
-	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_TOP_RIGHT, ANIM_DELAY * 3);
+	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_TOP_RIGHT, ANIM_DELAY * 2);
 	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP_RIGHT, { (float)4 * m,  0, m, n });
 	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_TOP_RIGHT, { (float)1 * m,  0, m, n });
 
-	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, ANIM_DELAY * 3);
+	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, ANIM_DELAY * 2);
 	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)5 * m,  0, -m, n });
 	sprite->AddKeyFrame((int)PlayerAnim::CLIMBING_BOTTOM_LEFT, { (float)1 * m,  0, -m, n });
 
-	/*sprite->SetAnimationDelay((int)PlayerAnim::WHIP_CLIMBING_TOP_RIGHT, ANIM_DELAY * 3);
-	sprite->AddKeyFrame((int)PlayerAnim::WHIP_CLIMBING_TOP_RIGHT, { (float)4 * m,  0, m, n });
+	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_CLIMBING_TOP_RIGHT, ANIM_DELAY * 5);
+	for (i = 0; i < 3; ++i)
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_CLIMBING_TOP_RIGHT, { (float)i * m, 5 * n, m, n });
 
-	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT, ANIM_DELAY * 3);
-	sprite->AddKeyFrame((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT, { (float)5 * m,  0, -m, n });*/
+	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT, ANIM_DELAY * 5);
+	for (i = 0; i < 3; ++i)
+	sprite->AddKeyFrame((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT, { (float)i * m, 6 * n, -m, n });
 
 	sprite->SetAnimation((int)PlayerAnim::IDLE_RIGHT);
 
@@ -246,7 +250,8 @@ void Player::StartAttacking()
 	if (state == State::CROUCHING)
 	{
 		isCrouching = true;
-		state = State::ATTACKING;
+		/*state = State::ATTACKING;*/
+		isAttacking = true;
 		if (IsLookingRight())
 		{
 			SetAnimation((int)PlayerAnim::WHIP_CROUCHING_RIGHT);
@@ -279,26 +284,29 @@ void Player::StartAttacking()
 
 		}
 	}*/
-	/*else if (state == State::CLIMBING)
+	else if (state == State::CLIMBING)
 	{
-		if (IsLookingRight())
+		/*state = State::ATTACKING;*/
+		isAttacking = true;
+		if (isClimbingUp)
 		{
-			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
+			SetAnimation((int)PlayerAnim::WHIP_CLIMBING_TOP_RIGHT);
 			Sprite* sprite = dynamic_cast<Sprite*>(render);
 			sprite->SetSingleMode();
 
 		}
-		else
+		else if (isClimbingDown)
 		{
-			SetAnimation((int)PlayerAnim::WHIP_IDLE_LEFT);
+			SetAnimation((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT);
 			Sprite* sprite = dynamic_cast<Sprite*>(render);
 			sprite->SetSingleMode();
 
 		}
-	}*/
+	}
 	else if(state == State::IDLE)
 	{
-		state = State::ATTACKING;
+		/*state = State::ATTACKING;*/
+		isAttacking = true;
 		if (IsLookingRight())
 		{
 			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
@@ -316,7 +324,8 @@ void Player::StartAttacking()
 	}
 	else if (state == State::WALKING)
 	{
-		state = State::ATTACKING;
+		/*state = State::ATTACKING;*/
+		isAttacking = true;
 		if (IsLookingRight())
 		{
 			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
@@ -334,7 +343,7 @@ void Player::StartAttacking()
 	}
 	data.LoadSound(ResourceAudio::SOUND_ATTACK, "Images/WhipMissTarget.wav");
 	data.StartSound(ResourceAudio::SOUND_ATTACK);
-
+	isAttacking = false;
 }
 void Player::StartClimbingUp()
 {
@@ -405,7 +414,7 @@ void Player::Update()
 	{
 		Death();
 	}
-	else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
+	else if (IsKeyPressed(KEY_SPACE) && !isAttacking && state != State::DEAD)
 	{
 		StartAttacking();
 	}
@@ -427,8 +436,18 @@ void Player::Update()
 		sprite->SetIsFinished(false);
 		if (isCrouching)
 		{
-			state = State::CROUCHING;
+			/*state = State::CROUCHING;*/
 			StartCrouching();
+		}
+		else if (isClimbingUp)
+		{
+			/*state = State::CLIMBING;*/
+			StartClimbingUp();
+		}
+		else if (isClimbingDown)
+		{
+			/*state = State::CLIMBING;*/
+			StartClimbingDown();
 		}
 		else
 		{
@@ -449,7 +468,7 @@ void Player::MoveX()
 	if (state == State::CLIMBING)	return;
 	if (state == State::DEAD) return;
 
-	if (IsKeyDown(KEY_DOWN) && state != State::ATTACKING)
+	if (IsKeyDown(KEY_DOWN) && !isAttacking)
 	{
 		if (state == State::JUMPING) return;
 		else if (state == State::IDLE) StartCrouching();
@@ -458,7 +477,7 @@ void Player::MoveX()
 	}
 	
 
-	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
+	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && !isAttacking)
 	{
 		if (pos.x < 0) { pos.x = 0; }
 
@@ -480,7 +499,7 @@ void Player::MoveX()
 		}
 	}
 
-	else if (IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
+	else if (IsKeyDown(KEY_RIGHT) && !isAttacking)
 	{
 		if (pos.x >= WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64))
 		{
@@ -635,6 +654,7 @@ void Player::LogicClimbing()
 	if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_RIGHT))
 	{
 		isClimbingUp = true;
+		isClimbingDown = false;
 		pos.y -= PLAYER_LADDER_SPEED;
 		pos.x += PLAYER_LADDER_SPEED;
 		sprite->NextFrame();
@@ -642,6 +662,7 @@ void Player::LogicClimbing()
 	else if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_LEFT))
 	{
 		isClimbingUp = false;
+		isClimbingDown = true;
 		pos.y += PLAYER_LADDER_SPEED;
 		pos.x -= PLAYER_LADDER_SPEED;
 		sprite->NextFrame(); // Change the sprite to go downwards, check what sprite is
