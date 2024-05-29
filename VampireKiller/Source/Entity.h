@@ -4,7 +4,7 @@
 #include "ResourceManager.h"
 #include "RenderComponent.h"
 #include "AABB.h"
-enum class LookE { RIGHT, LEFT };
+enum class Look { RIGHT, LEFT };
 class Entity
 {
 public:

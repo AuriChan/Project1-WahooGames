@@ -40,9 +40,6 @@
     <ClCompile Include="Source\Player.cpp">
       <Filter>Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Bat.cpp">
-      <Filter>Entities\Enemies</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Enemy.cpp">
       <Filter>Entities\Enemies</Filter>
     </ClCompile>
@@ -53,9 +50,6 @@
       <Filter>Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Source\ShotManager.cpp">
-      <Filter>Entities\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\SkullHead.cpp">
       <Filter>Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Source\SkullTurret.cpp">
@@ -114,9 +108,6 @@
     <ClInclude Include="Source\Object.h">
       <Filter>Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Bat.h">
-      <Filter>Entities\Enemies</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Enemy.h">
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
@@ -127,9 +118,6 @@
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Source\ShotManager.h">
-      <Filter>Entities\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SkullHead.h">
       <Filter>Entities\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Source\SkullTurret.h">

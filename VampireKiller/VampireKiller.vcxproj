@@ -138,7 +138,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\AABB.cpp" />
-    <ClCompile Include="Source\Bat.cpp" />
     <ClCompile Include="Source\Enemy.cpp" />
     <ClCompile Include="Source\EnemyManager.cpp" />
     <ClCompile Include="Source\Entity.cpp" />
@@ -153,7 +152,6 @@
     <ClCompile Include="Source\Scene.cpp" />
     <ClCompile Include="Source\Shot.cpp" />
     <ClCompile Include="Source\ShotManager.cpp" />
-    <ClCompile Include="Source\SkullHead.cpp" />
     <ClCompile Include="Source\SkullTurret.cpp" />
     <ClCompile Include="Source\Soldier.cpp" />
     <ClCompile Include="Source\Sprite.cpp" />
@@ -163,7 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\AABB.h" />
-    <ClInclude Include="Source\Bat.h" />
     <ClInclude Include="Source\Enemy.h" />
     <ClInclude Include="Source\EnemyManager.h" />
     <ClInclude Include="Source\Entity.h" />
@@ -179,7 +176,6 @@
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\Shot.h" />
     <ClInclude Include="Source\ShotManager.h" />
-    <ClInclude Include="Source\SkullHead.h" />
     <ClInclude Include="Source\SkullTurret.h" />
     <ClInclude Include="Source\Soldier.h" />
     <ClInclude Include="Source\Sprite.h" />

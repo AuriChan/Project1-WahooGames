@@ -19,7 +19,7 @@
 #define ANIM_LADDER_DELAY		(2*ANIM_DELAY)
 
 //When jumping, initial jump speed and maximum falling speed
-#define PLAYER_JUMP_FORCE		9
+#define PLAYER_JUMP_FORCE		8
 
 //Frame delay for updating the jump velocity
 #define PLAYER_JUMP_DELAY		2
@@ -32,7 +32,7 @@
 
 //Logic states
 enum class State { IDLE, WALKING, JUMPING, FALLING, CROUCHING, CLIMBING, ATTACKING, DEAD };
-enum class Look { RIGHT, LEFT};
+
 
 enum class PlayerAnim {
 	IDLE_LEFT, IDLE_RIGHT, IDLE_BACK,
@@ -62,10 +62,10 @@ public:
 	int GetStage()const;
 	void IncrScore(int n);
 	void IncrLifes(int n);
-	int GetScore();
+	int GetScore()const;
 	void SetLifes(int l);
 	int GetLives()const;
-	bool GetWin();
+	bool GetWin()const;
 	void SetWin(bool w);
 	void SetHp(int h);
 	int GetHp()const;

@@ -1,5 +1,4 @@
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\AABB.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\AABB.obj
-C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Bat.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\Bat.obj
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Enemy.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\Enemy.obj
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\EnemyManager.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\EnemyManager.obj
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Entity.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\Entity.obj
@@ -14,7 +13,6 @@ C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Resou
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Scene.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\Scene.obj
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Shot.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\Shot.obj
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\ShotManager.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\ShotManager.obj
-C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\SkullHead.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\SkullHead.obj
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\SkullTurret.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\SkullTurret.obj
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Soldier.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\Soldier.obj
 C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Sprite.cpp;C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\VampireKiller\x64\Debug\Sprite.obj

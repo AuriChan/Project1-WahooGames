@@ -135,11 +135,11 @@ void Player::IncrLifes(int n)
 {
 	lifes += n;
 }
-int Player::GetScore()
+int Player::GetScore()const
 {
 	return score;
 }
-bool Player::GetWin()
+bool Player::GetWin()const
 {
 	return win;
 };
@@ -314,6 +314,24 @@ void Player::StartAttacking()
 
 		}
 	}
+	else if (state == State::WALKING)
+	{
+		state = State::ATTACKING;
+		if (IsLookingRight())
+		{
+			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
+			Sprite* sprite = dynamic_cast<Sprite*>(render);
+			sprite->SetSingleMode();
+
+		}
+		else
+		{
+			SetAnimation((int)PlayerAnim::WHIP_IDLE_LEFT);
+			Sprite* sprite = dynamic_cast<Sprite*>(render);
+			sprite->SetSingleMode();
+
+		}
+	}
 	data.LoadSound(ResourceAudio::SOUND_ATTACK, "Images/WhipMissTarget.wav");
 	data.StartSound(ResourceAudio::SOUND_ATTACK);
 
@@ -414,7 +432,7 @@ void Player::Update()
 		}
 		else
 		{
-			state == State::IDLE;
+			state = State::IDLE;
 			Stop();
 		}
 
@@ -438,6 +456,7 @@ void Player::MoveX()
 		else if (state == State::WALKING) StartCrouching();
 
 	}
+	
 
 	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
 	{
@@ -447,6 +466,7 @@ void Player::MoveX()
 
 		if (state == State::IDLE) StartWalkingLeft();
 		else if (state == State::CROUCHING) StartWalkingLeft();
+		
 		else
 		{
 			if (IsLookingRight()) ChangeAnimLeft();
