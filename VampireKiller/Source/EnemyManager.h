@@ -21,7 +21,7 @@ public:
 
 	//Update enemies according to their logic. If the given player hitbox is visible to them,
 	//they will shoot by adding shots to the ShotManager
-	void Update(const AABB& player_hitbox);
+	void Update(AABB& player_hitbox);
 
 	//Draw all enemies
 	void Draw() const;
@@ -34,7 +34,7 @@ public:
 
 private:
 	std::vector<Enemy*> enemies;
-
+	
 	//Reference to the ShotManager object
 	//This class does not own the object, it only holds a reference to it
 	ShotManager* shots;

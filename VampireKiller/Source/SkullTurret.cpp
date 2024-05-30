@@ -44,7 +44,7 @@ AppStatus Turret::Initialise(Look look, const AABB& area)
 
 	return AppStatus::OK;
 }
-bool Turret::Update(const AABB& box)
+bool Turret::Update( AABB& box)
 {
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	bool shoot = false;

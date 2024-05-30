@@ -83,7 +83,7 @@ void Slime::InitPattern()
 	current_step = 0;
 	current_frames = 0;
 }
-bool Slime::Update(const AABB& box)
+bool Slime::Update( AABB& box)
 {
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	bool shoot = false;

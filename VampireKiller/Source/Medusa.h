@@ -33,7 +33,7 @@ public:
 	AppStatus Initialise(Look look, const AABB& area) override;
 
 	//Update the enemy according to its logic, return true if the enemy must shoot
-	bool Update(const AABB& box) override;
+	bool Update( AABB& box) override;
 
 	//Retrieve the position and direction of the shot to be thrown
 	void GetShootingPosDir(Point* pos, Point* dir) const override;
@@ -47,7 +47,7 @@ private:
 
 	int attack_delay;	//delay between attacks
 	MedusaState state;
-
+	int cooldown = 0;
 	int current_step;	//current step of the pattern
 	int current_frames;	//number of frames in the current step
 	std::vector<StepM> pattern;

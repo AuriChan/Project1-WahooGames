@@ -63,89 +63,149 @@ void Medusa::InitPattern()
 	//Multiplying by 3 ensures sufficient time for displaying all 3 frames of the
 	//walking animation, resulting in smoother transitions and preventing the animation
 	//from appearing rushed or incomplete
-	const int n = MEDUSA_ANIM_DELAY * 3;
+	const int n = MEDUSA_ANIM_DELAY;
 
-	pattern.push_back({ {0, 0}, 2 * n, (int)MedusaAnim::IDLE_RIGHT });
-	pattern.push_back({ {MEDUSA_SPEED, 0}, n, (int)MedusaAnim::WALKING_RIGHT });
-	pattern.push_back({ {0, 0}, n, (int)MedusaAnim::IDLE_RIGHT });
-	pattern.push_back({ {MEDUSA_SPEED, 0}, n, (int)MedusaAnim::WALKING_RIGHT });
-	pattern.push_back({ {0, 0}, n, (int)MedusaAnim::IDLE_RIGHT });
+	//pattern.push_back({ {0, 0}, 2 * n, (int)MedusaAnim::IDLE_RIGHT });
+	//pattern.push_back({ {MEDUSA_SPEED, 0}, n, (int)MedusaAnim::WALKING_RIGHT });
+	//pattern.push_back({ {0, 0}, n, (int)MedusaAnim::IDLE_RIGHT });
+	pattern.push_back({ {MEDUSA_SPEED,MEDUSA_SPEED}, n, (int)MedusaAnim::WALKING_RIGHT });
+	pattern.push_back({ {MEDUSA_SPEED,-MEDUSA_SPEED}, n, (int)MedusaAnim::WALKING_RIGHT });
+	pattern.push_back({ {MEDUSA_SPEED,MEDUSA_SPEED}, n, (int)MedusaAnim::WALKING_RIGHT });
+	pattern.push_back({ {MEDUSA_SPEED,-MEDUSA_SPEED}, n, (int)MedusaAnim::WALKING_RIGHT });
+	//pattern.push_back({ {0, 0}, n, (int)MedusaAnim::IDLE_RIGHT });
 	
-	pattern.push_back({ {0, 0}, 2 * n, (int)MedusaAnim::IDLE_LEFT });
-	pattern.push_back({ {-MEDUSA_SPEED, 0}, n, (int)MedusaAnim::WALKING_LEFT });
-	pattern.push_back({ {0, 0}, n, (int)MedusaAnim::IDLE_LEFT });
-	pattern.push_back({ {-MEDUSA_SPEED, 0}, n, (int)MedusaAnim::WALKING_LEFT });
-	pattern.push_back({ {0, 0}, n, (int)MedusaAnim::IDLE_LEFT });
+	//pattern.push_back({ {0, 0}, 2 * n, (int)MedusaAnim::IDLE_LEFT });
+	//pattern.push_back({ {-MEDUSA_SPEED, 0}, n, (int)MedusaAnim::WALKING_LEFT });
+	//pattern.push_back({ {0, 0}, n, (int)MedusaAnim::IDLE_LEFT });
+	/*pattern.push_back({ {-MEDUSA_SPEED, MEDUSA_SPEED}, n, (int)MedusaAnim::WALKING_LEFT });
+	pattern.push_back({ {-MEDUSA_SPEED, -MEDUSA_SPEED}, n, (int)MedusaAnim::WALKING_LEFT });
+	pattern.push_back({ {-MEDUSA_SPEED, MEDUSA_SPEED}, n, (int)MedusaAnim::WALKING_LEFT });
+	pattern.push_back({ {-MEDUSA_SPEED, -MEDUSA_SPEED}, n, (int)MedusaAnim::WALKING_LEFT });*/
+	//pattern.push_back({ {0, 0}, n, (int)MedusaAnim::IDLE_LEFT });
 
 	current_step = 0;
 	current_frames = 0;
 }
-bool Medusa::Update(const AABB& box)
+bool Medusa::Update(AABB& box)
 {
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	bool shoot = false;
 	int anim_id;
+	if (cooldown > 0)
+	{
+		cooldown--;
 
+	}
+	else if (cooldown == 0)
+	{
+		state = MedusaState::ROAMING;
+	}
+	
 	if (state == MedusaState::ROAMING)
 	{
-		if (IsVisible(box))
-		{
-			state = MedusaState::ATTACK;
-			//The attack animation consists of 2 frames, with the second one being when
-			//we throw the shot. Wait for a frame before initiating the attack.
-			attack_delay = MEDUSA_ANIM_DELAY;
+		//if (IsVisible(box))
+		//{
+		//	state = MedusaState::ATTACK;
+		//	//The attack animation consists of 2 frames, with the second one being when
+		//	//we throw the shot. Wait for a frame before initiating the attack.
+		//	attack_delay = MEDUSA_ANIM_DELAY;
 
-			if (look == Look::LEFT)	sprite->SetAnimation((int)MedusaAnim::ATTACK_LEFT);
-			else					sprite->SetAnimation((int)MedusaAnim::ATTACK_RIGHT);
-		}
-		
+		//	if (look == Look::LEFT)	sprite->SetAnimation((int)MedusaAnim::ATTACK_LEFT);
+		//	else					sprite->SetAnimation((int)MedusaAnim::ATTACK_RIGHT);
+		//}
 
-		else
-		{
-			pos += pattern[current_step].speed;
-			
-			
-			current_frames++;
-
-			if (current_frames == pattern[current_step].frames)
+		/*else
+		{*/
+			if (box.pos.x < pos.x && cooldown == 0)
 			{
-				current_step++;
-				current_step %= pattern.size();
-				current_frames = 0;
+				look = Look::LEFT;
+				pos -= pattern[current_step].speed;
 
-				anim_id = pattern[current_step].anim;
-				sprite->SetAnimation(anim_id);
-				UpdateLook(anim_id);
+
+				current_frames++;
+
+				if (current_frames == pattern[current_step].frames)
+				{
+					current_step++;
+					current_step %= pattern.size();
+					current_frames = 0;
+
+					anim_id = pattern[current_step].anim;
+					sprite->SetAnimation(anim_id);
+					UpdateLook(anim_id);
+				}
 			}
-		}
-	}
-	else if (state == MedusaState::ATTACK)
-	{
-		if (!IsVisible(box))
-		{
-			state = MedusaState::ROAMING;
-
-			//Continue with the previous animation pattern before initiating the attack
-			anim_id = pattern[current_step].anim;
-			sprite->SetAnimation(anim_id);
-		}
-		else
-		{
-			attack_delay--;
-			if (attack_delay == 0)
+			else if (box.pos.x > pos.x && cooldown == 0)
 			{
-				shoot = true;
+				look = Look::RIGHT;
+				pos += pattern[current_step].speed;
 
-				//The attack animation consists of 2 frames. Wait for a complete loop
-				//before shooting again
-				attack_delay = 2 * MEDUSA_ANIM_DELAY;
+
+				current_frames++;
+
+				if (current_frames == pattern[current_step].frames)
+				{
+					current_step++;
+					current_step %= pattern.size();
+					current_frames = 0;
+
+					anim_id = pattern[current_step].anim;
+					sprite->SetAnimation(anim_id);
+					UpdateLook(anim_id);
+				}
+
 			}
-		}
-	}
-	sprite->Update();
+			else if (box.pos.x == pos.x)
+			{
+				state = MedusaState::ATTACK;
+				cooldown = 120;
+				if (look == Look::LEFT)	sprite->SetAnimation((int)MedusaAnim::ATTACK_LEFT);
+				else					sprite->SetAnimation((int)MedusaAnim::ATTACK_RIGHT);
+				
+				
+			}
 
-	return shoot;
-}
+			//}
+		}
+		else if (state == MedusaState::ATTACK)
+		{
+			//if (!IsVisible(box))
+			//{
+			//	state = MedusaState::ROAMING;
+
+			//	//Continue with the previous animation pattern before initiating the attack
+			//	anim_id = pattern[current_step].anim;
+			//	sprite->SetAnimation(anim_id);
+			//}
+			//else
+			//{
+		       shoot = true;
+				attack_delay--;
+				if (attack_delay == 0)
+				{
+					shoot = true;
+
+					//The attack animation consists of 2 frames. Wait for a complete loop
+					//before shooting again
+					attack_delay = 2 * MEDUSA_ANIM_DELAY;
+				}
+			//}
+		}
+
+		//attack_delay--;
+		//if (attack_delay == 0)
+		//{
+		//	shoot = true;
+
+		//	//The attack animation consists of 2 frames. Wait for a complete loop
+		//	//before shooting again
+		//	attack_delay = 2 * MEDUSA_ANIM_DELAY;
+		//}
+		sprite->Update();
+
+		return shoot;
+	}
+
 void Medusa::UpdateLook(int anim_id)
 {
 	MedusaAnim anim = (MedusaAnim)anim_id;
