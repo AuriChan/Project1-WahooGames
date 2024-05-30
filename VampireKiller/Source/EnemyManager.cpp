@@ -28,15 +28,17 @@ void EnemyManager::SetShotManager(ShotManager* shots)
 void EnemyManager::Add(const Point& pos, EnemyType type, const AABB& area, Look look)
 {
 	Enemy* enemy;
+	
 
 	if (type == EnemyType::SLIME)
 	{
 		enemy = new Slime(pos, SLIME_PHYSICAL_WIDTH, SLIME_PHYSICAL_HEIGHT, SLIME_FRAME_SIZE_X, SLIME_FRAME_SIZE_Y);
 	}
-	/*else if (type == EnemyType::TURRET)
+	else if (type == EnemyType::TURRET)
 	{
-		enemy = new Turret(pos, TURRET_PHYSICAL_WIDTH, TURRET_PHYSICAL_HEIGHT, TURRET_FRAME_SIZE, TURRET_FRAME_SIZE);
-	}*/
+		enemy = new Turret(pos, TURRET_PHYSICAL_WIDTH, TURRET_PHYSICAL_HEIGHT, TURRET_FRAME_SIZE_X, TURRET_FRAME_SIZE_Y);
+		
+	}
 	else
 	{
 		LOG("Internal error: trying to add a new enemy with invalid type");

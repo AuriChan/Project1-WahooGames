@@ -9,10 +9,11 @@
 #define SLIME_PHYSICAL_HEIGHT	32
 
 //Representation model size: 32x32
-#define TURRET_FRAME_SIZE		32
+#define TURRET_FRAME_SIZE_Y		32
+#define TURRET_FRAME_SIZE_X		16
 //Logical model size: 0x0
-#define TURRET_PHYSICAL_WIDTH	32
-#define TURRET_PHYSICAL_HEIGHT	26
+#define TURRET_PHYSICAL_WIDTH	16
+#define TURRET_PHYSICAL_HEIGHT	32
 
 enum class EnemyType { SLIME, TURRET };
 

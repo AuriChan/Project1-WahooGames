@@ -16,6 +16,7 @@ public:
 	void SetPos(const Point& p);
 	void Update();
 	AABB GetHitbox() const;
+	
 	void SetAlive(bool b);
 	bool IsAlive() const;
 	void Set(const Point& p, const Point& d, int w, int h, int framew, int frameh);

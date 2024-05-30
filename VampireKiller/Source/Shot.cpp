@@ -3,7 +3,7 @@
 
 Shot::Shot()
 {
-	Rectangle rc = { 2 * TILE_SIZE, 12, TILE_SIZE, 3 };
+	Rectangle rc = { 6 * TILE_SIZE + 4, 3*TILE_SIZE + 9, 7,7 };
 	ResourceManager& data = ResourceManager::Instance();
 	render = new StaticImage(data.GetTexture(ResourceImages::IMG_ENEMY), rc);
 
