@@ -1,6 +1,7 @@
 #include "EnemyManager.h"
 #include "Soldier.h"
 #include "SkullTurret.h"
+#include "Medusa.h"
 
 EnemyManager::EnemyManager()
 {
@@ -39,6 +40,10 @@ void EnemyManager::Add(const Point& pos, EnemyType type, const AABB& area, Look 
 		enemy = new Turret(pos, TURRET_PHYSICAL_WIDTH, TURRET_PHYSICAL_HEIGHT, TURRET_FRAME_SIZE_X, TURRET_FRAME_SIZE_Y);
 		
 	}
+	if (type == EnemyType::MEDUSA)
+	{
+		enemy = new Medusa(pos, MEDUSA_PHYSICAL_WIDTH, MEDUSA_PHYSICAL_HEIGHT, MEDUSA_FRAME_SIZE, MEDUSA_FRAME_SIZE);
+	}
 	else
 	{
 		LOG("Internal error: trying to add a new enemy with invalid type");
@@ -60,6 +65,11 @@ AABB EnemyManager::GetEnemyHitBox(const Point& pos, EnemyType type) const
 	{
 		width = TURRET_PHYSICAL_WIDTH;
 		height = TURRET_PHYSICAL_HEIGHT;
+	}
+	else if (type == EnemyType::MEDUSA)
+	{
+		width = MEDUSA_PHYSICAL_WIDTH;
+		height = MEDUSA_PHYSICAL_HEIGHT;
 	}
 	else
 	{

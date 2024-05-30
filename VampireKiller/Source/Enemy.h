@@ -15,7 +15,14 @@
 #define TURRET_PHYSICAL_WIDTH	16
 #define TURRET_PHYSICAL_HEIGHT	32
 
-enum class EnemyType { SLIME, TURRET };
+
+#define MEDUSA_FRAME_SIZE		32
+//Logical model size: 24x30
+#define MEDUSA_PHYSICAL_WIDTH	32
+#define MEDUSA_PHYSICAL_HEIGHT	32
+
+
+enum class EnemyType { SLIME, TURRET, MEDUSA };
 
 class Enemy : public Entity
 {

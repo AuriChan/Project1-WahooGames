@@ -1,7 +1,7 @@
 #pragma once
 
 //game size 
-#define GAME_SCALE_FACTOR	4.0f
+#define GAME_SCALE_FACTOR	5.0f
 #define WINDOW_WIDTH    256
 #define WINDOW_HEIGHT   208 //198
 #define MARGIN_GUI_Y	32
