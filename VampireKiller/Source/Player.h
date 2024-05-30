@@ -92,6 +92,7 @@ private:
 	void MoveY();
 	void LogicJumping();
 	void LogicClimbing();
+	void CreateWhipHitbox();
 
 	//Animation management
 	void SetAnimation(int id);
@@ -116,8 +117,8 @@ private:
 	bool IsDescending() const;
 
 	//Ladder get in/out steps
-	bool IsInFirstHalfTile() const;
-	bool IsInSecondHalfTile() const;
+	/*bool IsInFirstHalfTile() const;
+	bool IsInSecondHalfTile() const;*/
 
 	State state;
 	Look look;
@@ -134,10 +135,9 @@ private:
 	bool isCrouching = false;
 	ResourceManager& data = ResourceManager::Instance();
 
+	AABB whipbox;
 	bool isClimbingUp;
 	bool isClimbingDown;
 	bool startedClimbing;
-	bool isAttacking;
-	
 };
 
