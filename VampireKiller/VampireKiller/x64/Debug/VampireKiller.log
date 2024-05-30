@@ -1,2 +1,11 @@
+<<<<<<< Updated upstream
 ﻿  Scene.cpp
   VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+=======
+﻿  Game.cpp
+  Player.cpp
+  Scene.cpp
+  main.cpp
+  Generando código...
+  VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+>>>>>>> Stashed changes

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Project executed on 30-05-2024 at 20:05:41.
 main.cpp(13): Application start
 EnemyManager.cpp(49): Internal error: trying to add a new enemy with invalid type
@@ -312,5 +313,38 @@ TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given 
 TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (0, 30)
 TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (0, 30)
 TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (0, 30)
+=======
+Project executed on 30-05-2024 at 20:05:44.
+main.cpp(13): Application start
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 17)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 17)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 17)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 17)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 17)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 17)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 17)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 17)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 18)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 18)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 18)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 18)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 18)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 18)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 18)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 18)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 19)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 19)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 19)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 19)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 19)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 19)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 19)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 19)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 20)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 20)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 20)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 20)
+TileMap.cpp(260): Error: Index out of bounds. Tile map dimensions: 25x17. Given index: (15, 20)
+>>>>>>> Stashed changes
 main.cpp(34): Application finish
 main.cpp(37): Bye :)

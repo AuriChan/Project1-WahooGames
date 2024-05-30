@@ -16,7 +16,6 @@ Player::Player(const Point& p, State s, Look view) :
 	isClimbingUp = false;
 	isClimbingDown = false;
 	startedClimbing = false;
-	isAttacking = false;
 }
 Player::~Player()
 {
@@ -255,17 +254,17 @@ void Player::StartCrouching()
 }
 void Player::StartAttacking()
 {
+
 	if (state == State::CROUCHING)
 	{
 		isCrouching = true;
-		/*state = State::ATTACKING;*/
-		isAttacking = true;
+		state = State::ATTACKING;
 		if (IsLookingRight())
 		{
 			SetAnimation((int)PlayerAnim::WHIP_CROUCHING_RIGHT);
 			Sprite* sprite = dynamic_cast<Sprite*>(render);
 			sprite->SetSingleMode();
-
+			
 		}
 		else
 		{
@@ -275,46 +274,9 @@ void Player::StartAttacking()
 
 		}
 	}
-	/*else if (state == State::JUMPING)
-	{
-		if (IsLookingRight())
-		{
-			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
-			Sprite* sprite = dynamic_cast<Sprite*>(render);
-			sprite->SetSingleMode();
-
-		}
-		else
-		{
-			SetAnimation((int)PlayerAnim::WHIP_IDLE_LEFT);
-			Sprite* sprite = dynamic_cast<Sprite*>(render);
-			sprite->SetSingleMode();
-
-		}
-	}*/
-	else if (state == State::CLIMBING)
-	{
-		/*state = State::ATTACKING;*/
-		isAttacking = true;
-		if (isClimbingUp)
-		{
-			SetAnimation((int)PlayerAnim::WHIP_CLIMBING_TOP_RIGHT);
-			Sprite* sprite = dynamic_cast<Sprite*>(render);
-			sprite->SetSingleMode();
-
-		}
-		else if (isClimbingDown)
-		{
-			SetAnimation((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT);
-			Sprite* sprite = dynamic_cast<Sprite*>(render);
-			sprite->SetSingleMode();
-
-		}
-	}
 	else if(state == State::IDLE)
 	{
-		/*state = State::ATTACKING;*/
-		isAttacking = true;
+		state = State::ATTACKING;
 		if (IsLookingRight())
 		{
 			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
@@ -332,8 +294,7 @@ void Player::StartAttacking()
 	}
 	else if (state == State::WALKING)
 	{
-		/*state = State::ATTACKING;*/
-		isAttacking = true;
+		state = State::ATTACKING;
 		if (IsLookingRight())
 		{
 			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
@@ -349,9 +310,17 @@ void Player::StartAttacking()
 
 		}
 	}
+	else if (state == State::CLIMBING)
+	{
+		return;
+	}
+	else if (state == State::JUMPING)
+	{
+		return;
+	}
+	
 	data.LoadSound(ResourceAudio::SOUND_ATTACK, "Images/WhipMissTarget.wav");
 	data.StartSound(ResourceAudio::SOUND_ATTACK);
-	isAttacking = false;
 }
 void Player::StartClimbingUp()
 {
@@ -418,11 +387,12 @@ void Player::Update()
 {
 	//Player doesn't use the "Entity::Update() { pos += dir; }" default behaviour.
 	//Instead, uses an independent behaviour for each axis.
+
 	if (HpBar == 0)
 	{
 		Death();
 	}
-	else if (IsKeyPressed(KEY_SPACE) && !isAttacking && state != State::DEAD)
+	else if (IsKeyPressed(KEY_SPACE) && state != State::ATTACKING && state != State::DEAD)
 	{
 		StartAttacking();
 	}
@@ -434,7 +404,7 @@ void Player::Update()
 
 	}
 
-
+	CreateWhipHitbox();
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
 
@@ -444,18 +414,7 @@ void Player::Update()
 		sprite->SetIsFinished(false);
 		if (isCrouching)
 		{
-			/*state = State::CROUCHING;*/
 			StartCrouching();
-		}
-		else if (isClimbingUp)
-		{
-			/*state = State::CLIMBING;*/
-			StartClimbingUp();
-		}
-		else if (isClimbingDown)
-		{
-			/*state = State::CLIMBING;*/
-			StartClimbingDown();
 		}
 		else
 		{
@@ -476,7 +435,7 @@ void Player::MoveX()
 	if (state == State::CLIMBING)	return;
 	if (state == State::DEAD) return;
 
-	if (IsKeyDown(KEY_DOWN) && !isAttacking)
+	if (IsKeyDown(KEY_DOWN) && state != State::ATTACKING)
 	{
 		if (state == State::JUMPING) return;
 		else if (state == State::IDLE) StartCrouching();
@@ -485,7 +444,7 @@ void Player::MoveX()
 	}
 	
 
-	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && !isAttacking)
+	else if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
 	{
 		if (pos.x < 0) { pos.x = 0; }
 
@@ -507,7 +466,7 @@ void Player::MoveX()
 		}
 	}
 
-	else if (IsKeyDown(KEY_RIGHT) && !isAttacking)
+	else if (IsKeyDown(KEY_RIGHT) && state != State::ATTACKING)
 	{
 		if (pos.x >= WINDOW_WIDTH - (PLAYER_FRAME_SIZE_X - 64))
 		{
@@ -545,18 +504,6 @@ void Player::MoveY()
 	}
 	else if (state == State::CLIMBING)
 	{
-		/*if (IsKeyDown(KEY_UP))
-		{
-			SetAnimation((int)PlayerAnim::CLIMBING_TOP_RIGHT);
-			Sprite* sprite = dynamic_cast<Sprite*>(render);
-			sprite->SetManualMode();
-		}
-		else *//*if (IsKeyDown(KEY_DOWN))
-		{
-			SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
-			Sprite* sprite = dynamic_cast<Sprite*>(render);
-			sprite->SetManualMode();
-		}*/
 		LogicClimbing();
 	}
 	else //idle, walking, falling
@@ -587,7 +534,6 @@ void Player::MoveY()
 					StartClimbingDown();
 					pos.y += 16;
 					pos.x -= 16;
-					/*startedClimbing = true;*/
 				}
 
 			}
@@ -701,10 +647,33 @@ void Player::LogicClimbing()
 		else if (!isClimbingUp && GetAnimation() != PlayerAnim::CLIMBING_BOTTOM_LEFT) SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
 	}
 }
-
+void Player::CreateWhipHitbox()
+{
+	if (state == State::ATTACKING && IsLookingRight())
+	{
+		Point p(pos.x + 12, pos.y - 15);
+		AABB hitbox(p, 27, 8);
+		whipbox = hitbox;
+	}
+	else if (state == State::ATTACKING && IsLookingLeft())
+	{
+		Point p(pos.x + 12, pos.y - 15);
+		AABB hitbox(p, 27, 8);
+		whipbox = hitbox;
+	}
+}
 void Player::DrawDebug(const Color& col) const
 {
 	Entity::DrawHitbox(pos.x, pos.y, width, height, col);
+	if (state == State::ATTACKING && IsLookingRight())
+	{
+		Entity::DrawHitbox(whipbox.pos.x, whipbox.pos.y, whipbox.width, whipbox.height, col);
+	}
+	else if (state == State::ATTACKING && IsLookingLeft())
+	{
+		Entity::DrawHitbox(whipbox.pos.x, whipbox.pos.y, whipbox.width, whipbox.height, col);
+	}
+	
 
 	DrawText(TextFormat("Position: (%d,%d)\nSize: %dx%d\nFrame: %dx%d", pos.x, pos.y, width, height, frame_width, frame_height), 18 * 16, 0, 8, LIGHTGRAY);
 	DrawPixel(pos.x, pos.y, WHITE);
