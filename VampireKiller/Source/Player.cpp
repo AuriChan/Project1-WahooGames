@@ -662,6 +662,10 @@ void Player::CreateWhipHitbox()
 		whipbox = hitbox;
 	}
 }
+AABB Player::GetWhipHitbox() const
+{
+	return whipbox;
+}
 void Player::DrawDebug(const Color& col) const
 {
 	Entity::DrawHitbox(pos.x, pos.y, width, height, col);

@@ -1654,14 +1654,13 @@ void Scene::Release()
 }
 void Scene::CheckCollisions()
 {
-	AABB player_box, obj_box, soldier_box;
+	AABB player_box, obj_box, soldier_box, whip_box;
 
 	player_box = player->GetHitbox();
+	whip_box = player->GetWhipHitbox();
 	
 	auto it = objects.begin();
 
-
-	
 
 	while (it != objects.end())
 	{
@@ -1864,6 +1863,7 @@ void Scene::CheckCollisions()
 		}
 	}
 
+	enemies->CheckCollisions(whip_box);
 }
 void Scene::ClearLevel()
 {

@@ -6,6 +6,7 @@
 EnemyManager::EnemyManager()
 {
 	shots = nullptr;
+	
 }
 EnemyManager::~EnemyManager()
 {
@@ -93,6 +94,47 @@ void EnemyManager::Update(const AABB& player_hitbox)
 			enemy->GetShootingPosDir(&p, &d);
 			shots->Add(p, d);
 		}
+	}
+}
+void EnemyManager::CheckCollisions(AABB player_box)
+{
+	AABB enemy_box;
+	auto it = enemies.begin();
+
+
+	while (it != enemies.end())
+	{
+		enemy_box = (*it)->GetHitbox();
+
+		/*if (player_box.TestAABB(enemy_box))
+		{
+			switch ((*it)->GetType())
+			{
+			case EnemyType::SLIME:
+				if ((*it)->GetCollision() == false)
+				{
+					(*it)->ReceiveDamage();
+					(*it)->SetCollision(true);
+				}
+				else if ((*it)->GetCollision() == true && !player_box.TestAABB(enemy_box))
+				{
+					(*it)->SetCollision(false);
+				}
+
+				if ((*it)->GetLifes() == 0)
+				{
+					delete* it;
+					it = enemies.erase(it);
+				}
+				break;
+			default:
+				break;
+			}
+		}
+		else
+		{*/
+			++it;
+		/*}*/
 	}
 }
 void EnemyManager::Draw() const

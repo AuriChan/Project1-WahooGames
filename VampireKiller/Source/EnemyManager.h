@@ -23,6 +23,7 @@ public:
 	//they will shoot by adding shots to the ShotManager
 	void Update(const AABB& player_hitbox);
 
+	void CheckCollisions(AABB box);
 	//Draw all enemies
 	void Draw() const;
 
@@ -38,5 +39,6 @@ private:
 	//Reference to the ShotManager object
 	//This class does not own the object, it only holds a reference to it
 	ShotManager* shots;
+	
 };
 
