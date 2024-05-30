@@ -36,11 +36,11 @@ AppStatus Slime::Initialise(Look look, const AABB& area)
 	sprite->AddKeyFrame((int)SlimeAnim::IDLE_LEFT, { 0, 3 * n, -m, n });
 
 	sprite->SetAnimationDelay((int)SlimeAnim::WALKING_RIGHT, SLIME_ANIM_DELAY);
-	for (i = 0; i < 2; ++i)
-		sprite->AddKeyFrame((int)SlimeAnim::WALKING_RIGHT, { (float)i * n, 3* n,  m, n });
+	for (i = 0; i < 3; ++i)
+		sprite->AddKeyFrame((int)SlimeAnim::WALKING_RIGHT, { (float)i * m, 3* n,  m, n });
 	sprite->SetAnimationDelay((int)SlimeAnim::WALKING_LEFT, SLIME_ANIM_DELAY);
-	for (i = 0; i < 2; ++i)
-		sprite->AddKeyFrame((int)SlimeAnim::WALKING_LEFT, { (float)i * n, 3 * n, -m, n });
+	for (i = 0; i < 3; ++i)
+		sprite->AddKeyFrame((int)SlimeAnim::WALKING_LEFT, { (float)i * m, 3 * n, -m, n });
 
 	sprite->SetAnimationDelay((int)SlimeAnim::ATTACK_RIGHT, SLIME_ANIM_DELAY);
 	sprite->AddKeyFrame((int)SlimeAnim::ATTACK_RIGHT, { 0, 3 * n, m, n });
