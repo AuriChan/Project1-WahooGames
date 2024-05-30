@@ -98,10 +98,12 @@ bool Medusa::Update(const AABB& box)
 			if (look == Look::LEFT)	sprite->SetAnimation((int)MedusaAnim::ATTACK_LEFT);
 			else					sprite->SetAnimation((int)MedusaAnim::ATTACK_RIGHT);
 		}
+		
+
 		else
 		{
-			pos.x += pattern[current_step].speed.x;
-			pos.y -= pattern[current_step].speed.y;
+			pos += pattern[current_step].speed;
+			
 			
 			current_frames++;
 

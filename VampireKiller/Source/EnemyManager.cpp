@@ -40,7 +40,7 @@ void EnemyManager::Add(const Point& pos, EnemyType type, const AABB& area, Look 
 		enemy = new Turret(pos, TURRET_PHYSICAL_WIDTH, TURRET_PHYSICAL_HEIGHT, TURRET_FRAME_SIZE_X, TURRET_FRAME_SIZE_Y);
 		
 	}
-	if (type == EnemyType::MEDUSA)
+	else if (type == EnemyType::MEDUSA)
 	{
 		enemy = new Medusa(pos, MEDUSA_PHYSICAL_WIDTH, MEDUSA_PHYSICAL_HEIGHT, MEDUSA_FRAME_SIZE, MEDUSA_FRAME_SIZE);
 	}
