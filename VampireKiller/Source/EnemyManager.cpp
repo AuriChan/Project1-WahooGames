@@ -7,6 +7,7 @@ EnemyManager::EnemyManager()
 {
 	shots = nullptr;
 	
+	
 }
 EnemyManager::~EnemyManager()
 {
@@ -113,12 +114,17 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 			{
 			case EnemyType::SLIME:
 				
+				if (cooldownHit == 0)
+				{
 					(*it)->ReceiveDamage();
-					
+					cooldownHit = 60;
 
-				
-				
-				
+				}
+				else if(cooldownHit > 0)
+				{
+					cooldownHit--;
+				}
+					
 				/*if ((*it)->GetCollision() == false)
 				{
 					(*it)->ReceiveDamage();
@@ -128,6 +134,8 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 				{
 					(*it)->SetCollision(false);
 				}*/
+				
+				
 
 				if ((*it)->GetLifes() == 0)
 				{
@@ -135,6 +143,9 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 					it = enemies.erase(it);
 					p->IncrScore(100);
 				}
+				
+					
+
 				break;
 			case EnemyType::TURRET:
 				(*it)->ReceiveDamage();
@@ -201,7 +212,7 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 			++it;
 		}
 	}
-	cooldownHit--;
+	
 }
 void EnemyManager::Draw() const
 {

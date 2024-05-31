@@ -1,3 +1,2 @@
-﻿  Scene.cpp
-C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Scene.cpp(1518,10): warning C4101: 'obj': unreferenced local variable
+﻿  EnemyManager.cpp
   VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe

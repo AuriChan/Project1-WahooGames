@@ -1526,7 +1526,7 @@ void Scene::Update()
 	else if (IsKeyPressed(KEY_TWO)) { LoadLevel(12); posP.x = GetScreenWidth()/2; posP.y = 32; player->SetPos(posP);}
 	else if (IsKeyPressed(KEY_THREE)) { LoadLevel(18); }
 	else if (IsKeyPressed(KEY_FOUR)) { LoadLevel(19); }
-	else if (IsKeyPressed(KEY_FIVE)) { LoadLevel(5); }
+	/*else if (IsKeyPressed(KEY_FIVE)) { LoadLevel(5); }
 	else if (IsKeyPressed(KEY_SIX)) { LoadLevel(6); }
 	else if (IsKeyPressed(KEY_SEVEN)) { LoadLevel(7); }
 	else if (IsKeyPressed(KEY_EIGHT)) { LoadLevel(8); }
@@ -1542,49 +1542,49 @@ void Scene::Update()
 	else if (IsKeyPressed(KEY_R)) { LoadLevel(18); }
 	else if (IsKeyPressed(KEY_T)) { LoadLevel(19); }
 	else if (IsKeyPressed(KEY_Y)) { LoadLevel(20); }
-	else if (IsKeyPressed(KEY_U)) { LoadLevel(21); }
+	else if (IsKeyPressed(KEY_U)) { LoadLevel(21); }*/
 
 	//spawn enemies in front of player
-	//if (IsKeyPressed(KEY_FIVE))
-	//{
-	//	posE.x = player->GetPosx() + 48;
-	//	posE.y =  player->GetPosY();
-	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::SLIME);
-	//	area = level->GetSweptAreaX(enemyBox);
-	//	enemies->Add(posE, EnemyType::SLIME, area);
-	//}
-	//else if (IsKeyPressed(KEY_SIX))
-	//{
-	//	posE.x = player->GetPosx() + 48;
-	//	posE.y = player->GetPosY();
-	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::TURRET);
-	//	area = level->GetSweptAreaX(enemyBox);
-	//	enemies->Add(posE, EnemyType::TURRET, area);
-	//}
-	//else if (IsKeyPressed(KEY_SEVEN))
-	//{
-	//	posE.x = player->GetPosx() + 48;
-	//	posE.y = player->GetPosY();
-	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::MEDUSA);
-	//	area = level->GetSweptAreaX(enemyBox);
-	//	enemies->Add(posE, EnemyType::MEDUSA, area);
-	//}
+	if (IsKeyPressed(KEY_FIVE))
+	{
+		posE.x = player->GetPosx() + 48;
+		posE.y =  player->GetPosY();
+		enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::SLIME);
+		area = level->GetSweptAreaX(enemyBox);
+		enemies->Add(posE, EnemyType::SLIME, area);
+	}
+	else if (IsKeyPressed(KEY_SIX))
+	{
+		posE.x = player->GetPosx() + 48;
+		posE.y = player->GetPosY();
+		enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::TURRET);
+		area = level->GetSweptAreaX(enemyBox);
+		enemies->Add(posE, EnemyType::TURRET, area);
+	}
+	else if (IsKeyPressed(KEY_SEVEN))
+	{
+		posE.x = player->GetPosx() + 48;
+		posE.y = player->GetPosY();
+		enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::MEDUSA);
+		area = level->GetSweptAreaX(enemyBox);
+		enemies->Add(posE, EnemyType::MEDUSA, area);
+	}
 
-	//// spawn objects in front of player
-	//else if (IsKeyPressed(KEY_EIGHT))
-	//{
-	//	posE.x = player->GetPosx() + 32;
-	//	posE.y = player->GetPosY();
-	//	obj = new Object(posE, ObjectType::HEART);
-	//	objects.push_back(obj);
-	//}
-	//else if (IsKeyPressed(KEY_NINE))
-	//{
-	//	posE.x = player->GetPosx() + 32;
-	//	posE.y = player->GetPosY();
-	//	obj = new Object(posE, ObjectType::SILVER_KEY);
-	//	objects.push_back(obj);
-	//}
+	// spawn objects in front of player
+	else if (IsKeyPressed(KEY_EIGHT))
+	{
+		posE.x = player->GetPosx() + 32;
+		posE.y = player->GetPosY();
+		obj = new Object(posE, ObjectType::HEART);
+		objects.push_back(obj);
+	}
+	else if (IsKeyPressed(KEY_NINE))
+	{
+		posE.x = player->GetPosx() + 32;
+		posE.y = player->GetPosY();
+		obj = new Object(posE, ObjectType::SILVER_KEY);
+		objects.push_back(obj);
+	}
 
 	//Take out lives and die manually
 
@@ -1963,7 +1963,7 @@ void Scene::ClearLevel()
 		delete obj;
 	}
 	objects2.clear();
-
+	
 	enemies->Release();
 	shots->Clear();
 
