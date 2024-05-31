@@ -60,6 +60,10 @@ public:
 	void InitScore();
 	void SetStage(int n);
 	int GetStage()const;
+
+	void SetLevel(int n);
+	int GetLevel()const;
+
 	void IncrScore(int n);
 	void IncrLifes(int n);
 	int GetScore()const;
@@ -70,6 +74,9 @@ public:
 
 	bool GetKey()const;
 	void SetKey(bool k);
+
+	int GetTreasureKey()const;
+	void increaseTreasureKey();
 
 	void SetHp(int h);
 	int GetHp()const;
@@ -123,6 +130,7 @@ private:
 	State state;
 	Look look;
 	int jump_delay;
+	int Level = 0;
 
 	TileMap* map;
 	int stageC = 1;
@@ -131,6 +139,7 @@ private:
 	int HpBar = 100;
 	bool win = false;
 	bool key = false;
+	int treasureKey = 0;
 	bool isFinished = false;
 	bool isCrouching = false;
 	ResourceManager& data = ResourceManager::Instance();

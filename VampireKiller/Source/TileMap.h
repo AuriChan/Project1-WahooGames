@@ -106,6 +106,9 @@ private:
 
 	Tile GetTileIndex(int x, int y) const;
 	bool IsTileSolid(Tile tile) const;
+
+	
+
 	bool IsTileLadder(Tile tile) const;
 	bool IsTileLadderTop(Tile tile) const;
 	bool CollisionX(const Point& p, int distance) const;

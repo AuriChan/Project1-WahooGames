@@ -158,6 +158,14 @@ void Player::SetKey(bool k)
 {
 	key = k;
 }
+int Player:: GetTreasureKey()const
+{
+	return treasureKey;
+}
+void Player:: increaseTreasureKey() 
+{
+	treasureKey++;
+}
 void Player::SetHp(int h)
 {
 	HpBar = h;
@@ -175,6 +183,15 @@ int Player::GetPosY()const
 int Player::GetPosx()const
 {
 	return pos.x;
+}
+
+void Player::SetLevel(int n)
+{
+	Level = n;
+}
+int Player:: GetLevel()const
+{
+	return Level;
 }
 
 

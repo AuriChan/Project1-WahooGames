@@ -1,6 +1,7 @@
 #pragma once
 #include "Enemy.h"
 #include "ShotManager.h"
+#include "Player.h"
 
 class EnemyManager
 {
@@ -23,7 +24,7 @@ public:
 	//they will shoot by adding shots to the ShotManager
 	void Update(AABB& player_hitbox);
 
-	void CheckCollisions(AABB box);
+	void CheckCollisions(AABB box, AABB bp, Player *p);
 	//Draw all enemies
 	void Draw() const;
 
@@ -35,7 +36,7 @@ public:
 
 private:
 	std::vector<Enemy*> enemies;
-	
+	int cooldownHit = 0;
 	//Reference to the ShotManager object
 	//This class does not own the object, it only holds a reference to it
 	ShotManager* shots;

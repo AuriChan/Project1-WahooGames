@@ -96,10 +96,11 @@ void EnemyManager::Update( AABB& player_hitbox)
 		}
 	}
 }
-void EnemyManager::CheckCollisions(AABB player_box)
+void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 {
 	AABB enemy_box;
 	auto it = enemies.begin();
+	
 
 
 	while (it != enemies.end())
@@ -111,7 +112,13 @@ void EnemyManager::CheckCollisions(AABB player_box)
 			switch ((*it)->GetType())
 			{
 			case EnemyType::SLIME:
-				(*it)->ReceiveDamage();
+				
+					(*it)->ReceiveDamage();
+					
+
+				
+				
+				
 				/*if ((*it)->GetCollision() == false)
 				{
 					(*it)->ReceiveDamage();
@@ -126,6 +133,7 @@ void EnemyManager::CheckCollisions(AABB player_box)
 				{
 					delete* it;
 					it = enemies.erase(it);
+					p->IncrScore(100);
 				}
 				break;
 			case EnemyType::TURRET:
@@ -144,6 +152,7 @@ void EnemyManager::CheckCollisions(AABB player_box)
 				{
 					delete* it;
 					it = enemies.erase(it);
+					p->IncrScore(200);
 				}
 				break;
 			case EnemyType::MEDUSA:
@@ -162,17 +171,37 @@ void EnemyManager::CheckCollisions(AABB player_box)
 				{
 					delete* it;
 					it = enemies.erase(it);
+					p->IncrScore(2000);
 				}
 				break;
 			default:
 				break;
 			}
 		}
+		/*if (bp.TestAABB(enemy_box))
+		{
+			switch ((*it)->GetType())
+			{
+			case EnemyType::SLIME:
+				p->SetHp((p->GetHp()) - 2);
+
+				break;
+			case EnemyType::TURRET:
+				p->SetHp((p->GetHp()) - 4);
+				break;
+			case EnemyType::MEDUSA:
+				p->SetHp((p->GetHp()) - 8);
+				break;
+			default:
+				break;
+			}
+		}*/
 		else
 		{
 			++it;
 		}
 	}
+	cooldownHit--;
 }
 void EnemyManager::Draw() const
 {

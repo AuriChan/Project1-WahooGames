@@ -58,7 +58,10 @@ AABB Entity::GetHitbox() const
 
 	return hitbox;
 }
-
+Point Entity:: GetPosition() const
+{
+	return pos;
+}
 
 Point Entity::GetRenderingPosition() const
 {

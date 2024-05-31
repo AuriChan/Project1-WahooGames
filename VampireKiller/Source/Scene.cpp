@@ -209,12 +209,13 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0,0, 0, 0, 0,212, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->InitScore();
 		player->SetStage(1);
+		player->SetLevel(1);
 
 
 
@@ -246,7 +247,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0,0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0,0,0,213, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
@@ -320,6 +321,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(4);
+		player->SetLevel(2);
 
 	}
 	else if (stage == 5)
@@ -394,9 +396,9 @@ AppStatus Scene::LoadLevel(int stage)
 		map = new int[size] {
 
 			-3, -3, 81, 81, 81, 81, 86, 87, 81, 81, 94, 95, 86, 87, 81, 81, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 96, 97, 81, 81, 86, 87, 96, 97, 81, 81, 86, 87, 96, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0,111, 96, 97, 81, 81, 86, 87, 96, 97, 81, 81, 86, 87, 96, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 98, 99, 81, 81, 86, 87, 98, 99, 81, 81, 86, 87, 98, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 90, 91, 81, 81, 86, 87, 81, 81, 81, 81, 86, 87, 90, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0,0, 90, 91, 81, 81, 86, 87, 81, 81, 81, 81, 86, 87, 90, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 88, 89, 81, 81, -3, -3, -3, -3, 81, 81, -3, -3, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, 81, 88, 92, 81, 81, 81, 81, -3, -3, 81, 81, 86, 87, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, 81, -3, -3, 81, 81, 81, 81, -3, -3, 81, 81, 86, 87, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -410,7 +412,7 @@ AppStatus Scene::LoadLevel(int stage)
 			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -585,6 +587,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(12);
+		player->SetLevel(3);
 
 	}
 	else if (stage == 13)
@@ -783,6 +786,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(18);
+		player->SetLevel(2);
 
 	}
 	else if (stage == 19)
@@ -1508,19 +1512,20 @@ void Scene::Update()
 	{
 		fade_transition.Update();
 	}
-	Point p1, p2, posP;
-	AABB box;
+	Point p1, p2, posP, posE;
+	AABB box, enemyBox, area;
 	Point p;
+	Object* obj;
 
 	//Switch between the different debug modes: off, on (sprites & hitboxes), on (hitboxes) 
 	if (IsKeyPressed(KEY_F1)) { debug = (DebugMode)(((int)debug + 1) % (int)DebugMode::SIZE); }
 	//Debug levels instantly
 	if (IsKeyPressed(KEY_F1)) { debug = (DebugMode)(((int)debug + 1) % (int)DebugMode::SIZE); }
-	else if (IsKeyPressed(KEY_ZERO)) { LoadLevel(0); }
-	else if (IsKeyPressed(KEY_ONE)) { LoadLevel(1); }
-	else if (IsKeyPressed(KEY_TWO)) { LoadLevel(2); }
-	else if (IsKeyPressed(KEY_THREE)) { LoadLevel(3); }
-	else if (IsKeyPressed(KEY_FOUR)) { LoadLevel(4); }
+	else if (IsKeyPressed(KEY_ZERO)) { LoadLevel(1); }
+	else if (IsKeyPressed(KEY_ONE)) { LoadLevel(4); posP.x = GetScreenWidth() / 2; posP.y = 32; player->SetPos(posP); }
+	else if (IsKeyPressed(KEY_TWO)) { LoadLevel(12); posP.x = GetScreenWidth()/2; posP.y = 32; player->SetPos(posP);}
+	else if (IsKeyPressed(KEY_THREE)) { LoadLevel(18); }
+	else if (IsKeyPressed(KEY_FOUR)) { LoadLevel(19); }
 	else if (IsKeyPressed(KEY_FIVE)) { LoadLevel(5); }
 	else if (IsKeyPressed(KEY_SIX)) { LoadLevel(6); }
 	else if (IsKeyPressed(KEY_SEVEN)) { LoadLevel(7); }
@@ -1538,6 +1543,48 @@ void Scene::Update()
 	else if (IsKeyPressed(KEY_T)) { LoadLevel(19); }
 	else if (IsKeyPressed(KEY_Y)) { LoadLevel(20); }
 	else if (IsKeyPressed(KEY_U)) { LoadLevel(21); }
+
+	//spawn enemies in front of player
+	//if (IsKeyPressed(KEY_FIVE))
+	//{
+	//	posE.x = player->GetPosx() + 48;
+	//	posE.y =  player->GetPosY();
+	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::SLIME);
+	//	area = level->GetSweptAreaX(enemyBox);
+	//	enemies->Add(posE, EnemyType::SLIME, area);
+	//}
+	//else if (IsKeyPressed(KEY_SIX))
+	//{
+	//	posE.x = player->GetPosx() + 48;
+	//	posE.y = player->GetPosY();
+	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::TURRET);
+	//	area = level->GetSweptAreaX(enemyBox);
+	//	enemies->Add(posE, EnemyType::TURRET, area);
+	//}
+	//else if (IsKeyPressed(KEY_SEVEN))
+	//{
+	//	posE.x = player->GetPosx() + 48;
+	//	posE.y = player->GetPosY();
+	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::MEDUSA);
+	//	area = level->GetSweptAreaX(enemyBox);
+	//	enemies->Add(posE, EnemyType::MEDUSA, area);
+	//}
+
+	//// spawn objects in front of player
+	//else if (IsKeyPressed(KEY_EIGHT))
+	//{
+	//	posE.x = player->GetPosx() + 32;
+	//	posE.y = player->GetPosY();
+	//	obj = new Object(posE, ObjectType::HEART);
+	//	objects.push_back(obj);
+	//}
+	//else if (IsKeyPressed(KEY_NINE))
+	//{
+	//	posE.x = player->GetPosx() + 32;
+	//	posE.y = player->GetPosY();
+	//	obj = new Object(posE, ObjectType::SILVER_KEY);
+	//	objects.push_back(obj);
+	//}
 
 	//Take out lives and die manually
 
@@ -1659,6 +1706,7 @@ void Scene::Release()
 void Scene::CheckCollisions()
 {
 	AABB player_box, obj_box, soldier_box, whip_box;
+	Point pos;
 
 	player_box = player->GetHitbox();
 	whip_box = player->GetWhipHitbox();
@@ -1671,11 +1719,11 @@ void Scene::CheckCollisions()
 
 		obj_box = (*it)->GetHitbox();
 
-		if (player_box.TestAABB(soldier_box) && player->GetLives() != 0 )
+		/*if (player_box.TestAABB(soldier_box) && player->GetLives() != 0 )
 		{
 			player->SetLifes(player->GetLives() - 1);
 
-		}
+		}*/
 		if (player_box.TestAABB(obj_box))
 		{
 			switch ((*it)->GetType())
@@ -1749,15 +1797,42 @@ void Scene::CheckCollisions()
 				it = objects.erase(it);
 				break;
 			case ObjectType::ITEM_CHEST:
-				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
-				data.StartSound(ResourceAudio::SOUND_ITEM);
+				if (player->GetTreasureKey() > 0)
+				{
+					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				    data.StartSound(ResourceAudio::SOUND_ITEM);
+				
+					if (player->GetPosx() <= (*it)->GetPosition().x)
+					{  
 
-				delete* it;
-				it = objects.erase(it);
+				        pos = (*it)->GetPosition();
+				        pos.x = (*it)->GetPosition().x + 4;
+				        Object* obj;
+				        obj = new Object(pos, ObjectType::HEART);
+				        objects.push_back(obj);
+						
+						
+
+					}
+					else 
+					{
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x -4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::HEART);
+						objects.push_back(obj);
+					}
+				        delete* it;
+				        it = objects.erase(it);
+
+				}
+				++it;
 				break;
 			case ObjectType::GOLD_KEY:
 				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				player->increaseTreasureKey();
 
 				delete* it;
 				it = objects.erase(it);
@@ -1858,6 +1933,9 @@ void Scene::CheckCollisions()
 			default:
 				break;
 			}
+				
+
+				
 		}
 
 		else
@@ -1867,7 +1945,7 @@ void Scene::CheckCollisions()
 		}
 	}
 
-	enemies->CheckCollisions(whip_box);
+	enemies->CheckCollisions(whip_box, player_box, player );
 
 }
 void Scene::ClearLevel()
@@ -1929,13 +2007,13 @@ void Scene::RenderGUI() const
 	font->Draw(180, 1, TextFormat("@-%d", player->GetLives()));
 	font->Draw(10, 11, TextFormat("PLAYER %d", player->GetHp()));
 	font->Draw(10, 21, TextFormat("ENEMY %d", 0));
-	if (player->GetStage() < 10)
+	if (player->GetLevel() < 10)
 	{
-		font->Draw(110, 1, TextFormat("STAGE-0%d", player->GetStage()));
+		font->Draw(110, 1, TextFormat("STAGE-0%d", player->GetLevel()));
 	}
 	else
 	{
-		font->Draw(110, 1, TextFormat("STAGE-%d", player->GetStage()));
+		font->Draw(110, 1, TextFormat("STAGE-%d", player->GetLevel()));
 
 	}
 

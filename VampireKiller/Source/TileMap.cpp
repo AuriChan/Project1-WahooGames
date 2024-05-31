@@ -157,9 +157,9 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::FIRE_FRAME1] = { 6 * n,  3* n, n, n };
 
     //stage2
-	dict_rect[(int)Tile::PINK_DOOR_TOP] = { 6 * n, 6 * n, n, n };
+	dict_rect[(int)Tile::PINK_DOOR_TOP] = { 6 * n, 6 * n, n, 3*n };
 	dict_rect[(int)Tile::PINK_DOOR_MID] = { 6 * n, 7 * n, n, n };
-	dict_rect[(int)Tile::PINK_DOOR_BOTTOM] = { 6 * n, 8 * n, n, n };
+	dict_rect[(int)Tile::PINK_DOOR_BOTTOM] = { 6 * n, 8 * n, n, 3*n };
 	dict_rect[(int)Tile::CRUSHER_TOP] = { 7 * n, 6 * n, n, n };
 	dict_rect[(int)Tile::CRUSHER_MID] = { 7 * n, 7 * n, n, n };
 	dict_rect[(int)Tile::CRUSHER_BOTTOM] = { 7 * n, 8 * n, n, n };
@@ -263,9 +263,10 @@ Tile TileMap::GetTileIndex(int x, int y) const
 	return map[x + y * width];
 }
 bool TileMap::IsTileSolid(Tile tile) const
-{
+{   
 	return (Tile::SOLID_FIRST <= tile && tile <= Tile::SOLID_LAST);
 }
+
 bool TileMap::IsTileLadder(Tile tile) const
 {
 	return tile == Tile::STAIRS;

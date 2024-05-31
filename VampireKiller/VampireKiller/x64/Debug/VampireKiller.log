@@ -1,4 +1,3 @@
-﻿  Medusa.cpp
-  SkullTurret.cpp
-  Generando código...
-  VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+﻿  Scene.cpp
+C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Scene.cpp(1518,10): warning C4101: 'obj': unreferenced local variable
+  VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
