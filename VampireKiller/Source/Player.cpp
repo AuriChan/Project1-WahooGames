@@ -404,7 +404,6 @@ void Player::Update()
 
 	}
 
-	CreateWhipHitbox();
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
 
@@ -647,35 +646,31 @@ void Player::LogicClimbing()
 		else if (!isClimbingUp && GetAnimation() != PlayerAnim::CLIMBING_BOTTOM_LEFT) SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
 	}
 }
-void Player::CreateWhipHitbox()
+AABB Player::GetWhipHitbox() const
 {
 	if (state == State::ATTACKING && IsLookingRight())
 	{
 		Point p(pos.x + 12, pos.y - 15);
 		AABB hitbox(p, 27, 8);
-		whipbox = hitbox;
+		return hitbox;
 	}
 	else if (state == State::ATTACKING && IsLookingLeft())
 	{
-		Point p(pos.x + 12, pos.y - 15);
+		Point p(pos.x - 27, pos.y - 15);
 		AABB hitbox(p, 27, 8);
-		whipbox = hitbox;
+		return hitbox;
 	}
-}
-AABB Player::GetWhipHitbox() const
-{
-	return whipbox;
 }
 void Player::DrawDebug(const Color& col) const
 {
 	Entity::DrawHitbox(pos.x, pos.y, width, height, col);
 	if (state == State::ATTACKING && IsLookingRight())
 	{
-		Entity::DrawHitbox(whipbox.pos.x, whipbox.pos.y, whipbox.width, whipbox.height, col);
+		Entity::DrawHitbox(GetWhipHitbox().pos.x, GetWhipHitbox().pos.y, GetWhipHitbox().width, GetWhipHitbox().height, col);
 	}
 	else if (state == State::ATTACKING && IsLookingLeft())
 	{
-		Entity::DrawHitbox(whipbox.pos.x, whipbox.pos.y, whipbox.width, whipbox.height, col);
+		Entity::DrawHitbox(GetWhipHitbox().pos.x, GetWhipHitbox().pos.y, GetWhipHitbox().width, GetWhipHitbox().height, col);
 	}
 	
 

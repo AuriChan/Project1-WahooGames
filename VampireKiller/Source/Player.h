@@ -93,7 +93,6 @@ private:
 	void MoveY();
 	void LogicJumping();
 	void LogicClimbing();
-	void CreateWhipHitbox();
 
 	//Animation management
 	void SetAnimation(int id);

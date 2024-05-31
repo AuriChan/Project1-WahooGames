@@ -106,12 +106,13 @@ void EnemyManager::CheckCollisions(AABB player_box)
 	{
 		enemy_box = (*it)->GetHitbox();
 
-		/*if (player_box.TestAABB(enemy_box))
+		if (player_box.TestAABB(enemy_box))
 		{
 			switch ((*it)->GetType())
 			{
 			case EnemyType::SLIME:
-				if ((*it)->GetCollision() == false)
+				(*it)->ReceiveDamage();
+				/*if ((*it)->GetCollision() == false)
 				{
 					(*it)->ReceiveDamage();
 					(*it)->SetCollision(true);
@@ -119,7 +120,43 @@ void EnemyManager::CheckCollisions(AABB player_box)
 				else if ((*it)->GetCollision() == true && !player_box.TestAABB(enemy_box))
 				{
 					(*it)->SetCollision(false);
+				}*/
+
+				if ((*it)->GetLifes() == 0)
+				{
+					delete* it;
+					it = enemies.erase(it);
 				}
+				break;
+			case EnemyType::TURRET:
+				(*it)->ReceiveDamage();
+				/*if ((*it)->GetCollision() == false)
+				{
+					(*it)->ReceiveDamage();
+					(*it)->SetCollision(true);
+				}
+				else if ((*it)->GetCollision() == true && !player_box.TestAABB(enemy_box))
+				{
+					(*it)->SetCollision(false);
+				}*/
+
+				if ((*it)->GetLifes() == 0)
+				{
+					delete* it;
+					it = enemies.erase(it);
+				}
+				break;
+			case EnemyType::MEDUSA:
+				(*it)->ReceiveDamage();
+				/*if ((*it)->GetCollision() == false)
+				{
+					(*it)->ReceiveDamage();
+					(*it)->SetCollision(true);
+				}
+				else if ((*it)->GetCollision() == true && !player_box.TestAABB(enemy_box))
+				{
+					(*it)->SetCollision(false);
+				}*/
 
 				if ((*it)->GetLifes() == 0)
 				{
@@ -132,9 +169,9 @@ void EnemyManager::CheckCollisions(AABB player_box)
 			}
 		}
 		else
-		{*/
+		{
 			++it;
-		/*}*/
+		}
 	}
 }
 void EnemyManager::Draw() const

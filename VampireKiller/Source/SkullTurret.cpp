@@ -6,6 +6,9 @@ Turret::Turret(const Point& p, int width, int height, int frame_width, int frame
 {
 	attack_delay = TURRET_SHOOT_DELAY;
 	state = TurretState::IDLE;
+
+	lifes = 4;
+	damage = 4;
 }
 Turret::~Turret()
 {

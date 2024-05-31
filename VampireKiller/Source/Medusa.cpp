@@ -9,6 +9,9 @@ Medusa::Medusa(const Point& p, int width, int height, int frame_width, int frame
 
 	current_step = 0;
 	current_frames = 0;
+
+	lifes = 4;
+	damage = 4;
 }
 Medusa::~Medusa()
 {
