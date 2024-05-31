@@ -6,6 +6,7 @@
 
 Game::Game()
 {
+    
     state = GameState::INITIAL_SCREEN;
     scene = nullptr;
     img_menu = nullptr;
@@ -204,7 +205,7 @@ AppStatus Game::Update()
             if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
             if (IsKeyPressed(KEY_SPACE))
             {
-                CloseAudioDevice();
+               
                 state = GameState::MAIN_MENU;
             }
             break;
@@ -213,7 +214,7 @@ AppStatus Game::Update()
             if (IsKeyPressed(KEY_ESCAPE)) { state = GameState::MAIN_MENU; };
             if (IsKeyPressed(KEY_SPACE))
             {
-                CloseAudioDevice();
+                
                 state = GameState::MAIN_MENU;
             }
             break;

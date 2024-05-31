@@ -47,7 +47,8 @@ private:
 
 	int attack_delay;	//delay between attacks
 	MedusaState state;
-	int cooldown = 0;
+	int cooldown = -1;
+	int counter = 300;
 	int current_step;	//current step of the pattern
 	int current_frames;	//number of frames in the current step
 	std::vector<StepM> pattern;

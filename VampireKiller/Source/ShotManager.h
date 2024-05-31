@@ -3,7 +3,7 @@
 #include "Shot.h"
 #include "TileMap.h"
 
-#define MAX_SHOTS		16
+#define MAX_SHOTS		500
 
 class ShotManager
 {
