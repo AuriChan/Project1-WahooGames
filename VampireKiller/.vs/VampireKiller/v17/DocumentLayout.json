@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Medusa.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Medusa.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Medusa.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Medusa.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|solutionrelative:Source\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6BA6C315-471C-4163-9B4F-47981D6CB902}|VampireKiller.vcxproj|C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Soldier.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -192,7 +192,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -204,25 +204,23 @@
               "RelativeToolTip": "Source\\Enemy.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-19T15:04:42.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-19T15:04:42.491Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Medusa.cpp",
               "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Medusa.cpp",
               "RelativeDocumentMoniker": "Source\\Medusa.cpp",
               "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Medusa.cpp",
               "RelativeToolTip": "Source\\Medusa.cpp",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAAAJAAAAAAAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-30T17:35:27.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T17:35:27.015Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Medusa.h",
               "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Medusa.h",
               "RelativeDocumentMoniker": "Source\\Medusa.h",
@@ -230,18 +228,17 @@
               "RelativeToolTip": "Source\\Medusa.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-30T17:34:30.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T17:34:30.825Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Scene.cpp",
               "DocumentMoniker": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
               "RelativeDocumentMoniker": "Source\\Scene.cpp",
               "ToolTip": "C:\\Users\\Paula\\Documents\\project1\\Project1-WahooGames\\VampireKiller\\Source\\Scene.cpp",
               "RelativeToolTip": "Source\\Scene.cpp",
-              "ViewState": "AQIAAEwDAAAAAAAAAAAAAGEDAAAuAAAA",
+              "ViewState": "AQIAAF4CAAAAAAAAAAAAAG0CAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-11T14:27:01.101Z",
               "EditorCaption": ""
@@ -256,8 +253,7 @@
               "RelativeToolTip": "Source\\SkullTurret.cpp",
               "ViewState": "AQIAACoAAAAAAAAAAAAhwEEAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-28T19:51:53.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-28T19:51:53.737Z"
             },
             {
               "$type": "Document",
@@ -281,8 +277,7 @@
               "RelativeToolTip": "Source\\Enemy.h",
               "ViewState": "AQIAABIAAAAAAAAAAAAAACwAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-19T14:13:50.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-19T14:13:50.429Z"
             },
             {
               "$type": "Document",
@@ -307,8 +302,7 @@
               "RelativeToolTip": "Source\\Entity.h",
               "ViewState": "AQIAAAsAAAAAAAAAAAAhwCQAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:27:01.099Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.099Z"
             },
             {
               "$type": "Document",
@@ -320,8 +314,7 @@
               "RelativeToolTip": "Source\\EnemyManager.h",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-28T19:51:21.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-28T19:51:21.217Z"
             },
             {
               "$type": "Document",
@@ -333,8 +326,7 @@
               "RelativeToolTip": "Source\\Scene.h",
               "ViewState": "AQIAABsAAAAAAAAAAAAAADQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:27:01.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.1Z"
             },
             {
               "$type": "Document",
@@ -346,8 +338,7 @@
               "RelativeToolTip": "Source\\EnemyManager.cpp",
               "ViewState": "AQIAACQAAAAAAAAAAAAhwDcAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-28T19:31:10.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-28T19:31:10.125Z"
             },
             {
               "$type": "Document",
@@ -359,8 +350,7 @@
               "RelativeToolTip": "Source\\TileMap.cpp",
               "ViewState": "AQIAAJkBAAAAAAAAAAAhwKwBAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-11T14:27:01.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:27:01.1Z"
             },
             {
               "$type": "Document",
@@ -372,8 +362,7 @@
               "RelativeToolTip": "Source\\Soldier.h",
               "ViewState": "AQIAABoAAAAAAAAAAAAhwC0AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-28T19:52:06.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-28T19:52:06.665Z"
             },
             {
               "$type": "Document",
@@ -397,8 +386,7 @@
               "RelativeToolTip": "Source\\SkullTurret.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-28T19:51:55.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-28T19:51:55.482Z"
             },
             {
               "$type": "Document",

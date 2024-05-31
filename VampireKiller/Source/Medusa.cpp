@@ -63,7 +63,7 @@ void Medusa::InitPattern()
 	//Multiplying by 3 ensures sufficient time for displaying all 3 frames of the
 	//walking animation, resulting in smoother transitions and preventing the animation
 	//from appearing rushed or incomplete
-	const int n = MEDUSA_ANIM_DELAY;
+	const int n = MEDUSA_ANIM_DELAY*2;
 
 	//pattern.push_back({ {0, 0}, 2 * n, (int)MedusaAnim::IDLE_RIGHT });
 	//pattern.push_back({ {MEDUSA_SPEED, 0}, n, (int)MedusaAnim::WALKING_RIGHT });
