@@ -6,9 +6,34 @@ Enemy::Enemy(const Point& p, int width, int height, int frame_width, int frame_h
 {
 	visibility_area = {};
 	look = Look::LEFT;
+	collision = false;
 }
 Enemy::~Enemy()
 {
+}
+int Enemy::GetLifes() const
+{
+	return lifes;
+}
+int Enemy::GetDamage() const
+{
+	return damage;
+}
+EnemyType Enemy::GetType() const
+{
+	return type;
+}
+bool Enemy::GetCollision() const
+{
+	return collision;
+}
+void Enemy::SetCollision(bool col)
+{
+	collision = col;
+}
+void Enemy::ReceiveDamage()
+{
+	lifes--;
 }
 bool Enemy::IsVisible(const AABB& hitbox)
 {

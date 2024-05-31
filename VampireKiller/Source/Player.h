@@ -75,6 +75,7 @@ public:
 	int GetHp()const;
 	int GetPosY()const;
 	int GetPosx()const;
+	AABB GetWhipHitbox() const;
 	
 	
 
