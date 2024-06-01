@@ -701,7 +701,7 @@ void Player::LogicClimbing()
 }
 AABB Player::GetWhipHitbox() 
 {
-	if (state == State::ATTACKING && IsLookingRight())
+	if (state == State::ATTACKING && IsLookingRight() && !isCrouching)
 	{
 		if (hit == false)
 		{
@@ -719,7 +719,43 @@ AABB Player::GetWhipHitbox()
 		AABB hitbox(p, 27, 8);
 		return hitbox;
 	}
-	else if (state == State::ATTACKING && IsLookingLeft())
+	else if (state == State::ATTACKING && IsLookingLeft() && !isCrouching)
+	{
+		if (hit == false)
+		{
+			hit = true;
+			hitTimer = timer;
+		}
+		else if (hit == true && hitTimer == timer)
+		{
+			hit = true;
+			Point p(pos.x - 27, pos.y - 15);
+			AABB hitbox(p, 27, 8);
+			return hitbox;
+		}
+		Point p(pos.x - 27, pos.y - 15);
+		AABB hitbox(p, 27, 8);
+		return hitbox;
+	}
+	else if (state == State::ATTACKING && IsLookingRight() && isCrouching)
+	{
+		if (hit == false)
+		{
+			hit = true;
+			hitTimer = timer;
+		}
+		else if (hit == true && hitTimer == timer)
+		{
+			hit = true;
+			Point p(pos.x + 12, pos.y);
+			AABB hitbox(p, 27, 8);
+			return hitbox;
+		}
+		Point p(pos.x + 12, pos.y - 15);
+		AABB hitbox(p, 27, 8);
+		return hitbox;
+	}
+	else if (state == State::ATTACKING && IsLookingLeft() && isCrouching)
 	{
 		if (hit == false)
 		{
@@ -741,13 +777,21 @@ AABB Player::GetWhipHitbox()
 void Player::DrawDebug(const Color& col) const
 {
 	Entity::DrawHitbox(pos.x, pos.y, width, height, col);
-	if (state == State::ATTACKING && IsLookingRight())
+	if (state == State::ATTACKING && IsLookingRight() && !isCrouching)
 	{
 		Entity::DrawHitbox(pos.x + 12, pos.y - 15, 27, 8, col);
 	}
-	else if (state == State::ATTACKING && IsLookingLeft())
+	else if (state == State::ATTACKING && IsLookingLeft() && !isCrouching)
 	{
 		Entity::DrawHitbox(pos.x - 27, pos.y - 15, 27, 8, col);
+	}
+	else if (state == State::ATTACKING && IsLookingRight() && isCrouching)
+	{
+		Entity::DrawHitbox(pos.x + 12, pos.y - 8, 27, 8, col);
+	}
+	else if (state == State::ATTACKING && IsLookingLeft() && isCrouching)
+	{
+		Entity::DrawHitbox(pos.x - 27, pos.y - 8, 27, 8, col);
 	}
 	
 
