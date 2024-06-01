@@ -85,6 +85,21 @@ public:
 	bool GetTreasureKey()const;
 	void SetTreasureKey(int k);
 	
+	bool GetTreasureKey1()const;
+	void SetTreasureKey1(int k);
+
+	bool GetTreasureKey2()const;
+	void SetTreasureKey2(int k);
+	
+	bool GetTreasureKey3()const;
+	void SetTreasureKey3(int k);
+	
+	bool GetTreasureKey4()const;
+	void SetTreasureKey4(int k);
+	
+
+	bool GetTreasureKey5()const;
+	void SetTreasureKey5(int k);
 	
 
 	void SetHp(int h);
@@ -150,6 +165,10 @@ private:
 	bool key = false;
 	bool treasureKey = false;
 	bool TKey1 = false;
+	bool TKey2 = false;
+	bool TKey3 = false;
+	bool TKey4 = false;
+	bool TKey5 = false;
 	bool isFinished = false;
 	bool isCrouching = false;
 	ResourceManager& data = ResourceManager::Instance();

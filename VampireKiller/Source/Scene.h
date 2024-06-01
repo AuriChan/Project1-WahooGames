@@ -46,7 +46,18 @@ private:
    
     bool firstLoad = true;
     bool key = true;
+    bool key1 = true;
+    bool key2 = true;
+    bool key3 = true;
+    bool key4 = true;
+    bool key5 = true;
+
     bool chest = true;
+    bool chest1 = true;
+    bool chest2 = true;
+    bool chest3 = true;
+    bool chest4 = true;
+    bool chest5 = true;
     bool doorEntrance = true;
 
     ResourceManager& data = ResourceManager::Instance();

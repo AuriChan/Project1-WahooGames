@@ -18,7 +18,17 @@ Object::Object(const Point& p, ObjectType t) : Entity(p, OBJECT_PHYSICAL_SIZE, O
 	case ObjectType::BOSS_ORB: rc = { 5 * n, 0, n, n }; break;
 	case ObjectType::INVULNERABILITY_ORB: rc = { 7 * n, 0, n, n }; break;
 	case ObjectType::ITEM_CHEST: rc = { 0, n, n, n }; break;
+	case ObjectType::CHEST1: rc = { 0, n, n, n }; break;
+	case ObjectType::CHEST2: rc = { 0, n, n, n }; break;
+	case ObjectType::CHEST3: rc = { 0, n, n, n }; break;
+	case ObjectType::CHEST4: rc = { 0, n, n, n }; break;
+	case ObjectType::CHEST5: rc = { 0, n, n, n }; break;
 	case ObjectType::GOLD_KEY: rc = { n, n, n, n }; break;
+	case ObjectType::TKEY_1: rc = { n, n, n, n }; break;
+	case ObjectType::TKEY_2: rc = { n, n, n, n }; break;
+	case ObjectType::TKEY_3: rc = { n, n, n, n }; break;
+	case ObjectType::TKEY_4: rc = { n, n, n, n }; break;
+	case ObjectType::TKEY_5: rc = { n, n, n, n }; break;
 	case ObjectType::SILVER_KEY: rc = { 2 * n, n, n, n }; break;
 	case ObjectType::HEART: rc = { 3 * n, n, n, n }; break;
 	case ObjectType::SPEED_BOOTS: rc = { 0, 2 * n, n, n }; break;

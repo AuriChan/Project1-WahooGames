@@ -185,6 +185,54 @@ void Player::SetTreasureKey(int k)
 {
 	treasureKey = k;
 }
+
+
+bool Player::GetTreasureKey1()const
+{
+	return TKey1;
+}
+void Player::SetTreasureKey1(int k)
+{
+	TKey1 = k;
+}
+
+bool Player::GetTreasureKey2()const
+{
+	return TKey2;
+}
+void Player::SetTreasureKey2(int k)
+{
+	TKey2 = k;
+}
+
+bool Player::GetTreasureKey3()const
+{
+	return TKey3;
+}
+void Player::SetTreasureKey3(int k)
+{
+	TKey3 = k;
+}
+
+
+bool Player::GetTreasureKey4()const
+{
+	return TKey4;
+}
+void Player::SetTreasureKey4(int k)
+{
+	TKey4 = k;
+}
+
+bool Player::GetTreasureKey5()const
+{
+	return TKey5;
+}
+void Player::SetTreasureKey5(int k)
+{
+	TKey5 = k;
+}
+
 void Player::SetHp(int h)
 {
 	HpBar = h;

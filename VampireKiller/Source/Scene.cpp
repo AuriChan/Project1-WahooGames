@@ -209,7 +209,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0,0, 0, 0, 0,212, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0,0, 0,0, 0,0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
@@ -247,7 +247,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0,0,0,213, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0,0,0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
@@ -281,7 +281,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
@@ -311,11 +311,11 @@ AppStatus Scene::LoadLevel(int stage)
 			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0,0,401, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0,0,401, 0, 0, 0,229, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				400, 0, 0, 0, 0, 0,  0, 0, 0, 0, 0, 0, 0, 0, 0,401, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -347,11 +347,11 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0,0, 0, 0, 0,401, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0,0, 0, 0,401, 0, 0, 204, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0,0, 0,401, 0, 0, 0, 204, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(5);
@@ -380,9 +380,9 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,228, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 200,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 401,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -445,9 +445,9 @@ AppStatus Scene::LoadLevel(int stage)
 			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0,227, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0,234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0,401, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -467,7 +467,7 @@ AppStatus Scene::LoadLevel(int stage)
 				81, 81, 86, 87, 81, 81, 81, 81, 81, 81, 86, 87, 90, 91, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 86, 87, -3, -3, -3, -3, 81, 81, 86, 87, 88, 89, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, 81, 86, 87, 92, 93, 81, 81, 81, 81, 86, 87, 92, 93, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				-3, 81, 86, 87, 94, 95, 81, 81, 120, -3, 86, 87, 94, 95, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				-3, 81, 86, 87, 94, 95, 81, 81, 110, -3, 86, 87, 94, 95, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, 81, 86, 87, 96, 97, 81, 110, 90, 91, 86, 87, 96, 97, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, -3, -3, 98, 99, 110, 81, 88, 89, -3, -3, 98, 99, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, 81, 86, 87, 81, 110, 81, 81, 106, 107, 86, 87, 81, 81, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -478,11 +478,11 @@ AppStatus Scene::LoadLevel(int stage)
 			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0,232, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 233, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -500,7 +500,7 @@ AppStatus Scene::LoadLevel(int stage)
 				-3, -3, 81, 81, 81, 81, 86, 87, 90, 91, 81, 81, 90, 91, 86, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, -3, -3, -3, -3, -3, -3, -3, -3, 81, 81, 88, -3, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 85, 82, 83, 84, 85, 82, 83, 84, 85, 82, 83, 84, 85, 82, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				-3, -3, 86, 87, 0, 0, 86, 87, 0, 0, -3, -3, 0, 0, 86, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				-3, -3, 86, 87,  0,  0, 86, 87,  0,  0, -3, -3, 0, 0, 86, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 86, 87, 96, 97, 86, 87, 96, 97, 86, 87, 96, 97, 86, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 86, 87, 98, 99, 86, 87, 98, 99, 86, 87, 98, 99, 86, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 86, 87, 90, 91, 86, 87, 106, 107, 86, 87, 81, 81, 86, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -513,7 +513,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0,401,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,230, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -649,7 +649,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0,230, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
@@ -715,7 +715,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0,236, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
@@ -764,7 +764,7 @@ AppStatus Scene::LoadLevel(int stage)
 				-3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 92, 93, 81, 81, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 94, 95, 81, 81, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				81, 81, 81, 81, -3, -3, -3, -3, 81, 81, 90, 91, 81, 81, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				81, 81, 81, 81, 81, -3, -3, -3, -3, 81, 90, 91, 81, 81, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 88, 89, -3, -3, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				81, 81, 81, 81, 90, 91, 81, 81, 90, 91, -3, -3, -3, -3, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				-3, -3, 81, 81, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -777,7 +777,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0,401, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 0,231, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -1043,7 +1043,7 @@ AppStatus Scene::LoadLevel(int stage)
 				objects.push_back(obj);
 				map2[i] = 0;
 				break;
-			case Tile::ITEM_CHEST:
+			/*case Tile::ITEM_CHEST:
 
 				if (chest == true )
 				{ pos.x = x * TILE_SIZE;
@@ -1065,6 +1065,121 @@ AppStatus Scene::LoadLevel(int stage)
 				}
 				
 				break;
+			case Tile::CHEST1:
+
+				if (chest1 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::CHEST1);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 40);
+					pos.y = y * (TILE_SIZE * 40) + (TILE_SIZE * 40) - 1;
+					obj = new Object(pos, ObjectType::CHEST1);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
+				break;
+			case Tile::CHEST2:
+
+				if (chest2 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::CHEST2);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 40);
+					pos.y = y * (TILE_SIZE * 40) + (TILE_SIZE * 40) - 1;
+					obj = new Object(pos, ObjectType::CHEST2);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
+				break;
+			case Tile::CHEST3:
+
+				if (chest3 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::CHEST3);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 40);
+					pos.y = y * (TILE_SIZE * 40) + (TILE_SIZE * 40) - 1;
+					obj = new Object(pos, ObjectType::CHEST3);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
+				break;
+			case Tile::CHEST4:
+
+				if (chest4 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::CHEST4);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 40);
+					pos.y = y * (TILE_SIZE * 40) + (TILE_SIZE * 40) - 1;
+					obj = new Object(pos, ObjectType::CHEST4);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
+				break;
+			case Tile::CHEST5:
+
+				if (chest5 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::CHEST5);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 40);
+					pos.y = y * (TILE_SIZE * 40) + (TILE_SIZE * 40) - 1;
+					obj = new Object(pos, ObjectType::CHEST5);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
+				break;*/
 			case Tile::ITEM_GOLD_KEY:
 
 				if (key == true)
@@ -1086,6 +1201,116 @@ AppStatus Scene::LoadLevel(int stage)
 
 				}
 				
+				break;
+			case Tile::TKEY_1:
+
+				if (key1 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::TKEY_1);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 41);
+					pos.y = y * (TILE_SIZE * 41) + (TILE_SIZE * 41) - 1;
+					obj = new Object(pos, ObjectType::TKEY_1);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
+				break;
+			case Tile::TKEY_2:
+
+				if (key2 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::TKEY_2);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 41);
+					pos.y = y * (TILE_SIZE * 41) + (TILE_SIZE * 41) - 1;
+					obj = new Object(pos, ObjectType::TKEY_2);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
+				break;
+			case Tile::TKEY_3:
+
+				if (key3 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::TKEY_3);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 41);
+					pos.y = y * (TILE_SIZE * 41) + (TILE_SIZE * 41) - 1;
+					obj = new Object(pos, ObjectType::TKEY_3);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
+				break;
+			case Tile::TKEY_4:
+
+				if (key4 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::TKEY_4);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 41);
+					pos.y = y * (TILE_SIZE * 41) + (TILE_SIZE * 41) - 1;
+					obj = new Object(pos, ObjectType::TKEY_4);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
+				break;
+			case Tile::TKEY_5:
+
+				if (key5 == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::TKEY_5);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 41);
+					pos.y = y * (TILE_SIZE * 41) + (TILE_SIZE * 41) - 1;
+					obj = new Object(pos, ObjectType::TKEY_5);
+					objects.push_back(obj);
+					map2[i] = 0;
+
+				}
+
 				break;
 			case Tile::ITEM_SILVER_KEY:
 				pos.x = x * TILE_SIZE;
@@ -1844,7 +2069,7 @@ void Scene::CheckCollisions()
 				it = objects.erase(it);
 				break;
 			case ObjectType::ITEM_CHEST:
-				if (player->GetTreasureKey() > 0)
+				if (player->GetTreasureKey() == true)
 				{
 					chest = false;
 					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
@@ -1876,12 +2101,222 @@ void Scene::CheckCollisions()
 				}
 				++it;
 				break;
+			case ObjectType::CHEST1:
+				if (player->GetTreasureKey1() == true)
+				{
+					chest1 = false;
+					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+					data.StartSound(ResourceAudio::SOUND_ITEM);
+
+					if (player->GetPosx() <= (*it)->GetPosition().x)
+					{
+
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x + 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::HEART);
+						objects.push_back(obj);
+
+
+
+					}
+					else
+					{
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x - 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::HEART);
+						objects.push_back(obj);
+					}
+					delete *it;
+					it = objects.erase(it);
+
+				}
+				++it;
+				break;
+			case ObjectType::CHEST2:
+				if (player->GetTreasureKey2() == true)
+				{
+					chest2 = false;
+					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+					data.StartSound(ResourceAudio::SOUND_ITEM);
+
+					if (player->GetPosx() <= (*it)->GetPosition().x)
+					{
+
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x + 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::WHITE_MONEY_BAG);
+						objects.push_back(obj);
+
+
+
+					}
+					else
+					{
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x - 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::WHITE_MONEY_BAG);
+						objects.push_back(obj);
+					}
+					delete* it;
+					it = objects.erase(it);
+
+				}
+				++it;
+				break;
+			case ObjectType::CHEST3:
+				if (player->GetTreasureKey3() == true)
+				{
+					chest3 = false;
+					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+					data.StartSound(ResourceAudio::SOUND_ITEM);
+
+					if (player->GetPosx() <= (*it)->GetPosition().x)
+					{
+
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x + 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::BLUE_MONEY_BAG);
+						objects.push_back(obj);
+
+
+
+					}
+					else
+					{
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x - 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::BLUE_MONEY_BAG);
+						objects.push_back(obj);
+					}
+					delete* it;
+					it = objects.erase(it);
+
+				}
+				++it;
+				break;
+			case ObjectType::CHEST4:
+				if (player->GetTreasureKey4() == true)
+				{
+					chest4 = false;
+					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+					data.StartSound(ResourceAudio::SOUND_ITEM);
+
+					if (player->GetPosx() <= (*it)->GetPosition().x)
+					{
+
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x + 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::HEALTH_ORB);
+						objects.push_back(obj);
+
+
+
+					}
+					else
+					{
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x - 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::HEALTH_ORB);
+						objects.push_back(obj);
+					}
+					delete* it;
+					it = objects.erase(it);
+
+				}
+				++it;
+				break;
+			case ObjectType::CHEST5:
+				if (player->GetTreasureKey5() == true)
+				{
+					chest5 = false;
+					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+					data.StartSound(ResourceAudio::SOUND_ITEM);
+
+					if (player->GetPosx() <= (*it)->GetPosition().x)
+					{
+
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x + 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::SILVER_KEY);
+						objects.push_back(obj);
+
+
+
+					}
+					else
+					{
+						pos = (*it)->GetPosition();
+						pos.x = (*it)->GetPosition().x - 4;
+						Object* obj;
+						obj = new Object(pos, ObjectType::SILVER_KEY);
+						objects.push_back(obj);
+					}
+					delete* it;
+					it = objects.erase(it);
+
+				}
+				++it;
+				break;
 			case ObjectType::GOLD_KEY:
 				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 				data.StartSound(ResourceAudio::SOUND_ITEM);
 
 				player->SetTreasureKey(true);
 				key = false;
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::TKEY_1:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				player->SetTreasureKey1(true);
+				key1 = false;
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::TKEY_2:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				player->SetTreasureKey2(true);
+				key2 = false;
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::TKEY_3:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				player->SetTreasureKey3(true);
+				key3 = false;
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::TKEY_4:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				player->SetTreasureKey4(true);
+				key4 = false;
+				delete* it;
+				it = objects.erase(it);
+				break;
+			case ObjectType::TKEY_5:
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.StartSound(ResourceAudio::SOUND_ITEM);
+
+				player->SetTreasureKey5(true);
+				key5 = false;
 				delete* it;
 				it = objects.erase(it);
 				break;
@@ -1946,14 +2381,14 @@ void Scene::CheckCollisions()
 			case ObjectType::WHITE_MONEY_BAG:
 				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 				data.StartSound(ResourceAudio::SOUND_ITEM);
-
+				player->IncrScore(5000);
 				delete* it;
 				it = objects.erase(it);
 				break;
 			case ObjectType::BLUE_MONEY_BAG:
 				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 				data.StartSound(ResourceAudio::SOUND_ITEM);
-
+				player->IncrScore(1000);
 				delete* it;
 				it = objects.erase(it);
 				break;
@@ -1967,7 +2402,7 @@ void Scene::CheckCollisions()
 			case ObjectType::HEALTH_ORB:
 				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 				data.StartSound(ResourceAudio::SOUND_ITEM);
-
+				player->SetHp(player->GetHp() + 68);
 				delete* it;
 				it = objects.erase(it);
 				break;
@@ -1993,6 +2428,11 @@ void Scene::CheckCollisions()
 		}
 	}
 
+<<<<<<< Updated upstream
+=======
+
+	//enemies->CheckCollisions(whip_box, player_box, player );
+>>>>>>> Stashed changes
 	if (player->GetOrb() == true)
 	{
 		pos.x = player->GetPosx() + 48;
@@ -2004,6 +2444,10 @@ void Scene::CheckCollisions()
 
 	enemies->CheckCollisionsEnemies(whip_box, player );
 	enemies->CheckCollisionsPlayer(player_box, player );
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 }
 void Scene::ClearLevel()
@@ -2060,6 +2504,21 @@ void Scene::RenderGUI() const
 	else if (player->GetScore() < 1000)
 	{
 		font->Draw(10, 1, TextFormat("SCORE-000%d", player->GetScore()));
+
+	}
+	else if (player->GetScore() < 10000)
+	{
+		font->Draw(10, 1, TextFormat("SCORE-00%d", player->GetScore()));
+
+	}
+	else if (player->GetScore() < 100000)
+	{
+		font->Draw(10, 1, TextFormat("SCORE-0%d", player->GetScore()));
+
+	}
+	else if (player->GetScore() < 1000000)
+	{
+		font->Draw(10, 1, TextFormat("SCORE-%d", player->GetScore()));
 
 	}
 	font->Draw(180, 1, TextFormat("@-%d", player->GetLives()));
