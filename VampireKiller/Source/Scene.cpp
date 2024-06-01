@@ -1993,6 +1993,7 @@ void Scene::CheckCollisions()
 		}
 	}
 
+<<<<<<< Updated upstream
 	enemies->CheckCollisions(whip_box, player_box, player );
 	if (player->GetOrb() == true)
 	{
@@ -2002,6 +2003,10 @@ void Scene::CheckCollisions()
 		objects.push_back(obj);
 		player->SetOrb(false);
 	}
+=======
+	enemies->CheckCollisionsEnemies(whip_box, player );
+	enemies->CheckCollisionsPlayer(player_box, player );
+>>>>>>> Stashed changes
 
 }
 void Scene::ClearLevel()

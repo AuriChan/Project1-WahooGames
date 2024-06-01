@@ -24,7 +24,8 @@ public:
 	//they will shoot by adding shots to the ShotManager
 	void Update(AABB& player_hitbox);
 
-	void CheckCollisions(AABB box, AABB bp, Player *p);
+	void CheckCollisionsEnemies(AABB box, Player *p);
+	void CheckCollisionsPlayer(AABB box, Player* p);
 	//Draw all enemies
 	void Draw() const;
 
@@ -36,12 +37,10 @@ public:
 
 private:
 	std::vector<Enemy*> enemies;
-	int cooldownHit = 0;
-	int timer = 0;
-	bool cooldown = false;
 	//Reference to the ShotManager object
 	//This class does not own the object, it only holds a reference to it
 	ShotManager* shots;
+	int timer;
 	
 };
 

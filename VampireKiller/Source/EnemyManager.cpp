@@ -6,7 +6,7 @@
 EnemyManager::EnemyManager()
 {
 	shots = nullptr;
-	
+	timer = 0;
 	
 }
 EnemyManager::~EnemyManager()
@@ -91,8 +91,15 @@ void EnemyManager::Update( AABB& player_hitbox)
 	bool shoot;
 	Point p, d;
 
-	timer++;
-	timer %= 60;
+	if (timer > 0)
+	{
+		timer--;
+	}
+	else
+	{
+		timer = 0;
+	}
+	
 	
 	for (Enemy* enemy : enemies)
 	{
@@ -104,16 +111,15 @@ void EnemyManager::Update( AABB& player_hitbox)
 		}
 	}
 }
-void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
+void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *p)
 {
 	AABB enemy_box;
 	auto it = enemies.begin();
+
 	
-
-
 	while (it != enemies.end())
 	{
-		
+
 		enemy_box = (*it)->GetHitbox();
 
 		if (player_box.TestAABB(enemy_box))
@@ -134,7 +140,7 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 				{
 					++it;
 				}
-				
+
 				break;
 			}
 			case EnemyType::TURRET:
@@ -178,28 +184,55 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 		{
 			++it;
 		}
-		/*if (bp.TestAABB(enemy_box))
+	}
+	
+	
+}
+void EnemyManager::CheckCollisionsPlayer(AABB player_box, Player* p)
+{
+	AABB enemy_box;
+	auto it = enemies.begin();
+
+	while (it != enemies.end())
+	{
+		enemy_box = (*it)->GetHitbox();
+		if (player_box.TestAABB(enemy_box))
 		{
 			switch ((*it)->GetType())
 			{
 			case EnemyType::SLIME:
-				p->SetHp((p->GetHp()) - 2);
-
+				if (timer == 0)
+				{
+					p->SetHp((p->GetHp()) - (*it)->GetDamage());
+					timer = 120;
+				}
+				++it;
 				break;
 			case EnemyType::TURRET:
-				p->SetHp((p->GetHp()) - 4);
+				if (timer == 0)
+				{
+					p->SetHp((p->GetHp()) - (*it)->GetDamage());
+					timer = 120;
+				}
+				++it;
 				break;
 			case EnemyType::MEDUSA:
-				p->SetHp((p->GetHp()) - 8);
+				if (timer == 0)
+				{
+					p->SetHp((p->GetHp()) - (*it)->GetDamage());
+					timer = 120;
+				}
+				++it;
 				break;
 			default:
 				break;
 			}
-		}*/
-		
-		
+		}
+		else
+		{
+			++it;
+		}
 	}
-	
 }
 void EnemyManager::Draw() const
 {

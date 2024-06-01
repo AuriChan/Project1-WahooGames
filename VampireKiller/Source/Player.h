@@ -145,7 +145,7 @@ private:
 	int stageC = 1;
 	int score;
 	int lifes = 3;
-	int HpBar = 100;
+	int HpBar = 1088;
 	bool win = false;
 	bool key = false;
 	bool treasureKey = false;

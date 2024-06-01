@@ -346,14 +346,29 @@ void Player::StartAttacking()
 
 		}
 	}
+	else if (state == State::JUMPING)
+	{
+		state = State::ATTACKING;
+		if (IsLookingRight())
+		{
+			SetAnimation((int)PlayerAnim::WHIP_IDLE_RIGHT);
+			Sprite* sprite = dynamic_cast<Sprite*>(render);
+			sprite->SetSingleMode();
+
+		}
+		else
+		{
+			SetAnimation((int)PlayerAnim::WHIP_IDLE_LEFT);
+			Sprite* sprite = dynamic_cast<Sprite*>(render);
+			sprite->SetSingleMode();
+
+		}
+	}
 	else if (state == State::CLIMBING)
 	{
 		return;
 	}
-	else if (state == State::JUMPING)
-	{
-		return;
-	}
+	
 	
 	data.LoadSound(ResourceAudio::SOUND_ATTACK, "Images/WhipMissTarget.wav");
 	data.StartSound(ResourceAudio::SOUND_ATTACK);
