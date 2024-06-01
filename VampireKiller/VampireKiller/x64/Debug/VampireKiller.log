@@ -1,6 +1,9 @@
 ﻿  EnemyManager.cpp
-  Medusa.cpp
-  SkullTurret.cpp
-  Soldier.cpp
-  Generando código...
-  VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe
+  Game.cpp
+  main.cpp
+  Player.cpp
+  Scene.cpp
+C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Scene.cpp(1847,31): warning C4804: '>': unsafe use of type 'bool' in operation
+  Generating Code...
+C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\Source\Player.cpp(725,1): warning C4715: 'Player::GetWhipHitbox': not all control paths return a value
+  VampireKiller.vcxproj -> C:\Users\Paula\Documents\project1\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe

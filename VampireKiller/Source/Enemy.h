@@ -44,6 +44,8 @@ public:
 	//Retrieve the position and direction of the shot to be thrown
 	virtual void GetShootingPosDir(Point* pos, Point* dir) const = 0;
 	EnemyType GetType() const;
+	EnemyType SetType(EnemyType t);
+	
 	int GetLifes() const;
 	int GetDamage() const;
 	bool GetCollision() const;

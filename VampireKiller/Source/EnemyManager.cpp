@@ -44,7 +44,11 @@ void EnemyManager::Add(const Point& pos, EnemyType type, const AABB& area, Look 
 	}
 	else if (type == EnemyType::MEDUSA)
 	{
+		
 		enemy = new Medusa(pos, MEDUSA_PHYSICAL_WIDTH, MEDUSA_PHYSICAL_HEIGHT, MEDUSA_FRAME_SIZE, MEDUSA_FRAME_SIZE);
+		enemy->SetType(EnemyType::MEDUSA);
+		
+		
 	}
 	else
 	{
@@ -123,7 +127,7 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 				if ((*it)->GetLifes() <= 0)
 				{
 					delete* it;
-					it = enemies.erase(it);
+ 					it = enemies.erase(it);
 					p->IncrScore(200);
 				}
 				else
@@ -154,9 +158,12 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 
 				if ((*it)->GetLifes() <= 0)
 				{
+					p->IncrScore(2000);
 					delete* it;
 					it = enemies.erase(it);
-					p->IncrScore(2000);
+					
+					p->SetOrb(true);
+					
 				}
 				else
 				{

@@ -72,11 +72,20 @@ public:
 	bool GetWin()const;
 	void SetWin(bool w);
 
+	void SetFCount(int l);
+	int GetFCount()const;
+	void DecreaseFCount();
+
+	bool GetOrb()const;
+	void SetOrb(bool w);
+
 	bool GetKey()const;
 	void SetKey(bool k);
 
-	int GetTreasureKey()const;
-	void increaseTreasureKey();
+	bool GetTreasureKey()const;
+	void SetTreasureKey(int k);
+	
+	
 
 	void SetHp(int h);
 	int GetHp()const;
@@ -139,7 +148,8 @@ private:
 	int HpBar = 100;
 	bool win = false;
 	bool key = false;
-	int treasureKey = 0;
+	bool treasureKey = false;
+	bool TKey1 = false;
 	bool isFinished = false;
 	bool isCrouching = false;
 	ResourceManager& data = ResourceManager::Instance();
@@ -151,5 +161,8 @@ private:
 	int timer = 0;
 	int hitTimer = 0;
 	bool hit = false;
+	bool spawnOrb = false;
+
+	int finalCountdown = -1;
 };
 

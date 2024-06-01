@@ -45,6 +45,8 @@ private:
     DebugMode debug;
    
     bool firstLoad = true;
+    bool key = true;
+    bool chest = true;
     bool doorEntrance = true;
 
     ResourceManager& data = ResourceManager::Instance();

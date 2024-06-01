@@ -23,6 +23,10 @@ EnemyType Enemy::GetType() const
 {
 	return type;
 }
+EnemyType Enemy::SetType(EnemyType t)
+{
+	return type = t ;
+}
 bool Enemy::GetCollision() const
 {
 	return collision;

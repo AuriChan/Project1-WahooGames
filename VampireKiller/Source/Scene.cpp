@@ -209,7 +209,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0,0, 0, 0, 0,212, 0, 0, 401, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0,0, 0, 0, 0,212, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
@@ -1044,18 +1044,48 @@ AppStatus Scene::LoadLevel(int stage)
 				map2[i] = 0;
 				break;
 			case Tile::ITEM_CHEST:
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				obj = new Object(pos, ObjectType::ITEM_CHEST);
-				objects.push_back(obj);
-				map2[i] = 0;
+
+				if (chest == true )
+				{ pos.x = x * TILE_SIZE;
+				  pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				  obj = new Object(pos, ObjectType::ITEM_CHEST);
+				  objects.push_back(obj);
+				  map2[i] = 0;
+				  
+
+				}
+				else
+				{
+					pos.x = x * (TILE_SIZE * 40);
+					pos.y = y * (TILE_SIZE * 40) + (TILE_SIZE * 40) - 1;
+					obj = new Object(pos, ObjectType::ITEM_CHEST);
+					objects.push_back(obj);
+					map2[i] = 0;
+					
+				}
+				
 				break;
 			case Tile::ITEM_GOLD_KEY:
-				pos.x = x * TILE_SIZE;
-				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
-				obj = new Object(pos, ObjectType::GOLD_KEY);
-				objects.push_back(obj);
-				map2[i] = 0;
+
+				if (key == true)
+				{
+					pos.x = x * TILE_SIZE;
+					pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+					obj = new Object(pos, ObjectType::GOLD_KEY);
+					objects.push_back(obj);
+					map2[i] = 0;
+					
+				}
+				else 
+				{
+					pos.x = x * (TILE_SIZE * 41);
+					pos.y = y * (TILE_SIZE * 41) + (TILE_SIZE * 41) - 1;
+				    obj = new Object(pos, ObjectType::GOLD_KEY);
+				    objects.push_back(obj);
+				    map2[i] = 0;
+
+				}
+				
 				break;
 			case Tile::ITEM_SILVER_KEY:
 				pos.x = x * TILE_SIZE;
@@ -1545,32 +1575,32 @@ void Scene::Update()
 	else if (IsKeyPressed(KEY_U)) { LoadLevel(21); }*/
 
 	//spawn enemies in front of player
-	if (IsKeyPressed(KEY_FIVE))
-	{
-		posE.x = player->GetPosx() + 48;
-		posE.y =  player->GetPosY();
-		enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::SLIME);
-		area = level->GetSweptAreaX(enemyBox);
-		enemies->Add(posE, EnemyType::SLIME, area);
-	}
-	else if (IsKeyPressed(KEY_SIX))
-	{
-		posE.x = player->GetPosx() + 48;
-		posE.y = player->GetPosY();
-		enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::TURRET);
-		area = level->GetSweptAreaX(enemyBox);
-		enemies->Add(posE, EnemyType::TURRET, area);
-	}
-	else if (IsKeyPressed(KEY_SEVEN))
-	{
-		posE.x = player->GetPosx() + 48;
-		posE.y = player->GetPosY();
-		enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::MEDUSA);
-		area = level->GetSweptAreaX(enemyBox);
-		enemies->Add(posE, EnemyType::MEDUSA, area);
-	}
+	//if (IsKeyPressed(KEY_FIVE))
+	//{
+	//	posE.x = player->GetPosx() + 48;
+	//	posE.y =  player->GetPosY();
+	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::SLIME);
+	//	area = level->GetSweptAreaX(enemyBox);
+	//	enemies->Add(posE, EnemyType::SLIME, area);
+	//}
+	//else if (IsKeyPressed(KEY_SIX))
+	//{
+	//	posE.x = player->GetPosx() + 48;
+	//	posE.y = player->GetPosY();
+	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::TURRET);
+	//	area = level->GetSweptAreaX(enemyBox);
+	//	enemies->Add(posE, EnemyType::TURRET, area);
+	//}
+	//else if (IsKeyPressed(KEY_SEVEN))
+	//{
+	//	posE.x = player->GetPosx() + 48;
+	//	posE.y = player->GetPosY();
+	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::MEDUSA);
+	//	area = level->GetSweptAreaX(enemyBox);
+	//	enemies->Add(posE, EnemyType::MEDUSA, area);
+	//}
 
-	// spawn objects in front of player
+	//// spawn objects in front of player
 	else if (IsKeyPressed(KEY_EIGHT))
 	{
 		posE.x = player->GetPosx() + 32;
@@ -1583,6 +1613,13 @@ void Scene::Update()
 		posE.x = player->GetPosx() + 32;
 		posE.y = player->GetPosY();
 		obj = new Object(posE, ObjectType::SILVER_KEY);
+		objects.push_back(obj);
+	}
+	else if (IsKeyPressed(KEY_LEFT_SHIFT))
+	{
+		posE.x = player->GetPosx() + 32;
+		posE.y = player->GetPosY();
+		obj = new Object(posE, ObjectType::BOSS_ORB);
 		objects.push_back(obj);
 	}
 
@@ -1609,7 +1646,14 @@ void Scene::Update()
 
 	}
 
-
+	if (player->GetFCount() == 0)
+	{
+		player->SetWin(true);
+	}
+	else 
+	{
+		player->DecreaseFCount();
+	}
 	//natural death
 	if (player->GetHp() <= 0)
 	{
@@ -1707,6 +1751,7 @@ void Scene::CheckCollisions()
 {
 	AABB player_box, obj_box, soldier_box, whip_box;
 	Point pos;
+	Object *obj;
 
 	player_box = player->GetHitbox();
 	whip_box = player->GetWhipHitbox();
@@ -1776,16 +1821,18 @@ void Scene::CheckCollisions()
 				it = objects.erase(it);
 				break;
 			case ObjectType::MAGIC_STAFF:
-				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
-				data.StartSound(ResourceAudio::SOUND_ITEM);
-
+				data.LoadSound(ResourceAudio::MUSIC_BOSS, "Images/Item.wav");
+				data.StartSound(ResourceAudio::MUSIC_BOSS);
+				
+				
 				delete* it;
 				it = objects.erase(it);
 				break;
 			case ObjectType::BOSS_ORB:
-				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
+				data.ReleaseMusic(ResourceAudio::MUSIC_BOSS);
+				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Stage Clear.mp3");
 				data.StartSound(ResourceAudio::SOUND_ITEM);
-
+				player->SetFCount(300);
 				delete* it;
 				it = objects.erase(it);
 				break;
@@ -1799,6 +1846,7 @@ void Scene::CheckCollisions()
 			case ObjectType::ITEM_CHEST:
 				if (player->GetTreasureKey() > 0)
 				{
+					chest = false;
 					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 				    data.StartSound(ResourceAudio::SOUND_ITEM);
 				
@@ -1832,8 +1880,8 @@ void Scene::CheckCollisions()
 				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 				data.StartSound(ResourceAudio::SOUND_ITEM);
 
-				player->increaseTreasureKey();
-
+				player->SetTreasureKey(true);
+				key = false;
 				delete* it;
 				it = objects.erase(it);
 				break;
@@ -1946,6 +1994,14 @@ void Scene::CheckCollisions()
 	}
 
 	enemies->CheckCollisions(whip_box, player_box, player );
+	if (player->GetOrb() == true)
+	{
+		pos.x =player->GetPosx() +48;
+		pos.y =player->GetPosY();
+		obj = new Object(pos, ObjectType::BOSS_ORB);
+		objects.push_back(obj);
+		player->SetOrb(false);
+	}
 
 }
 void Scene::ClearLevel()

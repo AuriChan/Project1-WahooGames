@@ -129,7 +129,26 @@ int Player::GetLives()const
 {
 	return lifes;
 }
-
+void Player::SetFCount(int l)
+{
+	finalCountdown = l;
+}
+int Player::GetFCount()const
+{
+	return finalCountdown;
+}
+void Player::DecreaseFCount()
+{
+	finalCountdown--;
+}
+bool Player::GetOrb()const
+{
+	return spawnOrb;
+}
+void Player:: SetOrb(bool w)
+{
+	spawnOrb = w;
+}
 void Player::IncrScore(int n)
 {
 	score += n;
@@ -158,13 +177,13 @@ void Player::SetKey(bool k)
 {
 	key = k;
 }
-int Player:: GetTreasureKey()const
+bool Player:: GetTreasureKey()const
 {
 	return treasureKey;
 }
-void Player:: increaseTreasureKey() 
+void Player::SetTreasureKey(int k)
 {
-	treasureKey++;
+	treasureKey = k;
 }
 void Player::SetHp(int h)
 {
