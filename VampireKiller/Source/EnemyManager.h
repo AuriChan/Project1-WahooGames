@@ -37,6 +37,8 @@ public:
 private:
 	std::vector<Enemy*> enemies;
 	int cooldownHit = 0;
+	int timer = 0;
+	bool cooldown = false;
 	//Reference to the ShotManager object
 	//This class does not own the object, it only holds a reference to it
 	ShotManager* shots;

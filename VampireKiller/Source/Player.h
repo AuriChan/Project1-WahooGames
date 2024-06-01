@@ -82,7 +82,7 @@ public:
 	int GetHp()const;
 	int GetPosY()const;
 	int GetPosx()const;
-	AABB GetWhipHitbox() const;
+	AABB GetWhipHitbox();
 	
 	
 
@@ -148,5 +148,8 @@ private:
 	bool isClimbingUp;
 	bool isClimbingDown;
 	bool startedClimbing;
+	int timer = 0;
+	int hitTimer = 0;
+	bool hit = false;
 };
 

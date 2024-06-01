@@ -402,6 +402,8 @@ void Player::ChangeAnimLeft()
 }
 void Player::Update()
 {
+	timer++;
+	timer %= 11;
 	//Player doesn't use the "Entity::Update() { pos += dir; }" default behaviour.
 	//Instead, uses an independent behaviour for each axis.
 
@@ -663,16 +665,40 @@ void Player::LogicClimbing()
 		else if (!isClimbingUp && GetAnimation() != PlayerAnim::CLIMBING_BOTTOM_LEFT) SetAnimation((int)PlayerAnim::CLIMBING_BOTTOM_LEFT);
 	}
 }
-AABB Player::GetWhipHitbox() const
+AABB Player::GetWhipHitbox() 
 {
 	if (state == State::ATTACKING && IsLookingRight())
 	{
+		if (hit == false)
+		{
+			hit = true;
+			hitTimer = timer;
+		}
+		else if (hit == true && hitTimer == timer)
+		{
+			hit = true;
+			Point p(pos.x + 12, pos.y - 15);
+			AABB hitbox(p, 27, 8);
+			return hitbox;
+		}
 		Point p(pos.x + 12, pos.y - 15);
 		AABB hitbox(p, 27, 8);
 		return hitbox;
 	}
 	else if (state == State::ATTACKING && IsLookingLeft())
 	{
+		if (hit == false)
+		{
+			hit = true;
+			hitTimer = timer;
+		}
+		else if (hit == true && hitTimer == timer)
+		{
+			hit = true;
+			Point p(pos.x - 27, pos.y - 15);
+			AABB hitbox(p, 27, 8);
+			return hitbox;
+		}
 		Point p(pos.x - 27, pos.y - 15);
 		AABB hitbox(p, 27, 8);
 		return hitbox;
@@ -683,11 +709,11 @@ void Player::DrawDebug(const Color& col) const
 	Entity::DrawHitbox(pos.x, pos.y, width, height, col);
 	if (state == State::ATTACKING && IsLookingRight())
 	{
-		Entity::DrawHitbox(GetWhipHitbox().pos.x, GetWhipHitbox().pos.y, GetWhipHitbox().width, GetWhipHitbox().height, col);
+		Entity::DrawHitbox(pos.x + 12, pos.y - 15, 27, 8, col);
 	}
 	else if (state == State::ATTACKING && IsLookingLeft())
 	{
-		Entity::DrawHitbox(GetWhipHitbox().pos.x, GetWhipHitbox().pos.y, GetWhipHitbox().width, GetWhipHitbox().height, col);
+		Entity::DrawHitbox(pos.x - 27, pos.y - 15, 27, 8, col);
 	}
 	
 

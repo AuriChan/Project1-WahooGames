@@ -86,6 +86,9 @@ void EnemyManager::Update( AABB& player_hitbox)
 {
 	bool shoot;
 	Point p, d;
+
+	timer++;
+	timer %= 60;
 	
 	for (Enemy* enemy : enemies)
 	{
@@ -106,6 +109,7 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 
 	while (it != enemies.end())
 	{
+		
 		enemy_box = (*it)->GetHitbox();
 
 		if (player_box.TestAABB(enemy_box))
@@ -113,81 +117,59 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 			switch ((*it)->GetType())
 			{
 			case EnemyType::SLIME:
-				
-				if (cooldownHit == 0)
-				{
-					(*it)->ReceiveDamage();
-					cooldownHit = 60;
-
-				}
-				else if(cooldownHit > 0)
-				{
-					cooldownHit--;
-				}
-					
-				/*if ((*it)->GetCollision() == false)
-				{
-					(*it)->ReceiveDamage();
-					(*it)->SetCollision(true);
-				}
-				else if ((*it)->GetCollision() == true && !player_box.TestAABB(enemy_box))
-				{
-					(*it)->SetCollision(false);
-				}*/
-				
-				
-
-				if ((*it)->GetLifes() == 0)
-				{
-					delete* it;
-					it = enemies.erase(it);
-					p->IncrScore(100);
-				}
-				
-					
-
-				break;
-			case EnemyType::TURRET:
+			{
 				(*it)->ReceiveDamage();
-				/*if ((*it)->GetCollision() == false)
-				{
-					(*it)->ReceiveDamage();
-					(*it)->SetCollision(true);
-				}
-				else if ((*it)->GetCollision() == true && !player_box.TestAABB(enemy_box))
-				{
-					(*it)->SetCollision(false);
-				}*/
 
-				if ((*it)->GetLifes() == 0)
+				if ((*it)->GetLifes() <= 0)
 				{
 					delete* it;
 					it = enemies.erase(it);
 					p->IncrScore(200);
 				}
+				else
+				{
+					++it;
+				}
+				
+				break;
+			}
+			case EnemyType::TURRET:
+
+				(*it)->ReceiveDamage();
+
+				if ((*it)->GetLifes() <= 0)
+				{
+					delete* it;
+					it = enemies.erase(it);
+					p->IncrScore(300);
+				}
+				else
+				{
+					++it;
+				}
 				break;
 			case EnemyType::MEDUSA:
-				(*it)->ReceiveDamage();
-				/*if ((*it)->GetCollision() == false)
-				{
-					(*it)->ReceiveDamage();
-					(*it)->SetCollision(true);
-				}
-				else if ((*it)->GetCollision() == true && !player_box.TestAABB(enemy_box))
-				{
-					(*it)->SetCollision(false);
-				}*/
 
-				if ((*it)->GetLifes() == 0)
+				(*it)->ReceiveDamage();
+
+				if ((*it)->GetLifes() <= 0)
 				{
 					delete* it;
 					it = enemies.erase(it);
 					p->IncrScore(2000);
 				}
+				else
+				{
+					++it;
+				}
 				break;
 			default:
 				break;
 			}
+		}
+		else
+		{
+			++it;
 		}
 		/*if (bp.TestAABB(enemy_box))
 		{
@@ -207,10 +189,8 @@ void EnemyManager::CheckCollisions(AABB player_box, AABB bp, Player *p)
 				break;
 			}
 		}*/
-		else
-		{
-			++it;
-		}
+		
+		
 	}
 	
 }
