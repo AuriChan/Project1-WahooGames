@@ -13,8 +13,11 @@ public:
 	~Shot();
 
 	void Init(const Point& p, const Point& dir);
+	int GetDamage() const;
 	bool IsMovingLeft() const;
 	bool IsMovingRight() const;
 	void DrawDebug(const Color& col) const;
+private:
+	int damage = 2;
 };
 

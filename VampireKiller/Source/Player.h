@@ -160,7 +160,7 @@ private:
 	int stageC = 1;
 	int score;
 	int lifes = 3;
-	int HpBar = 1088;
+	int HpBar = 64;
 	bool win = false;
 	bool key = false;
 	bool treasureKey = false;
@@ -181,6 +181,7 @@ private:
 	int hitTimer = 0;
 	bool hit = false;
 	bool spawnOrb = false;
+	bool receivedDamage;
 
 	int finalCountdown = -1;
 };

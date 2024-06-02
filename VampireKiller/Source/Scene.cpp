@@ -1918,7 +1918,7 @@ void Scene::Update()
 
 	box = player->GetHitbox();
 	enemies->Update(box);
-	shots->Update(box);
+	shots->Update(box, player);
 
 	if (player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
 	{
@@ -2428,11 +2428,9 @@ void Scene::CheckCollisions()
 		}
 	}
 
-<<<<<<< Updated upstream
-=======
 
 	//enemies->CheckCollisions(whip_box, player_box, player );
->>>>>>> Stashed changes
+
 	if (player->GetOrb() == true)
 	{
 		pos.x = player->GetPosx() + 48;
@@ -2444,10 +2442,6 @@ void Scene::CheckCollisions()
 
 	enemies->CheckCollisionsEnemies(whip_box, player );
 	enemies->CheckCollisionsPlayer(player_box, player );
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
 }
 void Scene::ClearLevel()

@@ -11,7 +11,7 @@ Slime::Slime(const Point& p, int width, int height, int frame_width, int frame_h
 	current_frames = 0;
 
 	lifes = 68;
-	damage = 68;
+	damage = 4;
 }
 Slime::~Slime()
 {

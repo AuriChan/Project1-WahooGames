@@ -16,6 +16,7 @@ Player::Player(const Point& p, State s, Look view) :
 	isClimbingUp = false;
 	isClimbingDown = false;
 	startedClimbing = false;
+	receivedDamage = false;
 }
 Player::~Player()
 {
@@ -103,6 +104,10 @@ AppStatus Player::Initialise()
 	sprite->SetAnimationDelay((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT, ANIM_DELAY * 5);
 	for (i = 0; i < 3; ++i)
 	sprite->AddKeyFrame((int)PlayerAnim::WHIP_CLIMBING_BOTTOM_LEFT, { (float)i * m, 6 * n, -m, n });
+
+	sprite->SetAnimationDelay((int)PlayerAnim::RECEIVING_DAMAGE, ANIM_DELAY);
+	sprite->AddKeyFrame((int)PlayerAnim::RECEIVING_DAMAGE, { 0, 0, m, n });
+	sprite->AddKeyFrame((int)PlayerAnim::RECEIVING_DAMAGE, { 3 * m, n, m, n });
 
 	sprite->SetAnimation((int)PlayerAnim::IDLE_RIGHT);
 

@@ -2,6 +2,7 @@
 #include <array>
 #include "Shot.h"
 #include "TileMap.h"
+#include "Player.h"
 
 #define MAX_SHOTS		500
 
@@ -23,7 +24,7 @@ public:
 	void Clear();
 
 	//Update shot positions and check for collisions with the level and player
-	void Update(const AABB& player_hitbox);
+	void Update(const AABB& player_hitbox, Player* player);
 
 	//Draw all active shots
 	void Draw() const;
@@ -37,5 +38,6 @@ private:
 	//Reference to the TileMap object
 	//This class does not own the object, it only holds a reference to it
 	TileMap* map;
+	int timer;
 };
 

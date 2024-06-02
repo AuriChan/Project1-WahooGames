@@ -1,3 +1,7 @@
-﻿  Player.cpp
-C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\Source\Player.cpp(776,1): warning C4715: 'Player::GetWhipHitbox': no todas las rutas de acceso de control devuelven un valor
+﻿  EnemyManager.cpp
+  Game.cpp
+  Scene.cpp
+  ShotManager.cpp
+  main.cpp
+  Generando código...
   VampireKiller.vcxproj -> C:\Users\Laura\OneDrive\Documentos\GitHub\Project1-WahooGames\VampireKiller\x64\Debug\VampireKiller.exe

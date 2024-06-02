@@ -3,6 +3,7 @@
 ShotManager::ShotManager()
 {
 	map = nullptr;
+	timer = 0;
 }
 ShotManager::~ShotManager()
 {
@@ -37,10 +38,19 @@ void ShotManager::Clear()
 	for (Shot& shot : shots)
 		shot.SetAlive(false);
 }
-void ShotManager::Update(const AABB& player_hitbox)
+void ShotManager::Update(const AABB& player_hitbox, Player* player)
 {
 	AABB box;
 	bool hit;
+
+	if (timer > 0)
+	{
+		timer--;
+	}
+	else
+	{
+		timer = 0;
+	}
 
 	for (Shot& shot : shots)
 	{
@@ -58,7 +68,17 @@ void ShotManager::Update(const AABB& player_hitbox)
 			//Check player collision
 			if (!hit) hit = box.TestAABB(player_hitbox);
 
-			if (hit) shot.SetAlive(false);
+			if (hit)
+			{
+				shot.SetAlive(false);
+				if (timer == 0)
+				{
+					player->SetHp(player->GetHp() - shot.GetDamage());
+					timer = 120;
+				}
+				
+			}
+				
 		}
 	}
 }

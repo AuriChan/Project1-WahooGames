@@ -11,7 +11,7 @@ Medusa::Medusa(const Point& p, int width, int height, int frame_width, int frame
 	current_frames = 0;
 
 	lifes = 272;
-	damage = 68;
+	damage = 4;
 }
 Medusa::~Medusa()
 {

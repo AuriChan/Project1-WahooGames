@@ -12,6 +12,10 @@ Shot::Shot()
 Shot::~Shot()
 {
 }
+int Shot::GetDamage() const
+{
+	return damage;
+}
 void Shot::Init(const Point& p, const Point& dir)
 {
 	Set(p, dir, SHOT_PHYSICAL_WIDTH, SHOT_PHYSICAL_HEIGHT, SHOT_FRAME_WIDTH, SHOT_FRAME_HEIGHT);
