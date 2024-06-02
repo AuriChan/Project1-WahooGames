@@ -637,7 +637,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 227, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -844,6 +844,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(19);
+		bossStage = true;
 
 	}
 	else if (stage == 20)
@@ -869,7 +870,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				0, 227, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -1843,30 +1844,30 @@ void Scene::Update()
 	else if (IsKeyPressed(KEY_U)) { LoadLevel(21); }*/
 
 	//spawn enemies in front of player
-	//if (IsKeyPressed(KEY_FIVE))
-	//{
-	//	posE.x = player->GetPosx() + 48;
-	//	posE.y =  player->GetPosY();
-	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::SLIME);
-	//	area = level->GetSweptAreaX(enemyBox);
-	//	enemies->Add(posE, EnemyType::SLIME, area);
-	//}
-	//else if (IsKeyPressed(KEY_SIX))
-	//{
-	//	posE.x = player->GetPosx() + 48;
-	//	posE.y = player->GetPosY();
-	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::TURRET);
-	//	area = level->GetSweptAreaX(enemyBox);
-	//	enemies->Add(posE, EnemyType::TURRET, area);
-	//}
-	//else if (IsKeyPressed(KEY_SEVEN))
-	//{
-	//	posE.x = player->GetPosx() + 48;
-	//	posE.y = player->GetPosY();
-	//	enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::MEDUSA);
-	//	area = level->GetSweptAreaX(enemyBox);
-	//	enemies->Add(posE, EnemyType::MEDUSA, area);
-	//}
+	if (IsKeyPressed(KEY_FIVE))
+	{
+		posE.x = player->GetPosx() + 48;
+		posE.y =  player->GetPosY();
+		enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::SLIME);
+		area = level->GetSweptAreaX(enemyBox);
+		enemies->Add(posE, EnemyType::SLIME, area);
+	}
+	else if (IsKeyPressed(KEY_SIX))
+	{
+		posE.x = player->GetPosx() + 48;
+		posE.y = player->GetPosY();
+		enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::TURRET);
+		area = level->GetSweptAreaX(enemyBox);
+		enemies->Add(posE, EnemyType::TURRET, area);
+	}
+	else if (IsKeyPressed(KEY_SEVEN))
+	{
+		posE.x = player->GetPosx() + 48;
+		posE.y = player->GetPosY();
+		enemyBox = enemies->GetEnemyHitBox(posE, EnemyType::MEDUSA);
+		area = level->GetSweptAreaX(enemyBox);
+		enemies->Add(posE, EnemyType::MEDUSA, area);
+	}
 
 	//// spawn objects in front of player
 	else if (IsKeyPressed(KEY_EIGHT))
@@ -2602,8 +2603,39 @@ void Scene::RenderGUI() const
 
 	}
 	font->Draw(180, 1, TextFormat("@-%d", player->GetLives()));
-	font->Draw(10, 11, TextFormat("PLAYER %d", player->GetHp()));
-	font->Draw(10, 21, TextFormat("ENEMY %d", 0));
+	//player lifes
+	font->Draw(10, 11, TextFormat("PLAYER" ));
+
+	if (player->GetLives() <= 0)
+	{
+		DrawRectangle(60,15, player->GetHp() , 5,BLACK);
+	}
+	else
+	{
+		DrawRectangle(60, 15,player->GetHp(), 5, { 255, 181, 145, 255 });
+
+	}
+	
+
+	////enemy bar
+	font->Draw(10, 21, TextFormat("ENEMY"));
+	if (enemies->GetMedusaLifes() == 40 && enemies->GetMedusaState() == false && bossStage == false)
+	{
+ 		DrawRectangle(60, 25,  272 - 208 ,5, RED);
+	}
+	else if (enemies->GetMedusaLifes() > 0 && enemies->GetMedusaState() == false)
+	{
+		DrawRectangle(60,25, enemies->GetMedusaLifes()/4, 5 , RED);
+
+	}
+	else if(enemies->GetMedusaState() == true)
+	{
+		DrawRectangle(60, 25, 272 - 208, 5, BLACK);
+	}
+	
+	
+
+
 	if (player->GetLevel() < 10)
 	{
 		font->Draw(110, 1, TextFormat("STAGE-0%d", player->GetLevel()));
@@ -2613,7 +2645,7 @@ void Scene::RenderGUI() const
 		font->Draw(110, 1, TextFormat("STAGE-%d", player->GetLevel()));
 
 	}
-
+	
 	
 	font->Draw(210, 1, TextFormat("P-02"));
 

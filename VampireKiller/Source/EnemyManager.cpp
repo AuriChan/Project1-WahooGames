@@ -116,6 +116,26 @@ void EnemyManager::Update( AABB& player_hitbox)
 		}
 	}
 }
+int EnemyManager::GetMedusaLifes()
+{
+	auto it = enemies.begin();
+	while (it != enemies.end())
+	{
+
+		if ((*it)->GetType() == EnemyType::MEDUSA)
+		{
+			return (*it)->GetLifes();
+		}
+		else
+		{
+			++it;
+
+		}
+		
+	}
+	
+			
+}
 void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *player)
 {
 	AABB enemy_box;
@@ -178,6 +198,7 @@ void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *player)
 					player->IncrScore(2000);
 					delete* it;
 					it = enemies.erase(it);
+					medusaDed = true;
 					
 					player->SetOrb(true);
 					
@@ -198,6 +219,10 @@ void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *player)
 	}
 	
 	
+}
+bool EnemyManager::GetMedusaState()
+{
+	return medusaDed;
 }
 void EnemyManager::CheckCollisionsPlayer(AABB player_box, Player* p)
 {

@@ -60,6 +60,8 @@ private:
     bool chest5 = true;
     bool doorEntrance = true;
 
+    bool bossStage = false;
+
     ResourceManager& data = ResourceManager::Instance();
     Text *font;
     //Enemies present in the level
@@ -73,5 +75,6 @@ private:
 
     Rectangle dst;
     FadeTransition fade_transition;
+
 
 };

@@ -33,9 +33,11 @@ public:
 
 	//Draw enemy hitboxes for debugging
 	void DrawDebug() const;
-
+	int GetMedusaLifes();
 	//Delete all enemies and clear the enemy vector
 	void Release();
+
+	bool GetMedusaState();
 
 private:
 	std::vector<Enemy*> enemies;
@@ -44,6 +46,7 @@ private:
 	ShotManager* shots;
 	ParticleManager* particles;
 	int timer;
-	
+	bool medusaDed = false;
 };
+
 
