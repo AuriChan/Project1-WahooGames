@@ -7,6 +7,9 @@ Sprite::Sprite(const Texture2D* texture)
     current_frame = 0;
     current_delay = 0;
     mode = AnimMode::AUTOMATIC;
+    isFinished = false;
+    animation_complete = false;
+    
 }
 Sprite::~Sprite()
 {
@@ -38,6 +41,7 @@ void Sprite::SetAnimation(int id)
         current_anim = id;
         current_frame = 0;
         current_delay = animations[current_anim].delay;
+        animation_complete = false;
     }
 }
 int Sprite::GetAnimation()
@@ -51,6 +55,10 @@ bool Sprite::GetIsFinished()
 void Sprite::SetIsFinished(bool f)
 {
     isFinished = f;
+}
+bool Sprite::IsAnimationComplete() const
+{
+    return animation_complete;
 }
 void Sprite::SetManualMode()
 {
@@ -79,6 +87,9 @@ void Sprite::Update()
                 current_frame++;
                 current_frame %= animations[current_anim].frames.size();
                 current_delay = animations[current_anim].delay;
+
+                //Animation is complete when we repeat from the first frame
+                animation_complete = (current_frame == 0);
             }
             else if (mode == AnimMode::SINGLE)
             {

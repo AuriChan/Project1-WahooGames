@@ -23,6 +23,7 @@ public:
     int GetAnimation();
     bool GetIsFinished();
     void SetIsFinished(bool f);
+    bool IsAnimationComplete() const;
 
     void SetManualMode();
     void SetAutomaticMode();
@@ -47,5 +48,6 @@ private:
 
     AnimMode mode;
     bool isFinished;
+    bool animation_complete;
 };
 

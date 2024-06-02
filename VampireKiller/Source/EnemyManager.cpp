@@ -6,6 +6,7 @@
 EnemyManager::EnemyManager()
 {
 	shots = nullptr;
+	particles = nullptr;
 	timer = 0;
 	
 }
@@ -27,6 +28,10 @@ AppStatus EnemyManager::Initialise()
 void EnemyManager::SetShotManager(ShotManager* shots)
 {
 	this->shots = shots;
+}
+void EnemyManager::SetParticleManager(ParticleManager* particles)
+{
+	this->particles = particles;
 }
 void EnemyManager::Add(const Point& pos, EnemyType type, const AABB& area, Look look)
 {
@@ -111,7 +116,7 @@ void EnemyManager::Update( AABB& player_hitbox)
 		}
 	}
 }
-void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *p)
+void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *player)
 {
 	AABB enemy_box;
 	auto it = enemies.begin();
@@ -124,6 +129,10 @@ void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *p)
 
 		if (player_box.TestAABB(enemy_box))
 		{
+			Point p;
+			p.x = enemy_box.pos.x - (TILE_SIZE - SHOT_PHYSICAL_WIDTH) / 2;
+			p.y = enemy_box.pos.y - (TILE_SIZE - SHOT_PHYSICAL_HEIGHT) / 2;
+
 			switch ((*it)->GetType())
 			{
 			case EnemyType::SLIME:
@@ -132,10 +141,11 @@ void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *p)
 
 				if ((*it)->GetLifes() <= 0)
 				{
+					particles->Add(p);
 					delete* it;
  					it = enemies.erase(it);
-					p->IncrScore(200);
-
+					player->IncrScore(200);
+					
 				}
 				else
 				{
@@ -152,7 +162,7 @@ void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *p)
 				{
 					delete* it;
 					it = enemies.erase(it);
-					p->IncrScore(300);
+					player->IncrScore(300);
 				}
 				else
 				{
@@ -165,11 +175,11 @@ void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *p)
 
 				if ((*it)->GetLifes() <= 0)
 				{
-					p->IncrScore(2000);
+					player->IncrScore(2000);
 					delete* it;
 					it = enemies.erase(it);
 					
-					p->SetOrb(true);
+					player->SetOrb(true);
 					
 				}
 				else

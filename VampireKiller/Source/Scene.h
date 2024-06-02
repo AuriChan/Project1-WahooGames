@@ -68,6 +68,9 @@ private:
     //Shots thrown by enemies
     ShotManager* shots;
 
+    //Enemies particles
+    ParticleManager* particles;
+
     Rectangle dst;
     FadeTransition fade_transition;
 

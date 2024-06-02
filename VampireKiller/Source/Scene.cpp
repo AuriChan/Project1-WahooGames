@@ -15,6 +15,7 @@ Scene::Scene()
 	font = nullptr;
 	enemies = nullptr;
 	shots = nullptr;
+	particles = nullptr;
 
 	camera.target = { 0, 0 };				//Center of the screen
 	camera.offset = { 0, MARGIN_GUI_Y };	//Offset from the target (center of the screen)
@@ -46,6 +47,16 @@ Scene::~Scene()
 		enemies->Release();
 		delete enemies;
 		enemies = nullptr;
+	}
+	if (shots != nullptr)
+	{
+		delete shots;
+		shots = nullptr;
+	}
+	if (particles != nullptr)
+	{
+		delete particles;
+		particles = nullptr;
 	}
 	if (level != nullptr)
 	{
@@ -97,7 +108,6 @@ AppStatus Scene::Init()
 		LOG("Failed to initialise Enemy Manager");
 		return AppStatus::ERROR;
 	}
-
 	//Create shot manager 
 	shots = new ShotManager();
 	if (shots == nullptr)
@@ -109,6 +119,19 @@ AppStatus Scene::Init()
 	if (shots->Initialise() != AppStatus::OK)
 	{
 		LOG("Failed to initialise Shot Manager");
+		return AppStatus::ERROR;
+	}
+	//Create particle manager 
+	particles = new ParticleManager();
+	if (particles == nullptr)
+	{
+		LOG("Failed to allocate memory for Particle Manager");
+		return AppStatus::ERROR;
+	}
+	//Initialise particle manager
+	if (particles->Initialise() != AppStatus::OK)
+	{
+		LOG("Failed to initialise Particle Manager");
 		return AppStatus::ERROR;
 	}
 	//Create text font 
@@ -157,6 +180,7 @@ AppStatus Scene::Init()
 	shots->SetTileMap(level);
 	//Assign the shot manager reference to the enemy manager so enemies can add shots
 	enemies->SetShotManager(shots);
+	enemies->SetParticleManager(particles);
 
 
 	return AppStatus::OK;
@@ -1968,6 +1992,7 @@ void Scene::Update()
 	box = player->GetHitbox();
 	enemies->Update(box);
 	shots->Update(box, player);
+	particles->Update();
 
 	if (player->GetStage() == 1 || player->GetStage() == 2 || player->GetStage() == 3)
 	{
@@ -2020,6 +2045,7 @@ void Scene::Render()
 
 	}
 	if (fade_transition.IsActive()) fade_transition.Render();
+	particles->Draw();
 
 	EndMode2D();
 
@@ -2521,6 +2547,7 @@ void Scene::ClearLevel()
 	
 	enemies->Release();
 	shots->Clear();
+	particles->Clear();
 
 }
 void Scene::RenderObjects() const
