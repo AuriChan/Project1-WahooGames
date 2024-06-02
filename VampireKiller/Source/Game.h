@@ -19,10 +19,10 @@ public:
 private:
     AppStatus BeginPlay();
     void FinishPlay();
-
+    void FullScreenWindow(int windowWidth, int windowHeight);
     AppStatus LoadResources();
     void UnloadResources();
-
+ 
     GameState state;
     Scene* scene;
     const Texture2D* img_menu;

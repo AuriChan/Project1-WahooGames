@@ -35,7 +35,9 @@ AppStatus Game::Initialise(float scale)
     h = WINDOW_HEIGHT * scale;
 
     //Initialise window
-    InitWindow((int)w, (int)h, "Vampire Killer");
+    int monitor = GetCurrentMonitor();
+     InitWindow((int)w, (int)h, "Vampire Killer");
+     
 
     //Render texture initialisation, used to hold the rendering result so we can easily resize it
     target = LoadRenderTexture(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -46,7 +48,7 @@ AppStatus Game::Initialise(float scale)
     }
     SetTextureFilter(target.texture, TEXTURE_FILTER_POINT);
     src = { 0, 0, WINDOW_WIDTH, -WINDOW_HEIGHT };
-    dst = { 0, 0, w, h };
+    dst = { 0 , 0, WINDOW_WIDTH * scale, WINDOW_HEIGHT * scale };
 
     //Load resources
     if (LoadResources() != AppStatus::OK)
@@ -60,6 +62,13 @@ AppStatus Game::Initialise(float scale)
     SetTargetFPS(60);
     //Disable the escape key to quit functionality
     SetExitKey(0);
+
+    
+        FullScreenWindow(WINDOW_WIDTH * GAME_SCALE_FACTOR, WINDOW_HEIGHT * GAME_SCALE_FACTOR);
+
+    
+    
+   
 
     return AppStatus::OK;
 }
@@ -118,6 +127,15 @@ void Game::FinishPlay()
 AppStatus Game::Update()
 {
     //Check if user attempts to close the window, either by clicking the close button or by pressing Alt+F4
+    
+    if (IsKeyPressed(KEY_ENTER))
+    {
+        FullScreenWindow(WINDOW_WIDTH * GAME_SCALE_FACTOR, WINDOW_HEIGHT * GAME_SCALE_FACTOR);
+
+    }
+       
+    
+
     if (WindowShouldClose()) return AppStatus::QUIT;
 
     if (fade_transition.IsActive() == true)
@@ -280,4 +298,20 @@ void Game::UnloadResources()
     data.ReleaseTexture(ResourceImages::IMG_DATA);
 
     UnloadRenderTexture(target);
+}
+void Game::FullScreenWindow(int windowWidth, int windowHeight)
+{
+    if (!IsWindowFullscreen())
+    {
+        int monitor = GetCurrentMonitor();
+        SetWindowSize(GetMonitorWidth(monitor), GetMonitorHeight(monitor));
+        dst = { (1920 - (WINDOW_WIDTH * 5)) / 2 , 0, WINDOW_WIDTH * 5, WINDOW_HEIGHT * 5 };
+        ToggleFullscreen();
+    }
+    else
+    {
+        dst = { 0 , 0, WINDOW_WIDTH * GAME_SCALE_FACTOR, WINDOW_HEIGHT * GAME_SCALE_FACTOR };
+        ToggleFullscreen();
+        SetWindowSize(windowWidth, windowHeight);
+    }
 }
