@@ -1886,7 +1886,7 @@ void Scene::Update()
 	{
 		posE.x = player->GetPosx() + 32;
 		posE.y = player->GetPosY();
-		obj = new Object(posE, ObjectType::SILVER_KEY);
+		obj = new Object(posE, ObjectType::WHITE_MONEY_BAG);
 		objects.push_back(obj);
 	}
 	else if (IsKeyPressed(KEY_LEFT_SHIFT))
