@@ -1068,7 +1068,7 @@ AppStatus Scene::LoadLevel(int stage)
 				objects.push_back(obj);
 				map2[i] = 0;
 				break;
-			/*case Tile::ITEM_CHEST:
+			case Tile::ITEM_CHEST:
 
 				if (chest == true )
 				{ pos.x = x * TILE_SIZE;
@@ -1088,8 +1088,10 @@ AppStatus Scene::LoadLevel(int stage)
 					map2[i] = 0;
 					
 				}
-				
 				break;
+
+				//THIS IS THE FIRST CHEST -----------------------------
+
 			case Tile::CHEST1:
 
 				if (chest1 == true)
@@ -1204,7 +1206,10 @@ AppStatus Scene::LoadLevel(int stage)
 
 				}
 
-				break;*/
+				break;
+
+				//THIS IS THE LAST CHEST -----------------------------
+
 			case Tile::ITEM_GOLD_KEY:
 
 				if (key == true)
@@ -2158,199 +2163,151 @@ void Scene::CheckCollisions()
 				if (player->GetTreasureKey() == true)
 				{
 					chest = false;
+					chestopened = false;
 					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
-				    data.StartSound(ResourceAudio::SOUND_ITEM);
-				
+					data.StartSound(ResourceAudio::SOUND_ITEM);
+
 					if (player->GetPosx() <= (*it)->GetPosition().x)
-					{  
-
-				        pos = (*it)->GetPosition();
-				        pos.x = (*it)->GetPosition().x + 4;
-				        Object* obj;
-				        obj = new Object(pos, ObjectType::HEART);
-				        objects.push_back(obj);
-						
-						
-
-					}
-					else 
 					{
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x -4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::HEART);
-						objects.push_back(obj);
+						right = false;
 					}
-				        delete* it;
-				        it = objects.erase(it);
+					else
+					{
+						right = true;
+					}
+					delete* it;
+					it = objects.erase(it);
 
 				}
-				++it;
+				else
+				{
+					++it;
+				}
 				break;
 			case ObjectType::CHEST1:
 				if (player->GetTreasureKey1() == true)
 				{
 					chest1 = false;
+					chestopened1 = false;
 					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 					data.StartSound(ResourceAudio::SOUND_ITEM);
 
 					if (player->GetPosx() <= (*it)->GetPosition().x)
 					{
-
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x + 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::HEART);
-						objects.push_back(obj);
-
-
-
+						right = false;
 					}
 					else
 					{
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x - 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::HEART);
-						objects.push_back(obj);
+						right = true;
 					}
-					delete *it;
+					delete* it;
 					it = objects.erase(it);
 
 				}
-				++it;
+				else
+				{
+					++it;
+				}
 				break;
 			case ObjectType::CHEST2:
 				if (player->GetTreasureKey2() == true)
 				{
 					chest2 = false;
+					chestopened2 = false;
 					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 					data.StartSound(ResourceAudio::SOUND_ITEM);
 
 					if (player->GetPosx() <= (*it)->GetPosition().x)
 					{
-
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x + 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::WHITE_MONEY_BAG);
-						objects.push_back(obj);
-
-
-
+						right = false;
 					}
 					else
 					{
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x - 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::WHITE_MONEY_BAG);
-						objects.push_back(obj);
+						right = true;
 					}
 					delete* it;
 					it = objects.erase(it);
 
 				}
-				++it;
+				else
+				{
+					++it;
+				}
 				break;
 			case ObjectType::CHEST3:
 				if (player->GetTreasureKey3() == true)
 				{
 					chest3 = false;
+					chestopened3 = false;
 					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 					data.StartSound(ResourceAudio::SOUND_ITEM);
 
 					if (player->GetPosx() <= (*it)->GetPosition().x)
 					{
-
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x + 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::BLUE_MONEY_BAG);
-						objects.push_back(obj);
-
-
-
+						right = false;
 					}
 					else
 					{
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x - 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::BLUE_MONEY_BAG);
-						objects.push_back(obj);
+						right = true;
 					}
 					delete* it;
 					it = objects.erase(it);
-
+					
 				}
-				++it;
+				else
+				{
+					++it;
+				}
 				break;
 			case ObjectType::CHEST4:
 				if (player->GetTreasureKey4() == true)
 				{
 					chest4 = false;
+					chestopened4 = false;
 					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 					data.StartSound(ResourceAudio::SOUND_ITEM);
 
 					if (player->GetPosx() <= (*it)->GetPosition().x)
 					{
-
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x + 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::HEALTH_ORB);
-						objects.push_back(obj);
-
-
-
+						right = false;
 					}
 					else
 					{
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x - 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::HEALTH_ORB);
-						objects.push_back(obj);
+						right = true;
 					}
 					delete* it;
 					it = objects.erase(it);
 
 				}
-				++it;
+				else
+				{
+					++it;
+				}
 				break;
 			case ObjectType::CHEST5:
 				if (player->GetTreasureKey5() == true)
 				{
 					chest5 = false;
+					chestopened5 = false;
 					data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
 					data.StartSound(ResourceAudio::SOUND_ITEM);
 
 					if (player->GetPosx() <= (*it)->GetPosition().x)
 					{
-
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x + 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::SILVER_KEY);
-						objects.push_back(obj);
-
-
-
+						right = false;
 					}
 					else
 					{
-						pos = (*it)->GetPosition();
-						pos.x = (*it)->GetPosition().x - 4;
-						Object* obj;
-						obj = new Object(pos, ObjectType::SILVER_KEY);
-						objects.push_back(obj);
+						right = true;
 					}
 					delete* it;
 					it = objects.erase(it);
 
 				}
-				++it;
+				else
+				{
+					++it;
+				}
 				break;
 			case ObjectType::GOLD_KEY:
 				data.LoadSound(ResourceAudio::SOUND_ITEM, "Images/Item.wav");
@@ -2524,6 +2481,120 @@ void Scene::CheckCollisions()
 		obj = new Object(pos, ObjectType::BOSS_ORB);
 		objects.push_back(obj);
 		player->SetOrb(false);
+	}
+	if (chestopened == false)
+	{
+		if (right == false)
+		{
+
+			pos.x = player->GetPosx() + 8;
+			pos.y = player->GetPosY();
+
+		}
+		else if (right == true)
+		{
+			pos.x = player->GetPosx() - 8;
+			pos.y = player->GetPosY();
+		}
+		Object* obj;
+		obj = new Object(pos, ObjectType::HEART);
+		objects.push_back(obj);
+		chestopened = true;
+	}
+	if (chestopened1 == false)
+	{
+		if (right == false)
+		{
+
+			pos.x = player->GetPosx() + 8;
+			pos.y = player->GetPosY();
+
+		}
+		else if (right == true)
+		{
+			pos.x = player->GetPosx() - 8;
+			pos.y = player->GetPosY();
+		}
+		Object* obj;
+		obj = new Object(pos, ObjectType::HEART);
+		objects.push_back(obj);
+		chestopened1 = true;
+	}
+	if (chestopened2 == false)
+	{
+		if (right == false)
+		{
+
+			pos.x = player->GetPosx() + 8;
+			pos.y = player->GetPosY();
+
+		}
+		else if (right == true)
+		{
+			pos.x = player->GetPosx() - 8;
+			pos.y = player->GetPosY();
+		}
+		Object* obj;
+		obj = new Object(pos, ObjectType::WHITE_MONEY_BAG);
+		objects.push_back(obj);
+		chestopened2 = true;
+	}
+	if (chestopened3 == false)
+	{
+		if (right == false)
+		{
+
+			pos.x = player->GetPosx() + 8;
+			pos.y = player->GetPosY();
+
+		}
+		else if (right == true)
+		{
+			pos.x = player->GetPosx() - 8;
+			pos.y = player->GetPosY();
+		}
+		Object* obj;
+		obj = new Object(pos, ObjectType::BLUE_MONEY_BAG);
+		objects.push_back(obj);
+		chestopened3 = true;
+	}
+	if (chestopened4 == false)
+	{
+		if (right == false)
+		{
+
+			pos.x = player->GetPosx() + 8;
+			pos.y = player->GetPosY();
+
+		}
+		else if (right == true)
+		{
+			pos.x = player->GetPosx() - 8;
+			pos.y = player->GetPosY();
+		}
+		Object* obj;
+		obj = new Object(pos, ObjectType::HEALTH_ORB);
+		objects.push_back(obj);
+		chestopened4 = true;
+	}
+	if (chestopened5 == false)
+	{
+		if (right == false)
+		{
+
+			pos.x = player->GetPosx() + 8;
+			pos.y = player->GetPosY();
+
+		}
+		else if (right == true)
+		{
+			pos.x = player->GetPosx() - 8;
+			pos.y = player->GetPosY();
+		}
+		Object* obj;
+		obj = new Object(pos, ObjectType::HEALTH_ORB);
+		objects.push_back(obj);
+		chestopened5 = true;
 	}
 
 	enemies->CheckCollisionsEnemies(whip_box, player );
