@@ -101,6 +101,11 @@ public:
 	bool GetTreasureKey5()const;
 	void SetTreasureKey5(int k);
 	
+	int GetTimerDamage();
+	bool GetRender();
+
+	void SetRender(bool b);
+	void SetTimerDamage(int i);
 
 	void SetHp(int h);
 	int GetHp()const;
@@ -142,6 +147,9 @@ private:
 	void ChangeAnimRight();
 	void ChangeAnimLeft();
 
+
+	
+
 	//Jump steps
 	bool IsAscending() const;
 	bool IsLevitating() const;
@@ -182,6 +190,9 @@ private:
 	bool hit = false;
 	bool spawnOrb = false;
 	bool receivedDamage;
+
+	bool renderP = false;
+	int timerDamage = 0;
 
 	int finalCountdown = -1;
 };

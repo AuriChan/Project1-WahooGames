@@ -351,7 +351,7 @@ AppStatus Scene::LoadLevel(int stage)
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				400, 0, 0, 0, 0, 0,0, 0,401, 0, 0, 0, 204, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				400, 0, 0, 0, 0, 0,0, 0,401, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			};
 		player->SetStage(5);
@@ -1763,6 +1763,25 @@ void Scene::StageManager(int stage)
 }
 void Scene::Update()
 {
+	if (player->GetRender() == false)
+	{
+		player->SetRender(true);
+	}
+	else
+	{
+		player->SetRender(false);
+	}
+
+	if (player->GetTimerDamage() > 0)
+	{
+		player->SetTimerDamage(player->GetTimerDamage() - 1);
+	}
+	else
+	{
+		player->SetTimerDamage(0);
+	}
+
+
 	if (fade_transition.IsActive() == true)
 	{
 		fade_transition.Update();
@@ -1888,9 +1907,9 @@ void Scene::Update()
 			&& player->GetLives() > 0)
 		{
 
-			player->Update();
+			//player->Update();
 			player->SetLifes(player->GetLives() - 1);
-			player->SetHp(100);
+			player->SetHp(64);
 
 
 			LoadLevel(1);
@@ -1902,11 +1921,41 @@ void Scene::Update()
 		else if ((player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6)
 			&& player->GetLives() > 0)
 		{
-			player->Update();
+			//player->Update();
 			player->SetLifes(player->GetLives() - 1);
-			player->SetHp(100);
+			player->SetHp(64);
 
 			LoadLevel(4);
+
+	    }
+		else if ((player->GetStage() == 4 || player->GetStage() == 5 || player->GetStage() == 6 || player->GetStage() == 7 || player->GetStage() == 8 || player->GetStage() == 9)
+			&& player->GetLives() > 0)
+		{
+			//player->Update();
+			player->SetLifes(player->GetLives() - 1);
+			player->SetHp(64);
+
+			LoadLevel(4);
+
+		}
+		else if ((player->GetStage() == 10 || player->GetStage() ==11 || player->GetStage() ==12 || player->GetStage() == 13|| player->GetStage() == 14 || player->GetStage() == 15)
+			&& player->GetLives() > 0)
+		{
+			//player->Update();
+			player->SetLifes(player->GetLives() - 1);
+			player->SetHp(64);
+
+			LoadLevel(12);
+
+		}
+		else if ((player->GetStage() == 16 || player->GetStage() == 17 || player->GetStage() == 18 || player->GetStage() == 19 || player->GetStage() == 20 || player->GetStage() == 21)
+			&& player->GetLives() > 0)
+		{
+			//player->Update();
+			player->SetLifes(player->GetLives() - 1);
+			player->SetHp(64);
+
+			LoadLevel(18);
 
 		}
 
@@ -1947,7 +1996,17 @@ void Scene::Render()
 	if (debug == DebugMode::OFF || debug == DebugMode::SPRITES_AND_HITBOXES)
 	{
 		RenderObjects();
-		player->Draw();
+		if (player->GetTimerDamage() > 0 && player->GetRender() == false)
+		{
+			player->DrawTransparent();
+		}
+		else
+		{
+			player->Draw();
+
+		}
+
+
 		enemies->Draw();
 		shots->Draw();
 

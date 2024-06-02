@@ -238,6 +238,23 @@ void Player::SetTreasureKey5(int k)
 	TKey5 = k;
 }
 
+int Player::GetTimerDamage()
+{
+	return timerDamage;
+}
+bool Player::GetRender()
+{
+	return renderP;
+}
+
+void Player::SetRender(bool b)
+{
+	renderP = b;
+}
+void Player::SetTimerDamage(int i)
+{
+	timerDamage = i;
+}
 void Player::SetHp(int h)
 {
 	HpBar = h;

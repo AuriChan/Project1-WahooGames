@@ -80,6 +80,14 @@ void Entity::DrawTint(const Color& col) const
 	Point p = GetRenderingPosition();
 	render->DrawTint(p.x, p.y, col);
 }
+
+
+void Entity::DrawTransparent()
+{
+	Point p = GetRenderingPosition();
+	render->DrawTint(p.x, p.y,BLANK);
+}
+
 void Entity::DrawHitbox(const Color& col) const
 {
 	Color c = col;
