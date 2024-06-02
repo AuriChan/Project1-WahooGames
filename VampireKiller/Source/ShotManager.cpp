@@ -74,8 +74,10 @@ void ShotManager::Update(const AABB& player_hitbox, Player* player)
 				if (timer == 0)
 				{
 					player->SetHp(player->GetHp() - shot.GetDamage());
-					timer = 120;
+					timer = 180;
+					player->SetTimerDamage(180);
 				}
+
 				
 			}
 				

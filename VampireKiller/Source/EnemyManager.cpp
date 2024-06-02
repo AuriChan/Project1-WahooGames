@@ -241,8 +241,9 @@ void EnemyManager::CheckCollisionsPlayer(AABB player_box, Player* p)
 				{
 					p->SetHp((p->GetHp()) - (*it)->GetDamage());
 					timer = 120;
+					p->SetTimerDamage(120);
 				}
-				p->SetTimerDamage(60);
+				
 				++it;
 				break;
 			case EnemyType::TURRET:
@@ -259,8 +260,9 @@ void EnemyManager::CheckCollisionsPlayer(AABB player_box, Player* p)
 				{
 					p->SetHp((p->GetHp()) - (*it)->GetDamage());
 					timer = 120;
+					p->SetTimerDamage(120);
 				}
-				p->SetTimerDamage(60);
+				
 				++it;
 				break;
 			default:
