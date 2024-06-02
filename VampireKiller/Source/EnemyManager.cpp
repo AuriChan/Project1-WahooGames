@@ -135,6 +135,7 @@ void EnemyManager::CheckCollisionsEnemies(AABB player_box, Player *p)
 					delete* it;
  					it = enemies.erase(it);
 					p->IncrScore(200);
+
 				}
 				else
 				{
