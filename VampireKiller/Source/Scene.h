@@ -60,9 +60,9 @@ private:
     bool chest5 = true;
     bool doorEntrance = true;
 
-<<<<<<< Updated upstream
+
     bool bossStage = false;
-=======
+
     bool right = false;
 
     bool chestopened = true;
@@ -71,7 +71,7 @@ private:
     bool chestopened3 = true;
     bool chestopened4 = true;
     bool chestopened5 = true;
->>>>>>> Stashed changes
+
 
     ResourceManager& data = ResourceManager::Instance();
     Text *font;
